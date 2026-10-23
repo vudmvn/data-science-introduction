@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="learning-gate">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,51 @@
 @media(max-width:820px){.app{display:block}.sidebar{width:min(296px,88vw);position:fixed;left:0;top:0;bottom:0;transform:translateX(-110%);transition:transform .2s;box-shadow:12px 0 30px #0001}.sidebar.open{transform:translateX(0)}.menu-toggle{display:inline-flex}.mobile-shade.open{display:block;position:fixed;inset:0;background:#102a3a9c;z-index:19}.topbar{height:60px;padding:0 18px}.content{padding:25px 18px 70px}.three,.four{grid-template-columns:repeat(2,minmax(0,1fr))}.stepper{grid-template-columns:repeat(3,minmax(0,1fr))}.ref{display:none}}
 @media(max-width:570px){h1{font-size:2.2rem}.top-actions .optional{display:none}.two,.three,.four,.glossary-grid{grid-template-columns:1fr}.stat-row{grid-template-columns:1fr 1fr}.flow-steps{grid-template-columns:1fr;gap:6px}.flow-arrow{transform:rotate(90deg);text-align:center;font-size:1.25rem}.flow-step{min-height:94px}.quiz-options{grid-template-columns:1fr}.section{padding-top:49px}.section-head{display:block}.hero{border-radius:18px}.step-info{grid-template-columns:1fr}.step-info .medallion{width:52px;height:52px;font-size:1.9rem}.stepper{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media print{body{background:white;color:#111}.sidebar,.topbar,.mobile-shade,.hero-actions,.step-pager,.control-row,.quiz-options,.btn,.no-print{display:none!important}.app{display:block}.content{max-width:none;padding:0}.hero{color:#111;background:white;box-shadow:none;border:2px solid #1e4268}.hero p{color:#111}.section{break-inside:avoid;padding-top:20px}.card,.interactive{box-shadow:none;break-inside:avoid}.print-only{display:block}.result,.interactive{background:white}}
+
+/* Chế độ học tuần tự: các mục chưa được mở khóa không hiển thị */
+html.learning-gate section.observer:not(#home):not([data-gate-unlocked]){display:none!important}
+.nav-link.gate-disabled{opacity:.45;cursor:not-allowed}
+.nav-link.gate-disabled:hover{background:transparent;color:#d9e8f2}
+.nav-link.gate-done .nav-index{background:#147a70;color:#fff}
+.gate-card{border:1px solid #8ecad3;border-radius:17px;background:linear-gradient(145deg,#f1faff,#fff);margin-top:25px;padding:clamp(18px,2vw,26px);box-shadow:0 12px 32px #123d5f10}
+.gate-card h3{margin:4px 0 9px;color:#135677}
+.gate-card p{color:#405a6b;margin-bottom:12px}
+.gate-choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:9px;margin:14px 0}
+.gate-choice{cursor:pointer;border:1px solid #cadde7;background:#fff;border-radius:11px;padding:11px;display:flex;align-items:flex-start;gap:9px;line-height:1.5}
+.gate-choice:hover{border-color:#168b95}
+.gate-choice input{accent-color:#087d93;margin-top:5px;flex:none}
+.gate-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:12px}
+.gate-message{font-size:.9rem;font-weight:650;margin-top:12px}
+.gate-message.success{color:#17744b}.gate-message.error{color:#ad4a36}
+.gate-completed{border-color:#79bba2;background:#eefaf3}
+.gate-profile{border:1px solid #bed9e4;border-radius:17px;background:#fff;margin:22px 0;padding:22px}
+.gate-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:13px 0}
+.gate-fields label{display:flex;flex-direction:column;gap:5px;color:#244d65;font-weight:750;font-size:.86rem}
+.gate-fields input{width:100%;min-width:0;padding:10px 12px;border:1px solid #abc7d7;border-radius:9px;background:#fff}
+.gate-intro{display:flex;align-items:center;flex-wrap:wrap;gap:9px}
+.gate-progress-text{font-size:.82rem;color:#b9dbe5}
+@media(max-width:690px){.gate-fields{grid-template-columns:1fr}.gate-choice{width:100%}}
+@media print{.gate-card,.gate-profile{break-inside:avoid}}
+
+/* Certificate of lesson completion – local self-report, no external assets */
+[hidden]{display:none !important}
+.certificate-section{margin-top:26px;border:1px solid #bed7e6;border-radius:21px;background:linear-gradient(150deg,#f5fbff,#ffffff 65%);padding:clamp(16px,3vw,28px);box-shadow:0 9px 24px rgba(13,66,115,.06)}
+.certificate-header{display:flex;gap:13px;align-items:flex-start;margin-bottom:12px}
+.certificate-header .cert-icon{font-size:2rem;line-height:1}
+.certificate-header h3{font-size:clamp(1.15rem,2.4vw,1.55rem);margin:0 0 4px}
+.certificate-explain{color:#4b6476;line-height:1.65;margin-top:4px}
+.certificate-frame{padding:9px;border:1px solid #d0dfec;border-radius:12px;background:#eaf2f8;margin-top:18px}
+.certificate-frame canvas{display:block;width:100%;height:auto;background:#fff;border-radius:7px}
+.cert-buttons{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+.cert-buttons .btn{white-space:normal}
+.cert-report{border-radius:13px;background:#eff6fb;border:1px solid #cfdfeb;padding:12px 15px;margin:18px 0 2px;font-size:.94rem;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere}
+.cert-status{min-height:25px;color:#176f54;margin:13px 0 0;font-size:.89rem}
+.cert-warning{font-size:.8rem;color:#61798b;line-height:1.6;margin-top:14px}
+.cert-disabled-message{color:#476177;margin:10px 0}
+.sidebar .btn.certificate-shortcut{background:#fff7d9;color:#284761;border-color:#c69c43;font-weight:750;width:100%;margin-top:9px}
+@media(max-width:590px){.certificate-section{padding:15px}.certificate-header{align-items:center}.cert-buttons .btn{width:100%}.certificate-frame{padding:4px}}
+@media print{.certificate-section{break-inside:avoid}.cert-buttons,.sidebar{display:none !important}}
+
 </style>
 </head>
 <body>
@@ -33,7 +78,7 @@
  <a class="nav-link" href="#worked"><span class="nav-index">10</span>Bài tập mẫu có lời giải</a>
  <a class="nav-link" href="#quiz"><span class="nav-index">11</span>Tự kiểm tra cuối bài</a>
  </nav>
- <div class="sidebar-bottom"><p><a href="bai_1_quiz_tu_cham.html" style="color:#fff">↗ Quiz 34 câu tự chấm</a></p><p><a href="bai_1_bai_tap_tu_lam.html" style="color:#fff">↗ 12 bài tập tự làm</a></p><div style="display:flex;justify-content:space-between"><b>Tiến độ khám phá</b><b id="progressText">0/11</b></div><div class="bar"><span id="progressBar"></span></div><p>Tiến độ lưu ngay trên trình duyệt.</p></div>
+ <div class="sidebar-bottom"><p><a href="bai_1_quiz_tu_cham.html" style="color:#fff">↗ Quiz 34 câu tự chấm</a></p><p><a href="bai_1_bai_tap_tu_lam.html" style="color:#fff">↗ 12 bài tập tự làm</a></p><div style="display:flex;justify-content:space-between"><b>Hoàn thành học phần</b><b id="progressText">0/11</b></div><div class="bar"><span id="progressBar"></span></div><p id="gateNavHelp">Học lần lượt từng mục và trả lời câu hỏi để mở khóa mục kế tiếp.</p><button type="button" class="btn mini" onclick="exportGateProgress()" style="margin-top:8px">↓ Xuất tiến độ học</button><button type="button" class="btn mini certificate-shortcut" id="certificateShortcut" hidden onclick="openCertificateSection()">🎓 Xem chứng nhận hoàn thành</button></div>
 </aside>
 <div class="main">
  <header class="topbar"><button class="btn mini menu-toggle" onclick="openMenu()" aria-label="Mở mục lục">☰</button><span class="crumb">Bài 1 / Giới thiệu về khoa học dữ liệu</span><div class="top-actions"><button class="btn mini optional" onclick="toggleFocus()" title="Ẩn / hiện mục lục">☷ Tập trung</button><button class="btn mini optional" onclick="toggleNight()" title="Đổi chế độ sáng tối">◐ Giao diện</button><button class="btn mini" onclick="window.print()">⎙ In</button></div></header>
@@ -48,9 +93,29 @@
     <div class="card"><div class="icon-square">▤</div><h3>Hiểu dữ liệu</h3><p>Nhận biết nguồn dữ liệu, các loại dữ liệu và các vấn đề chất lượng.</p></div>
     <div class="card"><div class="icon-square">▥</div><h3>Phân tích & biểu đồ</h3><p>Phân biệt các loại phân tích và lựa chọn cách trực quan hóa.</p></div>
     <div class="card"><div class="icon-square">◇</div><h3>Liên hệ thực tế</h3><p>Đặt câu hỏi dữ liệu cho tình huống trong kinh tế và kinh doanh.</p></div>
-    <div class="card feature"><h3>Cách học với trang này</h3><p>Đọc nội dung → thử mô phỏng → trả lời câu hỏi → làm bài cuối bài. Có thể học hoàn toàn ngoại tuyến.</p></div>
+    <div class="card feature"><h3>Cách học với trang này</h3><p>Đọc nội dung → thử mô phỏng → trả lời câu hỏi → làm bài cuối bài. Học theo trình tự và trả lời đúng câu hỏi cuối mỗi phần để mở khóa phần tiếp theo. Có thể học hoàn toàn ngoại tuyến.</p></div>
    </div>
-  </section>
+
+<div class="gate-profile" id="gate-profile">
+ <div class="eyebrow">Học theo lộ trình • Lưu tiến độ riêng</div>
+ <h2 style="margin-bottom:8px">Thông tin sinh viên</h2>
+ <p class="muted small">Nhập đủ thông tin, chọn “Lưu & bắt đầu”. Tiến độ được lưu <b>riêng theo mã sinh viên</b> trên trình duyệt này và có thể tiếp tục học sau khi mở lại file.</p>
+ <div class="gate-fields">
+  <label for="gateName">Họ và tên<input id="gateName" autocomplete="name" maxlength="100" placeholder="Nguyễn Văn An"></label>
+  <label for="gateStudentId">Mã sinh viên<input id="gateStudentId" maxlength="40" placeholder="1126xxxxx" spellcheck="false"></label>
+  <label for="gateClass">Mã lớp<input id="gateClass" maxlength="50" placeholder="KHDL_01" spellcheck="false"></label>
+ </div>
+ <div class="gate-intro"><button type="button" class="btn primary" onclick="saveGateProfile()">✓ Lưu & bắt đầu học</button><button type="button" class="btn" onclick="switchGateStudent()">↻ Đổi sinh viên</button><button type="button" class="btn" onclick="resetGateProgress()">Đặt lại tiến độ</button></div>
+ <div role="status" aria-live="polite" id="gateProfileInfo" class="gate-message">Hãy nhập thông tin sinh viên để lưu tiến độ.</div>
+ <p class="micro">Dữ liệu chỉ được lưu cục bộ trên thiết bị. Khi đổi mã sinh viên, trang sẽ tải tiến độ của mã mới; hệ thống không tự gửi kết quả cho giảng viên.</p>
+</div>
+  <div class="gate-card" id="checkpoint-home" data-gate-checkpoint="home">
+ <span class="pill">Kiểm tra hoàn thành · 1/11</span><h3>🔓 Mở khóa bài học tiếp theo</h3>
+ <p><b>Một mục tiêu quan trọng của Khoa học dữ liệu là gì?</b></p><div class="gate-choices"><label class="gate-choice"><input type="radio" name="gate-answer-home" value="0"><span>A. Chỉ học lập trình Python</span></label><label class="gate-choice"><input type="radio" name="gate-answer-home" value="1"><span>B. Biến dữ liệu thành hiểu biết hỗ trợ ra quyết định</span></label><label class="gate-choice"><input type="radio" name="gate-answer-home" value="2"><span>C. Chỉ thiết kế giao diện</span></label></div>
+ <div class="gate-actions"><button type="button" class="btn primary" onclick="submitGate('home')">Kiểm tra và mở khóa</button><button type="button" class="btn" id="go-next-home" onclick="goNextLesson('home')" hidden>Tiếp tục sang mục kế tiếp →</button></div>
+ <div class="gate-message" id="gate-msg-home" role="status" aria-live="polite">Trả lời đúng câu hỏi để mở khóa mục tiếp theo.</div>
+</div>
+</section>
 
   <section id="motivation" class="section observer">
    <div class="section-head"><div><div class="eyebrow">Phần I • Tầm quan trọng</div><h2>1. Vì sao cần học khoa học dữ liệu?</h2><p>Trong kinh doanh, các quyết định ngày càng cần bằng chứng từ dữ liệu thay vì chỉ dựa vào trực giác hoặc kinh nghiệm.</p></div><span class="ref">PDF • tr. 3–5</span></div>
@@ -63,7 +128,13 @@
     <div class="flow-steps"><div class="flow-step"><small>01 • Dữ liệu</small><b id="flowData">Đơn hàng, thời gian, kênh bán</b></div><div class="flow-arrow">→</div><div class="flow-step"><small>02 • Phân tích</small><b id="flowModel">Xác định nhóm doanh thu giảm</b></div><div class="flow-arrow">→</div><div class="flow-step"><small>03 • Quyết định</small><b id="flowDecision">Điều chỉnh sản phẩm/kênh</b></div></div>
     <div class="result" id="flowNarrative">Một quy trình có giá trị cần xuất phát từ quyết định mà doanh nghiệp phải đưa ra.</div>
    </div>
-  </section>
+  <div class="gate-card" id="checkpoint-motivation" data-gate-checkpoint="motivation">
+ <span class="pill">Kiểm tra hoàn thành · 2/11</span><h3>🔓 Mở khóa bài học tiếp theo</h3>
+ <p><b>Khi doanh thu giảm, cách tiếp cận phù hợp nhất là gì?</b></p><div class="gate-choices"><label class="gate-choice"><input type="radio" name="gate-answer-motivation" value="0"><span>A. Dựa hoàn toàn vào cảm giác</span></label><label class="gate-choice"><input type="radio" name="gate-answer-motivation" value="1"><span>B. Tìm dữ liệu, phân tích nơi giảm và xác định hành động</span></label><label class="gate-choice"><input type="radio" name="gate-answer-motivation" value="2"><span>C. Lập tức thay toàn bộ nhân viên</span></label></div>
+ <div class="gate-actions"><button type="button" class="btn primary" onclick="submitGate('motivation')">Kiểm tra và mở khóa</button><button type="button" class="btn" id="go-next-motivation" onclick="goNextLesson('motivation')" hidden>Tiếp tục sang mục kế tiếp →</button></div>
+ <div class="gate-message" id="gate-msg-motivation" role="status" aria-live="polite">Trả lời đúng câu hỏi để mở khóa mục tiếp theo.</div>
+</div>
+</section>
 
   <section id="pillars" class="section observer"><div class="section-head"><div><div class="eyebrow">Phần I • Nền tảng & ứng dụng</div><h2>2. Ba trụ cột của khoa học dữ liệu</h2><p>KHDL không chỉ là lập trình: kết quả cần có cơ sở toán học, được xử lý bằng công nghệ và có ý nghĩa trong bối cảnh thực tế.</p></div><span class="ref">PDF • tr. 6–8</span></div>
    <div class="grid three"><div class="card pillar"><div class="big-emoji">∑</div><h3>Toán học & Thống kê</h3><p>Đo lường, kiểm định giả thuyết, mô hình hóa và đánh giá độ tin cậy.</p><span class="pill">Kết quả có đáng tin?</span></div><div class="card pillar"><div class="big-emoji">⌘</div><h3>Khoa học máy tính</h3><p>Lưu trữ, làm sạch, xử lý tự động và triển khai mô hình dữ liệu.</p><span class="pill">Xử lý được dữ liệu?</span></div><div class="card pillar"><div class="big-emoji">◎</div><h3>Kiến thức chuyên ngành</h3><p>Đặt đúng câu hỏi, hiểu ngữ cảnh, giải thích và chuyển kết quả thành hành động.</p><span class="pill orange">Có ích cho kinh doanh?</span></div></div>
@@ -77,18 +148,36 @@
     <div class="card field-card"><b>⚙️ Vận hành</b><ul><li>Tối ưu quy trình</li><li>Dự báo lỗi hệ thống</li><li>Giảm chi phí</li></ul></div>
     <div class="card feature"><h3>Câu hỏi thảo luận</h3><p>Vì sao mô hình dự đoán chính xác chưa chắc đã giúp doanh nghiệp quyết định tốt?</p><button class="btn mini" onclick="toggleReveal('discuss1',this)">Gợi ý trả lời ▾</button><p id="discuss1" hidden class="small muted" style="margin-top:10px">Vì còn cần xét chi phí sai lầm, khả năng thực thi, tác động kinh tế, sự minh bạch và tính phù hợp với mục tiêu.</p></div>
    </div>
-  </section>
+  <div class="gate-card" id="checkpoint-pillars" data-gate-checkpoint="pillars">
+ <span class="pill">Kiểm tra hoàn thành · 3/11</span><h3>🔓 Mở khóa bài học tiếp theo</h3>
+ <p><b>Bộ ba trụ cột nào đúng với khoa học dữ liệu?</b></p><div class="gate-choices"><label class="gate-choice"><input type="radio" name="gate-answer-pillars" value="0"><span>A. Thống kê – Khoa học máy tính – Kiến thức chuyên ngành</span></label><label class="gate-choice"><input type="radio" name="gate-answer-pillars" value="1"><span>B. Thiết kế – Văn học – Địa lý</span></label><label class="gate-choice"><input type="radio" name="gate-answer-pillars" value="2"><span>C. Chỉ lập trình – Chỉ lưu trữ – Chỉ báo cáo</span></label></div>
+ <div class="gate-actions"><button type="button" class="btn primary" onclick="submitGate('pillars')">Kiểm tra và mở khóa</button><button type="button" class="btn" id="go-next-pillars" onclick="goNextLesson('pillars')" hidden>Tiếp tục sang mục kế tiếp →</button></div>
+ <div class="gate-message" id="gate-msg-pillars" role="status" aria-live="polite">Trả lời đúng câu hỏi để mở khóa mục tiếp theo.</div>
+</div>
+</section>
 
   <section id="crisp" class="section observer"><div class="section-head"><div><div class="eyebrow">Phần II • Quy trình khai thác dữ liệu</div><h2>3. CRISP-DM: Sáu giai đoạn của dự án</h2><p>CRISP-DM là khung quy trình có tính lặp: nhóm dự án có thể quay lại những bước trước để cải thiện dữ liệu, mô hình hoặc cách đặt vấn đề.</p></div><span class="ref">PDF • tr. 9–10</span></div>
    <div class="interactive"><h3><span class="interaction-tag">SƠ ĐỒ TƯƠNG TÁC</span> Nhấn từng bước để khám phá</h3><div class="stepper" id="stepper"></div><div class="step-info"><div class="medallion" id="stepEmoji">🎯</div><div><span class="pill" id="stepTitleSmall">Bước 1/6</span><h3 id="stepTitle">Hiểu nghiệp vụ</h3><p id="stepDescription">Xác định mục tiêu và nhu cầu kinh doanh.</p><div class="result"><b>Ví dụ chuỗi bán lẻ:</b> <span id="stepExample"></span></div></div></div><div class="step-pager"><button class="btn mini" id="stepPrev">← Trước</button><span class="muted small" id="stepCounter">01 / 06</span><button class="btn primary mini" id="stepNext">Tiếp →</button></div><p class="micro">↺ Các bước liên kết và có thể lặp lại — không phải dây chuyền một chiều tuyệt đối.</p></div>
    <div class="interactive"><h3><span class="interaction-tag">LUYỆN TẬP</span> Sắp xếp đúng thứ tự CRISP-DM</h3><p>Nhấp lần lượt vào các giai đoạn bên dưới theo đúng trình tự. Bạn có thể xóa một lựa chọn hoặc làm lại.</p><div class="ordering" id="orderBank"></div><p style="margin:14px 0 6px;font-weight:750;font-size:.86rem">Thứ tự đã chọn</p><div class="slots" id="orderSlots"></div><div class="control-row"><button class="btn primary mini" onclick="checkOrder()">Kiểm tra</button><button class="btn mini" onclick="resetOrder()">Làm lại</button></div><div id="orderFeedback" class="result" aria-live="polite">Hãy chọn đủ 6 giai đoạn trước khi kiểm tra.</div></div>
-  </section>
+  <div class="gate-card" id="checkpoint-crisp" data-gate-checkpoint="crisp">
+ <span class="pill">Kiểm tra hoàn thành · 4/11</span><h3>🔓 Mở khóa bài học tiếp theo</h3>
+ <p><b>Bước mở đầu của CRISP-DM là gì?</b></p><div class="gate-choices"><label class="gate-choice"><input type="radio" name="gate-answer-crisp" value="0"><span>A. Xây dựng mô hình</span></label><label class="gate-choice"><input type="radio" name="gate-answer-crisp" value="1"><span>B. Hiểu rõ nghiệp vụ và mục tiêu kinh doanh</span></label><label class="gate-choice"><input type="radio" name="gate-answer-crisp" value="2"><span>C. Triển khai mô hình</span></label></div>
+ <div class="gate-actions"><button type="button" class="btn primary" onclick="submitGate('crisp')">Kiểm tra và mở khóa</button><button type="button" class="btn" id="go-next-crisp" onclick="goNextLesson('crisp')" hidden>Tiếp tục sang mục kế tiếp →</button></div>
+ <div class="gate-message" id="gate-msg-crisp" role="status" aria-live="polite">Trả lời đúng câu hỏi để mở khóa mục tiếp theo.</div>
+</div>
+</section>
 
   <section id="problem" class="section observer"><div class="section-head"><div><div class="eyebrow">Phần II • Business Understanding</div><h2>4. Bắt đầu từ vấn đề kinh doanh</h2><p>Đặt câu hỏi: “Doanh nghiệp đang cần quyết định điều gì?” thay vì bắt đầu bằng việc chọn mô hình hoặc thuật toán.</p></div><span class="ref">PDF • tr. 11</span></div>
    <div class="grid two"><div class="card"><span class="pill orange">Cách tiếp cận chưa phù hợp</span><h3 style="margin-top:12px">“Có dữ liệu rồi, dùng mô hình gì?”</h3><p>Dễ dẫn đến mô hình thú vị về kỹ thuật nhưng không giải quyết nhu cầu thực tế.</p></div><div class="card feature"><span class="pill">Cách tiếp cận nên dùng</span><h3 style="margin-top:12px">“Doanh nghiệp cần ra quyết định gì?”</h3><p>Từ quyết định cần đưa ra, xác định câu hỏi phân tích, dữ liệu, chỉ số thành công.</p></div></div>
    <div class="interactive"><h3><span class="interaction-tag">BÀI TẬP TÌNH HUỐNG</span> Doanh thu của cửa hàng giảm</h3><p>Hãy chọn câu hỏi phân tích phù hợp nhất với mục tiêu tìm nguyên nhân và đề xuất hành động.</p><div class="grid two" id="businessChoices"><button class="quiz-option" data-choice="a">A. Nên dùng thuật toán máy học nào phức tạp nhất?</button><button class="quiz-option" data-choice="b">B. Sản phẩm, khu vực, thời điểm, nhóm khách hàng hay kênh nào giảm doanh thu mạnh nhất?</button><button class="quiz-option" data-choice="c">C. Máy tính nào chạy phân tích nhanh nhất?</button><button class="quiz-option" data-choice="d">D. Có thể tạo càng nhiều biểu đồ càng tốt không?</button></div><div class="result" id="businessFeedback">Chọn một phương án để xem phản hồi.</div>
     <div class="keyline"></div><h3>Thử viết bản mô tả bài toán</h3><p class="muted">Điền các trường dưới đây. Đây là bản nháp của bạn, không tự chấm điểm.</p><div class="grid two"><label class="form-field">Quyết định cần hỗ trợ<textarea id="pDecision" placeholder="Ví dụ: Điều chỉnh ngân sách marketing giữa các kênh ..."></textarea></label><label class="form-field">Dữ liệu cần thu thập<textarea id="pData" placeholder="Ví dụ: doanh thu, kênh, sản phẩm, thời gian..."></textarea></label><label class="form-field">Kết quả mong đợi<textarea id="pOutput" placeholder="Ví dụ: nhóm sản phẩm/khu vực giảm mạnh và bằng chứng..."></textarea></label><label class="form-field">Tiêu chí thành công<textarea id="pSuccess" placeholder="Ví dụ: nguyên nhân được chỉ ra và có phương án cải thiện..."></textarea></label></div><div class="control-row"><button class="btn primary mini" onclick="saveDraft()">Lưu bản nháp</button><button class="btn mini" onclick="toggleReveal('problemAnswer',this)">Xem gợi ý từ bài giảng ▾</button></div><div id="problemAnswer" class="result" hidden><b>Gợi ý:</b> Vấn đề: doanh thu giảm. Phân tích các nhóm sản phẩm, khu vực, thời điểm, khách hàng và kênh bán. Dữ liệu gồm đơn hàng, sản phẩm, thời gian, khách hàng và kênh. Thành công khi xác định được nguyên nhân có bằng chứng và đề xuất hành động cải thiện.</div></div>
-  </section>
+  <div class="gate-card" id="checkpoint-problem" data-gate-checkpoint="problem">
+ <span class="pill">Kiểm tra hoàn thành · 5/11</span><h3>🔓 Mở khóa bài học tiếp theo</h3>
+ <p><b>Phát biểu nào phù hợp để khởi động dự án phân tích doanh thu giảm?</b></p><div class="gate-choices"><label class="gate-choice"><input type="radio" name="gate-answer-problem" value="0"><span>A. Chọn ngay thuật toán phức tạp nhất</span></label><label class="gate-choice"><input type="radio" name="gate-answer-problem" value="1"><span>B. Thu thập mọi thứ không cần mục tiêu</span></label><label class="gate-choice"><input type="radio" name="gate-answer-problem" value="2"><span>C. Xác định bộ phận, sản phẩm, kênh nào giảm và quyết định cần hỗ trợ</span></label></div>
+ <div class="gate-actions"><button type="button" class="btn primary" onclick="submitGate('problem')">Kiểm tra và mở khóa</button><button type="button" class="btn" id="go-next-problem" onclick="goNextLesson('problem')" hidden>Tiếp tục sang mục kế tiếp →</button></div>
+ <div class="gate-message" id="gate-msg-problem" role="status" aria-live="polite">Trả lời đúng câu hỏi để mở khóa mục tiếp theo.</div>
+</div>
+</section>
 
   <section id="data" class="section observer"><div class="section-head"><div><div class="eyebrow">Phần II • Data Understanding & Preparation</div><h2>5. Thu thập, hiểu và làm sạch dữ liệu</h2><p>Nguồn dữ liệu có thể từ hệ thống bán hàng, CRM, website/ứng dụng, giao dịch, mạng xã hội, khảo sát hoặc báo cáo tài chính.</p></div><span class="ref">PDF • tr. 12–13</span></div>
    <div class="grid two"><div class="card"><h3>Bốn câu hỏi cần đặt ra</h3><ol class="focus-list"><li><b>Cấu trúc:</b> Những bảng, cột, biến nào có sẵn?</li><li><b>Ý nghĩa:</b> Mỗi biến thể hiện điều gì?</li><li><b>Chất lượng:</b> Có thiếu, trùng, sai hoặc bất thường?</li><li><b>Phù hợp:</b> Có trả lời được câu hỏi phân tích?</li></ol></div><div class="card"><h3>Các nhóm thao tác</h3><ol class="focus-list"><li><b>Làm sạch:</b> xử lý giá trị thiếu, trùng, sai định dạng.</li><li><b>Khám phá:</b> kiểm tra phân phối và mối quan hệ.</li><li><b>Biến đổi:</b> nối bảng, tạo biến, chuẩn hóa.</li><li><b>Kiểm định:</b> kiểm tra tính chính xác, nhất quán, duy nhất.</li></ol></div></div>
@@ -99,17 +188,35 @@
     <div class="control-row"><button class="btn mini" onclick="resetClean()">↺ Khôi phục dữ liệu gốc</button><button class="btn primary mini" onclick="doCleanAll()">✓ Thực hiện tất cả bước</button></div><div class="result" id="cleanComment">Dữ liệu bẩn có thể khiến kết luận phân tích sai lệch. Hãy thử lần lượt từng bước.</div>
    </div>
    <div class="highlight"><b>Lưu ý về phân loại dữ liệu:</b> Dữ liệu có thể là định tính (ví dụ khu vực, kênh bán) hoặc định lượng (ví dụ doanh thu, số lượng); định lượng có thể rời rạc hoặc liên tục. Khi phân tích cần hiểu đơn vị đo và ý nghĩa của mỗi biến.</div>
-  </section>
+  <div class="gate-card" id="checkpoint-data" data-gate-checkpoint="data">
+ <span class="pill">Kiểm tra hoàn thành · 6/11</span><h3>🔓 Mở khóa bài học tiếp theo</h3>
+ <p><b>Dữ liệu doanh thu bị thiếu nên được xử lý thế nào?</b></p><div class="gate-choices"><label class="gate-choice"><input type="radio" name="gate-answer-data" value="0"><span>A. Tự động coi là 0</span></label><label class="gate-choice"><input type="radio" name="gate-answer-data" value="1"><span>B. Kiểm tra nguồn và chọn cách xử lý phù hợp ngữ cảnh</span></label><label class="gate-choice"><input type="radio" name="gate-answer-data" value="2"><span>C. Luôn coi là doanh thu âm</span></label></div>
+ <div class="gate-actions"><button type="button" class="btn primary" onclick="submitGate('data')">Kiểm tra và mở khóa</button><button type="button" class="btn" id="go-next-data" onclick="goNextLesson('data')" hidden>Tiếp tục sang mục kế tiếp →</button></div>
+ <div class="gate-message" id="gate-msg-data" role="status" aria-live="polite">Trả lời đúng câu hỏi để mở khóa mục tiếp theo.</div>
+</div>
+</section>
 
   <section id="analytics" class="section observer"><div class="section-head"><div><div class="eyebrow">Phần II • Phân tích & mô hình hóa</div><h2>6. Bốn loại phân tích dữ liệu</h2><p>Phân biệt các câu hỏi “điều gì”, “vì sao”, “điều gì tiếp theo” và “nên làm gì”.</p></div><span class="ref">PDF • tr. 14</span></div>
    <div class="grid four"><div class="card"><span class="pill">Descriptive</span><h3 style="margin-top:9px">Mô tả</h3><p>Điều gì đã xảy ra?</p><div class="small muted">Doanh thu tháng này là bao nhiêu?</div></div><div class="card"><span class="pill">Diagnostic</span><h3 style="margin-top:9px">Chẩn đoán</h3><p>Vì sao xảy ra?</p><div class="small muted">Nhóm sản phẩm nào làm doanh thu giảm?</div></div><div class="card"><span class="pill orange">Predictive</span><h3 style="margin-top:9px">Dự báo</h3><p>Điều gì có thể xảy ra?</p><div class="small muted">Doanh thu tháng sau có thể là bao nhiêu?</div></div><div class="card"><span class="pill orange">Prescriptive</span><h3 style="margin-top:9px">Đề xuất</h3><p>Chúng ta nên làm gì?</p><div class="small muted">Nên ưu tiên khuyến mãi nhóm nào?</div></div></div>
    <div class="interactive"><h3><span class="interaction-tag">TỰ PHÂN LOẠI</span> Câu hỏi này thuộc kiểu phân tích nào?</h3><p id="analyticsPrompt" style="font-weight:750;font-size:1.06rem">...</p><div class="control-row" id="analyticsOptions"><button class="chip" data-ana="descriptive">Mô tả</button><button class="chip" data-ana="diagnostic">Chẩn đoán</button><button class="chip" data-ana="predictive">Dự báo</button><button class="chip" data-ana="prescriptive">Đề xuất</button></div><div class="result" id="analyticsFeedback">Hãy chọn một loại phân tích.</div><div class="control-row"><button class="btn primary mini" onclick="nextAnalytic()">Câu khác →</button><span class="micro" id="analyticsScore"></span></div></div>
-  </section>
+  <div class="gate-card" id="checkpoint-analytics" data-gate-checkpoint="analytics">
+ <span class="pill">Kiểm tra hoàn thành · 7/11</span><h3>🔓 Mở khóa bài học tiếp theo</h3>
+ <p><b>“Doanh thu tháng tới có thể là bao nhiêu?” thuộc loại phân tích nào?</b></p><div class="gate-choices"><label class="gate-choice"><input type="radio" name="gate-answer-analytics" value="0"><span>A. Phân tích dự báo</span></label><label class="gate-choice"><input type="radio" name="gate-answer-analytics" value="1"><span>B. Phân tích mô tả</span></label><label class="gate-choice"><input type="radio" name="gate-answer-analytics" value="2"><span>C. Phân tích chẩn đoán</span></label></div>
+ <div class="gate-actions"><button type="button" class="btn primary" onclick="submitGate('analytics')">Kiểm tra và mở khóa</button><button type="button" class="btn" id="go-next-analytics" onclick="goNextLesson('analytics')" hidden>Tiếp tục sang mục kế tiếp →</button></div>
+ <div class="gate-message" id="gate-msg-analytics" role="status" aria-live="polite">Trả lời đúng câu hỏi để mở khóa mục tiếp theo.</div>
+</div>
+</section>
 
   <section id="visual" class="section observer"><div class="section-head"><div><div class="eyebrow">Phần II • Data Visualization</div><h2>7. Trực quan hóa và kể chuyện bằng dữ liệu</h2><p>Biểu đồ hỗ trợ nhận diện xu hướng, so sánh nhóm, thấy ngoại lệ và truyền đạt một thông điệp mà người ra quyết định có thể sử dụng.</p></div><span class="ref">PDF • tr. 15</span></div>
    <div class="interactive"><h3><span class="interaction-tag">TRỰC QUAN HÓA</span> Chọn biểu đồ theo câu hỏi</h3><p class="muted">Số liệu bên dưới là <b>giả lập</b>. Chọn một loại biểu đồ để xem hình minh họa và mục đích.</p><div class="control-row" id="chartBtns"><button class="chip active" data-chart="line">Đường</button><button class="chip" data-chart="bar">Cột</button><button class="chip" data-chart="scatter">Scatter</button><button class="chip" data-chart="hist">Histogram</button><button class="chip" data-chart="box">Boxplot</button></div><div class="visual-area" id="chartCanvas" role="img" aria-label="Biểu đồ minh họa"></div><div class="result" id="chartNarrative"></div></div>
    <div class="grid two"><div class="card"><h3>Phải chọn đúng dạng biểu đồ</h3><p><b>Đường:</b> biến động theo thời gian.<br><b>Cột:</b> so sánh các nhóm.<br><b>Scatter:</b> quan hệ hai biến.<br><b>Histogram:</b> phân phối của một biến.<br><b>Boxplot:</b> phân phối, ngoại lệ và so sánh nhóm.<br><b>Dashboard:</b> theo dõi nhiều chỉ số.</p></div><div class="card"><h3>Khung truyền đạt kết quả</h3><ol class="focus-list"><li><b>Bối cảnh:</b> đang giải quyết vấn đề gì?</li><li><b>Phát hiện:</b> dữ liệu cho thấy gì?</li><li><b>Ý nghĩa:</b> tại sao quan trọng?</li><li><b>Đề xuất:</b> cần hành động gì?</li></ol><p class="muted small">Người phân tích không chỉ tạo biểu đồ mà còn cần kể được câu chuyện từ dữ liệu.</p></div></div>
-  </section>
+  <div class="gate-card" id="checkpoint-visual" data-gate-checkpoint="visual">
+ <span class="pill">Kiểm tra hoàn thành · 8/11</span><h3>🔓 Mở khóa bài học tiếp theo</h3>
+ <p><b>Để thể hiện doanh thu theo 12 tháng, nên ưu tiên biểu đồ nào?</b></p><div class="gate-choices"><label class="gate-choice"><input type="radio" name="gate-answer-visual" value="0"><span>A. Biểu đồ đường</span></label><label class="gate-choice"><input type="radio" name="gate-answer-visual" value="1"><span>B. Sơ đồ tổ chức</span></label><label class="gate-choice"><input type="radio" name="gate-answer-visual" value="2"><span>C. Word cloud</span></label></div>
+ <div class="gate-actions"><button type="button" class="btn primary" onclick="submitGate('visual')">Kiểm tra và mở khóa</button><button type="button" class="btn" id="go-next-visual" onclick="goNextLesson('visual')" hidden>Tiếp tục sang mục kế tiếp →</button></div>
+ <div class="gate-message" id="gate-msg-visual" role="status" aria-live="polite">Trả lời đúng câu hỏi để mở khóa mục tiếp theo.</div>
+</div>
+</section>
 
   <section id="bank" class="section observer"><div class="section-head"><div><div class="eyebrow">Phần II • Ví dụ xuyên suốt</div><h2>8. Tình huống: chiến dịch gửi tiết kiệm</h2><p>Một ngân hàng muốn chọn khách hàng có khả năng phản hồi tích cực nhằm nâng hiệu quả chiến dịch mời gửi tiết kiệm.</p></div><span class="ref">PDF • tr. 16</span></div>
    <div class="grid two"><div class="card"><h3>Những gì dự án cần trả lời</h3><p><b>Câu hỏi kinh doanh:</b> Liên hệ ai để tăng hiệu quả?</p><p><b>Dữ liệu:</b> độ tuổi, nghề nghiệp, thu nhập, lịch sử giao dịch, kênh tiếp cận, phản hồi chiến dịch trước.</p><p><b>Đầu ra:</b> danh sách ưu tiên, nhóm khách hàng tiềm năng, kênh liên hệ hiệu quả.</p></div><div class="card"><h3>Đánh giá thành công</h3><ul class="focus-list"><li>Tỷ lệ phản hồi tích cực cao hơn.</li><li>Chi phí trên mỗi chuyển đổi thấp hơn.</li><li>Kết quả có thể giải thích cho nhà quản lý.</li></ul><div class="highlight warning"><b>Phân biệt:</b> Mô hình có thể dự báo xác suất, nhưng lựa chọn người liên hệ còn phụ thuộc chi phí và lợi ích.</div></div></div>
@@ -117,7 +224,13 @@
     <div class="grid three"><div class="range-wrap"><label for="threshold">Ngưỡng chọn KH <span id="thresholdLabel">50%</span></label><input type="range" id="threshold" min="10" max="90" value="50" step="5"></div><div class="range-wrap"><label for="contactCost">Chi phí / liên hệ <span id="costLabel">20</span></label><input type="range" id="contactCost" min="5" max="80" value="20" step="5"></div><div class="range-wrap"><label for="convertValue">Giá trị / chuyển đổi <span id="valueLabel">100</span></label><input type="range" id="convertValue" min="50" max="250" value="100" step="10"></div></div>
     <div class="stat-row" style="margin-top:18px"><div class="stat"><div class="big-number" id="contacted">–</div><small>Khách hàng liên hệ</small></div><div class="stat"><div class="big-number" id="conversion">–</div><small>Phản hồi kỳ vọng (tổng p)</small></div><div class="stat"><div class="big-number" id="net">–</div><small>Giá trị ròng kỳ vọng (đ.v. giả định)</small></div></div><div class="data-table-wrap"><table class="data-table"><thead><tr><th>Khách hàng</th><th>Phản hồi trước</th><th>P(đồng ý) giả định</th><th>Liên hệ?</th><th>Lợi ích ròng kỳ vọng</th></tr></thead><tbody id="bankRows"></tbody></table></div><div class="result" id="bankComment"></div><div class="highlight warning small"><b>Giới hạn:</b> Công thức minh họa <code>EV = Σ(p × giá trị chuyển đổi − chi phí liên hệ)</code> cho những người được chọn; giả định xác suất và giá trị như nhau trên mọi khách hàng, không tính rủi ro, ngân sách, tính công bằng hay pháp lý. Không sử dụng để quyết định thực tế.</div></div>
    <h3 style="margin-top:25px">Đưa dự án này qua sáu bước CRISP-DM</h3><div class="grid three"><div class="card"><span class="pill">1–2</span><h3>Hiểu nghiệp vụ & dữ liệu</h3><p>Làm rõ mục tiêu, rà soát dữ liệu liên hệ, phản hồi, kênh và chất lượng dữ liệu.</p></div><div class="card"><span class="pill">3–4</span><h3>Chuẩn bị & mô hình</h3><p>Làm sạch, tạo biến và ước lượng khả năng khách hàng phản hồi.</p></div><div class="card"><span class="pill">5–6</span><h3>Đánh giá & triển khai</h3><p>Đánh giá tác động kinh doanh; thử nghiệm chiến dịch, theo dõi kết quả và cập nhật.</p></div></div>
-  </section>
+  <div class="gate-card" id="checkpoint-bank" data-gate-checkpoint="bank">
+ <span class="pill">Kiểm tra hoàn thành · 9/11</span><h3>🔓 Mở khóa bài học tiếp theo</h3>
+ <p><b>Một khách hàng có xác suất chuyển đổi p, giá trị V, chi phí gọi C. Công thức lợi ích ròng kỳ vọng là gì?</b></p><div class="gate-choices"><label class="gate-choice"><input type="radio" name="gate-answer-bank" value="0"><span>A. p × V − C</span></label><label class="gate-choice"><input type="radio" name="gate-answer-bank" value="1"><span>B. p + V + C</span></label><label class="gate-choice"><input type="radio" name="gate-answer-bank" value="2"><span>C. C − V / p</span></label></div>
+ <div class="gate-actions"><button type="button" class="btn primary" onclick="submitGate('bank')">Kiểm tra và mở khóa</button><button type="button" class="btn" id="go-next-bank" onclick="goNextLesson('bank')" hidden>Tiếp tục sang mục kế tiếp →</button></div>
+ <div class="gate-message" id="gate-msg-bank" role="status" aria-live="polite">Trả lời đúng câu hỏi để mở khóa mục tiếp theo.</div>
+</div>
+</section>
 
   
 <section id="worked" class="section observer"><div class="section-head"><div><div class="eyebrow">Bài tập mẫu có lời giải · Nội dung mở rộng</div><h2>9. Sáu bài tập mẫu: từ dữ liệu đến quyết định</h2><p>Đọc đề, thử tự giải, sau đó mở <b>Hướng dẫn từng bước</b>. Tất cả các số liệu dưới đây đều <b>giả lập</b> để minh họa những khái niệm từ Bài 1.</p></div><span class="ref">Mở rộng từ PDF • tr. 4–16</span></div>
@@ -130,13 +243,40 @@
   <article class="card"><span class="pill orange">Mẫu 06 · Ra quyết định có chi phí</span><h3 style="margin-top:10px">Ngân hàng nên liên hệ nhóm nào?</h3><p>Chuyển đổi thành công mang lại <b>200 nghìn VNĐ</b>; mỗi lần liên hệ tốn <b>20 nghìn</b>. Nhóm A có xác suất thành công <b>30%</b>, nhóm B <b>10%</b>, nhóm C <b>45%</b>. So sánh giá trị kỳ vọng của một lần liên hệ.</p><details class="result"><summary><b>Hướng dẫn từng bước & đáp án</b></summary><ol><li>Lợi ích kỳ vọng = xác suất chuyển đổi × 200.000 − 20.000.</li><li>Nhóm A: 0,30 × 200.000 − 20.000 = <b>40.000</b>.</li><li>Nhóm B: 0,10 × 200.000 − 20.000 = <b>0</b>.</li><li>Nhóm C: 0,45 × 200.000 − 20.000 = <b>70.000</b>.</li><li><b>Ưu tiên nhóm C</b> theo lợi ích kỳ vọng mỗi lượt liên hệ, <em>trong các giả định trên</em>.</li></ol><p>Đây là số giả lập dùng để giải thích phân tích đề xuất, <b>không phải</b> xác suất thực tế của một ngân hàng.</p></details></article>
 </div>
 <div class="interactive"><h3><span class="interaction-tag">LUYỆN TẬP TIẾP</span> Từ ví dụ mẫu đến tự giải</h3><p>Hãy làm bài kiểm tra hoặc thực hành độc lập với dữ liệu mới. Hai trang này có <b>chấm điểm tự động, chỉ ra câu sai và đáp án</b>.</p><div class="control-row"><a class="btn primary" href="bai_1_quiz_tu_cham.html">Làm quiz 34 câu →</a><a class="btn orange" href="bai_1_bai_tap_tu_lam.html">Làm 12 bài tập tự làm →</a></div></div>
+<div class="gate-card" id="checkpoint-worked" data-gate-checkpoint="worked">
+ <span class="pill">Kiểm tra hoàn thành · 10/11</span><h3>🔓 Mở khóa bài học tiếp theo</h3>
+ <p><b>Doanh thu tăng từ 200 lên 240 triệu. Tỷ lệ tăng trưởng là bao nhiêu?</b></p><div class="gate-choices"><label class="gate-choice"><input type="radio" name="gate-answer-worked" value="0"><span>A. 40%</span></label><label class="gate-choice"><input type="radio" name="gate-answer-worked" value="1"><span>B. 20%</span></label><label class="gate-choice"><input type="radio" name="gate-answer-worked" value="2"><span>C. 16,7%</span></label></div>
+ <div class="gate-actions"><button type="button" class="btn primary" onclick="submitGate('worked')">Kiểm tra và mở khóa</button><button type="button" class="btn" id="go-next-worked" onclick="goNextLesson('worked')" hidden>Tiếp tục sang mục kế tiếp →</button></div>
+ <div class="gate-message" id="gate-msg-worked" role="status" aria-live="polite">Trả lời đúng câu hỏi để mở khóa mục tiếp theo.</div>
+</div>
 </section>
 
 <section id="quiz" class="section observer"><div class="section-head"><div><div class="eyebrow">Ôn tập • Tổng kết bài 1</div><h2>10. Kiểm tra kiến thức nhanh</h2><p>12 câu hỏi tự chấm điểm với phản hồi và giải thích. Ba câu đầu dựa trên câu hỏi ôn tập ở trang 17 PDF, các câu còn lại biên soạn thêm theo nội dung bài học.</p></div><span class="ref">PDF • tr. 17–18</span></div>
    <div class="interactive"><h3><span class="interaction-tag">QUIZ</span> Trắc nghiệm cuối bài</h3><p>Chọn một đáp án mỗi câu. Hệ thống chấm ngay và giải thích. Có thể làm lại bất cứ lúc nào.</p><div class="stat-row"><div class="stat"><div class="big-number" id="quizDone">0/12</div><small>Câu đã làm</small></div><div class="stat"><div class="big-number" id="quizCorrect">0</div><small>Số câu đúng</small></div><div class="stat"><div class="big-number" id="quizPercent">0%</div><small>Độ chính xác tạm tính</small></div></div><div id="quizQuestions"></div><div class="control-row"><button class="btn primary" onclick="resetQuiz()">↻ Làm lại quiz</button><button class="btn" onclick="exportNotes()">↓ Xuất ghi chú và kết quả</button></div><div id="quizSummary" class="result quiz-summary" aria-live="polite">Hoàn thành 12 câu để xem nhận xét tổng kết.</div></div>
    <h3 style="margin-top:31px">Bảng thuật ngữ cần nhớ</h3><div class="glossary-grid"><div><b>Data Science</b><span>Lĩnh vực liên ngành khai thác dữ liệu để tạo tri thức và hỗ trợ quyết định.</span></div><div><b>CRISP-DM</b><span>Quy trình 6 giai đoạn có tính lặp cho dự án khai thác dữ liệu.</span></div><div><b>Data Preparation</b><span>Làm sạch, tích hợp, định dạng và biến đổi dữ liệu.</span></div><div><b>Modeling</b><span>Dùng phương pháp thống kê/máy học để phân tích và mô hình hóa.</span></div><div><b>Descriptive / Diagnostic</b><span>Điều gì đã xảy ra / Vì sao đã xảy ra?</span></div><div><b>Predictive / Prescriptive</b><span>Điều gì có thể xảy ra / Nên làm gì?</span></div></div>
    <div class="highlight" style="margin-top:25px"><b>Ba ý cốt lõi:</b> (1) Khoa học dữ liệu là liên ngành và hướng tới quyết định. (2) Quy trình bắt đầu từ bài toán thực tế, không phải từ thuật toán. (3) Kết quả chỉ thực sự có giá trị khi được đánh giá, giải thích và ứng dụng phù hợp bối cảnh.</div>
-  </section>
+  <div class="gate-card" id="checkpoint-quiz"><span class="pill">Hoàn thành · 11/11</span><h3>🏁 Kết thúc lộ trình bài giảng</h3><p>Trả lời đủ <b>12 câu quiz cuối bài</b> ở ngay phía trên. Không bắt buộc trả lời đúng tất cả; có thể ôn tập và làm lại để nâng kết quả.</p><div class="gate-actions"><button type="button" class="btn primary" onclick="submitGate('quiz')">Xác nhận hoàn thành Bài 1</button><a class="btn" href="bai_1_quiz_tu_cham.html">Làm quiz 34 câu ↗</a></div><div class="gate-message" id="gate-msg-quiz" role="status" aria-live="polite">Hoàn thành 12 câu để xác nhận.</div><div class="gate-actions"><button type="button" class="btn primary" hidden id="gateCertGo" onclick="openCertificateSection()">🎓 Hoàn thành bài học – Nhận chứng nhận</button></div></div>
+<div class="certificate-section" id="certificatePanel" hidden>
+  <div class="certificate-header"><div class="cert-icon" aria-hidden="true">🎓</div><div><div class="eyebrow">Minh chứng hoàn thành lộ trình Bài 1</div><h3>Chứng nhận hoàn thành bài học</h3><p class="certificate-explain">Khi đã hoàn thành 11/11 mục và trả lời đủ 12 câu kiểm tra cuối bài, sinh viên có thể tạo chứng nhận cá nhân, sao chép nội dung hoặc lưu dưới dạng ảnh PNG.</p></div></div>
+  <div id="certificateIssueBlock" hidden>
+    <p class="cert-disabled-message">Bạn đã đáp ứng yêu cầu học tập của <b>Bài 1: Giới thiệu về Khoa học dữ liệu</b>. Nhấn nút dưới đây để tạo chứng nhận với thông tin sinh viên đã lưu.</p>
+    <button type="button" class="btn primary" onclick="issueCertificate()">🎓 Hoàn thành bài học – Cấp chứng nhận</button>
+  </div>
+  <div id="certificateOutput" hidden>
+    <div class="certificate-frame"><canvas id="certificateCanvas" width="1600" height="1000" role="img" aria-label="Bản xem trước chứng nhận hoàn thành Bài 1"></canvas></div>
+    <div class="cert-buttons">
+      <button type="button" class="btn primary" onclick="downloadCertificatePNG()">↓ Tải chứng nhận PNG</button>
+      <button type="button" class="btn" onclick="copyCertificateText()">⎘ Sao chép nội dung</button>
+      <button type="button" class="btn" onclick="copyCertificateImage()">▣ Sao chép ảnh</button>
+      <button type="button" class="btn" onclick="renewCertificate()">↻ Cập nhật thông tin / cấp lại</button>
+    </div>
+    <div class="cert-report" id="certificateText" aria-label="Nội dung chứng nhận có thể sao chép"></div>
+    <p class="cert-warning">Chứng nhận là minh chứng học tập được tạo tự động và lưu cục bộ trên trình duyệt. Không có chữ ký, con dấu hoặc dịch vụ xác minh trực tuyến; đây <b>không phải chứng chỉ chính thức do nhà trường cấp</b>. Muốn dán hình vào tài liệu, có thể dùng “Sao chép ảnh” trên trình duyệt hỗ trợ hoặc tải PNG rồi chèn vào tài liệu.</p>
+  </div>
+  <div id="certificateStatus" class="cert-status" role="status" aria-live="polite"></div>
+</div>
+
+</section>
   <footer class="foot"><b>BÀI 1 • GIỚI THIỆU VỀ KHOA HỌC DỮ LIỆU</b><p>Nội dung nền tảng dựa trên tài liệu PDF 18 trang của ThS. Ngô Thái Hoà, Khoa Khoa học dữ liệu và Trí tuệ nhân tạo, Đại học Kinh tế Quốc dân. Thiết kế lại nhằm phục vụ học tập tương tác; biểu đồ, dữ liệu, bài tập và câu hỏi bổ sung được biên soạn riêng để minh họa. Trang hoạt động offline; mọi bản nháp và kết quả chỉ lưu trong trình duyệt hiện tại.</p></footer>
  </main>
 </div></div>
@@ -154,10 +294,10 @@ function toggleNight(){document.body.classList.toggle('night');storage.set('nigh
 function toggleReveal(id,b){const el=document.getElementById(id);el.hidden=!el.hidden;b.textContent=el.hidden?'Gợi ý trả lời ▾':'Ẩn gợi ý ▴'}
 if(storage.get('night',false))document.body.classList.add('night');if(storage.get('focus',false))document.body.classList.add('reading-focus');
 $$('#toc .nav-link').forEach(a=>a.addEventListener('click',()=>closeMenu()));
-const visited=new Set(storage.get('visited',[])), ids=['home','motivation','pillars','crisp','problem','data','analytics','visual','bank','worked','quiz'];
-function updateVisited(){let n=ids.filter(k=>visited.has(k)).length;$('#progressText').textContent=n+'/'+ids.length;$('#progressBar').style.width=(n/ids.length*100)+'%'}
-visited.add('home');updateVisited();
-const observe=new IntersectionObserver(entries=>{for(const x of entries){if(x.isIntersecting){let id=x.target.id;visited.add(id);storage.set('visited',[...visited]);updateVisited();$$('.nav-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id))}}},{rootMargin:'-15% 0px -69% 0px',threshold:0});$$('.observer').forEach(x=>observe.observe(x));
+const ids=['home','motivation','pillars','crisp','problem','data','analytics','visual','bank','worked','quiz'];
+const observe=new IntersectionObserver(entries=>{for(const x of entries){if(x.isIntersecting){const id=x.target.id;$$('.nav-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));}}},{rootMargin:'-15% 0px -69% 0px',threshold:0});
+$$('.observer').forEach(x=>observe.observe(x));
+
 // FLOW EXPLORER
 const flows={sales:{data:'Đơn hàng, sản phẩm, thời gian, kênh',model:'So sánh doanh thu theo nhóm',decision:'Điều chỉnh danh mục/kênh',note:'Đối chiếu sản phẩm, khu vực và thời điểm giúp định vị nơi giảm doanh thu để ưu tiên điều tra nguyên nhân và đề xuất cải thiện.'},churn:{data:'Thời gian sử dụng, phản hồi, lịch sử dịch vụ',model:'Ước lượng nguy cơ rời bỏ',decision:'Ưu tiên chương trình giữ chân',note:'Nhóm có nguy cơ cao có thể được ưu tiên chăm sóc. Cần đánh giá chi phí can thiệp và lợi ích giữ chân.'},stock:{data:'Đơn hàng, lượng tồn, thời gian giao hàng',model:'Ước lượng nhu cầu & mức tồn',decision:'Đề xuất kế hoạch bổ sung hàng',note:'Tối ưu tồn kho phải cân đối chi phí lưu kho và nguy cơ thiếu hàng; dự báo chỉ là thông tin đầu vào cho quyết định.'}};
 $$('#flowTabs button').forEach(b=>b.addEventListener('click',()=>{const t=flows[b.dataset.flow];$$('#flowTabs button').forEach(x=>x.classList.toggle('active',x===b));$('#flowData').textContent=t.data;$('#flowModel').textContent=t.model;$('#flowDecision').textContent=t.decision;$('#flowNarrative').textContent=t.note}));$('#flowNarrative').textContent=flows.sales.note;
@@ -207,11 +347,245 @@ const quiz=[
 {q:'Đánh giá một mô hình trong kinh tế và kinh doanh cần thêm điều gì?',opts:['Chỉ độ chính xác','Chỉ tốc độ code','Mức phù hợp mục tiêu, khả năng giải thích và giá trị kinh tế','Chỉ số cột trên bảng'],a:2,e:'Mô hình cần phục vụ quyết định thực tế, ngoài các chỉ số thống kê/kỹ thuật.'},
 {q:'Trong ví dụ ngân hàng, kết quả dự án phù hợp nhất là?',opts:['Danh sách ưu tiên liên hệ và khuyến nghị kênh thực hiện','Một tập dữ liệu không giải thích','Chỉ một thuật toán phức tạp','Không cần theo dõi chiến dịch'],a:0,e:'Dự án hướng tới hành động với tiêu chí phản hồi tốt hơn và chi phí chuyển đổi thấp hơn.'}
 ];
-let answers=storage.get('answers',{});function renderQuiz(){let n=0,c=0;$('#quizQuestions').innerHTML=quiz.map((q,i)=>{const v=answers[i],done=Number.isInteger(v);if(done){n++;if(v===q.a)c++}return `<article class="quiz-item"><h4><span class="question-count">Câu ${i+1}</span> ${escapeHTML(q.q)}</h4><div class="quiz-options">${q.opts.map((op,k)=>{const cls=!done?'':k===q.a?'correct':k===v?'wrong':'';return `<button class="quiz-option ${cls}${done&&k===v?' chosen':''}" ${done?'disabled':''} onclick="chooseAnswer(${i},${k})"><b>${String.fromCharCode(65+k)}.</b> ${escapeHTML(op)}</button>`}).join('')}</div>${done?`<div class="quiz-answer"><b>${v===q.a?'✓ Đúng':'✗ Chưa đúng'}.</b> ${escapeHTML(q.e)}</div>`:''}</article>`}).join('');$('#quizDone').textContent=n+'/'+quiz.length;$('#quizCorrect').textContent=c;$('#quizPercent').textContent=(n?Math.round(c/n*100):0)+'%';$('#quizSummary').innerHTML=n<quiz.length?`Bạn đã hoàn thành <b>${n}/${quiz.length}</b> câu. Tiếp tục để xem tổng kết.`:c===quiz.length?'<b>Xuất sắc:</b> Bạn đã trả lời đúng toàn bộ câu hỏi. Hãy thử vận dụng vào bài toán khác.':c>=9?`<b>Rất tốt:</b> ${c}/${quiz.length} câu đúng. Bạn đã nắm các khái niệm chính.`:`<b>Kết quả:</b> ${c}/${quiz.length} câu đúng. Nên đọc lại các phần còn nhầm và thử làm lại.`}
-function chooseAnswer(i,k){if(Number.isInteger(answers[i]))return;answers[i]=k;storage.set('answers',answers);renderQuiz()}function resetQuiz(){answers={};storage.set('answers',answers);renderQuiz();toast('Đã đặt lại bài trắc nghiệm.')}renderQuiz();
+let answers={};function lectureQuizKey(){return 'answers_student_'+encodeURIComponent(gateStudent.studentId||'anonymous')}function saveLectureAnswers(){storage.set(lectureQuizKey(),answers)}function renderQuiz(){let n=0,c=0;$('#quizQuestions').innerHTML=quiz.map((q,i)=>{const v=answers[i],done=Number.isInteger(v);if(done){n++;if(v===q.a)c++}return `<article class="quiz-item"><h4><span class="question-count">Câu ${i+1}</span> ${escapeHTML(q.q)}</h4><div class="quiz-options">${q.opts.map((op,k)=>{const cls=!done?'':k===q.a?'correct':k===v?'wrong':'';return `<button class="quiz-option ${cls}${done&&k===v?' chosen':''}" ${done?'disabled':''} onclick="chooseAnswer(${i},${k})"><b>${String.fromCharCode(65+k)}.</b> ${escapeHTML(op)}</button>`}).join('')}</div>${done?`<div class="quiz-answer"><b>${v===q.a?'✓ Đúng':'✗ Chưa đúng'}.</b> ${escapeHTML(q.e)}</div>`:''}</article>`}).join('');$('#quizDone').textContent=n+'/'+quiz.length;$('#quizCorrect').textContent=c;$('#quizPercent').textContent=(n?Math.round(c/n*100):0)+'%';$('#quizSummary').innerHTML=n<quiz.length?`Bạn đã hoàn thành <b>${n}/${quiz.length}</b> câu. Tiếp tục để xem tổng kết.`:c===quiz.length?'<b>Xuất sắc:</b> Bạn đã trả lời đúng toàn bộ câu hỏi. Hãy thử vận dụng vào bài toán khác.':c>=9?`<b>Rất tốt:</b> ${c}/${quiz.length} câu đúng. Bạn đã nắm các khái niệm chính.`:`<b>Kết quả:</b> ${c}/${quiz.length} câu đúng. Nên đọc lại các phần còn nhầm và thử làm lại.`}
+function chooseAnswer(i,k){if(Number.isInteger(answers[i]))return;answers[i]=k;saveLectureAnswers();renderQuiz()}function resetQuiz(){answers={};saveLectureAnswers();renderQuiz();toast('Đã đặt lại bài trắc nghiệm.')}renderQuiz();
 function exportNotes(){const notes=['BÀI 1 — GIỚI THIỆU VỀ KHOA HỌC DỮ LIỆU','', 'GHI CHÚ BÀI TOÁN THỰC HÀNH',...['pDecision','pData','pOutput','pSuccess'].map((id,i)=>['Quyết định','Dữ liệu cần','Kết quả','Tiêu chí thành công'][i]+': '+$('#'+id).value),'','KẾT QUẢ QUIZ',...quiz.map((q,i)=>`${i+1}. ${q.q}\nĐã chọn: ${Number.isInteger(answers[i])?q.opts[answers[i]]:'(chưa làm)'}\nĐáp án: ${q.opts[q.a]}`),'','Tài liệu gốc: Bài 1 — Giới thiệu về Khoa học dữ liệu, 18 trang.'].join('\n');const file=new Blob(['\ufeff'+notes],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(file),a=document.createElement('a');a.href=url;a.download='ghi_chu_bai_1_khoa_hoc_du_lieu.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Đã xuất ghi chú và kết quả.');}
 
 function checkGrowthSample(){const s=document.getElementById('growthTry').value.trim().replace(',','.');const v=Number(s);const el=document.getElementById('growthFeedback');if(!s||!Number.isFinite(v)){el.textContent='Vui lòng nhập một số hợp lệ.';return}el.textContent=Math.abs(v-20)<=0.01?'✓ Chính xác! (240 − 200) / 200 × 100 = 20%.':'Chưa đúng. Gợi ý: lấy độ tăng 40 chia cho doanh thu gốc 200, rồi nhân 100.'}
+
+// ------- KHÓA/MỞ BÀI GIẢNG TUẦN TỰ: riêng theo mã sinh viên -------
+const gateProfileKey='ds1_student_profile_v1';
+function storedGateProfile(){try{const v=JSON.parse(localStorage.getItem(gateProfileKey)||'{}');return {fullName:String(v.fullName||''),studentId:String(v.studentId||''),classCode:String(v.classCode||'')}}catch{return {fullName:'',studentId:'',classCode:''}}}
+let gateStudent=storedGateProfile();
+let gateCompleted=new Set();
+function profileReady(){return !!(gateStudent.fullName.trim()&&gateStudent.studentId.trim()&&gateStudent.classCode.trim())}
+function gateStoreKey(){return 'b1ds_course_progress_'+encodeURIComponent(gateStudent.studentId.trim().toLowerCase())}
+function loadGateProgress(){gateCompleted=new Set();if(!profileReady())return;try{const item=JSON.parse(localStorage.getItem(gateStoreKey())||'{}');const done=Array.isArray(item.completed)?item.completed:[];for(const id of ids){if(done.includes(id))gateCompleted.add(id);else break}}catch{}}
+function saveGateProgress(){if(!profileReady())return;try{localStorage.setItem(gateStoreKey(),JSON.stringify({completed:ids.filter(id=>gateCompleted.has(id)),updatedAt:new Date().toISOString()}))}catch{}}
+function gateAccessIndex(){if(!profileReady())return 0;let i=0;while(i<ids.length-1&&gateCompleted.has(ids[i]))i++;return i}
+function gateCanView(id){const i=ids.indexOf(id);return i>=0&&i<=gateAccessIndex()}
+function renderGate(){
+ const highest=gateAccessIndex();
+ ids.forEach((id,i)=>{
+   const section=document.getElementById(id),link=document.querySelector(`#toc a[href="#${id}"]`),isOpen=i<=highest,done=gateCompleted.has(id);
+   if(i>0){if(isOpen)section.setAttribute('data-gate-unlocked','');else section.removeAttribute('data-gate-unlocked');}
+   link.classList.toggle('gate-disabled',!isOpen);link.classList.toggle('gate-done',done);
+   link.setAttribute('aria-disabled',isOpen?'false':'true');link.tabIndex=isOpen?0:-1;
+   link.querySelector('.nav-index').textContent=done?'✓':isOpen?String(i+1).padStart(2,'0'):'🔒';
+   if(i<ids.length-1){
+    const box=document.getElementById('checkpoint-'+id),msg=document.getElementById('gate-msg-'+id),next=document.getElementById('go-next-'+id);
+    box.classList.toggle('gate-completed',done);next.hidden=!done;
+    if(done){msg.textContent='✓ Đã hoàn thành. Mục tiếp theo đã được mở khóa.';msg.className='gate-message success';}
+   }
+ });
+ const quizMsg=document.getElementById('gate-msg-quiz');if(gateCompleted.has('quiz')){quizMsg.textContent='✓ Đã hoàn thành toàn bộ 11 mục của Bài 1.';quizMsg.className='gate-message success'}
+ const n=ids.filter(id=>gateCompleted.has(id)).length;
+ document.getElementById('progressText').textContent=n+'/'+ids.length;
+ document.getElementById('progressBar').style.width=(n/ids.length*100)+'%';
+ document.getElementById('gateNavHelp').textContent=n===ids.length?'Đã hoàn thành cả 11 mục. Bạn có thể xem lại tất cả.':`Đã hoàn thành ${n}/11 mục • Đang mở: ${ids[highest]==='home'?'Tổng quan':document.querySelector(`#toc a[href="#${ids[highest]}"]`).textContent.trim()}.`;
+ document.getElementById('gateProfileInfo').textContent=profileReady()?`✓ Đang học: ${gateStudent.fullName} — ${gateStudent.studentId} — Lớp ${gateStudent.classCode}. Tiến độ: ${n}/11 mục.`:'Hãy nhập đủ họ tên, mã sinh viên và mã lớp rồi chọn “Lưu & bắt đầu học”.';
+ refreshCertificateUI();
+}
+function resetGateInputs(){document.getElementById('gateName').value=gateStudent.fullName;document.getElementById('gateStudentId').value=gateStudent.studentId;document.getElementById('gateClass').value=gateStudent.classCode}
+function refreshLectureStudent(){answers=storage.get(lectureQuizKey(),{});renderQuiz();for(const id of ['pDecision','pData','pOutput','pSuccess']){const el=document.getElementById(id),key=id+'_student_'+encodeURIComponent(gateStudent.studentId||'anonymous');el.value=storage.get(key,'');el.oninput=()=>storage.set(key,el.value)} }
+function saveGateProfile(){
+ const fresh={fullName:document.getElementById('gateName').value.trim(),studentId:document.getElementById('gateStudentId').value.trim(),classCode:document.getElementById('gateClass').value.trim()};
+ if(!fresh.fullName||!fresh.studentId||!fresh.classCode){document.getElementById('gateProfileInfo').textContent='Vui lòng nhập đủ 3 trường trước khi bắt đầu.';return}
+ const switching=gateStudent.studentId.trim().toLowerCase()!==fresh.studentId.toLowerCase();
+ gateStudent=fresh;
+ try{localStorage.setItem(gateProfileKey,JSON.stringify(gateStudent))}catch{}
+ if(switching){loadGateProgress();refreshLectureStudent()}renderGate();toast('Đã lưu thông tin sinh viên và tải tiến độ riêng.');
+}
+function switchGateStudent(){
+ if(!confirm('Đổi sinh viên? Tiến độ của sinh viên cũ vẫn được giữ trong trình duyệt theo mã sinh viên.'))return;
+ gateStudent={fullName:'',studentId:'',classCode:''};gateCompleted=new Set();
+ try{localStorage.removeItem(gateProfileKey)}catch{}
+ resetGateInputs();refreshLectureStudent();renderGate();location.hash='#home';document.getElementById('gateName').focus();
+}
+function resetGateProgress(){
+ if(!profileReady()){toast('Hãy nhập thông tin sinh viên trước.');return}
+ if(!confirm('Xóa tiến độ 11 mục của mã sinh viên '+gateStudent.studentId+' trên trình duyệt này? Thao tác không xóa bài làm quiz độc lập.'))return;
+ gateCompleted=new Set();saveGateProgress();try{localStorage.removeItem(certificateStoreKey())}catch{}renderGate();location.hash='#home';toast('Đã đặt lại tiến độ và chứng nhận tự tạo.');
+}
+function submitGate(id){
+ if(!profileReady()){toast('Trước hết hãy lưu đủ họ tên, mã sinh viên và mã lớp.');document.getElementById('gate-profile').scrollIntoView({behavior:'smooth'});return}
+ if(!gateCanView(id)){toast('Hoàn thành mục trước để mở phần này.');return}
+ if(id==='quiz'){
+   const finished=quiz.every((q,i)=>Number.isInteger(answers[i]));
+   if(!finished){const n=quiz.filter((q,i)=>Number.isInteger(answers[i])).length;const msg=document.getElementById('gate-msg-quiz');msg.className='gate-message error';msg.textContent=`Bạn đã làm ${n}/12 câu. Hãy trả lời đủ 12 câu để hoàn thành Bài 1.`;return}
+ }else{
+   if(gateCompleted.has(id)){goNextLesson(id);return}
+   const chosen=document.querySelector(`input[name="gate-answer-${id}"]:checked`);
+   const msg=document.getElementById('gate-msg-'+id);
+   if(!chosen){msg.textContent='Hãy chọn một đáp án trước khi chấm.';msg.className='gate-message error';return}
+   const correct=gateCheckpoints[id].answer;
+   if(Number(chosen.value)!==correct){msg.textContent='✗ Chưa đúng. Hãy đọc lại nội dung phía trên và thử lại.';msg.className='gate-message error';return}
+ }
+ const idx=ids.indexOf(id);for(let k=0;k<=idx;k++)gateCompleted.add(ids[k]);saveGateProgress();renderGate();
+ if(id==='quiz'){toast('Chúc mừng! Đã hoàn thành toàn bộ Bài 1. Hãy nhận chứng nhận của bạn.');openCertificateSection();return}
+ toast('✓ Chính xác! Đã mở khóa mục tiếp theo.');
+}
+const gateCheckpoints={home:{answer:1},motivation:{answer:1},pillars:{answer:0},crisp:{answer:1},problem:{answer:2},data:{answer:1},analytics:{answer:0},visual:{answer:0},bank:{answer:0},worked:{answer:1}};
+function goNextLesson(id){const i=ids.indexOf(id);if(i>=ids.length-1)return;if(!gateCanView(ids[i+1])){toast('Chưa mở khóa phần tiếp theo.');return}location.hash='#'+ids[i+1];document.getElementById(ids[i+1]).scrollIntoView({behavior:'smooth'})}
+function guardGateHash(){const key=decodeURIComponent(location.hash.slice(1));if(ids.includes(key)&&!gateCanView(key)){history.replaceState(null,'',location.pathname+location.search+'#'+ids[gateAccessIndex()]);toast('Mục này đang bị khóa. Hãy hoàn thành mục trước.')}}
+function exportGateProgress(){const rows=['TIẾN ĐỘ HỌC BÀI 1 – GIỚI THIỆU KHOA HỌC DỮ LIỆU','Họ và tên: '+(gateStudent.fullName||'(chưa nhập)'),'Mã sinh viên: '+(gateStudent.studentId||'(chưa nhập)'),'Mã lớp: '+(gateStudent.classCode||'(chưa nhập)'),'Ngày xuất: '+new Date().toLocaleString('vi-VN'),'',...ids.map((id,i)=>`${i+1}. ${document.querySelector(`#toc a[href="#${id}"]`).textContent.trim()}: ${gateCompleted.has(id)?'Hoàn thành':'Chưa hoàn thành'}`)];const blob=new Blob(['\ufeff'+rows.join('\n')],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='tien_do_bai_1_'+(gateStudent.studentId.replace(/[^A-Za-z0-9_-]/g,'_')||'chua_nhap')+'.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+// Ngăn nhảy tới mục chưa mở khóa qua liên kết và địa chỉ #hash.
+document.querySelectorAll('#toc a[href^="#"],.hero a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href').slice(1);if(!gateCanView(id)){e.preventDefault();toast('🔒 Cần hoàn thành mục trước để mở nội dung này.');closeMenu()}}));
+window.addEventListener('hashchange',guardGateHash);
+
+// --- Chứng nhận Bài 1 (không có xác thực server; lưu cục bộ theo mã sinh viên) ---
+function certificateStoreKey(){return 'b1ds_certificate_bai1_'+encodeURIComponent(gateStudent.studentId.trim().toLowerCase())}
+function allLessonsCompleted(){return profileReady()&&ids.every(id=>gateCompleted.has(id))}
+function lessonQuizFinished(){return quiz.every((q,i)=>Number.isInteger(answers[i]))}
+function readCertificate(){
+ if(!profileReady())return null;
+ try{
+  const item=JSON.parse(localStorage.getItem(certificateStoreKey())||'null');
+  if(item&&item.studentId===gateStudent.studentId.trim()&&item.course==='Bài 1: Giới thiệu về Khoa học dữ liệu'&&item.certificateId&&item.issuedAt)return item;
+ }catch{}return null;
+}
+function certificateRandomId(){
+ const bytes=new Uint8Array(7);
+ if(window.crypto&&window.crypto.getRandomValues)window.crypto.getRandomValues(bytes);
+ else for(let i=0;i<bytes.length;i++)bytes[i]=Math.floor(Math.random()*256);
+ return 'B1-'+new Date().getFullYear()+'-'+Array.from(bytes,x=>x.toString(16).padStart(2,'0')).join('').toUpperCase();
+}
+function certificateDate(item){
+ const date=new Date(item.issuedAt);
+ return Number.isNaN(+date)?'Không xác định':date.toLocaleString('vi-VN',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'});
+}
+function certificateTextContent(item){
+ return ['CHỨNG NHẬN HOÀN THÀNH BÀI HỌC',
+  'Bài học: '+item.course,
+  'Họ và tên: '+item.fullName,
+  'Mã sinh viên: '+item.studentId,
+  'Mã lớp: '+item.classCode,
+  'Tiến độ: Hoàn thành 11/11 mục lý thuyết và tương tác',
+  'Kiểm tra cuối bài: Trả lời đủ 12/12 câu; đúng '+item.quizCorrect+'/12 câu',
+  'Ngày tạo chứng nhận: '+certificateDate(item),
+  'Mã chứng nhận: '+item.certificateId,
+  'Ghi chú: Chứng nhận được tạo tự động trên trang học liệu HTML (offline). Không phải chứng chỉ chính thức do nhà trường cấp.'].join('\n');
+}
+function certificateStatusMessage(text,isError=false){
+ const el=document.getElementById('certificateStatus');el.textContent=text;el.style.color=isError?'#a44334':'#176f54';
+}
+function drawCertificate(item){
+ const canvas=document.getElementById('certificateCanvas');if(!canvas)return;
+ const ctx=canvas.getContext('2d');if(!ctx)return;
+ const w=canvas.width,h=canvas.height;
+ ctx.clearRect(0,0,w,h);
+ ctx.fillStyle='#fbfcff';ctx.fillRect(0,0,w,h);
+ let grad=ctx.createLinearGradient(0,0,w,0);grad.addColorStop(0,'#094274');grad.addColorStop(.67,'#1386bd');grad.addColorStop(1,'#25b2cb');ctx.fillStyle=grad;ctx.fillRect(0,0,w,18);
+ ctx.lineWidth=3;ctx.strokeStyle='#d2b26c';ctx.strokeRect(35,36,w-70,h-72);
+ ctx.lineWidth=1;ctx.strokeStyle='#c7d8e4';ctx.strokeRect(48,49,w-96,h-98);
+ ctx.fillStyle='#e7f2f9';ctx.beginPath();ctx.arc(1445,148,215,0,2*Math.PI);ctx.fill();
+ ctx.fillStyle='#edf7fb';ctx.beginPath();ctx.arc(85,830,180,0,2*Math.PI);ctx.fill();
+ ctx.textAlign='center';ctx.textBaseline='alphabetic';
+ function ctext(t,y,size,color,weight='500',max=1370,min=22){
+   size=Math.min(size,90);
+   while(size>min){ctx.font=weight+' '+size+'px "Segoe UI", Arial, sans-serif';if(ctx.measureText(t).width<=max)break;size-=2;}
+   ctx.font=weight+' '+size+'px "Segoe UI", Arial, sans-serif';
+   let content=t;
+   while(ctx.measureText(content).width>max&&content.length>4)content=content.slice(0,-2)+'…';
+   ctx.fillStyle=color;ctx.fillText(content,800,y);
+ }
+ ctext('HỌC LIỆU TƯƠNG TÁC  •  BÀI 01',126,32,'#276287','700',1250);
+ ctx.fillStyle='#d1b16c';ctx.fillRect(650,151,300,4);
+ ctext('CHỨNG NHẬN',247,83,'#0b4778','750');
+ ctext('HOÀN THÀNH BÀI HỌC',307,45,'#256b94','700');
+ ctext('Trân trọng xác nhận sinh viên',384,29,'#516c81','500');
+ ctext(item.fullName,470,67,'#102e53','750',1350,33);
+ ctx.strokeStyle='#c5a960';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(320,495);ctx.lineTo(1280,495);ctx.stroke();
+ ctext('Mã sinh viên: '+item.studentId+'     •     Mã lớp: '+item.classCode,543,29,'#37556f','600',1300,24);
+ ctext('đã hoàn thành lộ trình tương tác của',606,29,'#506980','500');
+ ctext(item.course,662,43,'#0c5c91','700',1330,27);
+ const boxY=715;
+ ctx.fillStyle='#eaf4f9';ctx.fillRect(225,boxY,1150,88);
+ ctext('11 / 11 mục hoàn thành      •      12 / 12 câu đã làm      •      '+item.quizCorrect+' / 12 câu đúng',769,32,'#155e83','700',1090,23);
+ ctext('Ngày tạo: '+certificateDate(item),849,26,'#4e687a','500');
+ ctext('Mã chứng nhận: '+item.certificateId,890,25,'#315c79','650');
+ ctx.strokeStyle='#d0dde7';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(180,926);ctx.lineTo(1420,926);ctx.stroke();
+ ctext('Minh chứng tự học (offline) • Không phải chứng chỉ chính thức do nhà trường cấp',948,19,'#66798a','500',1370,17);
+ ctx.lineWidth=3;ctx.strokeStyle='#d2b26c';ctx.strokeRect(35,36,w-70,h-72);
+}
+function refreshCertificateUI(){
+ const ready=allLessonsCompleted();
+ const panel=document.getElementById('certificatePanel');
+ panel.hidden=!ready;
+ document.getElementById('certificateShortcut').hidden=!ready;
+ document.getElementById('gateCertGo').hidden=!ready;
+ if(!ready){certificateStatusMessage('');return;}
+ const item=readCertificate();
+ document.getElementById('certificateIssueBlock').hidden=!!item;
+ document.getElementById('certificateOutput').hidden=!item;
+ if(item){drawCertificate(item);document.getElementById('certificateText').textContent=certificateTextContent(item);}
+}
+function openCertificateSection(){
+ if(!allLessonsCompleted()){toast('Hãy hoàn thành đủ 11 mục trước khi nhận chứng nhận.');return;}
+ document.getElementById('certificatePanel').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function issueCertificate(){
+ if(!allLessonsCompleted()||!lessonQuizFinished()){
+  certificateStatusMessage('Chưa đủ điều kiện: cần hoàn thành 11/11 mục và trả lời đủ 12 câu kiểm tra cuối bài.',true);return;
+ }
+ let item=readCertificate();
+ if(!item){
+  item={course:'Bài 1: Giới thiệu về Khoa học dữ liệu',fullName:gateStudent.fullName.trim(),studentId:gateStudent.studentId.trim(),classCode:gateStudent.classCode.trim(),certificateId:certificateRandomId(),issuedAt:new Date().toISOString(),quizCorrect:quiz.reduce((a,q,i)=>a+(answers[i]===q.a?1:0),0)};
+  try{localStorage.setItem(certificateStoreKey(),JSON.stringify(item))}catch{certificateStatusMessage('Không thể lưu chứng nhận trên trình duyệt. Hãy kiểm tra chế độ riêng tư hoặc bộ nhớ thiết bị.',true);return;}
+ }
+ refreshCertificateUI();certificateStatusMessage('✓ Đã tạo chứng nhận. Có thể sao chép nội dung hoặc tải ảnh PNG.');
+}
+function renewCertificate(){
+ if(!allLessonsCompleted()||!lessonQuizFinished())return;
+ if(!confirm('Cấp lại chứng nhận với họ tên, mã sinh viên và mã lớp hiện tại? Mã chứng nhận và ngày tạo cũ sẽ được thay thế trong trình duyệt này.'))return;
+ try{localStorage.removeItem(certificateStoreKey())}catch{}
+ issueCertificate();
+}
+function certFileName(item){return 'chung_nhan_hoan_thanh_bai_1_'+item.studentId.replace(/[^a-zA-Z0-9_-]+/g,'_').slice(0,45)+'.png'}
+function canvasAsBlob(){
+ return new Promise((resolve,reject)=>{
+  try{document.getElementById('certificateCanvas').toBlob(b=>b?resolve(b):reject(new Error('Không xuất được ảnh')),'image/png');}
+  catch(e){reject(e)}
+ });
+}
+async function downloadCertificatePNG(){
+ const item=readCertificate();if(!item||!allLessonsCompleted()){certificateStatusMessage('Chỉ có thể xuất chứng nhận sau khi hoàn thành bài học.',true);return;}
+ try{
+  drawCertificate(item);
+  const blob=await canvasAsBlob();const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;a.download=certFileName(item);document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),5000);
+  certificateStatusMessage('✓ Đã xuất file chứng nhận PNG.');
+ }catch(err){certificateStatusMessage('Không xuất được PNG: '+err.message,true)}
+}
+async function copyCertificateText(){
+ const item=readCertificate();if(!item||!allLessonsCompleted()){certificateStatusMessage('Cần hoàn thành bài học để sao chép chứng nhận.',true);return;}
+ const content=certificateTextContent(item);
+ try{
+  if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error('Clipboard API unavailable');
+  await navigator.clipboard.writeText(content);
+  certificateStatusMessage('✓ Đã sao chép toàn bộ nội dung chứng nhận.');return;
+ }catch{}
+ const textarea=document.createElement('textarea');textarea.value=content;textarea.style.position='fixed';textarea.style.opacity='0';document.body.appendChild(textarea);textarea.focus();textarea.select();
+ const ok=typeof document.execCommand==='function'&&document.execCommand('copy');textarea.remove();
+ certificateStatusMessage(ok?'✓ Đã sao chép chứng nhận.':'Trình duyệt không hỗ trợ sao chép tự động. Hãy bôi đen nội dung chứng nhận trong khung để sao chép.',!ok);
+}
+async function copyCertificateImage(){
+ const item=readCertificate();if(!item||!allLessonsCompleted()){certificateStatusMessage('Cần hoàn thành bài học để sao chép ảnh.',true);return;}
+ if(!navigator.clipboard?.write||typeof ClipboardItem==='undefined'){
+  certificateStatusMessage('Trình duyệt hiện không hỗ trợ sao chép ảnh. Hãy dùng nút Tải chứng nhận PNG.',true);return;
+ }
+ try{
+  drawCertificate(item);const blob=await canvasAsBlob();
+  await navigator.clipboard.write([new ClipboardItem({'image/png':blob})]);
+  certificateStatusMessage('✓ Đã sao chép ảnh chứng nhận; có thể dán vào Word hoặc ứng dụng hỗ trợ ảnh.');
+ }catch{
+  certificateStatusMessage('Không thể sao chép ảnh trong môi trường hiện tại. Hãy tải PNG rồi chèn vào tài liệu.',true);
+ }
+}
+
+loadGateProgress();resetGateInputs();refreshLectureStudent();renderGate();guardGateHash();
+
 </script>
 </body>
 </html>
