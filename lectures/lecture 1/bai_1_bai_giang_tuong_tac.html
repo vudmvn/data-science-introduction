@@ -38,7 +38,7 @@ html.learning-gate section.observer:not(#home):not([data-gate-unlocked]){display
 @media(max-width:690px){.gate-fields{grid-template-columns:1fr}.gate-choice{width:100%}}
 @media print{.gate-card,.gate-profile{break-inside:avoid}}
 
-/* Certificate of lesson completion – local self-report, no external assets */
+/* Certificate of lesson completion – local storage, no external assets */
 [hidden]{display:none !important}
 .certificate-section{margin-top:26px;border:1px solid #bed7e6;border-radius:21px;background:linear-gradient(150deg,#f5fbff,#ffffff 65%);padding:clamp(16px,3vw,28px);box-shadow:0 9px 24px rgba(13,66,115,.06)}
 .certificate-header{display:flex;gap:13px;align-items:flex-start;margin-bottom:12px}
@@ -266,12 +266,9 @@ html.learning-gate section.observer:not(#home):not([data-gate-unlocked]){display
     <div class="certificate-frame"><canvas id="certificateCanvas" width="1600" height="1000" role="img" aria-label="Bản xem trước chứng nhận hoàn thành Bài 1"></canvas></div>
     <div class="cert-buttons">
       <button type="button" class="btn primary" onclick="downloadCertificatePNG()">↓ Tải chứng nhận PNG</button>
-      <button type="button" class="btn" onclick="copyCertificateText()">⎘ Sao chép nội dung</button>
       <button type="button" class="btn" onclick="copyCertificateImage()">▣ Sao chép ảnh</button>
       <button type="button" class="btn" onclick="renewCertificate()">↻ Cập nhật thông tin / cấp lại</button>
     </div>
-    <div class="cert-report" id="certificateText" aria-label="Nội dung chứng nhận có thể sao chép"></div>
-    <p class="cert-warning">Chứng nhận là minh chứng học tập được tạo tự động và lưu cục bộ trên trình duyệt. Không có chữ ký, con dấu hoặc dịch vụ xác minh trực tuyến; đây là <b>minh chứng hoàn thành bài học tự giác</b>. Muốn dán hình vào tài liệu, có thể dùng “Sao chép ảnh” trên trình duyệt hỗ trợ hoặc tải PNG rồi chèn vào tài liệu.</p>
   </div>
   <div id="certificateStatus" class="cert-status" role="status" aria-live="polite"></div>
 </div>
@@ -505,7 +502,7 @@ function drawCertificate(item){
  ctext('Ngày tạo: '+certificateDate(item),849,26,'#4e687a','500');
  ctext('Mã chứng nhận: '+item.certificateId,890,25,'#315c79','650');
  ctx.strokeStyle='#d0dde7';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(180,926);ctx.lineTo(1420,926);ctx.stroke();
- ctext('Minh chứng tự học (offline) • Đã hoàn thành đầy đủ lý thuyết và kiểm tra tương tác',948,19,'#66798a','500',1370,17);
+ ctext('Chứng nhận hoàn thành nội dung Bài 1: Giới thiệu về Khoa học Dữ liệu',948,19,'#66798a','500',1370,17);
  ctx.lineWidth=3;ctx.strokeStyle='#d2b26c';ctx.strokeRect(35,36,w-70,h-72);
 }
 function refreshCertificateUI(){
@@ -518,7 +515,7 @@ function refreshCertificateUI(){
  const item=readCertificate();
  document.getElementById('certificateIssueBlock').hidden=!!item;
  document.getElementById('certificateOutput').hidden=!item;
- if(item){drawCertificate(item);document.getElementById('certificateText').textContent=certificateTextContent(item);}
+ if(item){drawCertificate(item);const txt=document.getElementById('certificateText');if(txt)txt.textContent=certificateTextContent(item);}
 }
 function openCertificateSection(){
  if(!allLessonsCompleted()){toast('Hãy hoàn thành đủ 11 mục trước khi nhận chứng nhận.');return;}

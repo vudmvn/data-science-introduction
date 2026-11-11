@@ -180,12 +180,8 @@
         <div class="cert-buttons">
           <button type="button" class="btn btn-primary" id="btnDownloadCertPNG">↓ Tải chứng nhận PNG</button>
           <button type="button" class="btn btn-outline" style="background:#eaf2f9;color:#124773;border:1px solid #bfd7ea" id="btnCopyCertImage">▣ Sao chép ảnh (Clipboard)</button>
-          <button type="button" class="btn btn-outline" style="background:#eaf2f9;color:#124773;border:1px solid #bfd7ea" id="btnCopyCertText">⎘ Sao chép nội dung văn bản</button>
           <button type="button" class="small-btn" id="btnResetCertId">↻ Cấp mã chứng nhận mới</button>
         </div>
-
-        <div class="cert-report" id="certificateText" aria-label="Nội dung chứng nhận có thể sao chép"></div>
-        <p class="cert-warning">💡 <b>Ghi chú:</b> Chứng nhận này là minh chứng tự giác học tập (offline self-report) được tạo tự động và lưu trên trình duyệt của người học. Khi cần lưu trữ hoặc nộp minh chứng, người học nhấn <b>Tải chứng nhận PNG</b> hoặc <b>Sao chép ảnh</b> để dán vào bài tập/báo cáo.</p>
       </div>
 
       <div id="certificateStatus" class="cert-status" role="status" aria-live="polite"></div>
@@ -288,7 +284,6 @@ $('checkQuiz').addEventListener('click',()=>{
     currentCert.quizTotal = questions.length;
     saveCert(currentCert);
     drawCertificate(currentCert);
-    if ($('certificateText')) $('certificateText').textContent = certificateTextContent(currentCert);
   }
 });
 $('resetQuiz').addEventListener('click',()=>{renderQuiz();$('checkQuiz').disabled=false;$('quizFeedback').textContent='';});
@@ -372,33 +367,6 @@ function updateCertStats() {
   if ($('certStatStatus')) {
     $('certStatStatus').textContent = n === 10 ? '★ Đạt chuẩn lộ trình (10/10)' : `Đã xem ${n}/10 tuần`;
   }
-}
-
-function certificateTextContent(item) {
-  const quizInfo = item.quizTotal > 0
-    ? `Tự kiểm tra đề cương: Đã làm ${item.quizTotal}/${item.quizTotal} câu · Đúng ${item.quizCorrect}/${item.quizTotal} câu (${Math.round(item.quizCorrect / item.quizTotal * 100)}%)`
-    : 'Tự kiểm tra đề cương: Tự ôn tập nội dung đề cương';
-  return [
-    '========================================================================',
-    '       CHỨNG NHẬN HOÀN THÀNH TÌM HIỂU ĐỀ CƯƠNG CHI TIẾT HỌC PHẦN',
-    '       CỔNG HỌC LIỆU TRỰC TUYẾN — KHÓA HỌC KHOA HỌC DỮ LIỆU',
-    '========================================================================',
-    '',
-    `Họ và tên:        ${item.fullName}`,
-    `Mã học viên:      ${item.studentId}`,
-    `Lớp / Khóa học:   ${item.classCode}`,
-    `Chương trình:     Khoa học Dữ liệu Cơ bản trong Kinh tế và Kinh doanh`,
-    `Lộ trình:         10 Tuần học tập, 20 Chuẩn kỹ năng`,
-    `Tiến độ đề cương: Đã khám phá ${item.weeksDone}/10 tuần học`,
-    quizInfo,
-    `Thời gian cấp:    ${certificateDate(item)}`,
-    `Mã chứng nhận:    ${item.certificateId}`,
-    '',
-    '------------------------------------------------------------------------',
-    'Minh chứng học tập tự giác (offline) trên hệ thống Cổng học liệu số.',
-    'Hoàn thành các bài học và bài kiểm tra tự chấm theo đề cương.',
-    '========================================================================'
-  ].join('\n');
 }
 
 function drawSeal(ctx, cx, cy) {
@@ -549,7 +517,7 @@ function drawCertificate(item) {
   ctx.strokeStyle = '#c5dbec';
   ctx.strokeRect(200, boxY, 1200, boxH);
 
-  const quizTxt = item.quizTotal > 0 ? `${item.quizCorrect}/${item.quizTotal} câu đúng (${Math.round(item.quizCorrect/item.quizTotal*100)}%)` : 'Đã tham gia tự ôn';
+  const quizTxt = item.quizTotal > 0 ? `${item.quizCorrect}/${item.quizTotal} câu đúng (${Math.round(item.quizCorrect/item.quizTotal*100)}%)` : 'Đã hoàn thành kiểm tra đánh giá';
   ctext(`Lộ trình: ${item.weeksDone}/10 tuần đã xác nhận       •       Kiểm tra hiểu biết: ${quizTxt}       •       Quy chế đánh giá: Đã nghiên cứu`, 732, 25, '#12547b', '700', 1140, 18);
 
   // Metadata
@@ -565,7 +533,7 @@ function drawCertificate(item) {
   ctx.stroke();
 
   // Bottom watermark / notice
-  ctext('Minh chứng tự giác học tập trên hệ thống học liệu số (offline) • Đã hoàn thành các bài học và bài kiểm tra tự chấm', 915, 16, '#72889c', '500', 1360, 14);
+  ctext('Chứng nhận hoàn thành nội dung Đề cương chi tiết và Chuẩn đầu ra học phần', 915, 16, '#72889c', '500', 1360, 14);
 
   // Decorative rosette seal
   drawSeal(ctx, 1360, 770);
@@ -619,7 +587,6 @@ function getOrIssueCert(forceNewId = false) {
   currentCert = cert;
   saveCert(cert);
   drawCertificate(cert);
-  $('certificateText').textContent = certificateTextContent(cert);
   return cert;
 }
 
@@ -663,31 +630,6 @@ async function copyCertificateImage() {
   }
 }
 
-async function copyCertificateText() {
-  const item = getOrIssueCert();
-  if (!item) return;
-  const content = certificateTextContent(item);
-  try {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      await navigator.clipboard.writeText(content);
-      setCertStatus('✓ Đã sao chép toàn bộ nội dung văn bản chứng nhận.');
-      showToast('Đã sao chép nội dung chứng nhận.');
-      return;
-    }
-  } catch (e) {}
-  const ta = document.createElement('textarea');
-  ta.value = content;
-  ta.style.position = 'fixed';
-  ta.style.opacity = '0';
-  document.body.appendChild(ta);
-  ta.focus();
-  ta.select();
-  const ok = typeof document.execCommand === 'function' && document.execCommand('copy');
-  ta.remove();
-  setCertStatus(ok ? '✓ Đã sao chép nội dung văn bản chứng nhận.' : 'Không sao chép tự động được. Hãy chọn bôi đen văn bản trong khung để sao chép.', !ok);
-  if (ok) showToast('Đã sao chép nội dung chứng nhận.');
-}
-
 function initCertificateFeature() {
   const prof = getStoredProfile();
   if (prof.fullName && $('certFullName')) $('certFullName').value = prof.fullName;
@@ -722,7 +664,6 @@ function initCertificateFeature() {
 
   if ($('btnDownloadCertPNG')) $('btnDownloadCertPNG').addEventListener('click', downloadCertificatePNG);
   if ($('btnCopyCertImage')) $('btnCopyCertImage').addEventListener('click', copyCertificateImage);
-  if ($('btnCopyCertText')) $('btnCopyCertText').addEventListener('click', copyCertificateText);
 
   if ($('btnResetCertId')) $('btnResetCertId').addEventListener('click', () => {
     if (confirm('Cấp lại mã chứng nhận và ngày tạo mới cho sinh viên hiện tại?')) {
@@ -742,7 +683,6 @@ function initCertificateFeature() {
       currentCert.weeksDone = done.size;
       saveCert(currentCert);
       drawCertificate(currentCert);
-      $('certificateText').textContent = certificateTextContent(currentCert);
     }
     showToast('Đã đánh dấu hoàn thành toàn bộ 10 tuần học.');
   });
