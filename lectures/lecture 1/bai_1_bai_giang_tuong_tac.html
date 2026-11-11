@@ -257,9 +257,9 @@ html.learning-gate section.observer:not(#home):not([data-gate-unlocked]){display
    <div class="highlight" style="margin-top:25px"><b>Ba ý cốt lõi:</b> (1) Khoa học dữ liệu là liên ngành và hướng tới quyết định. (2) Quy trình bắt đầu từ bài toán thực tế, không phải từ thuật toán. (3) Kết quả chỉ thực sự có giá trị khi được đánh giá, giải thích và ứng dụng phù hợp bối cảnh.</div>
   <div class="gate-card" id="checkpoint-quiz"><span class="pill">Hoàn thành · 11/11</span><h3>🏁 Kết thúc lộ trình bài giảng</h3><p>Trả lời đủ <b>12 câu quiz cuối bài</b> ở ngay phía trên. Không bắt buộc trả lời đúng tất cả; có thể ôn tập và làm lại để nâng kết quả.</p><div class="gate-actions"><button type="button" class="btn primary" onclick="submitGate('quiz')">Xác nhận hoàn thành Bài 1</button><a class="btn" href="bai_1_quiz_tu_cham.html">Làm quiz 34 câu ↗</a></div><div class="gate-message" id="gate-msg-quiz" role="status" aria-live="polite">Hoàn thành 12 câu để xác nhận.</div><div class="gate-actions"><button type="button" class="btn primary" hidden id="gateCertGo" onclick="openCertificateSection()">🎓 Hoàn thành bài học – Nhận chứng nhận</button></div></div>
 <div class="certificate-section" id="certificatePanel" hidden>
-  <div class="certificate-header"><div class="cert-icon" aria-hidden="true">🎓</div><div><div class="eyebrow">Minh chứng hoàn thành lộ trình Bài 1</div><h3>Chứng nhận hoàn thành bài học</h3><p class="certificate-explain">Khi đã hoàn thành 11/11 mục và trả lời đủ 12 câu kiểm tra cuối bài, sinh viên có thể tạo chứng nhận cá nhân, sao chép nội dung hoặc lưu dưới dạng ảnh PNG.</p></div></div>
+  <div class="certificate-header"><div class="cert-icon" aria-hidden="true">🎓</div><div><div class="eyebrow">Minh chứng hoàn thành lộ trình Bài 1</div><h3>Chứng nhận hoàn thành bài học</h3><p class="certificate-explain">Khi đã hoàn thành 11/11 mục và trả lời đủ 12 câu kiểm tra cuối bài, học viên có thể tạo chứng nhận cá nhân, sao chép nội dung hoặc lưu dưới dạng ảnh PNG.</p></div></div>
   <div id="certificateIssueBlock" hidden>
-    <p class="cert-disabled-message">Bạn đã đáp ứng yêu cầu học tập của <b>Bài 1: Giới thiệu về Khoa học dữ liệu</b>. Nhấn nút dưới đây để tạo chứng nhận với thông tin sinh viên đã lưu.</p>
+    <p class="cert-disabled-message">Bạn đã đáp ứng yêu cầu học tập của <b>Bài 1: Giới thiệu về Khoa học dữ liệu</b>. Nhấn nút dưới đây để tạo chứng nhận với thông tin học viên đã lưu.</p>
     <button type="button" class="btn primary" onclick="issueCertificate()">🎓 Hoàn thành bài học – Cấp chứng nhận</button>
   </div>
   <div id="certificateOutput" hidden>
@@ -271,7 +271,7 @@ html.learning-gate section.observer:not(#home):not([data-gate-unlocked]){display
       <button type="button" class="btn" onclick="renewCertificate()">↻ Cập nhật thông tin / cấp lại</button>
     </div>
     <div class="cert-report" id="certificateText" aria-label="Nội dung chứng nhận có thể sao chép"></div>
-    <p class="cert-warning">Chứng nhận là minh chứng học tập được tạo tự động và lưu cục bộ trên trình duyệt. Không có chữ ký, con dấu hoặc dịch vụ xác minh trực tuyến; đây <b>không phải chứng chỉ chính thức do nhà trường cấp</b>. Muốn dán hình vào tài liệu, có thể dùng “Sao chép ảnh” trên trình duyệt hỗ trợ hoặc tải PNG rồi chèn vào tài liệu.</p>
+    <p class="cert-warning">Chứng nhận là minh chứng học tập được tạo tự động và lưu cục bộ trên trình duyệt. Không có chữ ký, con dấu hoặc dịch vụ xác minh trực tuyến; đây là <b>minh chứng hoàn thành bài học tự giác</b>. Muốn dán hình vào tài liệu, có thể dùng “Sao chép ảnh” trên trình duyệt hỗ trợ hoặc tải PNG rồi chèn vào tài liệu.</p>
   </div>
   <div id="certificateStatus" class="cert-status" role="status" aria-live="polite"></div>
 </div>
@@ -458,13 +458,13 @@ function certificateTextContent(item){
  return ['CHỨNG NHẬN HOÀN THÀNH BÀI HỌC',
   'Bài học: '+item.course,
   'Họ và tên: '+item.fullName,
-  'Mã sinh viên: '+item.studentId,
-  'Mã lớp: '+item.classCode,
+  'Mã học viên: '+item.studentId,
+  'Lớp / Khóa: '+item.classCode,
   'Tiến độ: Hoàn thành 11/11 mục lý thuyết và tương tác',
   'Kiểm tra cuối bài: Trả lời đủ 12/12 câu; đúng '+item.quizCorrect+'/12 câu',
   'Ngày tạo chứng nhận: '+certificateDate(item),
   'Mã chứng nhận: '+item.certificateId,
-  'Ghi chú: Chứng nhận được tạo tự động trên trang học liệu HTML (offline). Không phải chứng chỉ chính thức do nhà trường cấp.'].join('\n');
+  'Ghi chú: Chứng nhận được tạo tự động trên trang học liệu HTML (offline). Minh chứng hoàn thành bài học tương tác.'].join('\n');
 }
 function certificateStatusMessage(text,isError=false){
  const el=document.getElementById('certificateStatus');el.textContent=text;el.style.color=isError?'#a44334':'#176f54';
@@ -493,10 +493,10 @@ function drawCertificate(item){
  ctx.fillStyle='#d1b16c';ctx.fillRect(650,151,300,4);
  ctext('CHỨNG NHẬN',247,83,'#0b4778','750');
  ctext('HOÀN THÀNH BÀI HỌC',307,45,'#256b94','700');
- ctext('Trân trọng xác nhận sinh viên',384,29,'#516c81','500');
+ ctext('Trân trọng xác nhận học viên',384,29,'#516c81','500');
  ctext(item.fullName,470,67,'#102e53','750',1350,33);
  ctx.strokeStyle='#c5a960';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(320,495);ctx.lineTo(1280,495);ctx.stroke();
- ctext('Mã sinh viên: '+item.studentId+'     •     Mã lớp: '+item.classCode,543,29,'#37556f','600',1300,24);
+ ctext('Mã học viên: '+item.studentId+'     •     Lớp / Khóa: '+item.classCode,543,29,'#37556f','600',1300,24);
  ctext('đã hoàn thành lộ trình tương tác của',606,29,'#506980','500');
  ctext(item.course,662,43,'#0c5c91','700',1330,27);
  const boxY=715;
@@ -505,7 +505,7 @@ function drawCertificate(item){
  ctext('Ngày tạo: '+certificateDate(item),849,26,'#4e687a','500');
  ctext('Mã chứng nhận: '+item.certificateId,890,25,'#315c79','650');
  ctx.strokeStyle='#d0dde7';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(180,926);ctx.lineTo(1420,926);ctx.stroke();
- ctext('Minh chứng tự học (offline) • Không phải chứng chỉ chính thức do nhà trường cấp',948,19,'#66798a','500',1370,17);
+ ctext('Minh chứng tự học (offline) • Đã hoàn thành đầy đủ lý thuyết và kiểm tra tương tác',948,19,'#66798a','500',1370,17);
  ctx.lineWidth=3;ctx.strokeStyle='#d2b26c';ctx.strokeRect(35,36,w-70,h-72);
 }
 function refreshCertificateUI(){

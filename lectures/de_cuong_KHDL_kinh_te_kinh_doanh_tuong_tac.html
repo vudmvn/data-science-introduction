@@ -131,9 +131,9 @@
       <div>
         <span class="kicker">06 / CHỨNG NHẬN ĐỀ CƯƠNG</span>
         <h2>Minh chứng Tìm hiểu & Hoàn thành Đề cương</h2>
-        <p>Sinh viên điền thông tin cá nhân để tạo chứng nhận học tập trực tuyến (kết xuất ảnh PNG độ nét cao hoặc văn bản sao chép).</p>
+        <p>Học viên điền thông tin cá nhân để tạo chứng nhận học tập trực tuyến (kết xuất ảnh PNG độ nét cao hoặc văn bản sao chép).</p>
       </div>
-      <span class="source">Học liệu số · NEU Data Science</span>
+      <span class="source">Học liệu số · Data Science</span>
     </div>
 
     <article class="panel cert-section">
@@ -154,16 +154,16 @@
 
       <div class="cert-form-grid">
         <div class="cert-form-item">
-          <label for="certFullName">Họ và tên sinh viên</label>
+          <label for="certFullName">Họ và tên học viên</label>
           <input type="text" id="certFullName" placeholder="Ví dụ: Nguyễn Văn An" autocomplete="name">
         </div>
         <div class="cert-form-item">
-          <label for="certStudentId">Mã số sinh viên (MSSV)</label>
+          <label for="certStudentId">Mã học viên / ID</label>
           <input type="text" id="certStudentId" placeholder="Ví dụ: 11210001" autocomplete="off">
         </div>
         <div class="cert-form-item">
-          <label for="certClassCode">Mã lớp học phần / Khóa</label>
-          <input type="text" id="certClassCode" placeholder="Ví dụ: KHDL.01 - K65" autocomplete="off">
+          <label for="certClassCode">Lớp / Khóa học</label>
+          <input type="text" id="certClassCode" placeholder="Ví dụ: KHDL.01" autocomplete="off">
         </div>
       </div>
 
@@ -185,7 +185,7 @@
         </div>
 
         <div class="cert-report" id="certificateText" aria-label="Nội dung chứng nhận có thể sao chép"></div>
-        <p class="cert-warning">💡 <b>Ghi chú:</b> Chứng nhận này là minh chứng tự giác học tập (offline self-report) được tạo tự động và lưu trên trình duyệt của sinh viên. Không có chữ ký số hoặc giá trị thay thế văn bằng, chứng chỉ chính thức của Trường Đại học Kinh tế Quốc dân. Khi cần nộp minh chứng, sinh viên nhấn <b>Tải chứng nhận PNG</b> hoặc <b>Sao chép ảnh</b> để dán vào bài tập/báo cáo.</p>
+        <p class="cert-warning">💡 <b>Ghi chú:</b> Chứng nhận này là minh chứng tự giác học tập (offline self-report) được tạo tự động và lưu trên trình duyệt của người học. Khi cần lưu trữ hoặc nộp minh chứng, người học nhấn <b>Tải chứng nhận PNG</b> hoặc <b>Sao chép ảnh</b> để dán vào bài tập/báo cáo.</p>
       </div>
 
       <div id="certificateStatus" class="cert-status" role="status" aria-live="polite"></div>
@@ -343,7 +343,7 @@ function certificateRandomId() {
   const bytes = new Uint8Array(6);
   if (window.crypto && window.crypto.getRandomValues) window.crypto.getRandomValues(bytes);
   else for (let i = 0; i < bytes.length; i++) bytes[i] = Math.floor(Math.random() * 256);
-  return 'DC-NEU-' + new Date().getFullYear() + '-' + Array.from(bytes, x => x.toString(16).padStart(2, '0')).join('').toUpperCase();
+  return 'DC-' + new Date().getFullYear() + '-' + Array.from(bytes, x => x.toString(16).padStart(2, '0')).join('').toUpperCase();
 }
 
 function certificateDate(item) {
@@ -381,22 +381,22 @@ function certificateTextContent(item) {
   return [
     '========================================================================',
     '       CHỨNG NHẬN HOÀN THÀNH TÌM HIỂU ĐỀ CƯƠNG CHI TIẾT HỌC PHẦN',
-    '       TRƯỜNG ĐẠI HỌC KINH TẾ QUỐC DÂN — KHOA KHDL & TTNT',
+    '       CỔNG HỌC LIỆU TRỰC TUYẾN — KHÓA HỌC KHOA HỌC DỮ LIỆU',
     '========================================================================',
     '',
-    `Họ và tên sinh viên:    ${item.fullName}`,
-    `Mã số sinh viên (MSSV): ${item.studentId}`,
-    `Mã lớp học phần:        ${item.classCode}`,
-    `Tên học phần:           Khoa học Dữ liệu Cơ bản trong Kinh tế và Kinh doanh`,
-    `Mã học phần:            FDA.6.1.2.01.V (3 Tín chỉ, 10 Tuần học, 20 Chuẩn CLO)`,
-    `Tiến độ đề cương:       Đã khám phá ${item.weeksDone}/10 tuần học`,
+    `Họ và tên:        ${item.fullName}`,
+    `Mã học viên:      ${item.studentId}`,
+    `Lớp / Khóa học:   ${item.classCode}`,
+    `Chương trình:     Khoa học Dữ liệu Cơ bản trong Kinh tế và Kinh doanh`,
+    `Lộ trình:         10 Tuần học tập, 20 Chuẩn kỹ năng`,
+    `Tiến độ đề cương: Đã khám phá ${item.weeksDone}/10 tuần học`,
     quizInfo,
-    `Thời gian cấp:          ${certificateDate(item)}`,
-    `Mã chứng nhận:          ${item.certificateId}`,
+    `Thời gian cấp:    ${certificateDate(item)}`,
+    `Mã chứng nhận:    ${item.certificateId}`,
     '',
     '------------------------------------------------------------------------',
     'Minh chứng học tập tự giác (offline) trên hệ thống Cổng học liệu số.',
-    'Không thay thế văn bằng, chứng chỉ chính thức do nhà trường cấp.',
+    'Hoàn thành các bài học và bài kiểm tra tự chấm theo đề cương.',
     '========================================================================'
   ].join('\n');
 }
@@ -427,9 +427,9 @@ function drawSeal(ctx, cx, cy) {
   ctx.fillStyle = '#f8f5ee';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.font = 'bold 15px "Segoe UI", Arial, sans-serif';
-  ctx.fillText('NEU', cx, cy - 10);
-  ctx.font = 'bold 10px "Segoe UI", Arial, sans-serif';
+  ctx.font = 'bold 13px "Segoe UI", Arial, sans-serif';
+  ctx.fillText('CERTIFIED', cx, cy - 10);
+  ctx.font = 'bold 9.5px "Segoe UI", Arial, sans-serif';
   ctx.fillText('DATA SCIENCE', cx, cy + 8);
   ctx.fillStyle = '#cda452';
   ctx.font = 'bold 9px "Segoe UI", Arial, sans-serif';
@@ -507,9 +507,9 @@ function drawCertificate(item) {
     ctx.fillText(content, 800, y);
   }
 
-  // Header Institution
-  ctext('TRƯỜNG ĐẠI HỌC KINH TẾ QUỐC DÂN  •  KHOA KHOA HỌC DỮ LIỆU VÀ TRÍ TUỆ NHÂN TẠO', 115, 23, '#214e75', '700', 1300);
-  ctext('CỔNG HỌC LIỆU ĐIỆN TỬ  •  ĐỀ CƯƠNG CHI TIẾT HỌC PHẦN', 145, 17, '#507698', '600', 1200);
+  // Header
+  ctext('CỔNG HỌC LIỆU TRỰC TUYẾN  •  DATA SCIENCE & ANALYTICS', 115, 23, '#214e75', '700', 1300);
+  ctext('ĐỀ CƯƠNG CHI TIẾT & LỘ TRÌNH HỌC TẬP', 145, 17, '#507698', '600', 1200);
 
   // Gold divider
   ctx.fillStyle = '#cda452';
@@ -520,10 +520,10 @@ function drawCertificate(item) {
   ctext('HOÀN THÀNH TÌM HIỂU ĐỀ CƯƠNG MÔN HỌC', 296, 32, '#186896', '750');
 
   // Confirmation
-  ctext('Trân trọng chứng nhận sinh viên', 362, 23, '#5c748a', '500');
+  ctext('Trân trọng chứng nhận học viên', 362, 23, '#5c748a', '500');
 
   // Student Name
-  ctext(item.fullName || 'SINH VIÊN ĐẠI HỌC KINH TẾ QUỐC DÂN', 438, 54, '#0d2847', '800', 1300, 26);
+  ctext(item.fullName || 'HỌC VIÊN KHÓA HỌC', 438, 54, '#0d2847', '800', 1300, 26);
 
   // Underline
   ctx.strokeStyle = '#cda452';
@@ -534,12 +534,12 @@ function drawCertificate(item) {
   ctx.stroke();
 
   // Student ID & Class
-  ctext(`Mã sinh viên: ${item.studentId || 'Chưa cung cấp'}     •     Mã lớp / Khóa: ${item.classCode || 'KHDL'}`, 502, 25, '#2c4b69', '650', 1250, 20);
+  ctext(`Mã học viên: ${item.studentId || 'Chưa cung cấp'}     •     Lớp / Khóa học: ${item.classCode || 'KHDL'}`, 502, 25, '#2c4b69', '650', 1250, 20);
 
   // Course completion text
   ctext('đã hoàn thành tìm hiểu toàn diện Đề cương chi tiết học phần', 555, 22, '#506c85', '500');
   ctext('KHOA HỌC DỮ LIỆU CƠ BẢN TRONG KINH TẾ VÀ KINH DOANH', 605, 34, '#0c5283', '800', 1320, 24);
-  ctext('Mã học phần: FDA.6.1.2.01.V   •   3 Tín chỉ   •   10 Tuần lộ trình   •   4 Mục tiêu CG   •   20 Chuẩn đầu ra CLO', 644, 19, '#55728a', '600', 1300, 16);
+  ctext('Chương trình đào tạo: 10 Tuần lộ trình   •   4 Khối kiến thức cốt lõi   •   20 Chuẩn kỹ năng', 644, 19, '#55728a', '600', 1300, 16);
 
   // Summary box
   const boxY = 678, boxH = 92;
@@ -554,7 +554,7 @@ function drawCertificate(item) {
 
   // Metadata
   ctext(`Ngày tạo: ${certificateDate(item)}       •       Mã chứng nhận: ${item.certificateId}`, 815, 21, '#48657f', '600', 1200, 16);
-  ctext('Khoa Khoa học Dữ liệu và Trí tuệ Nhân tạo — P.1604 Nhà A1, ĐH Kinh tế Quốc dân, Hà Nội', 848, 17, '#668096', '500', 1200, 14);
+  ctext('Chuyên đề: Khoa học Dữ liệu Cơ bản trong Kinh tế & Kinh doanh (Python Programming & Data Analytics)', 848, 17, '#668096', '500', 1200, 14);
 
   // Footer divider
   ctx.strokeStyle = '#d4e1ed';
@@ -565,7 +565,7 @@ function drawCertificate(item) {
   ctx.stroke();
 
   // Bottom watermark / notice
-  ctext('Minh chứng tự giác học tập trên hệ thống học liệu số (offline) • Không thay thế văn bằng, chứng chỉ chính thức của ĐH KTQD', 915, 16, '#72889c', '500', 1360, 14);
+  ctext('Minh chứng tự giác học tập trên hệ thống học liệu số (offline) • Đã hoàn thành các bài học và bài kiểm tra tự chấm', 915, 16, '#72889c', '500', 1360, 14);
 
   // Decorative rosette seal
   drawSeal(ctx, 1360, 770);
@@ -586,9 +586,9 @@ function getOrIssueCert(forceNewId = false) {
   let sid = ($('certStudentId').value || '').trim();
   let cls = ($('certClassCode').value || '').trim();
 
-  if (!name) name = 'Sinh viên NEU';
+  if (!name) name = 'Học viên';
   if (!sid) sid = 'Chưa điền';
-  if (!cls) cls = 'KHDL.NEU';
+  if (!cls) cls = 'KHDL';
 
   saveStudentProfile({ fullName: name, studentId: sid, classCode: cls });
   const qScore = getStoredQuizScore();
