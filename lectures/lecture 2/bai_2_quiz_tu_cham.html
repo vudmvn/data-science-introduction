@@ -1,0 +1,251 @@
+<!doctype html><html lang="vi" data-code-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#12365b"><title>Bài 2 – Quiz tự chấm | Khoa học dữ liệu</title><style>
+:root{--navy:#12365b;--navy2:#0c5074;--teal:#087f86;--teal-light:#e6f5f4;--orange:#eb8b39;--bg:#f3f6fa;--surface:#fff;--line:#dbe4ee;--text:#182d43;--muted:#64768b;--green:#127b54;--red:#b83e55;--shadow:0 8px 28px #17395611;--radius:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;color:var(--text);background:var(--bg);font:15.5px/1.65 system-ui,-apple-system,Segoe UI,Arial,sans-serif}h1,h2,h3,h4{line-height:1.26;letter-spacing:-.02em}h1{font-size:clamp(2rem,3.5vw,3.2rem);margin:.3em 0}h2{font-size:clamp(1.45rem,2vw,2.05rem)}h3{font-size:1.15rem}p{margin:0 0 14px}button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #f6b866;outline-offset:2px}button:disabled{cursor:not-allowed;opacity:.55}small,.small{font-size:.82rem}.muted{color:var(--muted)}.top{background:#ffffffee;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30;backdrop-filter:blur(18px)}.topin{max-width:1220px;margin:auto;display:flex;gap:14px;align-items:center;padding:12px 24px;min-height:65px}.logo{font-weight:850;letter-spacing:-.02em;color:var(--navy);text-decoration:none;white-space:nowrap}.logo .dot{color:var(--teal)}.links{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}.links a{font-size:.81rem;font-weight:750;text-decoration:none;border:1px solid var(--line);padding:7px 12px;border-radius:9px;background:#fff;white-space:nowrap}.links a[aria-current="page"]{background:var(--navy);color:white;border-color:var(--navy)}.shell{max-width:1210px;margin:0 auto;padding:27px 23px 70px}.hero{background:linear-gradient(125deg,#12385f,#086c80);color:#fff;padding:clamp(25px,4.2vw,49px);border-radius:24px;position:relative;overflow:hidden;margin-bottom:22px;box-shadow:0 17px 38px #12385f1c}.hero:after{content:"";width:300px;height:300px;position:absolute;border:55px solid #ffffff10;border-radius:50%;right:-120px;top:-125px;pointer-events:none}.hero>*{position:relative;z-index:1}.hero p{max-width:850px;color:#dcecf4}.kicker{letter-spacing:.13em;text-transform:uppercase;color:#88d8da;font-size:.72rem;font-weight:850}.metrics{display:flex;gap:10px;flex-wrap:wrap;margin-top:19px}.metric{background:#ffffff19;border:1px solid #ffffff36;border-radius:100px;padding:6px 12px;font-size:.8rem;font-weight:700}.layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:22px;align-items:start}.aside{position:sticky;top:89px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px;box-shadow:var(--shadow)}.aside h3{margin:4px 0 14px;font-size:1rem}.aside a{display:block;padding:8px 9px;border-radius:8px;text-decoration:none;font-size:.83rem;color:#3e5974;line-height:1.4}.aside a:hover{background:#ecf7fa;color:#045f75}.main{min-width:0}.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:clamp(17px,2.2vw,25px);box-shadow:var(--shadow);margin-bottom:17px;min-width:0}.card h2,.card h3{margin-top:0}.card p:last-child{margin-bottom:0}.tag{display:inline-flex;align-items:center;background:var(--teal-light);color:#146970;border-radius:100px;font-size:.72rem;font-weight:800;padding:4px 9px;margin-bottom:8px}.tag.orange{background:#fff0e4;color:#97531d}.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:18px 0}.btn{border:1px solid var(--line);padding:9px 14px;border-radius:10px;background:white;color:var(--navy);font-weight:760;text-decoration:none;font-size:.87rem;line-height:1.4;display:inline-flex;align-items:center;justify-content:center;gap:7px}.btn:hover{background:#ecf7fa}.btn.primary{background:var(--navy);color:#fff;border-color:var(--navy)}.btn.primary:hover{background:var(--navy2)}.btn.teal{background:var(--teal);color:#fff;border-color:var(--teal)}.btn.outline-danger{color:var(--red);border-color:#edc1cb}.btn.small{padding:6px 10px;font-size:.76rem}.pill{font-size:.75rem;border:1px solid var(--line);padding:5px 10px;border-radius:100px;color:var(--muted);white-space:nowrap}.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.push{margin-left:auto}.progress{background:#e4edf4;border-radius:20px;height:10px;overflow:hidden}.progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#138c91,#3cab8e);transition:width .25s}.num{font-weight:850;color:var(--navy);font-size:1.7rem;line-height:1.2}.panel{background:#f0f8fa;border:1px solid #d6e9ee;padding:16px;border-radius:12px;margin:15px 0}.panel.gold{background:#fff7eb;border-color:#f5dfbd}.panel.warn{background:#fff2f3;border-color:#f4d3d8}.score-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.score-grid>div{background:#f5f9fb;border:1px solid var(--line);padding:14px;border-radius:12px}.question{scroll-margin-top:95px}.qhead{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;margin-bottom:14px}.qhead h3{margin:4px 0 0}.qnum{font-size:.71rem;letter-spacing:.08em;font-weight:850;color:var(--teal)}.choices{display:grid;gap:9px}.choice{display:flex;align-items:flex-start;gap:11px;padding:11px 13px;border:1px solid #d8e3ed;border-radius:11px;cursor:pointer;background:#fff;line-height:1.5}.choice:hover{background:#f5fafc;border-color:#b9d3dd}.choice:has(input:checked){border-color:#16858b;background:#eaf7f6}.choice input{accent-color:#087f86;flex:none;margin-top:5px;width:17px;height:17px}.choice.correct{border-color:#57b192;background:#ecfaf3}.choice.incorrect{border-color:#d78899;background:#fff1f2}.feedback{display:none;background:#f2f8fc;border-left:4px solid var(--teal);padding:13px 15px;border-radius:0 9px 9px 0;margin-top:14px;font-size:.91rem}.feedback.visible{display:block}.feedback.bad{border-color:var(--red);background:#fff2f3}.mark{display:inline-block;font-size:.78rem;font-weight:850;padding:3px 8px;border-radius:8px;background:#ebf0f5;color:#365870}.mark.ok{background:#e2f6e9;color:#11643e}.mark.bad{background:#ffeaed;color:#9d2f45}.sect{scroll-margin-top:90px}.sect-title{margin:28px 0 15px;color:var(--navy)}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff}.field label,.field legend{display:block;font-size:.88rem;font-weight:700;line-height:1.5}.field select,.field input[type="number"],.field input[type="text"],.field textarea{display:block;width:100%;padding:10px 11px;border:1px solid #bbcbd9;border-radius:9px;color:var(--text);background:#fff;margin-top:9px}.field input[type="number"]{font-variant-numeric:tabular-nums}.field select{min-width:0}.multi{display:grid;gap:5px;margin-top:8px}.multi label{display:flex;gap:9px;align-items:flex-start;cursor:pointer;font-size:.82rem;font-weight:500}.multi input{accent-color:#117982;margin-top:5px}.field.isok{border-color:#68b49c;background:#f0faf6}.field.isbad{border-color:#df9ca6;background:#fff8f8}.explanation{display:none;font-weight:400;font-size:.79rem;line-height:1.55;color:#37516c;margin-top:11px;background:#eef5fa;padding:9px 10px;border-radius:8px}.explanation.visible{display:block}.taskhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:8px}.taskhead h3{margin:0 0 5px}.taskscore{font-size:.84rem;font-weight:800;color:var(--navy);background:#e9f2f9;border-radius:9px;padding:5px 11px}.data-table{border-collapse:collapse;width:100%;font-size:.85rem;margin:12px 0}.data-table th,.data-table td{padding:10px 12px;border:1px solid var(--line);text-align:left}.data-table th{background:#eff5f9}.tablewrap{overflow-x:auto}.sticky-actions{position:sticky;bottom:0;z-index:10;background:#fffffff5;backdrop-filter:blur(13px);border:1px solid var(--line);box-shadow:0 -7px 33px #1b3c5a19;padding:12px 15px;border-radius:13px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}.resultbox{border-top:4px solid var(--teal)}.resultbox h2{margin:0 0 10px}.list-tight{padding-left:22px;margin:10px 0}.list-tight li{margin-bottom:8px}.footer{border-top:1px solid var(--line);color:var(--muted);margin-top:40px;padding:20px 0;text-align:center;font-size:.79rem}.live{font-size:.78rem;color:var(--muted)}.hide{display:none!important}
+@media(max-width:970px){.layout{grid-template-columns:1fr}.aside{position:static;display:flex;gap:7px;flex-wrap:wrap;padding:10px}.aside h3{width:100%;margin:3px 5px}.aside a{border:1px solid var(--line);padding:5px 9px}.shell{padding:17px 14px 60px}.hero{border-radius:17px}.score-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.topin{padding:10px 13px;align-items:flex-start;flex-direction:column;gap:5px}.links{margin-left:0}.links a{padding:5px 8px;font-size:.73rem}.hero{padding:23px}.metrics{gap:6px}.metric{font-size:.74rem}.card{padding:17px}.formgrid{grid-template-columns:1fr}.score-grid{grid-template-columns:1fr 1fr}.qhead{flex-direction:column;gap:5px}.sticky-actions{position:static}.toolbar .btn{flex:1}.pill{white-space:normal}}
+@media print{.top,.aside,.sticky-actions,.toolbar .btn,.links{display:none!important}.layout{display:block}.shell{max-width:none}.hero{background:#fff!important;color:#122e4b!important;border:1px solid #ccc;box-shadow:none}.hero p{color:#3c536c}.card{box-shadow:none;break-inside:avoid}.feedback,.explanation{display:block!important}}
+
+/* Thông tin sinh viên: lưu cục bộ, hiển thị trong phiếu kết quả */
+.student-card{border:1px solid #b8dce2;box-shadow:0 7px 27px #153f5c0e;background:linear-gradient(180deg,#ffffff,#f9fcfd)}
+.student-title-row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.student-form-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:14px 0 8px}
+.student-field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.student-field label{font-weight:750;color:#1a405a;font-size:.91rem}
+.student-field input{display:block;width:100%;border:1px solid #b6c8d7;background:white;color:var(--text);border-radius:11px;padding:11px 13px;min-width:0;outline-offset:2px}
+.student-field input:focus{border-color:var(--teal);box-shadow:0 0 0 3px #087f861e}
+.student-form-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:13px}
+.student-form-actions .btn{font-size:.86rem}
+.student-save-status{color:#18634e;font-weight:700;font-size:.84rem}
+.student-guidance{font-size:.84rem;color:var(--muted);margin:12px 0 0}
+.student-result-info{font-weight:700;border-left:4px solid #158c94;padding:10px 12px;background:#edf8f8;margin:10px 0 14px;white-space:pre-line;overflow-wrap:anywhere}
+@media(max-width:760px){.student-form-grid{grid-template-columns:1fr}.student-form-actions{align-items:stretch}.student-form-actions .btn{width:100%}}
+@media print{#profileSave,#switchStudent{display:none!important}.student-card{box-shadow:none}}
+
+/* Chỉ hiển thị kết quả sau khi chọn nút Chấm bài */
+.grade-notice{border:1px solid #a8d5d9;background:#edf9f9;border-radius:12px;padding:12px 15px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:15px 0 4px}
+.grade-notice strong{color:#0d646c}.grade-notice.status-graded{background:#edf8f1;border-color:#b7ddc3}
+.grade-controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:12px}.grade-controls .btn{min-width:146px}
+@media(max-width:560px){.grade-controls .btn{flex:1}}
+
+/* Giao diện khối mã Bài 2 – sáng (mặc định) / tối */
+html[data-code-theme="light"]{
+ --py-bg:#ffffff;--py-fg:#193149;--py-toolbar:#edf4fa;--py-toolbar-fg:#244c67;
+ --py-border:#c6d7e5;--py-button-bg:#ffffff;--py-button-fg:#184b70;
+ --py-output-bg:#f3fafb;--py-output-fg:#174357;--py-note:#4e6880;
+ --py-key:#8a2bb1;--py-string:#137a46;--py-number:#a44900;--py-func:#006fb7;--py-comment:#718096;
+ --py-inline-bg:#e9f2fa;--py-inline-fg:#16466b;
+}
+html[data-code-theme="dark"]{
+ --py-bg:#111e2b;--py-fg:#edf5fc;--py-toolbar:#263f56;--py-toolbar-fg:#e5f4ff;
+ --py-border:#29475e;--py-button-bg:#3b5f78;--py-button-fg:#f5fcff;
+ --py-output-bg:#0c1823;--py-output-fg:#effbee;--py-note:#adc2ce;
+ --py-key:#dfadf8;--py-string:#a7e7ac;--py-number:#ffc98a;--py-func:#8bd7f7;--py-comment:#9bb6c9;
+ --py-inline-bg:#22384a;--py-inline-fg:#daedf9;
+}
+.code-theme-toggle{flex-shrink:0;min-width:128px;border:1px solid #b8cbd9;background:#f3f9fc;
+ color:#134563;padding:8px 12px;border-radius:10px;font-weight:760;font-size:.83rem;line-height:1.3;white-space:nowrap}
+.code-theme-toggle:hover{border-color:#078883;background:#e6f5f4}
+.code-theme-toggle:focus-visible{outline:3px solid #e6a33c;outline-offset:2px}
+.py-inline{display:inline;white-space:normal;overflow-wrap:anywhere;background:var(--py-inline-bg);
+ color:var(--py-inline-fg);border:1px solid var(--py-border);border-radius:5px;padding:2px 5px;
+ font:.91em/1.8 ui-monospace,SFMono-Regular,Consolas,Monaco,monospace;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.py-example{background:var(--py-bg);color:var(--py-fg);border:1px solid var(--py-border);
+ padding:13px 15px;border-radius:11px;font:14px/1.7 ui-monospace,Consolas,monospace;
+ overflow:auto;white-space:pre;tab-size:4}
+@media(max-width:680px){.code-theme-toggle{font-size:.8rem;flex:1;white-space:normal}.topin{flex-wrap:wrap}}
+@media print{.code-theme-toggle{display:none}}
+
+</style></head><body>
+<header class="top"><div class="topin"><a class="logo" href="../../index.html">NEU <span class="dot">/</span> KHOA HỌC DỮ LIỆU <span style="color:#7b8ca0;font-weight:600">• BÀI 2</span></a><nav class="links" aria-label="Ba hoạt động học"><a href="../../index.html">Trang chủ</a><a href="bai_2_bai_giang_tuong_tac.html" >Bài giảng</a><a href="bai_2_quiz_tu_cham.html" aria-current="page">Quiz tự chấm</a><a href="bai_2_bai_tap_tu_lam.html" >Bài tập tự làm</a></nav><button type="button" id="codeThemeToggle" class="code-theme-toggle" aria-label="Đổi giao diện khối code sáng hoặc tối" aria-pressed="false">☀ Code: Sáng</button></div></header>
+<div class="shell"><div class="hero"><div class="kicker">Khoa Khoa học dữ liệu và Trí tuệ nhân tạo · Bộ học liệu tương tác</div><h1>Quiz trắc nghiệm · Bài 2</h1><p>Tự kiểm tra ngôn ngữ Python: Google Colab, biến, kiểu dữ liệu, toán tử, chuyển kiểu, list, tuple, set, indexing và slicing.</p><div class="metrics"><span class="metric">34 câu hỏi</span><span class="metric">Chỉ chấm khi nộp</span><span class="metric">Giải thích từng đáp án</span><span class="metric">Lưu tiến độ</span></div></div><div class="layout"><aside class="aside"><h3>Điều hướng nhanh</h3><a href="#results">Bảng điểm tổng</a><a href="#questions">Danh sách câu hỏi</a><a href="#student-info">Thông tin sinh viên</a><a href="../../index.html">Trang chủ môn học</a><a href="bai_2_bai_giang_tuong_tac.html">Bài giảng</a><a href="bai_2_bai_tap_tu_lam.html">Bài tập tự làm</a></aside><main class="main"><section id="student-info" class="card student-card" aria-labelledby="student-heading">
+  <div class="student-title-row"><div><span class="tag">Thông tin người làm bài</span><h2 id="student-heading" style="margin:8px 0 0">Thông tin sinh viên</h2></div><span class="pill">Lưu trên trình duyệt</span></div>
+  <div class="student-form-grid">
+    <div class="student-field"><label for="studentFullName">Họ và tên</label><input id="studentFullName" type="text" maxlength="100" autocomplete="name" placeholder="Ví dụ: Nguyễn Văn An"></div>
+    <div class="student-field"><label for="studentId">Mã sinh viên</label><input id="studentId" type="text" maxlength="40" autocomplete="off" spellcheck="false" placeholder="Ví dụ: 1126xxxxx"></div>
+    <div class="student-field"><label for="classCode">Mã lớp</label><input id="classCode" type="text" maxlength="50" autocomplete="off" spellcheck="false" placeholder="Ví dụ: KHDL_01"></div>
+  </div>
+  <div class="student-form-actions"><button type="button" id="profileSave" class="btn teal">✓ Lưu thông tin</button><button type="button" id="switchStudent" class="btn outline-danger">↺ Đổi sinh viên / Xóa bài cũ</button><span id="profileStatus" class="student-save-status" role="status" aria-live="polite">Nhập thông tin để lưu.</span></div>
+  <p class="student-guidance">Thông tin được tự lưu khi nhập và được đính kèm trong file kết quả xuất ra. Nút “Làm lại” chỉ xóa câu trả lời, không xóa thông tin sinh viên. Nếu dùng chung máy, chọn “Đổi sinh viên” để xóa cả thông tin lẫn bài làm của người trước. Dữ liệu lưu cục bộ, không tự gửi về giảng viên; có thể mất khi xóa dữ liệu trình duyệt.</p>
+</section>
+
+<section class="card"><span class="tag">Hướng dẫn kiểm tra</span><h2>Trắc nghiệm kiến thức và vận dụng</h2><p>Gồm <b>34 câu hỏi</b>, phân bổ 100 điểm theo độ khó: nhận biết 2 điểm/câu, thông hiểu 3 điểm/câu, vận dụng 4 điểm/câu. Mười câu đầu lấy từ phần ôn tập của tài liệu (PDF tr. 29–31); các câu còn lại được bổ sung để sinh viên luyện tập. Có thể lọc theo chủ đề để ôn tập; khi chấm, toàn bộ 34 câu được tính vào tổng 100 điểm, câu chưa làm được 0 điểm.</p><div class="panel gold"><b>Cách làm:</b> (1) Chọn đáp án (có thể đổi lại nhiều lần, <b>không hiện đúng/sai</b>) → (2) Bấm <b>“Chấm bài”</b> để nộp → (3) Xem tổng điểm, câu đúng/sai và lời giải. Câu bỏ trống được tính 0 điểm. Khi chấm, hệ thống chuyển về xem toàn bộ 34 câu, đáp án và bộ lọc được khóa; chọn “Làm lại” để bắt đầu lượt mới. Có thể lọc chủ đề <b>trước khi chấm</b> để luyện từng phần.</div><div class="toolbar"><label for="filter" style="font-weight:750">Chọn chủ đề:</label><select id="filter" class="btn" style="max-width:240px"><option value="all">Toàn bộ 34 câu</option><option value="Python/Colab">Python / Colab</option><option value="Biến">Biến</option><option value="Kiểu dữ liệu">Kiểu dữ liệu</option><option value="Toán tử">Toán tử</option><option value="Chuỗi & logic">Chuỗi & logic</option><option value="Ép kiểu">Ép kiểu</option><option value="Cấu trúc dữ liệu">Cấu trúc dữ liệu</option><option value="Indexing">Indexing</option><option value="Slicing">Slicing</option></select><span class="pill">Đã trả lời <b id="answered">0</b>/<b id="qcount">34</b></span></div><div class="progress" aria-label="Tiến độ trả lời"><span id="bar"></span></div><div class="grade-notice" id="gradeNotice" role="status"><strong id="gradeStatus">Chưa chấm bài</strong><span id="gradeHint" class="muted">Chọn đáp án sẽ chỉ lưu lựa chọn, không hiện kết quả.</span></div><div class="grade-controls"><button type="button" id="gradeTop" class="btn primary">✓ Chấm bài</button><span class="small muted">Kết quả chỉ hiển thị sau khi bấm “Chấm bài”.</span></div></section>
+<section id="summary" class="card resultbox hide" aria-live="polite"><span class="tag">Kết quả bài làm</span><h2>Phiếu kết quả tự động</h2><p id="resultStudentInfo" class="student-result-info"></p><div class="score-grid"><div><div class="num" id="totalScore">0</div><small>Điểm đạt / 100 điểm</small></div><div><div class="num" id="percent">0%</div><small>Tỷ lệ câu đúng</small></div><div><div class="num" id="answeredFinal">0</div><small>Số câu đã làm</small></div></div><h3 style="margin:20px 0 12px">Kết quả theo chủ đề</h3><div id="topicResults"></div><div class="panel" id="resultAdvice"></div></section>
+<div id="questions"></div><div class="sticky-actions"><button class="btn primary" id="gradeAll" type="button">✓ Chấm bài</button><button class="btn" type="button" id="export" disabled title="Chấm bài trước khi xuất kết quả">↓ Xuất kết quả TXT</button><button class="btn" type="button" id="exportImage" disabled title="Chấm bài trước khi xuất phiếu điểm ảnh">🖼 Xuất phiếu điểm PNG</button><button class="btn outline-danger" id="reset">↺ Làm lại</button><span class="live">Điểm chỉ lưu tại trình duyệt đang sử dụng.</span></div>
+</main></div><footer class="footer">Từ PDF “Bài 2 – Giới thiệu ngôn ngữ Python” (32 trang) · Ví dụ số và bài tập bổ sung là dữ liệu mô phỏng phục vụ giảng dạy · Hoạt động trong trình duyệt, không cần máy chủ.</footer></div><script>
+const BANK = [{"topic":"Kiểu dữ liệu","q":"Kiểu dữ liệu nào dùng để lưu giá trị Đúng hoặc Sai trong Python?","options":["int","str","bool","float"],"answer":2,"why":"Kiểu bool chứa True hoặc False.","level":"Nhận biết","points":2,"original":true},{"topic":"Biến","q":"Biến nào dưới đây được đặt tên hợp lệ trong Python?","options":["2so_ly","gia-ca-phe","while","so_ly"],"answer":3,"why":"Tên biến không bắt đầu bằng số, không có dấu trừ và không trùng từ khóa.","level":"Nhận biết","points":2,"original":true},{"topic":"Toán tử","q":"Kết quả của 7 % 3 là gì?","options":["2","1","3","2.3333"],"answer":1,"why":"7 = 3 × 2 + 1 nên 7 % 3 bằng 1.","level":"Nhận biết","points":2,"original":true},{"topic":"Toán tử","q":"Phép toán nào dùng để lấy thương nguyên của phép chia (với các số dương trong ví dụ)?","options":["/","%","//","**"],"answer":2,"why":"// là phép chia lấy phần nguyên theo quy tắc làm tròn xuống; / trả về float.","level":"Nhận biết","points":2,"original":true},{"topic":"Ép kiểu","q":"Cho so_ban = \"12\". Cách chuyển thành số nguyên để tính toán là gì?","options":["float(so_ban)","str(so_ban)","bool(so_ban)","int(so_ban)"],"answer":3,"why":"int(\"12\") trả về số nguyên 12.","level":"Nhận biết","points":2,"original":true},{"topic":"Cấu trúc dữ liệu","q":"Kiểu dữ liệu nào lưu nhiều phần tử có thứ tự và có thể thay đổi được?","options":["tuple","set","list","bool"],"answer":2,"why":"list giữ thứ tự và cho phép thêm, sửa, xóa phần tử.","level":"Nhận biết","points":2,"original":true},{"topic":"Indexing","q":"Với thuc_don = [\"Đen\", \"Sữa\", \"Bạc xỉu\", \"Trà đào\"], thuc_don[2] là gì?","options":["Đen","Sữa","Bạc xỉu","Trà đào"],"answer":2,"why":"Python bắt đầu đếm từ chỉ số 0, nên [2] là phần tử thứ ba.","level":"Nhận biết","points":2,"original":true},{"topic":"Indexing","q":"Với thuc_don = [\"Đen\", \"Sữa\", \"Bạc xỉu\", \"Trà đào\"], thuc_don[-1] là gì?","options":["Đen","Sữa","Bạc xỉu","Trà đào"],"answer":3,"why":"Chỉ số -1 truy cập phần tử cuối cùng.","level":"Nhận biết","points":2,"original":true},{"topic":"Cấu trúc dữ liệu","q":"Đặc điểm nào đúng của set trong Python?","options":["Cho phép lưu hai phần tử bằng nhau","Có thứ tự cố định như list","Tự loại bỏ phần tử trùng","Luôn truy cập bằng chỉ số"],"answer":2,"why":"Set chỉ giữ phần tử duy nhất, không có indexing theo vị trí.","level":"Nhận biết","points":2,"original":true},{"topic":"Cấu trúc dữ liệu","q":"Phát biểu nào đúng về list và tuple?","options":["Cả hai đều không thể sửa","Tuple cho phép gán thay phần tử","List sửa được, tuple không sửa được","Tuple được khai báo bằng cặp ngoặc vuông"],"answer":2,"why":"List mutable; tuple immutable.","level":"Nhận biết","points":2,"original":true},{"topic":"Python/Colab","q":"Trong Google Colab, thao tác phổ biến để chạy một ô Code cell là gì?","options":["Ctrl + S","Shift + Enter","Alt + F4","Ctrl + F"],"answer":1,"why":"Shift + Enter chạy cell hiện tại và chuyển sang cell tiếp theo.","level":"Thông hiểu","points":3,"original":false},{"topic":"Python/Colab","q":"Text cell trong Colab chủ yếu dùng để làm gì?","options":["Thực thi mã Python","Lưu ảnh kết quả tạm","Viết mô tả bằng Markdown","Khởi tạo bộ nhớ GPU"],"answer":2,"why":"Text cell hiển thị chú thích và Markdown, không thực thi mã Python như Code cell.","level":"Thông hiểu","points":3,"original":false},{"topic":"Python/Colab","q":"Lệnh nào in ra dòng chữ NeuTech Coffee?","options":["echo(\"NeuTech Coffee\")","print(\"NeuTech Coffee\")","show(\"NeuTech Coffee\")","output(\"NeuTech Coffee\")"],"answer":1,"why":"Python dùng print() để hiển thị thông tin.","level":"Thông hiểu","points":3,"original":false},{"topic":"Biến","q":"Sau khi thực hiện so_ban = 12 rồi so_ban = 15, giá trị so_ban là gì?","options":["12","27","15","\"12 15\""],"answer":2,"why":"Toán tử = gán lại giá trị mới; phép gán sau thay giá trị trước.","level":"Thông hiểu","points":3,"original":false},{"topic":"Kiểu dữ liệu","q":"Với don_gia = 25000, type(don_gia).__name__ là gì?","options":["\"float\"","\"str\"","\"int\"","\"bool\""],"answer":2,"why":"25000 là literal số nguyên nên thuộc kiểu int.","level":"Thông hiểu","points":3,"original":false},{"topic":"Kiểu dữ liệu","q":"Kết quả của 6 / 3 trong Python 3 là gì?","options":["2","2.0","3","0"],"answer":1,"why":"Toán tử / trả về float kể cả khi chia hết.","level":"Thông hiểu","points":3,"original":false},{"topic":"Toán tử","q":"Kết quả của 2 ** 3 là gì?","options":["6","8","9","1"],"answer":1,"why":"** là toán tử lũy thừa, 2³ = 8.","level":"Thông hiểu","points":3,"original":false},{"topic":"Toán tử","q":"Kết quả của 17 // 5 là gì?","options":["2","3","3.4","5"],"answer":1,"why":"17 / 5 = 3,4; chia // lấy phần nguyên (floor) bằng 3 với số dương.","level":"Thông hiểu","points":3,"original":false},{"topic":"Chuỗi & logic","q":"Cho mon = \"Trà đào\". Kiểu của mon là gì?","options":["int","bool","str","list"],"answer":2,"why":"Giá trị có dấu nháy là chuỗi str.","level":"Thông hiểu","points":3,"original":false},{"topic":"Chuỗi & logic","q":"Kết quả của (80000 >= 50000) and True là gì?","options":["True","False","80000","None"],"answer":0,"why":"Hai điều kiện đều đúng nên and trả về True.","level":"Thông hiểu","points":3,"original":false},{"topic":"Chuỗi & logic","q":"Với la_thanh_vien = False, not la_thanh_vien trả về gì?","options":["False","\"False\"","True","0"],"answer":2,"why":"not đảo giá trị Boolean False thành True.","level":"Thông hiểu","points":3,"original":false},{"topic":"Ép kiểu","q":"Kết quả của int(\"12\") + 3 là gì?","options":["\"123\"","15","12.3","Lỗi"],"answer":1,"why":"int(\"12\") chuyển từ chuỗi sang 12, cộng 3 bằng 15.","level":"Thông hiểu","points":3,"original":false},{"topic":"Indexing","q":"Danh sách a = [10, 20, 30, 40]. Giá trị a[-2] là gì?","options":["10","20","30","40"],"answer":2,"why":"-2 là phần tử thứ hai từ cuối: 30.","level":"Thông hiểu","points":3,"original":false},{"topic":"Slicing","q":"Với a = [\"Đen\", \"Sữa\", \"Bạc xỉu\", \"Trà đào\"], a[1:3] là gì?","options":["[\"Đen\", \"Sữa\", \"Bạc xỉu\"]","[\"Sữa\", \"Bạc xỉu\"]","[\"Sữa\", \"Bạc xỉu\", \"Trà đào\"]","[\"Đen\", \"Sữa\"]"],"answer":1,"why":"Slice lấy vị trí 1 và 2, không bao gồm vị trí 3.","level":"Thông hiểu","points":3,"original":false},{"topic":"Cấu trúc dữ liệu","q":"Với a = {\"trà\", \"cà phê\", \"trà\"}, len(a) bằng bao nhiêu?","options":["1","2","3","0"],"answer":1,"why":"Set gộp hai giá trị \"trà\" trùng thành một, còn hai phần tử duy nhất.","level":"Thông hiểu","points":3,"original":false},{"topic":"Cấu trúc dữ liệu","q":"Dòng lệnh nào thay món đầu của list thuc_don bằng \"Cà phê muối\"?","options":["thuc_don(0) = \"Cà phê muối\"","thuc_don[0] = \"Cà phê muối\"","thuc_don{0} = \"Cà phê muối\"","tuple(thuc_don)[0] = \"Cà phê muối\""],"answer":1,"why":"Chỉ số phần tử list dùng ngoặc vuông và có thể gán.","level":"Thông hiểu","points":3,"original":false},{"topic":"Toán tử","q":"Quán bán 3 ly 35.000đ và 2 ly 25.000đ, tổng tiền trước ưu đãi là bao nhiêu?","options":["155000","130000","160000","145000"],"answer":0,"why":"3×35.000 + 2×25.000 = 155.000đ.","level":"Vận dụng","points":4,"original":false},{"topic":"Chuỗi & logic","q":"Chính sách: khách được giảm khi là thành viên VÀ hóa đơn từ 50.000đ. Với thanh_vien=True và tong=49000, biểu thức thanh_vien and tong>=50000 trả về gì?","options":["True","False","49000","Lỗi kiểu dữ liệu"],"answer":1,"why":"Điều kiện thành viên đúng nhưng tổng tiền chưa đạt 50.000 nên kết quả False.","level":"Vận dụng","points":4,"original":false},{"topic":"Ép kiểu","q":"Đoạn lệnh nào in chính xác chuỗi \"3 ly Trà đào = 105000đ\" khi don_gia=35000, so_ly=3 và mon=\"Trà đào\"?","options":["print(so_ly + \" ly \" + mon + \" = \" + don_gia*so_ly + \"đ\")","print(str(so_ly) + \" ly \" + mon + \" = \" + str(don_gia*so_ly) + \"đ\")","print(\"so_ly ly mon = 105000đ\")","print(str(so_ly) + mon + str(don_gia))"],"answer":1,"why":"Nối chuỗi với số đòi hỏi đổi số sang str(); phép nhân tính tiền trước.","level":"Vận dụng","points":4,"original":false},{"topic":"Slicing","q":"Với a = [\"A\", \"B\", \"C\", \"D\", \"E\"], kết quả a[1:-1] là gì?","options":["[\"A\", \"B\", \"C\", \"D\"]","[\"B\", \"C\", \"D\"]","[\"B\", \"C\", \"D\", \"E\"]","[\"A\", \"E\"]"],"answer":1,"why":"a[1:-1] bắt đầu từ B và dừng trước phần tử cuối E.","level":"Vận dụng","points":4,"original":false},{"topic":"Toán tử","q":"Với tong=80000, khách chia đều cho 3 người. Biểu thức tong // 3 cho kết quả nào?","options":["26667","26666.666666666668","26666","3"],"answer":2,"why":"Chia nguyên 80.000 // 3 = 26.666, không làm tròn lên.","level":"Vận dụng","points":4,"original":false},{"topic":"Cấu trúc dữ liệu","q":"Có thuc_don = [\"Đen\", \"Sữa\", \"Bạc xỉu\", \"Trà đào\"]. Sau thuc_don[1] = \"Cà phê muối\", thuc_don[:2] là gì?","options":["[\"Đen\", \"Cà phê muối\"]","[\"Cà phê muối\", \"Bạc xỉu\"]","[\"Đen\", \"Sữa\"]","[\"Đen\", \"Cà phê muối\", \"Bạc xỉu\"]"],"answer":0,"why":"Gán thay phần tử chỉ số 1; slice [:2] lấy chỉ số 0 và 1.","level":"Vận dụng","points":4,"original":false},{"topic":"Kiểu dữ liệu","q":"Sau khi chạy x = 12; x = \"12\", type(x).__name__ là gì?","options":["\"int\"","\"float\"","\"str\"","\"bool\""],"answer":2,"why":"Python có kiểu động, sau gán lại x chứa chuỗi.","level":"Vận dụng","points":4,"original":false},{"topic":"Chuỗi & logic","q":"Chính sách: giảm giá nếu là thành viên HOẶC hóa đơn ≥100.000đ. Với thanh_vien=False, tong=120000 thì biểu thức thanh_vien or tong>=100000 cho gì?","options":["True","False","120000","Lỗi"],"answer":0,"why":"Một vế của or đúng (120000 >= 100000) nên biểu thức True.","level":"Vận dụng","points":4,"original":false}];
+const STORE='ds2_quiz_v3';
+const $ = id=>document.getElementById(id);
+const pySafe = x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function pyCodeText(value){
+ const src=String(value);const pat=/(?:\b[A-Za-z_]\w*\s*=\s*(?:\[[^\]\n]*\]|\{[^}\n]*\}|"[^"\n]*"|'[^'\n]*'|\d+|True|False))|(?:\b[A-Za-z_]\w*\[[^\]\n]*\])|(?:\b(?:int|float|bool|str|len|print|type)\([^()\n]*\)(?:\.__name__)?)|(?:\b\d+\s*(?:\/\/|\*\*|%|\/|>=|<=|==)\s*\d+)|(?:\b(?:True|False)\s+(?:and|or)\s+(?:True|False))/g;
+ let out='',last=0,m;
+ while((m=pat.exec(src))!==null){out+=pySafe(src.slice(last,m.index));out+='<code class="py-inline">'+pySafe(m[0])+'</code>';last=pat.lastIndex;}
+ return out+pySafe(src.slice(last));
+}
+
+const safe = x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function load(){try{return JSON.parse(localStorage.getItem(STORE)||'{}')}catch{return {}}}
+const PROFILE_STORE='ds_course_student_profile_v1';
+const old=load(); let answers=old.answers||{},graded=!!old.graded;let student=cleanStudent(hasStudent(old.student||{})?old.student:readSharedProfile());
+function save(){try{localStorage.setItem(STORE,JSON.stringify({answers,graded,student,topic:$('filter')?.value||old.topic||'all',date:new Date().toISOString()}))}catch{}}
+
+function cleanStudent(source){return {fullName:String(source?.fullName||'').slice(0,100),studentId:String(source?.studentId||'').slice(0,40),classCode:String(source?.classCode||'').slice(0,50)}}
+function readSharedProfile(){try{return cleanStudent(JSON.parse(localStorage.getItem(PROFILE_STORE)||'{}'))}catch{return cleanStudent({})}}
+function hasStudent(v){return !!(v.fullName||v.studentId||v.classCode)}
+function getStudentLines(){return ['Họ và tên: '+(student.fullName.trim()||'(chưa nhập)'),'Mã sinh viên: '+(student.studentId.trim()||'(chưa nhập)'),'Mã lớp: '+(student.classCode.trim()||'(chưa nhập)')]}
+function studentFileSuffix(){return student.studentId.trim().replace(/[^A-Za-z0-9_-]/g,'_').slice(0,40)?'_'+student.studentId.trim().replace(/[^A-Za-z0-9_-]/g,'_').slice(0,40):''}
+function refreshStudentResult(){const el=$('resultStudentInfo');if(el)el.textContent=getStudentLines().join('  |  ')}
+function persistStudent(announce){
+  student=cleanStudent({fullName:$('studentFullName').value,studentId:$('studentId').value,classCode:$('classCode').value});
+  save();
+  try{localStorage.setItem(PROFILE_STORE,JSON.stringify(student))}catch{}
+  $('profileStatus').textContent=hasStudent(student)?(announce?'✓ Đã lưu thông tin sinh viên.':'✓ Đã tự lưu thông tin.'):'Chưa nhập thông tin sinh viên.';
+  refreshStudentResult();
+}
+function setupStudentForm(){
+  const fields=[['studentFullName','fullName'],['studentId','studentId'],['classCode','classCode']];
+  fields.forEach(([id,key])=>{$(id).value=student[key];$(id).addEventListener('input',()=>persistStudent(false));});
+  $('profileSave').addEventListener('click',()=>persistStudent(true));
+  $('switchStudent').addEventListener('click',switchStudent);
+  $('profileStatus').textContent=hasStudent(student)?'✓ Đã khôi phục thông tin đã lưu.':'Nhập thông tin để lưu.';
+  refreshStudentResult();
+}
+function switchStudent(){
+  if(!confirm('Đổi sinh viên sẽ xóa thông tin sinh viên hiện tại, mọi câu trả lời và kết quả quiz trên thiết bị này. Bạn có muốn tiếp tục?'))return;
+  answers={};graded=false;student=cleanStudent({});
+  try{localStorage.removeItem(PROFILE_STORE)}catch{}
+  save();setupStudentValues();render();
+  $('profileStatus').textContent='Đã xóa thông tin và bài làm. Mời sinh viên mới nhập thông tin.';
+  $('studentFullName').focus();
+}
+function setupStudentValues(){ $('studentFullName').value=student.fullName;$('studentId').value=student.studentId;$('classCode').value=student.classCode;refreshStudentResult()}
+function selectTopics(){const q=$('filter').value;return q==='all'?BANK.map((_,i)=>i):BANK.map((x,i)=>x.topic===q?i:-1).filter(i=>i>=0)}
+function render(){const indices=selectTopics();$('qcount').textContent=indices.length;$('answered').textContent=indices.filter(i=>Number.isInteger(answers[i])).length;
+$('bar').style.width=(indices.length?indices.filter(i=>Number.isInteger(answers[i])).length/indices.length*100:0)+'%';
+$('questions').innerHTML=indices.map(i=>{let q=BANK[i],v=answers[i],did=graded,correct=v===q.answer;
+let opts=q.options.map((o,j)=>`<label class="choice ${did&&j===q.answer?'correct':''} ${did&&v===j&&!correct?'incorrect':''}"><input type="radio" name="q${i}" value="${j}" ${v===j?'checked':''} ${did?'disabled':''} data-qi="${i}"><span><b>${String.fromCharCode(65+j)}.</b> ${pyCodeText(o)}</span></label>`).join('');
+return `<article id="q${i+1}" class="card question"><div class="qhead"><div><div class="qnum">CÂU ${i+1} • ${safe(q.topic)} ${q.original?'• Câu hỏi từ PDF':''}</div><h3>${pyCodeText(q.q)}</h3></div><span class="pill">${q.points} điểm · ${safe(q.level)}</span></div><div class="choices">${opts}</div><div class="feedback ${did?'visible':''} ${did&&!correct?'bad':''}"><b>${correct?'✓ Chính xác':`✗ ${Number.isInteger(v)?'Chưa chính xác':'Chưa trả lời'}`}</b> · Đáp án: <b>${String.fromCharCode(65+q.answer)}. ${pyCodeText(q.options[q.answer])}</b><div>${safe(q.why)}</div></div></article>`}).join('');
+$('questions').querySelectorAll('input[type=radio]').forEach(el=>el.addEventListener('change',e=>{answers[e.target.dataset.qi]=Number(e.target.value);save();updateProgressOnly()}));
+$('gradeAll').disabled=graded;
+$('gradeTop').disabled=graded;
+$('filter').disabled=graded;
+$('export').disabled=!graded;
+$('exportImage').disabled=!graded;
+$('gradeNotice').classList.toggle('status-graded',graded);
+$('gradeStatus').textContent=graded?'✓ Đã chấm bài':'Chưa chấm bài';
+$('gradeHint').textContent=graded?'Kết quả và giải thích đã được hiển thị. Bấm “Làm lại” nếu muốn làm lượt mới.':'Chọn đáp án sẽ chỉ lưu lựa chọn, không hiện kết quả.';
+if(graded){showResults(indices)}else{$('summary').classList.add('hide')}
+}
+function updateProgressOnly(){const idx=selectTopics();let n=idx.filter(i=>Number.isInteger(answers[i])).length;$('answered').textContent=n;$('bar').style.width=(n/idx.length*100)+'%'}
+function showResults(indices){let correct=indices.filter(i=>answers[i]===BANK[i].answer).length,total=indices.length,answered=indices.filter(i=>Number.isInteger(answers[i])).length;
+$('summary').classList.remove('hide');const weighted=indices.reduce((s,i)=>s+(answers[i]===BANK[i].answer?BANK[i].points:0),0);$('totalScore').textContent=weighted+'/100';$('percent').textContent=(100*correct/total).toFixed(0)+'%';$('answeredFinal').textContent=answered+'/'+total;
+const topics=[...new Set(indices.map(i=>BANK[i].topic))];$('topicResults').innerHTML=topics.map(t=>{let qs=indices.filter(i=>BANK[i].topic===t);let mx=qs.reduce((s,i)=>s+BANK[i].points,0),c=qs.reduce((s,i)=>s+(answers[i]===BANK[i].answer?BANK[i].points:0),0);return `<div class="row" style="margin:8px 0"><b style="min-width:126px">${safe(t)}</b><div class="progress" style="flex:1;min-width:90px"><span style="width:${100*c/mx}%"></span></div><small>${c}/${mx} điểm</small></div>`}).join('');
+$('resultAdvice').textContent=correct===total?'Xuất sắc! Bạn đã trả lời đúng tất cả câu được hiển thị.':correct/total>=.8?'Nắm khá vững kiến thức. Xem phần giải thích tại các câu chưa đúng.':'Nên ôn lại các nhóm có tỷ lệ đúng thấp và làm lại bài.';
+}
+
+function roundRect(ctx,x,y,w,h,r,fill,stroke){if(w<2*r)r=w/2;if(h<2*r)r=h/2;ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();if(fill)ctx.fill();if(stroke)ctx.stroke();}
+function saveCanvasAsPng(canvas,filename){const a=document.createElement('a');a.href=canvas.toDataURL('image/png');a.download=filename;a.click();}
+function downloadImageReport(){
+  if(!graded){alert('Hãy bấm “Chấm bài” trước khi xuất phiếu điểm ảnh.');return;}
+  const indices=BANK.map((_,i)=>i);
+  const nCorrect=indices.filter(i=>answers[i]===BANK[i].answer).length;
+  const nDone=indices.filter(i=>Number.isInteger(answers[i])).length;
+  const weighted=indices.reduce((s,i)=>s+(answers[i]===BANK[i].answer?BANK[i].points:0),0);
+  const topics=[...new Set(BANK.map(q=>q.topic))].map(name=>{
+    const subset=indices.filter(i=>BANK[i].topic===name);
+    return {name,got:subset.reduce((s,i)=>s+(answers[i]===BANK[i].answer?BANK[i].points:0),0),max:subset.reduce((s,i)=>s+BANK[i].points,0)};
+  });
+  const heading='PHIẾU ĐIỂM TỔNG KẾT · QUIZ';
+  const stats=[['Tổng điểm',weighted+'/100'],['Câu đúng',nCorrect+'/34'],['Đã trả lời',nDone+'/34'],['Thang điểm','100 điểm']];
+  const tY=512,tH=Math.max(318,110+topics.length*31);
+  const dY=tY+tH+22,dH=704;
+  const H=dY+dH+74;
+
+  const W=1600, left=70, inner=W-140;
+  const canvas=document.createElement('canvas');
+  canvas.width=W;canvas.height=H;
+  const ctx=canvas.getContext('2d');
+  ctx.fillStyle='#f1f6fb';ctx.fillRect(0,0,W,H);
+  function block(x,y,w,h,fill,r=20){ctx.fillStyle=fill;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill()}
+  function line(text,x,y,size=22,color='#163c56',weight='400',maxWidth){
+    ctx.font=`${weight} ${size}px Arial, sans-serif`;ctx.fillStyle=color;
+    let shown=String(text);
+    if(maxWidth){while(ctx.measureText(shown).width>maxWidth && shown.length>3)shown=shown.slice(0,-2);if(shown!==String(text))shown=shown.replace(/\s+$/,'')+'…'}
+    ctx.fillText(shown,x,y);
+  }
+  block(left,38,inner,164,'#123754',24);
+  line(heading,left+34,100,41,'#ffffff','700',inner-68);
+  line('Bài 2 · Giới thiệu ngôn ngữ Python',left+34,144,23,'#d9f1ff');
+  line('Thời điểm xuất: '+new Date().toLocaleString('vi-VN'),left+34,179,20,'#e2eef7');
+  block(left,220,inner,138,'#ffffff');
+  line('THÔNG TIN SINH VIÊN',left+30,260,22,'#16516d','700');
+  const fields=[['Họ và tên',student.fullName.trim()],['Mã sinh viên',student.studentId.trim()],['Mã lớp',student.classCode.trim()]];
+  fields.forEach(([key,value],i)=>{const x=left+30+i*480;line(key,x,297,17,'#597489','700');line(value||'(chưa nhập)',x,327,24,'#163c56','700',445)});
+  const cardY=378, cardGap=18, cardW=(inner-cardGap*3)/4;
+  const tileColors=['#e3f3ff','#e7f7f1','#fff1da','#f0ecff'];
+  stats.forEach(([label,value],i)=>{const x=left+i*(cardW+cardGap);block(x,cardY,cardW,112,tileColors[i],17);line(label,x+22,422,19,'#526b7f','700',cardW-40);line(value,x+22,467,32,'#123e59','700',cardW-40)});
+
+  block(left,tY,inner,tH,'#ffffff');
+  line('ĐIỂM THEO CHỦ ĐỀ',left+30,tY+45,25,'#154969','700');
+  topics.forEach((t,i)=>{
+    const y=tY+90+i*31;
+    line(t.name,left+34,y,20,'#2b546d','600',280);
+    block(left+310,y-18,850,15,'#e5edf2',8);
+    if(t.got>0)block(left+310,y-18,850*t.got/t.max,15,'#28a9a1',8);
+    line(t.got+'/'+t.max+' điểm',left+1210,y,21,'#164c68','700');
+  });
+  block(left,dY,inner,dH,'#ffffff');
+  line('ĐIỂM CHI TIẾT THEO CÂU',left+30,dY+44,25,'#154969','700');
+  const colW=676,colGap=24,rowH=36,start=dY+88;
+  BANK.forEach((q,i)=>{
+    const col=i<17?0:1,row=col===0?i:i-17;
+    const x=left+30+col*(colW+colGap),y=start+row*rowH;
+    block(x,y-22,colW,29,row%2===0?'#f0f6fa':'#f8fbfd',8);
+    line('Câu '+(i+1),x+11,y-2,18,'#224b65','700');
+    line(q.topic,x+120,y-2,17,'#667f93','400',370);
+    const points=answers[i]===q.answer?q.points:0;
+    line(points+'/'+q.points,x+colW-70,y-2,19,points===q.points?'#14795d':'#ad4942','700');
+  });
+  line('Phiếu điểm tự động từ bài trắc nghiệm HTML chạy offline · Dữ liệu trên thiết bị người học.',left,H-28,17,'#657f92');
+  saveCanvasAsPng(canvas,'phieu_diem_quiz_bai_2'+studentFileSuffix()+'.png');
+}
+
+function gradeAll(){
+  if(graded)return;
+  const indices=BANK.map((_,i)=>i);
+  const count=indices.filter(i=>Number.isInteger(answers[i])).length;
+  if(!count){alert('Bạn chưa chọn đáp án nào. Hãy trả lời ít nhất một câu trước khi chấm.');return;}
+  if(count<indices.length&&!confirm(`Bạn mới trả lời ${count}/${indices.length} câu. ${indices.length-count} câu chưa làm sẽ tính 0 điểm. Bạn vẫn muốn chấm bài?`))return;
+  $('filter').value='all';graded=true;save();render();$('summary').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetAll(){if(!confirm('Xóa câu trả lời và điểm quiz để bắt đầu lại?'))return;answers={};graded=false;save();render();window.scrollTo({top:0,behavior:'smooth'})}
+function downloadReport(){if(!graded){alert('Hãy bấm “Chấm bài” trước khi xuất kết quả.');return;}const indices=selectTopics();let c=indices.filter(i=>answers[i]===BANK[i].answer).length;const txt=['BÀI 2 — QUIZ TỰ CHẤM',...getStudentLines(),'Ngày xuất: '+new Date().toLocaleString('vi-VN'),'Trạng thái: '+(graded?'Đã chấm':'Chưa nộp chấm'),'Phạm vi: '+($('filter').selectedOptions[0]?.textContent||'Tất cả'),`Điểm: ${indices.reduce((s,i)=>s+(answers[i]===BANK[i].answer?BANK[i].points:0),0)}/100; câu đúng: ${c}/${indices.length}`,'',...indices.map(i=>`Câu ${i+1}: ${BANK[i].q}\nĐiểm: ${answers[i]===BANK[i].answer?BANK[i].points:0}/${BANK[i].points} (${BANK[i].level})\nTrả lời: ${Number.isInteger(answers[i])?BANK[i].options[answers[i]]:'(bỏ trống)'}\nĐáp án: ${BANK[i].options[BANK[i].answer]}\nGiải thích: ${BANK[i].why}\n`)].join('\n');let b=new Blob(['\ufeff'+txt],{type:'text/plain;charset=utf-8'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='ket_qua_quiz_bai_2'+studentFileSuffix()+'.txt';a.click();setTimeout(()=>URL.revokeObjectURL(u),1500)}
+setupStudentForm();$('filter').value=graded?'all':([...$('filter').options].some(o=>o.value===old.topic)?old.topic:'all');$('filter').addEventListener('change',()=>{save();render()});$('gradeTop').addEventListener('click',gradeAll);$('gradeAll').addEventListener('click',gradeAll);$('reset').addEventListener('click',resetAll);$('export').addEventListener('click',downloadReport);$('exportImage').addEventListener('click',downloadImageReport);
+render();
+</script>
+<script>
+/* Cấu hình riêng cho màu vùng code; không can thiệp dữ liệu trả lời hoặc tiến độ. */
+(function(){
+ const key='neu_ds_bai2_code_theme_v1';
+ const btn=document.getElementById('codeThemeToggle');
+ const val=v=>v==='dark'?'dark':'light';
+ function getStored(){try{return localStorage.getItem(key)}catch(e){return null}}
+ function updateNav(v){document.querySelectorAll('.links a[href]').forEach(a=>{
+  try{const url=new URL(a.href,location.href);if(!url.pathname.endsWith('.html'))return;
+   url.searchParams.set('codeTheme',v);a.href=url.href;}catch(e){}
+ });}
+ function setTheme(v,save){v=val(v);document.documentElement.dataset.codeTheme=v;
+  if(btn){btn.textContent=v==='dark'?'🌙 Code: Tối':'☀ Code: Sáng';btn.setAttribute('aria-pressed',String(v==='dark'));
+   btn.title='Đổi giao diện vùng mã sang chế độ '+(v==='dark'?'sáng':'tối');}
+  updateNav(v);
+  if(save){try{localStorage.setItem(key,v)}catch(e){}}
+ }
+ const param=new URLSearchParams(location.search).get('codeTheme');
+ const init=param==='light'||param==='dark'?param:getStored();
+ setTheme(init,false);
+ if(btn)btn.addEventListener('click',()=>setTheme(document.documentElement.dataset.codeTheme==='dark'?'light':'dark',true));
+ window.addEventListener('storage',e=>{if(e.key===key)setTheme(e.newValue,false)});
+})();
+</script>
+</body></html>

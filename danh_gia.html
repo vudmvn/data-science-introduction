@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Quy chế đánh giá, điều kiện dự thi và máy tính điểm mô phỏng (Hệ 10, Điểm chữ, GPA Hệ 4) môn Khoa học dữ liệu cơ bản trong kinh tế và kinh doanh — ĐH Kinh tế Quốc dân (NEU).">
+  <title>Đánh Giá Học Phần & Máy Tính Điểm | KHDL NEU</title>
+  <style>
+    :root {
+      --primary: #1d68bd;
+      --primary-dark: #103f75;
+      --primary-light: #eaf3ff;
+      --accent-cyan: #0b9ea8;
+      --accent-purple: #7952b3;
+      --accent-amber: #d97706;
+      --accent-emerald: #059669;
+      --ink: #111e2f;
+      --muted: #5c6e82;
+      --subtle: #8da2ba;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-subtle: #f1f5f9;
+      --border: #e2e8f0;
+      --border-focus: #3b82f6;
+      --shadow-sm: 0 1px 3px rgba(15,23,42,0.06);
+      --shadow-md: 0 4px 20px -2px rgba(15,23,42,0.08);
+      --shadow-lg: 0 16px 36px -4px rgba(15,23,42,0.12);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    button { cursor: pointer; border: 0; background: transparent; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: -0.3px;
+    }
+    .brand-badge {
+      display: inline-grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #1d68bd, #0b9ea8);
+      color: #fff;
+      font-weight: 900;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(29, 104, 189, 0.25);
+    }
+    .brand-meta {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-meta small {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      transition: color 0.15s ease;
+      padding: 6px 0;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary);
+    }
+    .nav-links a.active {
+      font-weight: 750;
+      border-bottom: 2px solid var(--primary);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(29, 104, 189, 0.25);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--ink);
+    }
+    .btn-outline:hover {
+      background: var(--surface-subtle);
+      border-color: #cbd5e1;
+    }
+    .mobile-toggle {
+      display: none;
+      font-size: 22px;
+      padding: 6px;
+    }
+
+    /* Hero */
+    .page-hero {
+      padding: 48px 0 36px;
+      background: radial-gradient(circle at 85% 15%, #e0f2fe 0%, transparent 45%),
+                  linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .badge-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 12px;
+      background: var(--primary-light);
+      border: 1px solid #bfdbfe;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 750;
+      color: var(--primary-dark);
+      margin-bottom: 14px;
+    }
+    .page-hero h1 {
+      font-size: clamp(28px, 3.2vw, 40px);
+      font-weight: 850;
+      letter-spacing: -0.8px;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .page-hero p {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* Assessment Weights Strip */
+    .weights-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 32px 0 40px;
+    }
+    .weight-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+    .weight-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--primary);
+    }
+    .weight-card:nth-child(1)::before { background: var(--accent-cyan); }
+    .weight-card:nth-child(2)::before { background: var(--primary); }
+    .weight-card:nth-child(3)::before { background: var(--accent-purple); }
+    .weight-card:nth-child(4)::before { background: var(--accent-amber); }
+    .weight-title {
+      font-size: 12px;
+      font-weight: 750;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .weight-pct {
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .weight-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Calculator & Rules Layout */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .card-head {
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .card-head h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    /* Calculator Inputs */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .field-group.full {
+      grid-column: 1 / -1;
+    }
+    .field-group label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .field-group input {
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      padding: 10px 13px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      transition: all 0.15s;
+    }
+    .field-group input:focus {
+      outline: 0;
+      border-color: var(--primary);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(29, 104, 189, 0.15);
+    }
+    .field-group small {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* Results Dashboard */
+    .result-board {
+      background: linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 100%);
+      border: 1px solid #bae6fd;
+      border-radius: var(--radius-md);
+      padding: 22px;
+      margin-top: 20px;
+    }
+    .result-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .metric-box {
+      background: #ffffffcc;
+      border: 1px solid #e0f2fe;
+      border-radius: 10px;
+      padding: 12px 14px;
+      text-align: center;
+    }
+    .metric-label {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--muted);
+    }
+    .metric-value {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--primary);
+      margin-top: 4px;
+    }
+    .metric-value.letter {
+      color: var(--accent-emerald);
+    }
+    .status-badge {
+      display: block;
+      text-align: center;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 800;
+      background: #dcfce7;
+      color: #15803d;
+      border: 1px solid #86efac;
+    }
+    .status-badge.warn {
+      background: #fef3c7;
+      color: #b45309;
+      border-color: #fde68a;
+    }
+    .status-badge.fail {
+      background: #fee2e2;
+      color: #b91c1c;
+      border-color: #fca5a5;
+    }
+
+    /* Rules & Conditions */
+    .rule-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .rule-item:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .rule-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 13px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .rule-text h3 {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .rule-text p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Grading Scale Table */
+    .scale-card {
+      margin-bottom: 60px;
+    }
+    .table-responsive {
+      overflow-x: auto;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: left;
+    }
+    .data-table th, .data-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .data-table th {
+      background: var(--surface-subtle);
+      color: var(--muted);
+      font-weight: 750;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+    }
+    .data-table tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0b1320;
+      color: #94a3b8;
+      padding: 40px 0 30px;
+      font-size: 13px;
+    }
+    .footer a:hover { color: #fff; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-top: 1px solid #1e293b;
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .calc-layout { grid-template-columns: 1fr; }
+      .weights-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 650px) {
+      .weights-grid { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .result-metrics { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        padding: 16px 24px;
+        box-shadow: var(--shadow-md);
+      }
+      .mobile-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand" aria-label="Về trang mục lục">
+          <span class="brand-badge">DS</span>
+          <div class="brand-meta">
+            <span>Data Science</span>
+            <small>ĐH Kinh tế Quốc dân</small>
+          </div>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html">📚 Mục lục bài học</a>
+          <a href="lectures/de_cuong_KHDL_kinh_te_kinh_doanh_tuong_tac.html">📖 Đề cương chi tiết</a>
+          <a href="danh_gia.html" class="active">🧮 Đánh giá & Tính điểm</a>
+          <a href="thuc_hanh.html">💻 Thực hành Python</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="lectures/lecture 2/bai_2_bai_giang_tuong_tac.html" class="btn btn-primary">
+            Học Bài 2 ↗
+          </a>
+          <button class="mobile-toggle" id="menuToggle" aria-label="Mở menu">☰</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="badge-chip">
+        <span>★</span> Quy chế đào tạo tín chỉ NEU
+      </div>
+      <h1>Quy Chế Đánh Giá & Máy Tính Điểm</h1>
+      <p>
+        Tìm hiểu chi tiết tỷ lệ 4 cột điểm thành phần, điều kiện được dự thi kết thúc học phần và thử nghiệm nhập điểm mô phỏng để tính Điểm hệ 10, Điểm chữ và GPA hệ 4.
+      </p>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- 4 Weights Cards -->
+    <div class="weights-grid">
+      <div class="weight-card">
+        <div class="weight-title">1. Chuyên cần</div>
+        <div class="weight-pct" style="color:var(--accent-cyan)">10%</div>
+        <div class="weight-desc">50% điểm bình quân 9 bài luyện tập trắc nghiệm + 50% điểm tham gia diễn đàn môn học.</div>
+      </div>
+
+      <div class="weight-card">
+        <div class="weight-title">2. Kiểm tra số 1</div>
+        <div class="weight-pct" style="color:var(--primary)">20%</div>
+        <div class="weight-desc">Thực hiện vào Tuần 4. Gồm 20 câu trắc nghiệm trực tuyến (kiến thức Tuần 1–4). Tối đa làm 3 lần.</div>
+      </div>
+
+      <div class="weight-card">
+        <div class="weight-title">3. Kiểm tra số 2</div>
+        <div class="weight-pct" style="color:var(--accent-purple)">20%</div>
+        <div class="weight-desc">Thực hiện vào Tuần 8. Gồm 20 câu trắc nghiệm trực tuyến (kiến thức Tuần 5–8). Tối đa làm 3 lần.</div>
+      </div>
+
+      <div class="weight-card">
+        <div class="weight-title">4. Thi cuối kỳ</div>
+        <div class="weight-pct" style="color:var(--accent-amber)">50%</div>
+        <div class="weight-desc">Thi tập trung 20 câu trắc nghiệm trên giấy trong 60 phút. Tỷ lệ: 20% Nhớ, 45% Hiểu, 35% Vận dụng.</div>
+      </div>
+    </div>
+
+    <!-- Simulator & Rules -->
+    <div class="calc-layout">
+      <!-- Calculator -->
+      <section class="card">
+        <div class="card-head">
+          <h2>🧮 Máy tính điểm mô phỏng</h2>
+          <button class="btn btn-outline" id="resetBtn" style="padding:6px 12px;font-size:12px">↺ Đặt lại mặc định</button>
+        </div>
+
+        <div class="form-grid">
+          <div class="field-group">
+            <label for="c-practice">Điểm TB 9 bài luyện tập (0–10)</label>
+            <input type="number" id="c-practice" min="0" max="10" step="0.5" value="8.0">
+            <small>Lấy điểm cao nhất mỗi bài</small>
+          </div>
+
+          <div class="field-group">
+            <label for="c-forum">Điểm diễn đàn (0–10)</label>
+            <input type="number" id="c-forum" min="0" max="10" step="0.5" value="8.0">
+            <small>Tối đa 10 điểm</small>
+          </div>
+
+          <div class="field-group">
+            <label for="c-t1">Kiểm tra 1 - Tuần 4 (0–10)</label>
+            <input type="number" id="c-t1" min="0" max="10" step="0.5" value="7.5">
+            <small>Điểm bình quân các lần làm</small>
+          </div>
+
+          <div class="field-group">
+            <label for="c-t2">Kiểm tra 2 - Tuần 8 (0–10)</label>
+            <input type="number" id="c-t2" min="0" max="10" step="0.5" value="7.0">
+            <small>Điểm bình quân các lần làm</small>
+          </div>
+
+          <div class="field-group full">
+            <label for="c-final">Điểm thi hết học phần (0–10)</label>
+            <input type="number" id="c-final" min="0" max="10" step="0.5" value="6.5">
+            <small>Trắc nghiệm 20 câu trên giấy (60 phút)</small>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px">
+          <label style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer">
+            <input type="checkbox" id="c-time" checked style="accent-color:var(--primary);width:16px;height:16px">
+            Đã hoàn thành thời gian học tập trực tuyến tối thiểu trên hệ thống
+          </label>
+        </div>
+
+        <div class="result-board">
+          <div class="result-metrics">
+            <div class="metric-box">
+              <div class="metric-label">Điểm hệ 10</div>
+              <div class="metric-value" id="outScore10">7.1</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Điểm chữ</div>
+              <div class="metric-value letter" id="outLetter">B</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">GPA hệ 4</div>
+              <div class="metric-value" id="outGpa4">3.0</div>
+            </div>
+          </div>
+          <div class="status-badge" id="outStatus">Đủ điều kiện & Hoàn thành học phần</div>
+        </div>
+      </section>
+
+      <!-- Rules -->
+      <section class="card">
+        <div class="card-head">
+          <h2>⚖️ Điều kiện thi & Đạt học phần</h2>
+          <span style="font-size:12px;color:var(--muted)">Đề cương chính thức</span>
+        </div>
+
+        <div class="rule-item">
+          <div class="rule-num">1</div>
+          <div class="rule-text">
+            <h3>Điều kiện được dự thi kết thúc học phần</h3>
+            <p>
+              Sinh viên phải đáp ứng đồng thời 3 tiêu chí:
+              <br>• Đủ thời gian truy cập học trực tuyến theo quy định.
+              <br>• Điểm chuyên cần (10%) đạt từ <strong>≥ 5.0</strong> trở lên.
+              <br>• Điểm đánh giá quá trình đạt từ <strong>≥ 2.0</strong> trở lên và <strong>không có bài kiểm tra nào bị 0 điểm</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div class="rule-item">
+          <div class="rule-num">2</div>
+          <div class="rule-text">
+            <h3>Điều kiện hoàn thành học phần</h3>
+            <p>
+              Sinh viên được công nhận tích lũy học phần khi:
+              <br>• Điểm tổng kết môn học (thang 10) đạt từ <strong>≥ 4.5</strong> trở lên.
+              <br>• Điểm bài thi kết thúc học phần phải <strong>> 1.0</strong> (tránh điểm liệt).
+            </p>
+          </div>
+        </div>
+
+        <div class="rule-item">
+          <div class="rule-num">3</div>
+          <div class="rule-text">
+            <h3>Quy chế thi lại & học lại</h3>
+            <p>
+              • <strong>Học lại:</strong> Nếu không đủ điều kiện dự thi cuối kỳ hoặc bị điểm F sau khi thi lại.
+              <br>• <strong>Thi lại:</strong> Nếu đủ điều kiện dự thi nhưng điểm thi cuối kỳ hoặc điểm tổng kết chưa đạt chuẩn đầu ra.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Scale Table -->
+    <section class="card scale-card">
+      <div class="card-head">
+        <h2>📊 Bảng Quy Đổi Thang Điểm Tín Chỉ NEU</h2>
+        <span style="font-size:12px;color:var(--muted)">Áp dụng theo quy chế đào tạo ĐH Kinh tế Quốc dân</span>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Điểm Thang 10</th>
+              <th>Điểm Chữ</th>
+              <th>Điểm Hệ 4</th>
+              <th>Xếp Loại Học Lực</th>
+              <th>Ghi Chú</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>8.5 – 10.0</strong></td>
+              <td><span style="color:#059669;font-weight:800">A</span></td>
+              <td><strong>4.0</strong></td>
+              <td>Xuất sắc / Giỏi</td>
+              <td>Đạt học phần loại xuất sắc</td>
+            </tr>
+            <tr>
+              <td><strong>8.0 – 8.4</strong></td>
+              <td><span style="color:#059669;font-weight:800">B+</span></td>
+              <td><strong>3.5</strong></td>
+              <td>Khá giỏi</td>
+              <td>Đạt chuẩn cao</td>
+            </tr>
+            <tr>
+              <td><strong>7.0 – 7.9</strong></td>
+              <td><span style="color:#1d68bd;font-weight:800">B</span></td>
+              <td><strong>3.0</strong></td>
+              <td>Khá</td>
+              <td>Nắm vững kiến thức</td>
+            </tr>
+            <tr>
+              <td><strong>6.5 – 6.9</strong></td>
+              <td><span style="color:#1d68bd;font-weight:800">C+</span></td>
+              <td><strong>2.5</strong></td>
+              <td>Trung bình khá</td>
+              <td>Đạt chuẩn đầu ra</td>
+            </tr>
+            <tr>
+              <td><strong>5.5 – 6.4</strong></td>
+              <td><span style="color:#d97706;font-weight:800">C</span></td>
+              <td><strong>2.0</strong></td>
+              <td>Trung bình</td>
+              <td>Đạt yêu cầu tối thiểu</td>
+            </tr>
+            <tr>
+              <td><strong>5.0 – 5.4</strong></td>
+              <td><span style="color:#d97706;font-weight:800">D+</span></td>
+              <td><strong>1.5</strong></td>
+              <td>Trung bình yếu</td>
+              <td>Cần cải thiện</td>
+            </tr>
+            <tr>
+              <td><strong>4.0 – 4.9</strong></td>
+              <td><span style="color:#d97706;font-weight:800">D</span></td>
+              <td><strong>1.0</strong></td>
+              <td>Yếu (Đạt)</td>
+              <td>Mức sàn tích lũy tín chỉ</td>
+            </tr>
+            <tr style="background:#fff1f2">
+              <td><strong>Dưới 4.0</strong> (hoặc phạm quy chế)</td>
+              <td><span style="color:#dc2626;font-weight:800">F</span></td>
+              <td><strong>0.0</strong></td>
+              <td>Kém (Học lại)</td>
+              <td>Không đạt · Buộc phải đăng ký học lại</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Đại học Kinh tế Quốc dân · Khoa Khoa học Dữ liệu và Trí tuệ Nhân tạo</div>
+        <div>
+          <a href="index.html" style="margin-right:16px">📚 Mục lục bài học</a>
+          <a href="lectures/de_cuong_KHDL_kinh_te_kinh_doanh_tuong_tac.html" style="margin-right:16px">📖 Đề cương</a>
+          <a href="thuc_hanh.html">💻 Thực hành Python</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      'use strict';
+
+      const STORAGE_KEY = 'ds_neu_grade_sim_data';
+
+      function calc() {
+        const p = Math.min(10, Math.max(0, parseFloat(document.getElementById('c-practice').value) || 0));
+        const f = Math.min(10, Math.max(0, parseFloat(document.getElementById('c-forum').value) || 0));
+        const t1 = Math.min(10, Math.max(0, parseFloat(document.getElementById('c-t1').value) || 0));
+        const t2 = Math.min(10, Math.max(0, parseFloat(document.getElementById('c-t2').value) || 0));
+        const finalExam = Math.min(10, Math.max(0, parseFloat(document.getElementById('c-final').value) || 0));
+        const timeOk = document.getElementById('c-time').checked;
+
+        // Lưu vào LocalStorage
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({ p, f, t1, t2, finalExam, timeOk }));
+        } catch (e) {}
+
+        const att = Math.round((0.5 * p + 0.5 * f) * 2) / 2;
+        const proc = Math.round(((t1 + t2) / 2) * 2) / 2;
+        const total = Math.round((att * 0.10 + proc * 0.40 + finalExam * 0.50) * 10) / 10;
+
+        const eligible = timeOk && att >= 5.0 && proc >= 2.0 && t1 > 0 && t2 > 0;
+
+        let letter = 'F';
+        let gpa4 = '0.0';
+
+        if (!eligible) {
+          letter = 'F';
+          gpa4 = '0.0';
+        } else if (total >= 8.5) {
+          letter = 'A'; gpa4 = '4.0';
+        } else if (total >= 8.0) {
+          letter = 'B+'; gpa4 = '3.5';
+        } else if (total >= 7.0) {
+          letter = 'B'; gpa4 = '3.0';
+        } else if (total >= 6.5) {
+          letter = 'C+'; gpa4 = '2.5';
+        } else if (total >= 5.5) {
+          letter = 'C'; gpa4 = '2.0';
+        } else if (total >= 5.0) {
+          letter = 'D+'; gpa4 = '1.5';
+        } else if (total >= 4.0) {
+          letter = 'D'; gpa4 = '1.0';
+        } else {
+          letter = 'F'; gpa4 = '0.0';
+        }
+
+        document.getElementById('outScore10').textContent = total.toFixed(1).replace('.', ',');
+        document.getElementById('outLetter').textContent = letter;
+        document.getElementById('outGpa4').textContent = gpa4;
+
+        const statusEl = document.getElementById('outStatus');
+        if (!eligible) {
+          statusEl.className = 'status-badge fail';
+          statusEl.textContent = 'Không đủ điều kiện dự thi (Học lại)';
+        } else if (total >= 4.5 && finalExam > 1.0) {
+          statusEl.className = 'status-badge';
+          statusEl.textContent = 'Đủ điều kiện & Hoàn thành học phần';
+        } else {
+          statusEl.className = 'status-badge warn';
+          statusEl.textContent = 'Chưa hoàn thành · Cần thi lại';
+        }
+      }
+
+      function restore() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (raw) {
+            const d = JSON.parse(raw);
+            if (d.p !== undefined) document.getElementById('c-practice').value = d.p;
+            if (d.f !== undefined) document.getElementById('c-forum').value = d.f;
+            if (d.t1 !== undefined) document.getElementById('c-t1').value = d.t1;
+            if (d.t2 !== undefined) document.getElementById('c-t2').value = d.t2;
+            if (d.finalExam !== undefined) document.getElementById('c-final').value = d.finalExam;
+            if (d.timeOk !== undefined) document.getElementById('c-time').checked = d.timeOk;
+          }
+        } catch (e) {}
+      }
+
+      ['c-practice', 'c-forum', 'c-t1', 'c-t2', 'c-final', 'c-time'].forEach(id => {
+        document.getElementById(id).addEventListener('input', calc);
+      });
+
+      document.getElementById('resetBtn').addEventListener('click', () => {
+        document.getElementById('c-practice').value = 8.0;
+        document.getElementById('c-forum').value = 8.0;
+        document.getElementById('c-t1').value = 7.5;
+        document.getElementById('c-t2').value = 7.0;
+        document.getElementById('c-final').value = 6.5;
+        document.getElementById('c-time').checked = true;
+        calc();
+      });
+
+      // Mobile Menu
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('open');
+          menuToggle.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+        });
+      }
+
+      restore();
+      calc();
+    })();
+  </script>
+</body>
+</html>

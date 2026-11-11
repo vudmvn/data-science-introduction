@@ -1,0 +1,739 @@
+<!doctype html><html lang="vi" data-code-theme="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bài 2 – Bài giảng Python tương tác | NeuTech Coffee</title><style>
+:root{--navy:#12365b;--navy2:#0c5074;--teal:#087f86;--teal-light:#e6f5f4;--orange:#eb8b39;--bg:#f3f6fa;--surface:#fff;--line:#dbe4ee;--text:#182d43;--muted:#64768b;--green:#127b54;--red:#b83e55;--shadow:0 8px 28px #17395611;--radius:16px}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;color:var(--text);background:var(--bg);font:16px/1.65 system-ui,-apple-system,Segoe UI,Arial,sans-serif}h1,h2,h3{line-height:1.25;letter-spacing:-.025em}h1{font-size:clamp(2rem,4vw,3.1rem);margin:.3em 0}h2{font-size:clamp(1.4rem,2.4vw,2.05rem)}p{margin:0 0 14px}a{color:inherit}button,input,select{font:inherit}button{cursor:pointer}:focus-visible{outline:3px solid #efad58;outline-offset:2px}button:disabled{opacity:.48;cursor:not-allowed}.muted{color:var(--muted)}.small{font-size:.85rem}.top{position:sticky;top:0;z-index:20;background:#ffffffed;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}.topin{max-width:1250px;margin:auto;display:flex;align-items:center;gap:14px;padding:12px 22px}.logo{font-weight:850;color:var(--navy);text-decoration:none;white-space:nowrap}.dot{color:var(--teal)}.links{margin-left:auto;display:flex;flex-wrap:wrap;gap:8px}.links a{text-decoration:none;padding:7px 11px;border:1px solid var(--line);border-radius:9px;background:white;font-weight:700;font-size:.84rem}.links a[aria-current]{background:var(--navy);color:white}.container{max-width:1250px;margin:auto;padding:26px 22px 80px}.hero{background:linear-gradient(125deg,#12385f,#086c80);color:white;padding:clamp(26px,5vw,56px);border-radius:24px;box-shadow:0 18px 40px #12385f20}.hero p{max-width:770px;color:#e1eff9}.badge{display:inline-block;border-radius:10px;background:#ffffff24;padding:5px 11px;font-size:.77rem;font-weight:800;letter-spacing:.04em}.metrics{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}.metrics span{border-radius:999px;background:#ffffff1c;border:1px solid #ffffff30;padding:6px 14px;font-size:.87rem}.shell{display:grid;grid-template-columns:260px minmax(0,1fr);gap:20px;margin-top:23px;align-items:start}.side{position:sticky;top:80px;background:white;border-radius:18px;border:1px solid var(--line);box-shadow:var(--shadow);padding:16px;max-height:calc(100vh - 96px);overflow:auto}.side h3{font-size:1.05rem;margin:5px 2px 12px}.side button{display:block;width:100%;text-align:left;border:0;border-radius:10px;padding:10px;font-size:.87rem;color:#294962;background:transparent;margin:2px 0}.side button.current{background:var(--navy);color:white;font-weight:800}.side button:disabled{color:#899baa;opacity:1;background:#f6f8fb}.progress{width:100%;height:10px;overflow:hidden;border-radius:20px;background:#e5ecf1}.progress span{height:100%;display:block;width:0;background:linear-gradient(90deg,#12a2ac,#2ac899);transition:width .24s}.card{background:white;padding:clamp(19px,2.8vw,33px);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);margin-bottom:18px}.lead{color:var(--muted);font-size:1.07rem}.tag{display:inline-block;font-weight:850;color:#0c7380;background:#e6f5f5;border-radius:8px;padding:4px 11px;font-size:.74rem;letter-spacing:.06em}.pill{font-size:.79rem;padding:5px 10px;border:1px solid var(--line);border-radius:30px;color:#56718d}.stephead{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.lesson{display:none}.lesson.active{display:block}.lesson-body p{margin:13px 0}.code{padding:21px;color:#d9f3f3;background:#122638;border-radius:13px;white-space:pre;overflow-x:auto;font:15px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;margin:18px 0}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:19px 0}.mini{border:1px solid var(--line);background:#f7fafc;border-radius:14px;padding:16px}.mini h3{color:#116f82;margin:0 0 7px;font-size:1rem}.mini p{margin:0}.note{background:#eff7fa;border-left:4px solid var(--teal);padding:14px 16px;border-radius:9px;margin:18px 0}.checkpoint{background:#f7fafa;border:1px solid #d3e5e9;border-radius:15px;margin-top:27px;padding:19px}.checkpoint h3{margin:0 0 9px}.choices{display:grid;gap:9px;margin:14px 0}.choice{display:flex;align-items:flex-start;gap:8px;cursor:pointer;border:1px solid #dae5ec;border-radius:11px;padding:10px 13px;background:#fff}.choice:hover{border-color:var(--teal)}.choice input{margin-top:6px;accent-color:var(--teal)}.choice span{flex:1}.btn{border:1px solid #c8d7e1;border-radius:11px;background:white;padding:10px 18px;font-weight:800;color:#184263}.btn.primary{color:white;background:#0a6887;border-color:#0a6887}.btn.teal{color:white;background:#078883;border-color:#078883}.btn.secondary{background:#edf5f8}.toolbar,.lesson-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:16px}.check-result{font-weight:750;margin-top:13px;min-height:16px}.ok{color:#148352}.bad{color:#be4654}.sim{border:1px dashed #4ab1b2;padding:18px;border-radius:15px;background:#f8fcfc;margin:18px 0}.sim h3{margin:0 0 12px}.sim input[type=number],.sim select,.profile input{border:1px solid #b8cddd;padding:9px 12px;border-radius:9px;width:100%;max-width:220px}.sim label{display:inline-flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 12px 8px 0}.sim label input[type=checkbox]{width:auto}.form-three{display:flex;gap:10px;flex-wrap:wrap}.form-three label{flex:1 1 140px}.sim output{display:block;background:#e7f5f2;color:#125f58;font-weight:700;border-radius:10px;padding:11px;margin-top:13px}.chip-row{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px}.chip{padding:9px;border:1px solid #c8d8e8;border-radius:10px;background:#f1f7fb;text-align:center;font-size:.83rem}.hint{background:#fff7e8;padding:16px;border-radius:12px}.hint summary{cursor:pointer;font-weight:750}.profile{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.profile label{font-weight:700;color:#294a62;font-size:.88rem}.profile input{display:block;max-width:none;margin-top:4px}.final-item{border:1px solid var(--line);border-radius:12px;margin:14px 0;padding:13px}.final-item legend{font-weight:700;padding:0 7px}.cert-actions{padding:15px;background:#f4faf7;border-radius:14px;margin-top:15px}#certCanvas{display:block;width:100%;height:auto;border-radius:9px;margin-top:16px;border:1px solid #d4e0e8}.mono{font-family:ui-monospace,Consolas,monospace}.footer{text-align:center;color:#6b7b89;margin-top:30px;font-size:.85rem}@media(max-width:850px){.shell{grid-template-columns:1fr}.side{position:static;max-height:none}.side .navitems{display:flex;overflow:auto;gap:7px}.side button{min-width:185px}.side button.current{min-width:185px}.profile{grid-template-columns:1fr}}@media(max-width:530px){.container{padding:14px 11px 60px}.topin{padding:9px 13px;flex-wrap:wrap}.links{margin-left:0}.hero{padding:26px 21px}.card{padding:17px}.cards{grid-template-columns:1fr}.code{font-size:12px;padding:12px}.side .navitems{padding:2px}.form-three label{flex:1 1 100%}}@media print{.side,.top,.checkpoint,.lesson-footer{display:none!important}.lesson{display:block!important}.card{break-inside:avoid;box-shadow:none}}
+
+
+/* Bổ sung bài giảng chi tiết và trình thực thi code nhập môn */
+.theory{margin:24px 0 12px;border-top:2px solid #e2eaf2;padding-top:18px}.theory>h3{font-size:1.22rem;margin:22px 0 11px;color:var(--navy)}
+.theory>p{line-height:1.82;color:#29425b}.theory code:not(.py-highlight),.lesson-body code:not(.py-highlight){background:#edf3f8;border-radius:5px;padding:1px 5px;font:600 .91em ui-monospace,SFMono-Regular,Consolas,monospace;overflow-wrap:anywhere}
+.reason-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:12px 0 20px}.reason-grid>div{background:#f1f8fc;border:1px solid #c8e4eb;padding:14px;border-radius:12px}.reason-grid p{margin:7px 0 0}
+.responsive-table{overflow-x:auto;border:1px solid #dce7ef;border-radius:12px;margin:14px 0 22px}.responsive-table table{border-collapse:collapse;width:100%;min-width:590px;background:#fff}.responsive-table th{background:#e9f4f8;color:#173b57;text-align:left}.responsive-table td,.responsive-table th{padding:11px 13px;border-bottom:1px solid #e7edf2;vertical-align:top}.responsive-table tr:nth-child(even) td{background:#fafcfe}
+.theory-tip{padding:15px 17px;background:#fffaea;border-left:4px solid #e7a32d;border-radius:9px;margin:18px 0;color:#59431d}
+.py-playground{border-radius:15px;overflow:hidden;border:1px solid #29475e;box-shadow:0 8px 24px #183d5911;background:#111e2b;margin:18px 0 22px}
+.py-toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding:10px 13px;background:#263f56}
+.py-caption{color:#e5f4ff;letter-spacing:.07em;font-size:.75rem;font-weight:800}.py-actions{display:flex;gap:6px;flex-wrap:wrap}.py-actions .btn{font-size:.78rem;padding:7px 10px;border-radius:8px;color:#f5fcff;background:#3b5f78;border:1px solid #7094a9}
+.py-actions .py-run{background:#168c76;border-color:#168c76;font-weight:800}.py-actions .btn:hover{filter:brightness(1.14)}
+.py-preview,.py-editor{margin:0;padding:19px 22px;font:15px/1.75 ui-monospace,SFMono-Regular,Consolas,Monaco,monospace;white-space:pre;overflow:auto;tab-size:4;color:#e6edf3;min-height:90px;max-height:430px;background:#111e2b;width:100%;border:0;display:block}
+.py-editor[hidden],.py-preview[hidden]{display:none}.py-editor{resize:vertical;outline-offset:-3px;min-height:155px;caret-color:#fff}.py-highlight .tok-key{color:#dfadf8}.py-highlight .tok-str{color:#a7e7ac}.py-highlight .tok-num{color:#ffc98a}.py-highlight .tok-fn{color:#8bd7f7}.py-highlight .tok-comment{color:#9bb6c9;font-style:italic}
+.py-output{border-top:1px solid #344f61;background:#0c1823;padding:11px 18px 13px;color:#d8efe6}.py-out-title{font-size:.76rem;text-transform:uppercase;letter-spacing:.04em;color:#a4d4da;font-weight:800}.py-state{font-weight:500;color:#adc2ce;text-transform:none;letter-spacing:normal}.py-result{white-space:pre-wrap;word-break:break-word;font:14px/1.66 ui-monospace,SFMono-Regular,Consolas,monospace;margin:6px 0 0;min-height:20px;color:#effbee}.py-output.error .py-result{color:#ffb8b7}
+@media(max-width:680px){.reason-grid{grid-template-columns:1fr}.py-toolbar{align-items:stretch}.py-actions .btn{flex:1}.py-preview,.py-editor{font-size:13px;padding:13px 12px}}
+
+/* Giao diện khối mã Bài 2 – sáng (mặc định) / tối */
+html[data-code-theme="light"]{
+ --py-bg:#ffffff;--py-fg:#193149;--py-toolbar:#edf4fa;--py-toolbar-fg:#244c67;
+ --py-border:#c6d7e5;--py-button-bg:#ffffff;--py-button-fg:#184b70;
+ --py-output-bg:#f3fafb;--py-output-fg:#174357;--py-note:#4e6880;
+ --py-key:#8a2bb1;--py-string:#137a46;--py-number:#a44900;--py-func:#006fb7;--py-comment:#718096;
+ --py-inline-bg:#e9f2fa;--py-inline-fg:#16466b;
+}
+html[data-code-theme="dark"]{
+ --py-bg:#111e2b;--py-fg:#edf5fc;--py-toolbar:#263f56;--py-toolbar-fg:#e5f4ff;
+ --py-border:#29475e;--py-button-bg:#3b5f78;--py-button-fg:#f5fcff;
+ --py-output-bg:#0c1823;--py-output-fg:#effbee;--py-note:#adc2ce;
+ --py-key:#dfadf8;--py-string:#a7e7ac;--py-number:#ffc98a;--py-func:#8bd7f7;--py-comment:#9bb6c9;
+ --py-inline-bg:#22384a;--py-inline-fg:#daedf9;
+}
+.code-theme-toggle{flex-shrink:0;min-width:128px;border:1px solid #b8cbd9;background:#f3f9fc;
+ color:#134563;padding:8px 12px;border-radius:10px;font-weight:760;font-size:.83rem;line-height:1.3;white-space:nowrap}
+.code-theme-toggle:hover{border-color:#078883;background:#e6f5f4}
+.code-theme-toggle:focus-visible{outline:3px solid #e6a33c;outline-offset:2px}
+.py-inline{display:inline;white-space:normal;overflow-wrap:anywhere;background:var(--py-inline-bg);
+ color:var(--py-inline-fg);border:1px solid var(--py-border);border-radius:5px;padding:2px 5px;
+ font:.91em/1.8 ui-monospace,SFMono-Regular,Consolas,Monaco,monospace;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.py-example{background:var(--py-bg);color:var(--py-fg);border:1px solid var(--py-border);
+ padding:13px 15px;border-radius:11px;font:14px/1.7 ui-monospace,Consolas,monospace;
+ overflow:auto;white-space:pre;tab-size:4}
+@media(max-width:680px){.code-theme-toggle{font-size:.8rem;flex:1;white-space:normal}.topin{flex-wrap:wrap}}
+@media print{.code-theme-toggle{display:none}}
+
+.py-playground{background:var(--py-bg)!important;border-color:var(--py-border)!important}
+.py-toolbar{background:var(--py-toolbar)!important;border-bottom:1px solid var(--py-border)}
+.py-caption{color:var(--py-toolbar-fg)!important}
+.py-actions .btn:not(.py-run){color:var(--py-button-fg)!important;background:var(--py-button-bg)!important;border-color:var(--py-border)!important}
+.py-actions .py-run{color:#fff!important;background:#087f78!important;border-color:#087f78!important}
+.py-preview,.py-editor{background:var(--py-bg)!important;color:var(--py-fg)!important;caret-color:var(--py-fg)!important}
+.py-highlight .tok-key{color:var(--py-key)!important}
+.py-highlight .tok-str{color:var(--py-string)!important}
+.py-highlight .tok-num{color:var(--py-number)!important}
+.py-highlight .tok-fn{color:var(--py-func)!important}
+.py-highlight .tok-comment{color:var(--py-comment)!important}
+.py-output{border-top-color:var(--py-border)!important;background:var(--py-output-bg)!important;color:var(--py-output-fg)!important}
+.py-out-title,.py-state{color:var(--py-note)!important}
+.py-result{color:var(--py-output-fg)!important}
+.py-output.error .py-result{color:#bc3244!important}
+html[data-code-theme="dark"] .py-output.error .py-result{color:#ffb8b7!important}
+.lesson-body .code{background:var(--py-bg);color:var(--py-fg);border:1px solid var(--py-border)}
+
+</style></head><body><header class="top"><div class="topin"><a class="logo" href="../../index.html">NEU · <span class="dot">DS</span> / Buổi 2</a><nav class="links"><a href="../../index.html">Trang chủ</a><a href="bai_2_bai_giang_tuong_tac.html" aria-current="page">Bài giảng</a><a href="bai_2_quiz_tu_cham.html">Quiz 100 điểm</a><a href="bai_2_bai_tap_tu_lam.html">Bài tập 100 điểm</a></nav><button type="button" id="codeThemeToggle" class="code-theme-toggle" aria-label="Đổi giao diện khối code sáng hoặc tối" aria-pressed="false">☀ Code: Sáng</button></div></header><div class="container"><section class="hero"><span class="badge">BÀI 2 · KHÓA HỌC TUẦN TỰ</span><h1>Giới thiệu ngôn ngữ lập trình Python</h1><p>Học Python từ ví dụ kinh doanh NeuTech Coffee: biến, kiểu dữ liệu, toán tử, Colab, list, tuple, set, indexing và slicing. Từng phần cần hoàn thành câu kiểm tra mới được mở phần kế tiếp.</p><div class="metrics"><span>11 mục học</span><span>11 câu mở khóa</span><span>31 code mẫu có Run</span><span>8 câu tổng kết</span><span>Chứng nhận PNG</span><span>Lưu tiến độ theo mã SV</span></div></section><div class="shell"><aside class="side"><h3>Lộ trình học tập</h3><div class="progress"><span id="progressBar"></span></div><p id="progressStatus" class="small muted">0/11 mục hoàn thành</p><div class="navitems" id="sideNav"></div></aside><main><section class="card"><span class="tag">Thông tin sinh viên</span><h2>Hồ sơ học tập</h2><p class="muted">Điền thông tin trước khi học. Khi đổi mã SV, tiến độ sẽ tách riêng trên cùng trình duyệt.</p><div class="profile"><label>Họ và tên<input id="studentName" type="text" maxlength="100" placeholder="Nguyễn Văn A"></label><label>Mã sinh viên<input id="studentId" type="text" maxlength="40" placeholder="1126xxxxx"></label><label>Mã lớp<input id="classCode" type="text" maxlength="50" placeholder="KHDL_01"></label></div><p id="profileMessage" class="small muted">Thông tin lưu tự động tại trình duyệt.</p></section><section class="lesson card" id="lesson0" data-lesson="0"><div class="stephead"><span class="tag">MỤC 01/11</span><span class="pill">PDF tr. 1–3</span></div><h2>Bắt đầu từ quán cà phê</h2><p class="lead">Vì sao học Python?</p><div class="lesson-body"><p>Buổi 2 sử dụng bối cảnh <b>NeuTech Coffee</b>: một quán cần lưu tên món, tính hóa đơn, quản lý thực đơn và xét điều kiện ưu đãi. Mỗi nhiệm vụ sẽ trở thành một bài toán lập trình nhỏ.</p><div class="cards"><article class="mini"><h3>Lưu thông tin</h3><p>Tên món, giá, số lượng → biến và kiểu dữ liệu.</p></article><article class="mini"><h3>Tính tiền</h3><p>Các phép cộng, nhân, chia và điều kiện logic.</p></article><article class="mini"><h3>Quản lý thực đơn</h3><p>Dùng list, tuple, set; truy cập theo chỉ số hoặc cắt lát.</p></article></div><div class="note">Mục tiêu sau bài: đọc và dự đoán được chương trình Python cơ bản, giải thích kiểu dữ liệu và viết các lệnh ngắn về hoạt động kinh doanh.</div>
+<div class="theory">
+<h3>Từ bài toán kinh doanh đến câu lệnh Python</h3>
+<p>Một bài toán thường đi qua bốn bước: <b>(1)</b> xác định đầu vào, <b>(2)</b> diễn tả phép xử lý, <b>(3)</b> xác định kết quả cần hiển thị và <b>(4)</b> kiểm tra kết quả có hợp lý không. Chẳng hạn, để tính doanh thu bán cà phê, đầu vào là <em>số ly</em> và <em>giá mỗi ly</em>, phép xử lý là nhân, đầu ra là tiền thu được.</p>
+<div class="reason-grid"><div><b>Dữ liệu đầu vào</b><p>Giá 25.000 đồng/ly; số lượng 4 ly.</p></div><div><b>Quy tắc xử lý</b><p>Doanh thu = đơn giá × số lượng.</p></div><div><b>Kết quả</b><p>100.000 đồng; cần kiểm tra đơn giá và số lượng không âm.</p></div></div>
+<h3>Ví dụ đầu tiên: cùng một bài toán, nhiều tình huống</h3>
+<p>Thay hai giá trị đầu vào rồi nhấn <b>Run</b> để kiểm tra kết quả. Khác với một máy tính bỏ túi chỉ có công thức cố định, khi lập trình ta có thể thay đổi quy trình tính toán và trình bày kết quả.</p>
+<div class="py-playground" data-playground="1">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 01</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">gia_moi_ly = 25000
+so_ly = 4
+doanh_thu = gia_moi_ly * so_ly
+print("Doanh thu:", doanh_thu, "đồng")</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 1" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>gia_moi_ly = 25000
+so_ly = 4
+doanh_thu = gia_moi_ly * so_ly
+print("Doanh thu:", doanh_thu, "đồng")</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div>
+<div class="theory-tip"><b>Tư duy quan trọng:</b> đừng bắt đầu bằng việc học thuộc cú pháp. Hãy xác định dữ liệu, quy tắc tính và đầu ra; Python là công cụ để diễn tả chính xác các bước đó.</div>
+</div></div><div class="checkpoint"><h3>Kiểm tra trước khi qua mục tiếp theo</h3><p>Quán muốn đổi món thứ hai trên thực đơn khi cần. Khái niệm nào sẽ giúp thực hiện việc này?</p><div class="choices"><label class="choice"><input type="radio" name="gate0" value="0"><span><b>A.</b> Chỉ có thể dùng số nguyên</span></label><label class="choice"><input type="radio" name="gate0" value="1"><span><b>B.</b> Dùng danh sách list có thể chỉnh sửa</span></label><label class="choice"><input type="radio" name="gate0" value="2"><span><b>C.</b> Chỉ có thể dùng tên tệp</span></label></div><button type="button" class="btn teal" data-check="0">✓ Kiểm tra câu trả lời</button><p class="check-result" id="gateMsg0" aria-live="polite"></p></div><div class="lesson-footer"><span class="small muted">Hoàn thành câu kiểm tra để mở mục tiếp theo.</span><button type="button" class="btn primary" data-next="0" disabled>Tiếp tục →</button></div></section><section class="lesson card" id="lesson1" data-lesson="1"><div class="stephead"><span class="tag">MỤC 02/11</span><span class="pill">PDF tr. 4–7</span></div><h2>Python và Google Colab</h2><p class="lead">Ngôn ngữ Python, cách chạy notebook</p><div class="lesson-body"><p><b>Python</b> là ngôn ngữ lập trình kiểu động, ra đời năm 1991 do Guido van Rossum phát triển. Python phổ biến trong khoa học dữ liệu và AI nhờ các thư viện như NumPy, pandas, matplotlib. Tệp mã có phần mở rộng <code>.py</code>.</p><div class="cards"><article class="mini"><h3>Kiểu động</h3><p>Biến không cần khai báo kiểu trước khi gán giá trị.</p></article><article class="mini"><h3>Code cell</h3><p>Ô chạy Python; dùng <kbd>Shift</kbd> + <kbd>Enter</kbd>.</p></article><article class="mini"><h3>Text cell</h3><p>Ô ghi chú Markdown, không chạy như lệnh Python.</p></article></div><div class="py-playground" data-playground="2">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 02</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">print("Hello World!")</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 2" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>print("Hello World!")</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div><div class="note">Trong Google Colab, truy cập colab.research.google.com → New notebook → tạo Code cell → chạy Shift + Enter. Các ví dụ trong trang có nút Run: trình chạy offline xử lý một tập con các lệnh Python nhập môn. Để chạy Python đầy đủ và các thư viện chuyên ngành, sử dụng Colab.</div>
+<div class="theory">
+<h3>Thông dịch, kiểu động và mục đích của Python</h3>
+<p>Python là ngôn ngữ lập trình bậc cao, thường được thực thi bằng một <b>trình thông dịch</b>. Cách diễn đạt “chạy từng dòng” hữu ích khi mới học, nhưng trên thực tế Python còn phân tích cú pháp và tạo bytecode trước khi thực thi. <b>Kiểu động</b> có nghĩa là ta gán giá trị cho tên mà không khai báo kiểu của tên từ đầu; đối tượng được gán vẫn có một kiểu xác định.</p>
+<p>Python dùng cho tự động hóa công việc, phân tích số liệu, xây dựng ứng dụng và khoa học dữ liệu. Trong những bài sau, sinh viên sẽ gặp NumPy (tính toán số), pandas (bảng dữ liệu) và matplotlib (biểu đồ).</p>
+<h3>File .py và notebook khác nhau thế nào?</h3>
+<div class="responsive-table"><table><thead><tr><th>Tiêu chí</th><th>Python .py</th><th>Google Colab notebook</th></tr></thead><tbody><tr><td>Cách tổ chức</td><td>Các câu lệnh trong file văn bản</td><td>Các ô Code và Text đan xen</td></tr><tr><td>Phù hợp</td><td>Chương trình có cấu trúc, tái sử dụng</td><td>Thử nghiệm, học tập, phân tích khám phá</td></tr><tr><td>Trạng thái biến</td><td>Chạy từ đầu theo luồng chương trình</td><td>Biến có thể giữ trong phiên chạy; chạy ô sai thứ tự gây nhầm lẫn</td></tr><tr><td>Lưu bài</td><td>Tệp .py trên thiết bị hoặc kho mã</td><td>Tệp .ipynb, thường trên Google Drive</td></tr></tbody></table></div>
+<h3>Code cell và Text cell</h3><p>Trong Colab: Code cell có thể <code>print()</code>, gán biến, tính toán và tạo biểu đồ; Text cell là Markdown dùng để viết tiêu đề, công thức và lời giải thích. Nhấn <kbd>Shift</kbd> + <kbd>Enter</kbd> để chạy ô và chuyển tới ô tiếp theo. Nếu báo lỗi <code>NameError</code> vì biến chưa tồn tại, cần chạy ô khai báo biến trước.</p>
+<div class="py-playground" data-playground="3">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 03</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">print("Xin chào NeuTech Coffee!")
+print("Python có thể tính:", 25000 * 3)</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 3" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>print("Xin chào NeuTech Coffee!")
+print("Python có thể tính:", 25000 * 3)</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div>
+<div class="theory-tip">Các nút <b>Run</b> trong file này thực thi <b>tập con Python nhập môn</b> ngay trên trình duyệt, không đòi hỏi Internet. Để chạy thư viện, vòng lặp phức tạp hoặc Python đầy đủ, hãy dùng <a href="https://colab.research.google.com" target="_blank" rel="noopener noreferrer">Google Colab</a>. Đừng dùng <code>eval()</code> hoặc <code>exec()</code> với dữ liệu không tin cậy.</div>
+</div></div><div class="checkpoint"><h3>Kiểm tra trước khi qua mục tiếp theo</h3><p>Muốn thực thi một đoạn print(&quot;Hello!&quot;) trên Colab, bạn dùng ô nào?</p><div class="choices"><label class="choice"><input type="radio" name="gate1" value="0"><span><b>A.</b> Text cell</span></label><label class="choice"><input type="radio" name="gate1" value="1"><span><b>B.</b> Code cell</span></label><label class="choice"><input type="radio" name="gate1" value="2"><span><b>C.</b> Tiêu đề notebook</span></label></div><button type="button" class="btn teal" data-check="1">✓ Kiểm tra câu trả lời</button><p class="check-result" id="gateMsg1" aria-live="polite"></p></div><div class="lesson-footer"><span class="small muted">Hoàn thành câu kiểm tra để mở mục tiếp theo.</span><button type="button" class="btn primary" data-next="1" disabled>Tiếp tục →</button></div></section><section class="lesson card" id="lesson2" data-lesson="2"><div class="stephead"><span class="tag">MỤC 03/11</span><span class="pill">PDF tr. 9–10</span></div><h2>Biến và phép gán</h2><p class="lead">Tên biến, giá trị, quy tắc đặt tên</p><div class="lesson-body"><p>Một biến là tên tham chiếu đến giá trị. Hình dung biến là nhãn dán trên hộp. Dấu <code>=</code> dùng để <b>gán</b>, không phải kiểm tra hai giá trị bằng nhau.</p><div class="py-playground" data-playground="4">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 04</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">ten_quan = "NeuTech Coffee"
+so_ban = 12
+gia_ca_phe = 20000
+print("Quán có", so_ban, "bàn")
+# Quán có 12 bàn</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 4" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>ten_quan = "NeuTech Coffee"
+so_ban = 12
+gia_ca_phe = 20000
+print("Quán có", so_ban, "bàn")
+# Quán có 12 bàn</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div><div class="cards"><article class="mini"><h3>Tên hợp lệ</h3><p><code>so_ly</code>, <code>gia_1</code>, <code>_tong</code>.</p></article><article class="mini"><h3>Tên không hợp lệ</h3><p><code>2so_ly</code> (bắt đầu bằng số), <code>gia-ca-phe</code> (dấu trừ), <code>while</code> (từ khóa).</p></article></div><div class="py-playground" data-playground="5">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 05</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">gia_ca_phe = 20000
+gia_ca_phe = 22000
+print(gia_ca_phe)
+# 22000</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 5" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>gia_ca_phe = 20000
+gia_ca_phe = 22000
+print(gia_ca_phe)
+# 22000</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div><div class="sim"><h3>Thử đổi giá</h3><label>Giá cà phê (VNĐ): <input id="priceInput" type="number" min="0" step="1000" value="20000"></label><button type="button" class="btn teal" id="priceGo">Tính giá của 3 ly</button><output id="priceOut">3 × 20.000 = 60.000 VNĐ</output></div>
+<div class="theory">
+<h3>Phân biệt <code>=</code> và <code>==</code></h3><p><code>=</code> là <b>gán</b> (đặt tên tham chiếu tới một giá trị). <code>==</code> là <b>so sánh</b>, trả về <code>True</code> hoặc <code>False</code>. Sau khi gán giá trị mới cho cùng tên, biểu thức tiếp theo sử dụng giá trị mới.</p>
+<div class="py-playground" data-playground="6">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 06</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">gia = 20000
+print(gia == 20000)
+gia = 22000
+print(gia)
+print(gia == 20000)</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 6" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>gia = 20000
+print(gia == 20000)
+gia = 22000
+print(gia)
+print(gia == 20000)</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div>
+<h3>Quy tắc đặt tên và lỗi thường gặp</h3>
+<div class="responsive-table"><table><thead><tr><th>Ví dụ</th><th>Hợp lệ?</th><th>Giải thích</th></tr></thead><tbody><tr><td><code>so_ly</code></td><td>Đúng</td><td>Chữ và dấu gạch dưới, tên có nghĩa</td></tr><tr><td><code>gia2</code></td><td>Đúng</td><td>Chữ số được phép xuất hiện sau ký tự đầu</td></tr><tr><td><code>2gia</code></td><td>Sai</td><td>Không bắt đầu bằng chữ số</td></tr><tr><td><code>gia-ca-phe</code></td><td>Sai</td><td>Dấu <code>-</code> được hiểu là phép trừ</td></tr><tr><td><code>while</code></td><td>Sai</td><td>Là từ khóa của Python</td></tr></tbody></table></div>
+<p>Python <b>phân biệt chữ hoa và chữ thường</b>: <code>Gia</code> và <code>gia</code> là hai tên khác nhau. Nên dùng <code>snake_case</code> như <code>gia_ca_phe</code> và tránh dùng tên trùng hàm có sẵn như <code>list</code>, <code>str</code>, <code>sum</code>.</p>
+<h3>Từ biến đơn đến biến trung gian</h3><div class="py-playground" data-playground="7">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 07</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">gia_ly = 30000
+so_ly = 3
+chi_phi_van_chuyen = 10000
+tien_hang = gia_ly * so_ly
+tong_thanh_toan = tien_hang + chi_phi_van_chuyen
+print("Tiền hàng:", tien_hang)
+print("Phải trả:", tong_thanh_toan)</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 7" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>gia_ly = 30000
+so_ly = 3
+chi_phi_van_chuyen = 10000
+tien_hang = gia_ly * so_ly
+tong_thanh_toan = tien_hang + chi_phi_van_chuyen
+print("Tiền hàng:", tien_hang)
+print("Phải trả:", tong_thanh_toan)</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div>
+<div class="theory-tip"><b>Bài tập nhỏ:</b> đổi phí vận chuyển từ 10.000 xuống 5.000 đồng. Dự đoán kết quả trước khi Run. Nếu bạn thấy <code>NameError</code>, hãy kiểm tra chính tả và việc gán biến trước khi sử dụng.</div>
+</div></div><div class="checkpoint"><h3>Kiểm tra trước khi qua mục tiếp theo</h3><p>Tên nào hợp lệ để lưu số ly khách gọi?</p><div class="choices"><label class="choice"><input type="radio" name="gate2" value="0"><span><b>A.</b> 3ly</span></label><label class="choice"><input type="radio" name="gate2" value="1"><span><b>B.</b> so_ly</span></label><label class="choice"><input type="radio" name="gate2" value="2"><span><b>C.</b> so-ly</span></label></div><button type="button" class="btn teal" data-check="2">✓ Kiểm tra câu trả lời</button><p class="check-result" id="gateMsg2" aria-live="polite"></p></div><div class="lesson-footer"><span class="small muted">Hoàn thành câu kiểm tra để mở mục tiếp theo.</span><button type="button" class="btn primary" data-next="2" disabled>Tiếp tục →</button></div></section><section class="lesson card" id="lesson3" data-lesson="3"><div class="stephead"><span class="tag">MỤC 04/11</span><span class="pill">PDF tr. 11–12</span></div><h2>Các kiểu dữ liệu cơ bản</h2><p class="lead">int, float, bool, str và kiểu cấu trúc</p><div class="lesson-body"><p>Giá trị trong Python có kiểu dữ liệu. <code>type()</code> có thể giúp xem kiểu của một đối tượng.</p><div class="cards"><article class="mini"><h3>int · số nguyên</h3><p>Ví dụ: <code>4</code>, <code>25000</code>.</p></article><article class="mini"><h3>float · số thực</h3><p>Ví dụ: <code>3.14159</code>, <code>2.0</code>.</p></article><article class="mini"><h3>str · chuỗi</h3><p>Ví dụ: <code>"Bạc xỉu"</code>.</p></article><article class="mini"><h3>bool · logic</h3><p>Ví dụ: <code>True</code>, <code>False</code>.</p></article></div><div class="py-playground" data-playground="8">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 08</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">so_ly = 4
+don_gia = 25000
+print(type(so_ly))   # &lt;class 'int'&gt;
+print(so_ly*don_gia) # 100000</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 8" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>so_ly = 4
+don_gia = 25000
+print(type(so_ly))   # &lt;class 'int'&gt;
+print(so_ly*don_gia) # 100000</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div><div class="note">Khác biệt rất quan trọng: <code>12</code> là số nguyên nhưng <code>"12"</code> là chuỗi. Biểu thức cộng số và nối chuỗi cho kết quả khác nhau.</div>
+<div class="theory">
+<h3>Mỗi giá trị có một kiểu</h3><p>Kiểu dữ liệu xác định những phép toán hợp lệ. <code>25</code> có kiểu <code>int</code>, trong khi <code>"25"</code> có kiểu <code>str</code>: một giá trị dùng để tính toán, giá trị còn lại là dãy ký tự. Hàm <code>type()</code> trả về kiểu đối tượng.</p>
+<div class="responsive-table"><table><thead><tr><th>Kiểu</th><th>Ví dụ</th><th>Khi nào dùng?</th></tr></thead><tbody><tr><td><code>int</code></td><td><code>5</code>, <code>-2</code></td><td>Số món, số đơn, đơn giá nguyên</td></tr><tr><td><code>float</code></td><td><code>12.5</code>, <code>0.1</code></td><td>Phần trăm, tỷ lệ, giá trị thực</td></tr><tr><td><code>bool</code></td><td><code>True</code>, <code>False</code></td><td>Hết hàng? Có thẻ thành viên?</td></tr><tr><td><code>str</code></td><td><code>"Cà phê"</code></td><td>Tên món, mã đơn, ghi chú</td></tr><tr><td><code>list</code></td><td><code>["Đen", "Sữa"]</code></td><td>Dãy có thứ tự, có thể sửa</td></tr><tr><td><code>tuple</code></td><td><code>(2026, 10, 23)</code></td><td>Bộ giá trị có thứ tự, bất biến</td></tr><tr><td><code>set</code></td><td><code>{"Đen", "Sữa"}</code></td><td>Nhóm phần tử duy nhất</td></tr><tr><td><code>dict</code></td><td><code>{"Đen": 20000}</code></td><td>Tra cứu theo khóa; sẽ học sâu ở bài tiếp theo</td></tr></tbody></table></div>
+<div class="py-playground" data-playground="9">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 09</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">a = 12
+b = "12"
+c = 12.0
+d = True
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(d))
+print(a + 3)
+print(b + "3")</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 9" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>a = 12
+b = "12"
+c = 12.0
+d = True
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(d))
+print(a + 3)
+print(b + "3")</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div>
+<p><b>Chú ý với tiền:</b> giá trị <code>float</code> có thể có sai số biểu diễn trong một số phép tính thập phân. Trong bài nhập môn ta dùng <code>int</code> biểu thị đơn vị VNĐ khi có thể; trong ứng dụng tài chính chính thức thường cân nhắc số nguyên theo đơn vị nhỏ nhất hoặc kiểu số thập phân chính xác.</p>
+</div></div><div class="checkpoint"><h3>Kiểm tra trước khi qua mục tiếp theo</h3><p>Biểu thức type(&quot;25&quot;) trả về kiểu dữ liệu nào?</p><div class="choices"><label class="choice"><input type="radio" name="gate3" value="0"><span><b>A.</b> int</span></label><label class="choice"><input type="radio" name="gate3" value="1"><span><b>B.</b> str</span></label><label class="choice"><input type="radio" name="gate3" value="2"><span><b>C.</b> float</span></label></div><button type="button" class="btn teal" data-check="3">✓ Kiểm tra câu trả lời</button><p class="check-result" id="gateMsg3" aria-live="polite"></p></div><div class="lesson-footer"><span class="small muted">Hoàn thành câu kiểm tra để mở mục tiếp theo.</span><button type="button" class="btn primary" data-next="3" disabled>Tiếp tục →</button></div></section><section class="lesson card" id="lesson4" data-lesson="4"><div class="stephead"><span class="tag">MỤC 05/11</span><span class="pill">PDF tr. 13–14</span></div><h2>Toán tử số học</h2><p class="lead">Cộng, trừ, nhân, chia, dư và lũy thừa</p><div class="lesson-body"><p>Python sử dụng các toán tử <code>+ - * / // % **</code>. Phép chia <code>/</code> trả về số thực, <code>//</code> là phép chia làm tròn xuống, <code>%</code> lấy phần dư.</p><div class="py-playground" data-playground="10">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 10</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">print(6/3)    # 2.0
+print(7//2)   # 3
+print(7%2)    # 1
+print(2**3)   # 8</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 10" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>print(6/3)    # 2.0
+print(7//2)   # 3
+print(7%2)    # 1
+print(2**3)   # 8</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div><div class="cards"><article class="mini"><h3>Ví dụ hóa đơn</h3><p>Một khách gọi cà phê sữa (25.000đ), trà đào (35.000đ), cà phê đen (20.000đ): tổng 80.000đ.</p></article><article class="mini"><h3>Chia hóa đơn</h3><p><code>80000/3</code> cho 26.666,666…; <code>80000//3</code> cho 26.666.</p></article></div><div class="sim"><h3>Mô phỏng hóa đơn</h3><div class="form-three"><label>Sữa (25.000đ)<input type="number" id="nSua" min="0" value="1"></label><label>Trà đào (35.000đ)<input id="nTra" type="number" min="0" value="1"></label><label>Đen (20.000đ)<input id="nDen" type="number" min="0" value="1"></label></div><button type="button" id="calcBill" class="btn teal">Tính hóa đơn</button><output id="billOut">Tổng: 80.000 VNĐ</output></div>
+<div class="theory">
+<h3>Ý nghĩa từng toán tử</h3>
+<div class="responsive-table"><table><thead><tr><th>Toán tử</th><th>Ví dụ</th><th>Ý nghĩa</th></tr></thead><tbody><tr><td><code>+</code></td><td><code>5 + 3</code></td><td>Cộng; với hai chuỗi là nối chuỗi</td></tr><tr><td><code>-</code></td><td><code>5 - 3</code></td><td>Trừ</td></tr><tr><td><code>*</code></td><td><code>5 * 3</code></td><td>Nhân</td></tr><tr><td><code>/</code></td><td><code>7 / 2</code></td><td>Chia thực → 3.5</td></tr><tr><td><code>//</code></td><td><code>7 // 2</code></td><td>Chia lấy thương làm tròn xuống → 3</td></tr><tr><td><code>%</code></td><td><code>7 % 2</code></td><td>Phần dư → 1</td></tr><tr><td><code>**</code></td><td><code>2 ** 3</code></td><td>Lũy thừa → 8</td></tr></tbody></table></div>
+<h3>Thứ tự ưu tiên và dấu ngoặc</h3><p>Lũy thừa có ưu tiên cao, sau đó là nhân/chia, rồi cộng/trừ. Dùng <code>()</code> khi muốn chỉ rõ phép tính theo nghiệp vụ: tổng tiền trước giảm giá thường là tổng của các dòng hóa đơn, <em>sau đó</em> mới áp dụng tỷ lệ giảm.</p>
+<div class="py-playground" data-playground="11">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 11</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">print(2 + 3 * 4)
+print((2 + 3) * 4)
+print(7 / 2)
+print(7 // 2)
+print(-7 // 2)
+print(-7 % 2)</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 11" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>print(2 + 3 * 4)
+print((2 + 3) * 4)
+print(7 / 2)
+print(7 // 2)
+print(-7 // 2)
+print(-7 % 2)</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div>
+<p><b>Lưu ý:</b> phép <code>//</code> làm tròn về âm vô cực. Vì thế <code>-7 // 2</code> bằng <code>-4</code>, không phải <code>-3</code>. Với <code>b ≠ 0</code>, quan hệ <code>a = (a // b) * b + (a % b)</code> luôn đúng theo quy tắc của Python.</p>
+<h3>Ví dụ thực tiễn: giới hạn tồn kho</h3><p>Cửa hàng có 41 chai si-rô và mỗi combo cần 6 chai. Cửa hàng có thể chuẩn bị tối đa bao nhiêu combo trọn vẹn? Còn dư bao nhiêu chai?</p>
+<div class="py-playground" data-playground="12">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 12</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">ton_kho = 41
+moi_combo = 6
+so_combo = ton_kho // moi_combo
+con_du = ton_kho % moi_combo
+print("Combo hoàn chỉnh:", so_combo)
+print("Chai còn dư:", con_du)</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 12" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>ton_kho = 41
+moi_combo = 6
+so_combo = ton_kho // moi_combo
+con_du = ton_kho % moi_combo
+print("Combo hoàn chỉnh:", so_combo)
+print("Chai còn dư:", con_du)</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div>
+<div class="theory-tip">Lỗi hay gặp: nhầm <code>/</code> với <code>//</code>, dùng dấu <code>^</code> thay cho lũy thừa <code>**</code>, hoặc chia cho 0 dẫn tới <code>ZeroDivisionError</code>.</div>
+</div></div><div class="checkpoint"><h3>Kiểm tra trước khi qua mục tiếp theo</h3><p>Kết quả của 7 // 2 là?</p><div class="choices"><label class="choice"><input type="radio" name="gate4" value="0"><span><b>A.</b> 3</span></label><label class="choice"><input type="radio" name="gate4" value="1"><span><b>B.</b> 3.5</span></label><label class="choice"><input type="radio" name="gate4" value="2"><span><b>C.</b> 1</span></label></div><button type="button" class="btn teal" data-check="4">✓ Kiểm tra câu trả lời</button><p class="check-result" id="gateMsg4" aria-live="polite"></p></div><div class="lesson-footer"><span class="small muted">Hoàn thành câu kiểm tra để mở mục tiếp theo.</span><button type="button" class="btn primary" data-next="4" disabled>Tiếp tục →</button></div></section><section class="lesson card" id="lesson5" data-lesson="5"><div class="stephead"><span class="tag">MỤC 06/11</span><span class="pill">PDF tr. 15–17</span></div><h2>Chuỗi, bool và toán tử so sánh</h2><p class="lead">Biểu diễn lời chào và điều kiện ưu đãi</p><div class="lesson-body"><p><code>str</code> lưu nội dung văn bản; <code>bool</code> lưu <code>True</code>/<code>False</code>. Kết quả so sánh thường là logic, ví dụ <code>tong_tien >= 50000</code>.</p><div class="py-playground" data-playground="13">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 13</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">ten_khach = "Chị An"
+ghi_chu = 'Note: "ít đường, nhiều đá"'
+la_thanh_vien = True
+tong_tien = 80000
+duoc_giam = la_thanh_vien and (tong_tien &gt;= 50000)
+print(duoc_giam)  # True</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 13" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>ten_khach = "Chị An"
+ghi_chu = 'Note: "ít đường, nhiều đá"'
+la_thanh_vien = True
+tong_tien = 80000
+duoc_giam = la_thanh_vien and (tong_tien &gt;= 50000)
+print(duoc_giam)  # True</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div><div class="cards"><article class="mini"><h3>So sánh</h3><p><code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>.</p></article><article class="mini"><h3>Logic</h3><p><code>and</code>: cả hai đúng; <code>or</code>: ít nhất một đúng; <code>not</code>: đảo đúng/sai.</p></article></div><div class="sim"><h3>Kiểm tra ưu đãi</h3><label><input type="checkbox" id="isMember" checked> Khách là thành viên</label><label>Tổng hóa đơn (VNĐ): <input type="number" id="discountTotal" value="80000" min="0"></label><button id="checkDiscount" class="btn teal" type="button">Kiểm tra đủ điều kiện</button><output id="discountOut">Có ưu đãi vì cả hai điều kiện đều đúng.</output></div>
+<div class="theory">
+<h3>Chuỗi: dữ liệu văn bản và thao tác ghép</h3><p>Một chuỗi được viết giữa dấu nháy đơn hoặc kép. Ta có thể ghép hai chuỗi bằng <code>+</code> hoặc truyền nhiều đối số cho <code>print()</code>. Chuỗi mang số vẫn là văn bản cho đến khi được chuyển kiểu.</p>
+<div class="py-playground" data-playground="14">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 14</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">ten = "Minh"
+mon = "Trà đào"
+print("Khách:", ten, "| Món:", mon)
+print("Phiếu: " + ten + " - " + mon)</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 14" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>ten = "Minh"
+mon = "Trà đào"
+print("Khách:", ten, "| Món:", mon)
+print("Phiếu: " + ten + " - " + mon)</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div>
+<h3>Toán tử so sánh và logic</h3><div class="responsive-table"><table><thead><tr><th>Nhóm</th><th>Toán tử</th><th>Ví dụ và ý nghĩa</th></tr></thead><tbody><tr><td>So sánh</td><td><code>==</code>, <code>!=</code></td><td>Bằng; khác</td></tr><tr><td>So sánh</td><td><code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></td><td>Lớn, nhỏ, lớn hoặc bằng, nhỏ hoặc bằng</td></tr><tr><td>Logic</td><td><code>and</code></td><td>Đúng khi cả hai điều kiện đúng</td></tr><tr><td>Logic</td><td><code>or</code></td><td>Đúng khi có ít nhất một điều kiện đúng</td></tr><tr><td>Logic</td><td><code>not</code></td><td>Đảo giá trị logic</td></tr></tbody></table></div>
+<h3>Tình huống: quy tắc ưu đãi hai điều kiện</h3><p>Giảm giá khi khách là thành viên <b>và</b> hóa đơn không dưới 50.000 đồng. Nhấn Run, sau đó thử đặt <code>la_thanh_vien = False</code> hoặc giảm giá trị <code>tong_tien</code>.</p>
+<div class="py-playground" data-playground="15">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 15</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">la_thanh_vien = True
+tong_tien = 70000
+du_dieu_kien = la_thanh_vien and tong_tien &gt;= 50000
+print("Có ưu đãi:", du_dieu_kien)
+print("Không đủ điều kiện:", not du_dieu_kien)</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 15" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>la_thanh_vien = True
+tong_tien = 70000
+du_dieu_kien = la_thanh_vien and tong_tien &gt;= 50000
+print("Có ưu đãi:", du_dieu_kien)
+print("Không đủ điều kiện:", not du_dieu_kien)</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div>
+<p><b>Phân biệt:</b> <code>=</code> là gán; <code>==</code> là so sánh. Trong Python đầy đủ, <code>and</code>/<code>or</code> có cơ chế đánh giá ngắn mạch và có thể trả về toán hạng; ở các bài nhập môn ta chủ yếu kết hợp các biểu thức logic.</p>
+</div></div><div class="checkpoint"><h3>Kiểm tra trước khi qua mục tiếp theo</h3><p>Khi la_thanh_vien=True nhưng tong_tien=40000, biểu thức la_thanh_vien and tong_tien&gt;=50000 cho?</p><div class="choices"><label class="choice"><input type="radio" name="gate5" value="0"><span><b>A.</b> True</span></label><label class="choice"><input type="radio" name="gate5" value="1"><span><b>B.</b> False</span></label><label class="choice"><input type="radio" name="gate5" value="2"><span><b>C.</b> &quot;False&quot;</span></label></div><button type="button" class="btn teal" data-check="5">✓ Kiểm tra câu trả lời</button><p class="check-result" id="gateMsg5" aria-live="polite"></p></div><div class="lesson-footer"><span class="small muted">Hoàn thành câu kiểm tra để mở mục tiếp theo.</span><button type="button" class="btn primary" data-next="5" disabled>Tiếp tục →</button></div></section><section class="lesson card" id="lesson6" data-lesson="6"><div class="stephead"><span class="tag">MỤC 07/11</span><span class="pill">PDF tr. 18–20</span></div><h2>Chuyển đổi kiểu dữ liệu</h2><p class="lead">int(), float(), str() và lỗi phổ biến</p><div class="lesson-body"><p>Một số dữ liệu ban đầu ở dạng chữ: <code>so_ban = "12"</code>. Khi làm phép tính cần chuyển sang số với <code>int()</code> hoặc <code>float()</code>. Khi ghép với văn bản dùng <code>str()</code>.</p><div class="py-playground" data-playground="16">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 16</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">so_ban = "12"
+print("Quán có " + so_ban + " bàn")
+print(int(so_ban) + 3)
+# Quán có 12 bàn
+# 15</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 16" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>so_ban = "12"
+print("Quán có " + so_ban + " bàn")
+print(int(so_ban) + 3)
+# Quán có 12 bàn
+# 15</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div><div class="py-playground" data-playground="17">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 17</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">ten_mon = "Trà đào"
+so_ly = 3
+tong_tien = 35000 * so_ly
+print(str(so_ly) + " ly " + ten_mon + " = " + str(tong_tien) + "đ")
+# 3 ly Trà đào = 105000đ</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 17" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>ten_mon = "Trà đào"
+so_ly = 3
+tong_tien = 35000 * so_ly
+print(str(so_ly) + " ly " + ten_mon + " = " + str(tong_tien) + "đ")
+# 3 ly Trà đào = 105000đ</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div><div class="note">Cảnh báo: <code>float("Cà phê")</code> gây ValueError vì chuỗi không đại diện cho số. Tương tự, không cộng trực tiếp số nguyên với chuỗi.</div>
+<div class="theory">
+<h3>Vì sao phải ép kiểu?</h3><p>Dữ liệu nhập qua biểu mẫu thường là chuỗi. Nếu coi <code>"3"</code> như số nguyên mà đem cộng số, Python sẽ báo <code>TypeError</code>. Khi cần tính toán ta dùng <code>int()</code> hoặc <code>float()</code>; khi cần ghép với chuỗi dùng <code>str()</code>.</p>
+<div class="responsive-table"><table><thead><tr><th>Cách chuyển</th><th>Kết quả</th><th>Lưu ý</th></tr></thead><tbody><tr><td><code>int("12")</code></td><td><code>12</code></td><td>Chuỗi cần biểu diễn số nguyên hợp lệ</td></tr><tr><td><code>float("12.5")</code></td><td><code>12.5</code></td><td>Thường dùng dấu chấm cho thập phân trong mã Python</td></tr><tr><td><code>str(12)</code></td><td><code>"12"</code></td><td>Biến số thành văn bản</td></tr><tr><td><code>int(3.9)</code></td><td><code>3</code></td><td>Cắt phần lẻ theo hướng về 0; khác làm tròn</td></tr><tr><td><code>bool(0)</code></td><td><code>False</code></td><td>Giá trị 0 là sai trong ngữ cảnh logic</td></tr></tbody></table></div>
+<div class="py-playground" data-playground="18">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 18</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">so_ly_dang_chu = "3"
+don_gia_dang_chu = "35000"
+so_ly = int(so_ly_dang_chu)
+don_gia = int(don_gia_dang_chu)
+print("Thành tiền:", so_ly * don_gia)
+print("Số ly: " + str(so_ly))</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 18" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>so_ly_dang_chu = "3"
+don_gia_dang_chu = "35000"
+so_ly = int(so_ly_dang_chu)
+don_gia = int(don_gia_dang_chu)
+print("Thành tiền:", so_ly * don_gia)
+print("Số ly: " + str(so_ly))</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div>
+<h3>Lỗi thường gặp</h3><p><code>int("3.5")</code> và <code>float("Cà phê")</code> không thể thực hiện trực tiếp và sẽ gây lỗi giá trị. Khi nhận dữ liệu thực tế cần kiểm tra thông tin nhập, xử lý lỗi và quyết định có chấp nhận giá trị rỗng hay không.</p>
+<div class="theory-tip"><b>Câu hỏi suy nghĩ:</b> Mã sinh viên như <code>"00123"</code> có nên đổi sang số nguyên không? Không nên nếu các số 0 đầu là một phần của mã định danh; giữ ở dạng chuỗi.</div>
+</div></div><div class="checkpoint"><h3>Kiểm tra trước khi qua mục tiếp theo</h3><p>Cách nào dùng để ghép một biến số nguyên so_ly với chuỗi &quot; ly&quot;?</p><div class="choices"><label class="choice"><input type="radio" name="gate6" value="0"><span><b>A.</b> so_ly + &quot; ly&quot;</span></label><label class="choice"><input type="radio" name="gate6" value="1"><span><b>B.</b> str(so_ly) + &quot; ly&quot;</span></label><label class="choice"><input type="radio" name="gate6" value="2"><span><b>C.</b> int(&quot; ly&quot;) + so_ly</span></label></div><button type="button" class="btn teal" data-check="6">✓ Kiểm tra câu trả lời</button><p class="check-result" id="gateMsg6" aria-live="polite"></p></div><div class="lesson-footer"><span class="small muted">Hoàn thành câu kiểm tra để mở mục tiếp theo.</span><button type="button" class="btn primary" data-next="6" disabled>Tiếp tục →</button></div></section><section class="lesson card" id="lesson7" data-lesson="7"><div class="stephead"><span class="tag">MỤC 08/11</span><span class="pill">PDF tr. 21–22, 26</span></div><h2>List và tuple</h2><p class="lead">Thực đơn có thể sửa và dữ liệu bất biến</p><div class="lesson-body"><p>Cả <code>list</code> và <code>tuple</code> có thứ tự. List có thể thay đổi sau khi tạo; tuple không cho gán sửa phần tử.</p><div class="py-playground" data-playground="19">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 19</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">thuc_don = ["Cà phê đen", "Cà phê sữa", "Trà đào"]
+ngay_khai_truong = (16, 12, 2023)
+thuc_don[0] = "Cà phê muối"
+print(thuc_don)
+# ngày khai trương là tuple nên ngay_khai_truong[0] = 17 sẽ lỗi</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 19" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>thuc_don = ["Cà phê đen", "Cà phê sữa", "Trà đào"]
+ngay_khai_truong = (16, 12, 2023)
+thuc_don[0] = "Cà phê muối"
+print(thuc_don)
+# ngày khai trương là tuple nên ngay_khai_truong[0] = 17 sẽ lỗi</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div><div class="cards"><article class="mini"><h3>List · ngoặc vuông</h3><p>Phù hợp cho menu và các danh sách cần cập nhật.</p></article><article class="mini"><h3>Tuple · ngoặc tròn</h3><p>Phù hợp cho các nhóm giá trị theo vị trí mà không muốn thay phần tử.</p></article></div><div class="sim"><h3>Thực đơn thử nghiệm</h3><p id="menuPreview" class="mono">["Cà phê đen", "Cà phê sữa", "Bạc xỉu", "Trà đào"]</p><button class="btn teal" id="replaceMenu" type="button">Đổi món thứ hai thành Cà phê muối</button><button class="btn secondary" id="resetMenu" type="button">Khôi phục</button></div>
+<div class="theory">
+<h3>Điểm giống và khác của list – tuple</h3><p>Cả hai là <b>dãy có thứ tự</b>, truy cập được bằng chỉ số và có thể chứa các kiểu dữ liệu khác nhau. Tuy nhiên <code>list</code> có thể thay đổi phần tử, còn <code>tuple</code> không thể gán lại phần tử bằng chỉ số. Điều này không có nghĩa là mọi đối tượng nằm bên trong tuple đều bất biến.</p>
+<div class="responsive-table"><table><thead><tr><th>Đặc tính</th><th>list</th><th>tuple</th></tr></thead><tbody><tr><td>Cú pháp</td><td><code>["Đen", "Sữa"]</code></td><td><code>("Đen", "Sữa")</code></td></tr><tr><td>Thứ tự</td><td>Có</td><td>Có</td></tr><tr><td>Lấy phần tử <code>[0]</code></td><td>Có</td><td>Có</td></tr><tr><td>Thay <code>[0] = ...</code></td><td>Có</td><td>Không</td></tr><tr><td>Tình huống</td><td>Thực đơn cập nhật thường xuyên</td><td>Bộ tọa độ/ngày tháng đã xác định</td></tr></tbody></table></div>
+<h3>List có thể đổi theo chỉ số</h3>
+<div class="py-playground" data-playground="20">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 20</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">thuc_don = ["Đen", "Sữa", "Trà đào"]
+print("Ban đầu:", thuc_don)
+thuc_don[1] = "Cà phê muối"
+print("Sau sửa:", thuc_don)
+print("Có", len(thuc_don), "món")</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 20" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>thuc_don = ["Đen", "Sữa", "Trà đào"]
+print("Ban đầu:", thuc_don)
+thuc_don[1] = "Cà phê muối"
+print("Sau sửa:", thuc_don)
+print("Có", len(thuc_don), "món")</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div>
+<h3>Tuple có thể dùng để lưu bộ giá trị cố định</h3>
+<div class="py-playground" data-playground="21">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 21</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">ngay = (16, 12, 2026)
+print(ngay)
+print("Tháng:", ngay[1])
+print("Số trường:", len(ngay))</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 21" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>ngay = (16, 12, 2026)
+print(ngay)
+print("Tháng:", ngay[1])
+print("Số trường:", len(ngay))</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div>
+<div class="theory-tip">Trong Python, tên biến không phải “hộp chứa giá trị” theo nghĩa tuyệt đối mà tham chiếu đến đối tượng. Khi có hai tên cùng tham chiếu tới một list, sửa list qua tên này có thể được nhìn thấy qua tên kia. Phần này sẽ được đào sâu ở các bài lập trình tiếp theo.</div>
+</div></div><div class="checkpoint"><h3>Kiểm tra trước khi qua mục tiếp theo</h3><p>Phát biểu nào đúng về list và tuple?</p><div class="choices"><label class="choice"><input type="radio" name="gate7" value="0"><span><b>A.</b> Tuple thay phần tử bằng chỉ số được</span></label><label class="choice"><input type="radio" name="gate7" value="1"><span><b>B.</b> Cả hai không có thứ tự</span></label><label class="choice"><input type="radio" name="gate7" value="2"><span><b>C.</b> List có thể thay phần tử, tuple không</span></label></div><button type="button" class="btn teal" data-check="7">✓ Kiểm tra câu trả lời</button><p class="check-result" id="gateMsg7" aria-live="polite"></p></div><div class="lesson-footer"><span class="small muted">Hoàn thành câu kiểm tra để mở mục tiếp theo.</span><button type="button" class="btn primary" data-next="7" disabled>Tiếp tục →</button></div></section><section class="lesson card" id="lesson8" data-lesson="8"><div class="stephead"><span class="tag">MỤC 09/11</span><span class="pill">PDF tr. 23</span></div><h2>Indexing</h2><p class="lead">Đếm vị trí từ 0 và từ cuối</p><div class="lesson-body"><p>List bắt đầu đánh chỉ số từ <code>0</code>. Với bốn món, các chỉ số tiến là 0,1,2,3 và chỉ số âm là -4,-3,-2,-1.</p><div class="py-playground" data-playground="22">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 22</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">thuc_don = ["Cà phê đen", "Cà phê sữa", "Bạc xỉu", "Trà đào"]
+print(thuc_don[0])   # Cà phê đen
+print(thuc_don[-1])  # Trà đào</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 22" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>thuc_don = ["Cà phê đen", "Cà phê sữa", "Bạc xỉu", "Trà đào"]
+print(thuc_don[0])   # Cà phê đen
+print(thuc_don[-1])  # Trà đào</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div><div class="sim"><h3>Chọn chỉ số để xem phần tử</h3><div class="chip-row" id="indexChips"></div><label>Chỉ số: <select id="indexSelect"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="-1">-1</option><option value="-2">-2</option><option value="-3">-3</option><option value="-4">-4</option></select></label><output id="indexOut"></output></div><div class="note">Lỗi phổ biến: nhầm phần tử thứ ba với <code>[3]</code>. Phần tử thứ ba có chỉ số <code>2</code>.</div>
+<div class="theory">
+<h3>Chỉ số là gì?</h3><p>Python đánh chỉ số từ <b>0</b>. Với bốn phần tử, chỉ số hợp lệ là <code>0, 1, 2, 3</code>. Chỉ số âm bắt đầu từ <code>-1</code> (phần tử cuối), <code>-2</code> (kế cuối). Nếu truy cập chỉ số ngoài phạm vi, Python báo <code>IndexError</code>.</p>
+<div class="responsive-table"><table><thead><tr><th>Phần tử</th><th>Đen</th><th>Sữa</th><th>Bạc xỉu</th><th>Trà đào</th></tr></thead><tbody><tr><td>Chỉ số dương</td><td>0</td><td>1</td><td>2</td><td>3</td></tr><tr><td>Chỉ số âm</td><td>-4</td><td>-3</td><td>-2</td><td>-1</td></tr></tbody></table></div>
+<h3>Ứng dụng trên dữ liệu giá bán</h3><div class="py-playground" data-playground="23">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 23</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">gia_ban = [20000, 25000, 28000, 35000]
+print("Giá đầu:", gia_ban[0])
+print("Giá cuối:", gia_ban[-1])
+print("Giá thứ ba:", gia_ban[2])
+print("Số món:", len(gia_ban))</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 23" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>gia_ban = [20000, 25000, 28000, 35000]
+print("Giá đầu:", gia_ban[0])
+print("Giá cuối:", gia_ban[-1])
+print("Giá thứ ba:", gia_ban[2])
+print("Số món:", len(gia_ban))</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div>
+<p>Indexing trả về <em>một</em> phần tử, còn slicing (học mục tiếp theo) thường trả về <em>một dãy con</em>. Phải phân biệt “món thứ ba” (chỉ số 2) với “món có chỉ số 3” (món thứ tư).</p>
+</div></div><div class="checkpoint"><h3>Kiểm tra trước khi qua mục tiếp theo</h3><p>Với bốn món, thuc_don[-2] chọn món ở vị trí nào?</p><div class="choices"><label class="choice"><input type="radio" name="gate8" value="0"><span><b>A.</b> Thứ hai từ đầu</span></label><label class="choice"><input type="radio" name="gate8" value="1"><span><b>B.</b> Thứ hai từ cuối</span></label><label class="choice"><input type="radio" name="gate8" value="2"><span><b>C.</b> Món cuối</span></label></div><button type="button" class="btn teal" data-check="8">✓ Kiểm tra câu trả lời</button><p class="check-result" id="gateMsg8" aria-live="polite"></p></div><div class="lesson-footer"><span class="small muted">Hoàn thành câu kiểm tra để mở mục tiếp theo.</span><button type="button" class="btn primary" data-next="8" disabled>Tiếp tục →</button></div></section><section class="lesson card" id="lesson9" data-lesson="9"><div class="stephead"><span class="tag">MỤC 10/11</span><span class="pill">PDF tr. 24–26</span></div><h2>Slicing, set và tính bất biến</h2><p class="lead">Cắt lát; loại trùng; mutable vs immutable</p><div class="lesson-body"><p><b>Slicing:</b> biểu thức <code>a[start:end]</code> lấy từ vị trí start đến ngay trước end. Set viết bằng ngoặc nhọn (với các phần tử) và không giữ phần tử trùng.</p><div class="py-playground" data-playground="24">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 24</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">a = ["Cà phê đen", "Cà phê sữa", "Bạc xỉu", "Trà đào"]
+print(a[1:3])
+# ["Cà phê sữa", "Bạc xỉu"]
+nhom = {"cà phê", "trà", "cà phê"}
+print(len(nhom))  # 2</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 24" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>a = ["Cà phê đen", "Cà phê sữa", "Bạc xỉu", "Trà đào"]
+print(a[1:3])
+# ["Cà phê sữa", "Bạc xỉu"]
+nhom = {"cà phê", "trà", "cà phê"}
+print(len(nhom))  # 2</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div><div class="cards"><article class="mini"><h3>Mutable</h3><p><code>list</code> (cho sửa phần tử).</p></article><article class="mini"><h3>Immutable</h3><p><code>tuple</code> và <code>str</code> (không sửa trực tiếp phần tử).</p></article><article class="mini"><h3>Set</h3><p>Không có indexing theo vị trí; bỏ phần tử trùng.</p></article></div><div class="sim"><h3>Điều chỉnh phạm vi slicing</h3><div class="form-three"><label>start <input type="number" id="sliceFrom" min="0" max="4" value="1"></label><label>end (không lấy) <input type="number" id="sliceTo" min="0" max="4" value="3"></label></div><button class="btn teal" type="button" id="calcSlice">Xem lát cắt</button><output id="sliceOut">["Cà phê sữa", "Bạc xỉu"]</output></div>
+<div class="theory">
+<h3>Cú pháp slicing chi tiết</h3><p><code>a[start:stop:step]</code> lấy từ chỉ số <code>start</code>, dừng <b>trước</b> <code>stop</code>, và nhảy theo <code>step</code>. Có thể bỏ trống start/stop; chỉ số âm và bước âm cho phép duyệt ngược. Slicing không sửa list gốc mà tạo danh sách phần tử được chọn.</p>
+<div class="py-playground" data-playground="25">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 25</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">a = [10, 20, 30, 40, 50]
+print(a[1:4])
+print(a[:3])
+print(a[2:])
+print(a[::2])
+print(a[::-1])</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 25" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>a = [10, 20, 30, 40, 50]
+print(a[1:4])
+print(a[:3])
+print(a[2:])
+print(a[::2])
+print(a[::-1])</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div>
+<h3>Set: khi chỉ quan tâm phần tử duy nhất</h3><p>Set loại phần tử trùng, không hỗ trợ truy cập bằng chỉ số vì đây không phải một dãy được sắp thứ tự. Trong Python thực tế, thứ tự hiển thị của set không phải thứ tự dữ liệu cần dựa vào. <code>{}</code> là dict rỗng, không phải set rỗng; dùng <code>set()</code> để tạo set rỗng.</p>
+<div class="py-playground" data-playground="26">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 26</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">nhom_do_uong = {"cà phê", "trà", "cà phê"}
+print("Số loại nhóm:", len(nhom_do_uong))
+print({1, 2, 3} == {3, 2, 1})</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 26" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>nhom_do_uong = {"cà phê", "trà", "cà phê"}
+print("Số loại nhóm:", len(nhom_do_uong))
+print({1, 2, 3} == {3, 2, 1})</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div>
+<h3>Mutable và immutable</h3><p><code>list</code> và <code>set</code> có thể thay đổi nội dung; <code>str</code>, <code>tuple</code>, <code>int</code> không cho chỉnh sửa tại chỗ theo cách tương tự. Khi “thay” một chuỗi, ta thực tế tạo giá trị chuỗi mới và gán lại cho tên biến.</p>
+<div class="theory-tip"><b>Nhận xét:</b> set hữu ích khi kiểm tra danh mục ngành hàng không trùng, nhưng list thích hợp hơn khi cần giữ thứ tự xuất hiện và tra cứu theo vị trí.</div>
+</div></div><div class="checkpoint"><h3>Kiểm tra trước khi qua mục tiếp theo</h3><p>Với a=[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;], a[1:3] trả về gì?</p><div class="choices"><label class="choice"><input type="radio" name="gate9" value="0"><span><b>A.</b> [&quot;A&quot;,&quot;B&quot;,&quot;C&quot;]</span></label><label class="choice"><input type="radio" name="gate9" value="1"><span><b>B.</b> [&quot;B&quot;,&quot;C&quot;]</span></label><label class="choice"><input type="radio" name="gate9" value="2"><span><b>C.</b> [&quot;B&quot;,&quot;C&quot;,&quot;D&quot;]</span></label></div><button type="button" class="btn teal" data-check="9">✓ Kiểm tra câu trả lời</button><p class="check-result" id="gateMsg9" aria-live="polite"></p></div><div class="lesson-footer"><span class="small muted">Hoàn thành câu kiểm tra để mở mục tiếp theo.</span><button type="button" class="btn primary" data-next="9" disabled>Tiếp tục →</button></div></section><section class="lesson card" id="lesson10" data-lesson="10"><div class="stephead"><span class="tag">MỤC 11/11</span><span class="pill">PDF tr. 19–20, 27–28</span></div><h2>Bài tập mẫu có lời giải</h2><p class="lead">Hai bài luyện tập trong PDF và ví dụ mở rộng</p><div class="lesson-body"><p><b>Bài mẫu 1 – Đơn trà đào.</b> Dữ liệu: giá 35.000đ/ly, còn hàng. Yêu cầu khai báo biến, xem kiểu và tính ba ly.</p><div class="py-playground" data-playground="27">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 27</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">ten_mon = "Trà đào"
+don_gia = 35000
+con_hang = True
+print(type(ten_mon))  # &lt;class 'str'&gt;
+print(type(don_gia)) # &lt;class 'int'&gt;
+print(type(con_hang))# &lt;class 'bool'&gt;
+so_ly = 3
+tong_tien = don_gia * so_ly
+print(str(so_ly) + " ly " + ten_mon + " = " + str(tong_tien) + "đ")
+# 3 ly Trà đào = 105000đ</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 27" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>ten_mon = "Trà đào"
+don_gia = 35000
+con_hang = True
+print(type(ten_mon))  # &lt;class 'str'&gt;
+print(type(don_gia)) # &lt;class 'int'&gt;
+print(type(con_hang))# &lt;class 'bool'&gt;
+so_ly = 3
+tong_tien = don_gia * so_ly
+print(str(so_ly) + " ly " + ten_mon + " = " + str(tong_tien) + "đ")
+# 3 ly Trà đào = 105000đ</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div><p><b>Bài mẫu 2 – Quản lý thực đơn.</b> In món đầu/cuối, thay món thứ hai, lấy hai món đầu.</p><div class="py-playground" data-playground="28">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 28</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">thuc_don = ["Cà phê đen", "Cà phê sữa", "Bạc xỉu", "Trà đào"]
+print(thuc_don[0])   # Cà phê đen
+print(thuc_don[-1])  # Trà đào
+thuc_don[1] = "Cà phê muối"
+print(thuc_don[0:2]) # ["Cà phê đen", "Cà phê muối"]</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 28" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>thuc_don = ["Cà phê đen", "Cà phê sữa", "Bạc xỉu", "Trà đào"]
+print(thuc_don[0])   # Cà phê đen
+print(thuc_don[-1])  # Trà đào
+thuc_don[1] = "Cà phê muối"
+print(thuc_don[0:2]) # ["Cà phê đen", "Cà phê muối"]</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div><details class="hint"><summary>Ví dụ mở rộng: Tính giảm 10% với đơn 155.000đ</summary><p>Đây là ví dụ bổ sung, không phải bài tập gốc trong PDF.</p><div class="py-playground" data-playground="29">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 29</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">tong_tien = 155000
+la_thanh_vien = True
+if la_thanh_vien and tong_tien &gt;= 100000:
+    tong_tien = tong_tien * 0.9
+print(tong_tien) # 139500.0</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 29" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>tong_tien = 155000
+la_thanh_vien = True
+if la_thanh_vien and tong_tien &gt;= 100000:
+    tong_tien = tong_tien * 0.9
+print(tong_tien) # 139500.0</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div></details>
+<div class="theory">
+<h3>Cách đọc đề và tự xây dựng lời giải</h3><p>Với mỗi bài tập Python, sinh viên nên làm theo bốn bước: phân tích dữ liệu đầu vào; lập kế hoạch tính toán/thay đổi; viết chương trình tối giản; kiểm thử với ví dụ thường, ví dụ biên và kiểu dữ liệu bất thường. Nếu kết quả khác dự đoán, dùng <code>print()</code> để xem giá trị trung gian.</p>
+<h3>Bài mẫu 3 – Dự toán doanh thu một buổi</h3><p>Giả sử quán bán 12 ly cà phê đen (20.000đ), 8 ly cà phê sữa (25.000đ) và 5 ly trà đào (35.000đ). Hãy tính doanh thu, số ly bán được và doanh thu trung bình mỗi ly. Đây là bài bổ sung so với slide.</p>
+<div class="py-playground" data-playground="30">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 30</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">so_den = 12
+so_sua = 8
+so_tra = 5
+doanh_thu = so_den * 20000 + so_sua * 25000 + so_tra * 35000
+so_ly = so_den + so_sua + so_tra
+trung_binh = doanh_thu / so_ly
+print("Số ly bán:", so_ly)
+print("Doanh thu:", doanh_thu)
+print("Doanh thu trung bình mỗi ly:", trung_binh)</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 30" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>so_den = 12
+so_sua = 8
+so_tra = 5
+doanh_thu = so_den * 20000 + so_sua * 25000 + so_tra * 35000
+so_ly = so_den + so_sua + so_tra
+trung_binh = doanh_thu / so_ly
+print("Số ly bán:", so_ly)
+print("Doanh thu:", doanh_thu)
+print("Doanh thu trung bình mỗi ly:", trung_binh)</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div>
+<h3>Bài mẫu 4 – Phân loại đơn hàng bằng điều kiện</h3><p>Quán hỗ trợ miễn phí vận chuyển khi hóa đơn từ 100.000 đồng trở lên. Ví dụ này mở rộng nhẹ tới cú pháp <code>if</code>/<code>else</code>; nội dung câu lệnh điều kiện sẽ được học kỹ ở buổi sau.</p>
+<div class="py-playground" data-playground="31">
+<div class="py-toolbar"><span class="py-caption">PYTHON · Ví dụ 31</span><div class="py-actions"><button type="button" class="btn py-run">▶ Run</button><button type="button" class="btn py-edit">✎ Sửa code</button><button type="button" class="btn py-reset">↺ Khôi phục</button><button type="button" class="btn py-copy">⧉ Copy</button></div></div>
+<pre class="py-preview"><code class="py-highlight">tong_tien = 125000
+if tong_tien &gt;= 100000:
+    print("Miễn phí vận chuyển")
+else:
+    print("Thu phí vận chuyển")</code></pre>
+<textarea class="py-editor" aria-label="Chỉnh sửa mã Python ví dụ 31" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" hidden>tong_tien = 125000
+if tong_tien &gt;= 100000:
+    print("Miễn phí vận chuyển")
+else:
+    print("Thu phí vận chuyển")</textarea>
+<div class="py-output"><div class="py-out-title">Kết quả chạy <span class="py-state">· chưa chạy</span></div><pre class="py-result" aria-live="polite">Bấm Run để xem kết quả.</pre></div>
+</div>
+<h3>Tự đánh giá trước khi chuyển sang quiz</h3><p>Hãy thay <code>tong_tien</code> lần lượt bằng 100.000, 99.999 và 0. Quan sát sự khác biệt giữa <code>&gt;</code> và <code>&gt;=</code>, đồng thời kiểm tra số lượng/đơn giá âm có hợp lệ về mặt nghiệp vụ không.</p>
+<div class="theory-tip">Bạn có thể chạy và sửa toàn bộ code mẫu, xem kết quả ngay dưới mỗi đoạn. Bộ chạy offline chỉ hỗ trợ phần cú pháp thuộc bài này và một số mở rộng đơn giản; chương trình Python đầy đủ cần môi trường như Google Colab.</div>
+</div></div><div class="checkpoint"><h3>Kiểm tra trước khi qua mục tiếp theo</h3><p>Sau lệnh thuc_don[1] = &quot;Cà phê muối&quot;, món nào ở vị trí 1?</p><div class="choices"><label class="choice"><input type="radio" name="gate10" value="0"><span><b>A.</b> Cà phê đen</span></label><label class="choice"><input type="radio" name="gate10" value="1"><span><b>B.</b> Cà phê muối</span></label><label class="choice"><input type="radio" name="gate10" value="2"><span><b>C.</b> Bạc xỉu</span></label></div><button type="button" class="btn teal" data-check="10">✓ Kiểm tra câu trả lời</button><p class="check-result" id="gateMsg10" aria-live="polite"></p></div><div class="lesson-footer"><span class="small muted">Hoàn thành câu kiểm tra để mở mục tiếp theo.</span><button type="button" class="btn primary" data-next="10" disabled>Tiếp tục →</button></div></section><section id="finalLesson" class="lesson card" style="display:none"><span class="tag">ĐÁNH GIÁ CUỐI BÀI</span><h2>Kiểm tra tổng kết & chứng nhận</h2><p>Hoàn thành cả 11 mục trước khi làm 8 câu kiểm tra tổng kết. Cần <b>ít nhất 7/8 câu đúng</b> để nhận chứng nhận hoàn thành bài học. Chỉ hiển thị đáp án sau khi bấm “Chấm kiểm tra”.</p><div id="finalQuestions"><fieldset class="final-item"><legend>1. Lệnh in chuỗi trong Python là gì?</legend><label class="choice"><input type="radio" name="final0" value="0"><span>A. show(&quot;Hi&quot;)</span></label><label class="choice"><input type="radio" name="final0" value="1"><span>B. print(&quot;Hi&quot;)</span></label><label class="choice"><input type="radio" name="final0" value="2"><span>C. write(&quot;Hi&quot;)</span></label></fieldset><fieldset class="final-item"><legend>2. Giá trị &quot;12&quot; thuộc kiểu gì?</legend><label class="choice"><input type="radio" name="final1" value="0"><span>A. int</span></label><label class="choice"><input type="radio" name="final1" value="1"><span>B. str</span></label><label class="choice"><input type="radio" name="final1" value="2"><span>C. bool</span></label></fieldset><fieldset class="final-item"><legend>3. 7 % 3 trả về gì?</legend><label class="choice"><input type="radio" name="final2" value="0"><span>A. 1</span></label><label class="choice"><input type="radio" name="final2" value="1"><span>B. 2</span></label><label class="choice"><input type="radio" name="final2" value="2"><span>C. 3</span></label></fieldset><fieldset class="final-item"><legend>4. Kết quả của 6 / 3 trong Python 3?</legend><label class="choice"><input type="radio" name="final3" value="0"><span>A. 2</span></label><label class="choice"><input type="radio" name="final3" value="1"><span>B. 2.0</span></label><label class="choice"><input type="radio" name="final3" value="2"><span>C. 3</span></label></fieldset><fieldset class="final-item"><legend>5. a=[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;]; a[-1] là gì?</legend><label class="choice"><input type="radio" name="final4" value="0"><span>A. A</span></label><label class="choice"><input type="radio" name="final4" value="1"><span>B. B</span></label><label class="choice"><input type="radio" name="final4" value="2"><span>C. C</span></label></fieldset><fieldset class="final-item"><legend>6. Tuple có thể gán sửa phần tử không?</legend><label class="choice"><input type="radio" name="final5" value="0"><span>A. Có</span></label><label class="choice"><input type="radio" name="final5" value="1"><span>B. Không</span></label><label class="choice"><input type="radio" name="final5" value="2"><span>C. Chỉ sửa phần tử đầu</span></label></fieldset><fieldset class="final-item"><legend>7. a=[1,2,3,4]; a[1:3] là gì?</legend><label class="choice"><input type="radio" name="final6" value="0"><span>A. [2,3]</span></label><label class="choice"><input type="radio" name="final6" value="1"><span>B. [1,2,3]</span></label><label class="choice"><input type="radio" name="final6" value="2"><span>C. [2,3,4]</span></label></fieldset><fieldset class="final-item"><legend>8. Nếu thành viên=True, tổng=40000, điều kiện member and total&gt;=50000?</legend><label class="choice"><input type="radio" name="final7" value="0"><span>A. True</span></label><label class="choice"><input type="radio" name="final7" value="1"><span>B. False</span></label><label class="choice"><input type="radio" name="final7" value="2"><span>C. 40000</span></label></fieldset></div><button id="gradeFinal" type="button" class="btn primary">✓ Chấm kiểm tra tổng kết</button><p id="finalGrade" class="check-result" aria-live="polite"></p><div id="certActions" class="cert-actions" style="display:none"><h3>Hoàn thành bài học</h3><p>Bạn đã đạt yêu cầu. Nhấn nút để cấp chứng nhận và xuất ảnh.</p><button type="button" class="btn primary" id="issueCert">🎓 Hoàn thành bài học – Nhận chứng nhận</button><div id="certPane" style="display:none"><canvas id="certCanvas" width="1600" height="1000" role="img" aria-label="Chứng nhận hoàn thành bài học"></canvas><div class="toolbar"><button type="button" class="btn teal" id="downloadCert">↓ Tải chứng nhận PNG</button><button type="button" class="btn" id="copyCert">⧉ Sao chép nội dung</button><button type="button" class="btn" id="copyCertImage">⧉ Sao chép ảnh</button></div><div id="certText" class="note"></div></div></div></section></main></div><p class="footer">Tài liệu được biên soạn dựa trên PDF Bài 2 (32 trang). Các mô phỏng số là ví dụ giảng dạy bổ sung; không thực thi Python tùy ý trong trình duyệt.</p></div><script>
+/* Offline interpreter for the Python beginner subset taught in Lesson 2.
+   No eval or Function is used; unsupported language features are rejected. */
+const MiniPython=(()=>{
+ class PyError extends Error{constructor(message){super(message);this.name='Lỗi Python'}}
+ const n=(value,isFloat=false)=>({kind:'number',v:Number(value),float:!!isFloat});
+ const tuple=v=>({kind:'tuple',v});
+ const set=v=>({kind:'set',v:v.filter((x,i,a)=>a.findIndex(y=>equal(y,x))===i)});
+ const dict=v=>({kind:'dict',v});
+ const pytype=x=>x&&x.kind==='number'?(x.float?'float':'int'):x&&x.kind==='tuple'?'tuple':x&&x.kind==='set'?'set':x&&x.kind==='dict'?'dict':Array.isArray(x)?'list':typeof x==='string'?'str':typeof x==='boolean'?'bool':x===null?'NoneType':'unknown';
+ const val=x=>x&&x.kind==='number'?x.v:x;
+ const truth=x=>{if(x===null)return false;if(typeof x==='boolean')return x;if(pytype(x)==='number')return val(x)!==0;if(typeof x==='string')return x.length>0;if(Array.isArray(x)||x?.kind==='tuple'||x?.kind==='set'||x?.kind==='dict')return (x.v||x).length>0;return !!x};
+ const equal=(a,b)=>{if(a?.kind==='number'&&b?.kind==='number')return a.v===b.v;if(Array.isArray(a)&&Array.isArray(b))return a.length===b.length&&a.every((v,i)=>equal(v,b[i]));if(a?.kind==='tuple'&&b?.kind==='tuple')return equal(a.v,b.v);if(a?.kind==='set'&&b?.kind==='set')return a.v.length===b.v.length&&a.v.every(x=>b.v.some(y=>equal(x,y)));return a===b};
+ function repr(v){if(v===null)return 'None';if(typeof v==='boolean')return v?'True':'False';if(typeof v==='string')return "'"+v.replaceAll('\\','\\\\').replaceAll("'","\\'")+"'";if(v?.kind==='number')return Number.isFinite(v.v)?(v.float&&Number.isInteger(v.v)?String(v.v)+'.0':String(v.v)):'nan';if(Array.isArray(v))return '['+v.map(repr).join(', ')+']';if(v?.kind==='tuple')return '('+v.v.map(repr).join(', ')+(v.v.length===1?',':'')+')';if(v?.kind==='set')return v.v.length?'{' + v.v.map(repr).join(', ') + '}':'set()';if(v?.kind==='dict')return '{'+v.v.map(([k,z])=>repr(k)+': '+repr(z)).join(', ')+'}';if(v?.kind==='pyclass')return "<class '"+v.type+"'>";return String(v)}
+ const display=x=>typeof x==='string'?x:repr(x);
+ function tokens(src){const out=[];let i=0;while(i<src.length){const c=src[i];if(/\s/.test(c)){i++;continue}if(c==='#')break;
+ if(c==='"'||c==="'"){const quote=c;let v='';i++;let closed=false;while(i<src.length){let ch=src[i++];if(ch===quote){closed=true;break}if(ch==='\\'){if(i===src.length)throw new PyError('Chuỗi chưa đóng.');const t=src[i++];v+=({n:'\n',t:'\t',r:'\r','\\':'\\',"'":"'",'"':'"'})[t]??t}else v+=ch}if(!closed)throw new PyError('Chuỗi chưa đóng dấu nháy.');out.push({t:'str',v});continue}
+ let m=src.slice(i).match(/^(?:\d+\.\d*|\.\d+|\d+)/);if(m){out.push({t:'num',v:m[0]});i+=m[0].length;continue}
+ m=src.slice(i).match(/^[\p{L}_][\p{L}\p{N}_]*/u);if(m){out.push({t:'name',v:m[0]});i+=m[0].length;continue}
+ const two=src.slice(i,i+2);if(['//','**','>=','<=','==','!='].includes(two)){out.push({t:two,v:two});i+=2;continue}
+ if('+-*/%()[]{}.,:<>='.includes(c)){out.push({t:c,v:c});i++;continue}
+ throw new PyError('Ký tự không được hỗ trợ: '+c)
+ }out.push({t:'eof',v:''});return out}
+ const precedences={or:1,and:2,'==':3,'!=':3,'>':3,'<':3,'>=':3,'<=':3,'+':4,'-':4,'*':5,'/':5,'//':5,'%':5,'**':7};
+ function calculate(op,a,b){if(op==='and')return truth(a)?b:a;if(op==='or')return truth(a)?a:b;
+ if(['==','!='].includes(op))return op==='=='?equal(a,b):!equal(a,b);
+ const av=val(a),bv=val(b);if(['>','<','>=','<='].includes(op)){if(typeof av!==typeof bv)throw new PyError('Không so sánh được các kiểu khác nhau.');return op==='>'?av>bv:op==='<'?av<bv:op==='>='?av>=bv:av<=bv}
+ if(op==='+'&&(typeof a==='string'&&typeof b==='string'))return a+b;
+ if(op==='+'&&Array.isArray(a)&&Array.isArray(b))return [...a,...b];
+ if(typeof av!=='number'||typeof bv!=='number')throw new PyError('Toán tử '+op+' không áp dụng cho '+pytype(a)+' và '+pytype(b));
+ if((op==='/'||op==='//'||op==='%')&&bv===0)throw new PyError('ZeroDivisionError: không chia cho 0.');
+ let res;switch(op){case '+':res=av+bv;break;case '-':res=av-bv;break;case '*':res=av*bv;break;case '/':res=av/bv;break;case '//':res=Math.floor(av/bv);break;case '%':res=av-Math.floor(av/bv)*bv;break;case '**':res=av**bv;break;default:throw new PyError('Toán tử không hỗ trợ '+op)}
+ return n(res,op==='/'||a?.float||b?.float||(op==='**'&&!Number.isInteger(res)))}
+ function subscript(target,spec){let seq=Array.isArray(target)?target:target?.kind==='tuple'?target.v:typeof target==='string'?[...target]:null;
+ if(!seq)throw new PyError('Đối tượng kiểu '+pytype(target)+' không hỗ trợ truy cập bằng chỉ số.');
+ const step=spec.step===null?1:val(spec.step);if(!Number.isInteger(step)||step===0)throw new PyError('Bước cắt lát phải là số nguyên khác 0.');
+ if(!spec.slice){let i=val(spec.index);if(!Number.isInteger(i))throw new PyError('Chỉ số phải là số nguyên.');if(i<0)i+=seq.length;if(i<0||i>=seq.length)throw new PyError('IndexError: chỉ số ngoài phạm vi.');return seq[i]}
+ const size=seq.length;let start=spec.start===null?(step>0?0:size-1):val(spec.start),stop=spec.stop===null?(step>0?size:-1):val(spec.stop);
+ if(spec.start!==null&&start<0)start+=size;if(spec.stop!==null&&stop<0)stop+=size;
+ const result=[];for(let i=start;step>0?i<stop:i>stop;i+=step){if(i>=0&&i<size)result.push(seq[i]);if(result.length>10000)throw new PyError('Lát cắt quá dài.')}
+ return typeof target==='string'?result.join(''):target?.kind==='tuple'?tuple(result):result}
+ function evaluate(src,env,print){let ts=tokens(src),p=0;
+ const here=()=>ts[p],next=()=>ts[p++],at=(value)=>here().v===value,match=(value)=>{if(at(value)){p++;return true}return false},must=(value)=>{if(!match(value))throw new PyError('Thiếu "'+value+'" trong biểu thức.')};
+ function expression(min=0){let token=next(),left;
+ if(token.t==='num')left=n(Number(token.v),token.v.includes('.'));
+ else if(token.t==='str')left=token.v;
+ else if(token.v==='True'||token.v==='False')left=token.v==='True';
+ else if(token.v==='None')left=null;
+ else if(['+','-','not'].includes(token.v)){let x=expression(token.v==='not'?3:6);left=token.v==='not'?!truth(x):token.v==='-'?n(-val(x),x.float):x}
+ else if(token.v==='('){if(match(')'))left=tuple([]);else{const items=[expression(0)];while(match(',')){if(at(')'))break;items.push(expression(0))}must(')');left=items.length>1||ts[p-2]?.v===','?tuple(items):items[0]}}
+ else if(token.v==='['){const items=[];if(!at(']')){items.push(expression(0));while(match(',')){if(at(']'))break;items.push(expression(0))}}must(']');left=items}
+ else if(token.v==='{'){const items=[];let isDict=false;if(!at('}')){let key=expression(0);if(match(':')){isDict=true;items.push([key,expression(0)]);}else items.push(key);
+ while(match(',')){if(at('}'))break;key=expression(0);if(isDict){must(':');items.push([key,expression(0)])}else items.push(key)}}must('}');left=isDict||!items.length?dict(items):set(items)}
+ else if(token.t==='name'){if(match('(')){const args=[];if(!at(')')){args.push(expression(0));while(match(',')){if(at(')'))break;args.push(expression(0))}}must(')');left=call(token.v,args,env,print)}
+ else if(Object.prototype.hasOwnProperty.call(env,token.v))left=env[token.v];else throw new PyError("NameError: chưa định nghĩa biến '"+token.v+"'")}
+ else throw new PyError('Cú pháp biểu thức chưa đúng: '+token.v);
+ while(true){if(at('[')){next();let spec={index:null,start:null,stop:null,step:null,slice:false};if(match(':')){spec.slice=true;}else{const f=expression(0);if(match(':')){spec.slice=true;spec.start=f}else{spec.index=f;must(']');left=subscript(left,spec);continue}}if(!at(']')&&!at(':'))spec.stop=expression(0);if(match(':')){if(!at(']'))spec.step=expression(0)}must(']');left=subscript(left,spec);continue}
+ const op=here().v,prec=precedences[op];if(prec===undefined||prec<min)break;next();const right=expression(prec+(op==='**'?0:1));left=calculate(op,left,right)}return left}
+ const out=expression();if(here().t!=='eof')throw new PyError('Còn phần biểu thức chưa hợp lệ gần: '+here().v);return out}
+ function call(name,args,env,print){const one=()=>{if(args.length!==1)throw new PyError(name+'() cần đúng một tham số.');return args[0]};switch(name){case 'print':print(args.map(display).join(' '));return null;case 'type':return {kind:'pyclass',type:pytype(one())};case 'len':{const x=one();if(typeof x==='string'||Array.isArray(x))return n(x.length);if(x?.v&&Array.isArray(x.v))return n(x.v.length);throw new PyError('len() không dùng cho '+pytype(x))}
+ case 'str':return display(one());case 'int':{const x=val(one()),num=typeof x==='string'?Number(x.trim()):Number(x);if(!Number.isFinite(num))throw new PyError('ValueError: không ép sang int được.');return n(Math.trunc(num))}
+ case 'float':{const x=val(one()),num=Number(x);if(!Number.isFinite(num))throw new PyError('ValueError: không ép sang float được.');return n(num,true)}case 'bool':return truth(one());case 'round':{if(args.length<1||args.length>2)throw new PyError('round() nhận 1 hoặc 2 tham số.');const decimal=args.length===2?val(args[1]):0,pow=10**decimal;return n(Math.round(val(args[0])*pow)/pow,args[0]?.float)}
+ case 'set':{if(!args.length)return set([]);const x=one();return set(Array.isArray(x)?x:x?.v||[x])}
+ case 'list':{if(!args.length)return [];const x=one();return Array.isArray(x)?[...x]:x?.v?[...x.v]:typeof x==='string'?[...x]:[x]}
+ case 'tuple':{if(!args.length)return tuple([]);const x=one();return tuple(Array.isArray(x)?[...x]:x?.v?[...x.v]:typeof x==='string'?[...x]:[x])}
+ case 'sum':{const x=one();if(!Array.isArray(x))throw new PyError('sum() yêu cầu list số.');return x.reduce((a,b)=>calculate('+',a,b),n(0))}
+ case 'range':{const vals=args.map(val);if(!vals.every(Number.isInteger)||vals.length<1||vals.length>3)throw new PyError('range() nhận số nguyên.');let st=vals.length===1?0:vals[0],end=vals.length===1?vals[0]:vals[1],step=vals.length===3?vals[2]:1;if(!step)throw new PyError('Bước range không bằng 0.');const out=[];for(let i=st;step>0?i<end:i>end;i+=step){if(out.length>2000)throw new PyError('range quá dài.');out.push(n(i))}return out}
+ default:throw new PyError('Hàm '+name+'() không thuộc tập lệnh offline. Có thể chạy bằng Google Colab.')}}
+ function assignment(s,env,print){let code=s.trim();const m=code.match(/^([a-zA-Z_]\w*)(?:\[(.+?)\])?\s*=\s*(?!=)(.+)$/);if(m){const name=m[1];if(['if','else','for','while','def','class','and','or','not','True','False','None'].includes(name))throw new PyError('Tên biến trùng từ khóa: '+name);const rhs=evaluate(m[3],env,print);if(m[2]!==undefined){const arr=env[name];if(!Array.isArray(arr))throw new PyError('TypeError: chỉ sửa phần tử của list trong phần thực hành này.');let idx=val(evaluate(m[2],env,print));if(!Number.isInteger(idx))throw new PyError('Chỉ số phải là số nguyên.');if(idx<0)idx+=arr.length;if(idx<0||idx>=arr.length)throw new PyError('IndexError: chỉ số ngoài phạm vi.');arr[idx]=rhs}else env[name]=rhs;return}evaluate(code,env,print)}
+ function noComment(s){let out='',quote=null,escape=false;for(let c of s){if(escape){out+=c;escape=false;continue}if(quote){out+=c;if(c==='\\')escape=true;else if(c===quote)quote=null;continue}if(c==='"'||c==="'"){quote=c;out+=c;continue}if(c==='#')break;out+=c}return out.trimEnd()}
+ function run(source){const lines=String(source).replace(/\r/g,'').split('\n');if(lines.length>150)throw new PyError('Ví dụ giới hạn 150 dòng.');const env={},outputs=[];const print=v=>{outputs.push(v);if(outputs.length>150)throw new PyError('Quá nhiều dòng kết quả.')};let count=0;
+ function execute(from,to,level){let i=from;while(i<to){const raw=lines[i],line=noComment(raw),indent=(raw.match(/^ */)||[''])[0].length;if(!line.trim()){i++;continue}if(indent<level)break;if(indent!==level)throw new PyError('IndentationError: dòng '+(i+1)+' thụt lề không hợp lệ.');const body=line.trim();if(body.startsWith('if ')&&body.endsWith(':')){let j=i+1;while(j<to){const a=lines[j],indent2=(a.match(/^ */)||[''])[0].length;if(a.trim()&&indent2<=level)break;j++}const nextIndent=lines.slice(i+1,j).filter(a=>a.trim()).map(a=>(a.match(/^ */)||[''])[0].length)[0];if(nextIndent===undefined||nextIndent<=level)throw new PyError('Thiếu khối lệnh thụt lề cho if.');let yes=false;try{yes=truth(evaluate(body.slice(3,-1),env,print))}catch(e){throw new PyError('Dòng '+(i+1)+': '+e.message)}if(yes)execute(i+1,j,nextIndent);
+ let k=j;if(k<to&&noComment(lines[k]).trim()==='else:'){let b=k+1;while(b<to){const a=lines[b],id=(a.match(/^ */)||[''])[0].length;if(a.trim()&&id<=level)break;b++}const ni=lines.slice(k+1,b).filter(a=>a.trim()).map(a=>(a.match(/^ */)||[''])[0].length)[0];if(ni===undefined||ni<=level)throw new PyError('Thiếu khối lệnh thụt lề cho else.');if(!yes)execute(k+1,b,ni);k=b}i=k;continue}
+ if(body==='else:')throw new PyError('else không đi sau if hợp lệ.');if(['for ','while ','def ','import ','from ','class '].some(x=>body.startsWith(x)))throw new PyError('Lệnh chưa hỗ trợ trong trình chạy offline. Hãy dùng Colab để chạy Python đầy đủ.');try{assignment(body,env,print)}catch(e){throw new PyError('Dòng '+(i+1)+': '+e.message)}i++;if(++count>600)throw new PyError('Vượt quá giới hạn số lệnh.')}}
+ execute(0,lines.length,0);return outputs.length?outputs.join('\n'):'(Đã chạy, chưa có lệnh print để xuất kết quả.)'}
+ return {run};
+})();
+
+function pyEscape(t){return String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function highlightPython(src){const keywords=new Set(['if','else','elif','not','and','or','in','is','for','while','return','True','False','None']);const functions=new Set(['print','type','len','int','str','float','bool','list','tuple','set','sum','round','range']);let i=0,html='';while(i<src.length){const c=src[i];if(c==='#'){let j=src.indexOf('\n',i);if(j<0)j=src.length;html+='<span class="tok-comment">'+pyEscape(src.slice(i,j))+'</span>';i=j;continue}
+ if(c==='"'||c==="'"){let j=i+1;while(j<src.length){if(src[j]==='\\'){j+=2;continue}if(src[j]===c){j++;break}j++}html+='<span class="tok-str">'+pyEscape(src.slice(i,j))+'</span>';i=j;continue}
+ let m=src.slice(i).match(/^(?:\d+\.\d*|\.\d+|\d+)/);if(m){html+='<span class="tok-num">'+pyEscape(m[0])+'</span>';i+=m[0].length;continue}
+ m=src.slice(i).match(/^[\p{L}_][\p{L}\p{N}_]*/u);if(m){const v=m[0];html+=(keywords.has(v)?'<span class="tok-key">':functions.has(v)?'<span class="tok-fn">':'')+pyEscape(v)+(keywords.has(v)||functions.has(v)?'</span>':'');i+=v.length;continue}
+ html+=pyEscape(c);i++}return html}
+function initEditors(){document.querySelectorAll('.py-playground').forEach(box=>{const code=box.querySelector('.py-highlight'),preview=box.querySelector('.py-preview'),editor=box.querySelector('.py-editor'),res=box.querySelector('.py-result'),out=box.querySelector('.py-output'),status=box.querySelector('.py-state');const original=editor.value;const refresh=()=>{code.innerHTML=highlightPython(editor.value)};refresh();
+ function toggle(force){const editing=typeof force==='boolean'?force:editor.hidden;editor.hidden=!editing;preview.hidden=editing;box.querySelector('.py-edit').textContent=editing?'✓ Xem code đẹp':'✎ Sửa code';if(editing)editor.focus();else refresh()}
+ box.querySelector('.py-edit').addEventListener('click',()=>toggle());box.querySelector('.py-run').addEventListener('click',()=>{out.classList.remove('error');try{res.textContent=MiniPython.run(editor.value);status.textContent='· đã chạy offline (tập lệnh nhập môn)'}catch(e){out.classList.add('error');res.textContent=e.name+': '+e.message;status.textContent='· có lỗi'}if(editor.hidden)refresh()});
+ box.querySelector('.py-reset').addEventListener('click',()=>{editor.value=original;refresh();res.textContent='Đã khôi phục ví dụ. Bấm Run để chạy.';status.textContent='· chưa chạy';out.classList.remove('error')});
+ box.querySelector('.py-copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(editor.value)}catch{const tmp=document.createElement('textarea');tmp.value=editor.value;document.body.appendChild(tmp);tmp.select();document.execCommand('copy');tmp.remove()}status.textContent='· đã copy mã'});
+ editor.addEventListener('input',refresh);editor.addEventListener('keydown',e=>{if(e.key==='Tab'){e.preventDefault();const a=editor.selectionStart,b=editor.selectionEnd;editor.setRangeText('    ',a,b,'end');refresh()}if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();box.querySelector('.py-run').click()}});
+ })}
+
+
+const LESSONS=[{"title": "Bắt đầu từ quán cà phê", "answer": 1, "why": "List cho phép thay đổi phần tử theo chỉ số."}, {"title": "Python và Google Colab", "answer": 1, "why": "Code cell thực thi Python, Text cell dùng cho phần diễn giải."}, {"title": "Biến và phép gán", "answer": 1, "why": "Python không cho tên biến bắt đầu bằng chữ số hoặc chứa dấu -."}, {"title": "Các kiểu dữ liệu cơ bản", "answer": 1, "why": "Dấu nháy biến 25 thành một chuỗi ký tự."}, {"title": "Toán tử số học", "answer": 0, "why": "Với số dương, // cho thương nguyên 3."}, {"title": "Chuỗi, bool và toán tử so sánh", "answer": 1, "why": "Điều kiện thứ hai không đạt, nên and cho False."}, {"title": "Chuyển đổi kiểu dữ liệu", "answer": 1, "why": "Để nối chuỗi cần biến số thành str()."}, {"title": "List và tuple", "answer": 2, "why": "Tính mutability là điểm khác biệt quan trọng."}, {"title": "Indexing", "answer": 1, "why": "Chỉ số âm -2 là phần tử thứ hai khi đếm từ cuối."}, {"title": "Slicing, set và tính bất biến", "answer": 1, "why": "Slice lấy chỉ số 1 và 2, dừng trước chỉ số 3."}, {"title": "Bài tập mẫu có lời giải", "answer": 1, "why": "Danh sách đã thay thế giá trị ở chỉ số 1."}];
+const FINAL=[["Lệnh in chuỗi trong Python là gì?", ["show(\"Hi\")", "print(\"Hi\")", "write(\"Hi\")"], 1], ["Giá trị \"12\" thuộc kiểu gì?", ["int", "str", "bool"], 1], ["7 % 3 trả về gì?", ["1", "2", "3"], 0], ["Kết quả của 6 / 3 trong Python 3?", ["2", "2.0", "3"], 1], ["a=[\"A\",\"B\",\"C\"]; a[-1] là gì?", ["A", "B", "C"], 2], ["Tuple có thể gán sửa phần tử không?", ["Có", "Không", "Chỉ sửa phần tử đầu"], 1], ["a=[1,2,3,4]; a[1:3] là gì?", ["[2,3]", "[1,2,3]", "[2,3,4]"], 0], ["Nếu thành viên=True, tổng=40000, điều kiện member and total>=50000?", ["True", "False", "40000"], 1]];
+const PROFILE_KEY='ds_course_student_profile_v1';const STORE='ds2_lesson_progress_';
+const $=id=>document.getElementById(id);
+function safeText(v){return String(v||'').trim().slice(0,100)}
+function defaultProfile(){try{return JSON.parse(localStorage.getItem(PROFILE_KEY)||'{}')}catch{return {}}}
+let profile=defaultProfile();let progress={done:[],finalPassed:false,finalScore:0,certificate:null};let current=0;
+function stateKey(){return STORE+(profile.studentId||'anonymous').trim().toLowerCase()}
+function readState(){try{const p=JSON.parse(localStorage.getItem(stateKey())||'{}');return {done:Array.isArray(p.done)?p.done:[],finalPassed:!!p.finalPassed,finalScore:p.finalScore||0,certificate:p.certificate||null}}catch{return {done:[],finalPassed:false,finalScore:0,certificate:null}}}
+function saveState(){try{localStorage.setItem(stateKey(),JSON.stringify(progress))}catch{}}
+function saveProfile(){profile={fullName:safeText($('studentName').value),studentId:safeText($('studentId').value),classCode:safeText($('classCode').value)};try{localStorage.setItem(PROFILE_KEY,JSON.stringify(profile))}catch{};$('profileMessage').textContent='Thông tin đã tự lưu cục bộ.'}
+function openLimit(){let limit=0;for(let i=0;i<LESSONS.length;i++){if(progress.done.includes(i))limit=i+1;else break;}return Math.min(limit,LESSONS.length)}
+function show(i){const limit=openLimit();if(i>limit)return;current=i;document.querySelectorAll('.lesson').forEach(el=>{el.classList.remove('active');el.style.display='none'});
+ if(i===LESSONS.length){$('finalLesson').style.display='block'}else{const el=$('lesson'+i);el.style.display='block';el.classList.add('active')};drawNav();window.scrollTo({top:0,behavior:'smooth'});}
+function drawNav(){const limit=openLimit();$('progressBar').style.width=(progress.done.length/LESSONS.length*100)+'%';$('progressStatus').textContent=progress.done.length+'/'+LESSONS.length+' mục đã hoàn thành';$('sideNav').innerHTML=LESSONS.map((x,i)=>`<button type="button" data-jump="${i}" class="${current===i?'current':''}" ${i>limit?'disabled':''}>${progress.done.includes(i)?'✓':i>limit?'🔒':'▶'} ${String(i+1).padStart(2,'0')}. ${x.title}</button>`).join('')+`<button type="button" data-jump="${LESSONS.length}" class="${current===LESSONS.length?'current':''}" ${limit<LESSONS.length?'disabled':''}>${progress.finalPassed?'✓':limit===LESSONS.length?'▶':'🔒'} Kiểm tra cuối bài</button>`;
+ $('sideNav').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>show(Number(b.dataset.jump))));
+ LESSONS.forEach((_,i)=>{const btn=document.querySelector('[data-next="'+i+'"]');if(btn)btn.disabled=!progress.done.includes(i)});
+ if(progress.finalPassed){$('certActions').style.display='block';$('finalGrade').textContent='Đã đạt '+progress.finalScore+'/8 câu; đủ điều kiện nhận chứng nhận.';if(progress.certificate)renderCertificate(progress.certificate);}
+}
+function checkGate(i){const val=document.querySelector('input[name="gate'+i+'"]:checked');const msg=$('gateMsg'+i);if(!val){msg.className='check-result bad';msg.textContent='Hãy chọn một đáp án trước khi kiểm tra.';return}
+ if(Number(val.value)!==LESSONS[i].answer){msg.className='check-result bad';msg.textContent='Chưa đúng. Gợi ý: xem lại nội dung phần này rồi thử lại.';return}
+ if(!progress.done.includes(i))progress.done.push(i);progress.done.sort((a,b)=>a-b);saveState();msg.className='check-result ok';msg.textContent='Chính xác! '+LESSONS[i].why+' Đã mở mục tiếp theo.';drawNav();}
+function gradeFinal(){const responses=FINAL.map((q,i)=>{const x=document.querySelector('input[name="final'+i+'"]:checked');return x?Number(x.value):null});const answered=responses.filter(x=>x!==null).length;
+ if(answered<FINAL.length){$('finalGrade').className='check-result bad';$('finalGrade').textContent='Cần trả lời đủ '+FINAL.length+' câu rồi mới chấm. Đã chọn '+answered+'/'+FINAL.length+'.';return}
+ const score=responses.reduce((s,x,i)=>s+(x===FINAL[i][2]?1:0),0);progress.finalScore=score;progress.finalPassed=score>=7;
+ const boxes=document.querySelectorAll('.final-item');boxes.forEach((box,i)=>{let old=box.querySelector('.grade-feedback');if(old)old.remove();const d=document.createElement('p');d.className='grade-feedback '+(responses[i]===FINAL[i][2]?'ok':'bad');d.textContent=(responses[i]===FINAL[i][2]?'✓ Đúng.':'✗ Chưa đúng.')+' Đáp án: '+FINAL[i][1][FINAL[i][2]];box.appendChild(d)});
+ $('finalGrade').className='check-result '+(progress.finalPassed?'ok':'bad');$('finalGrade').textContent='Kết quả '+score+'/8. '+(progress.finalPassed?'Đã đạt yêu cầu (từ 7/8). Bạn có thể nhận chứng nhận.':'Chưa đạt mức 7/8. Ôn lại và thử lại.');
+ if(!progress.finalPassed){progress.certificate=null;$('certActions').style.display='none'}else{$('certActions').style.display='block'};saveState();drawNav();}
+function codeCertificate(item){return ['CHỨNG NHẬN HOÀN THÀNH BÀI HỌC','Bài 2 – Giới thiệu ngôn ngữ lập trình Python','Họ và tên: '+item.fullName,'Mã sinh viên: '+item.studentId,'Mã lớp: '+item.classCode,'Hoàn thành: 11/11 mục học và '+item.score+'/8 câu kiểm tra cuối bài','Ngày hoàn thành: '+new Date(item.date).toLocaleString('vi-VN'),'Mã chứng nhận: '+item.id,'Hình thức: tự đánh giá offline trong trình duyệt; không phải chứng chỉ được nhà trường xác thực.'].join('\n')}
+function certId(){let n='';try{n=crypto.getRandomValues(new Uint32Array(2)).join('')}catch{n=String(Date.now())}return 'DS2-'+(profile.studentId||'SV').replace(/[^\w-]/g,'').slice(0,18)+'-'+n.slice(0,10)}
+function issueCert(){if(!progress.finalPassed||openLimit()<LESSONS.length){alert('Bạn chưa hoàn thành đủ yêu cầu bài học.');return}if(!profile.fullName||!profile.studentId||!profile.classCode){alert('Hãy nhập đầy đủ họ tên, mã sinh viên, mã lớp trước khi nhận chứng nhận.');$('studentName').focus();return}
+ let cert=progress.certificate;if(!cert||cert.studentId!==profile.studentId){cert={fullName:profile.fullName,studentId:profile.studentId,classCode:profile.classCode,date:new Date().toISOString(),score:progress.finalScore,id:certId()}}else{cert.fullName=profile.fullName;cert.classCode=profile.classCode}
+ progress.certificate=cert;saveState();renderCertificate(cert);}
+function wrap(ctx,text,maxWidth){const words=String(text).split(/\s+/);const lines=[];let line='';for(let word of words){const next=line?(line+' '+word):word;if(ctx.measureText(next).width>maxWidth&&line){lines.push(line);line=word}else line=next}if(line)lines.push(line);return lines}
+function renderCertificate(cert){if(!cert)return;const canvas=$('certCanvas'),ctx=canvas.getContext('2d');ctx.fillStyle='#f9fbff';ctx.fillRect(0,0,1600,1000);const grad=ctx.createLinearGradient(0,0,1600,0);grad.addColorStop(0,'#08345a');grad.addColorStop(1,'#098999');ctx.fillStyle=grad;ctx.fillRect(0,0,1600,190);ctx.fillStyle='#fff';ctx.font='bold 30px Arial';ctx.textAlign='center';ctx.fillText('ĐẠI HỌC KINH TẾ QUỐC DÂN · HỌC LIỆU TƯƠNG TÁC',800,70);ctx.font='bold 60px Arial';ctx.fillText('CHỨNG NHẬN HOÀN THÀNH BÀI HỌC',800,143);ctx.strokeStyle='#c5ab65';ctx.lineWidth=8;ctx.strokeRect(30,30,1540,940);ctx.fillStyle='#46627a';ctx.font='26px Arial';ctx.fillText('XÁC NHẬN NGƯỜI HỌC',800,265);ctx.fillStyle='#12385b';ctx.font='bold 66px Arial';ctx.fillText(cert.fullName,800,350);ctx.font='30px Arial';ctx.fillText('Mã SV: '+cert.studentId+'     |     Mã lớp: '+cert.classCode,800,410);ctx.font='31px Arial';ctx.fillText('Đã hoàn thành Bài 2',800,490);ctx.font='bold 39px Arial';wrap(ctx,'GIỚI THIỆU NGÔN NGỮ LẬP TRÌNH PYTHON',1350).forEach((line,i)=>ctx.fillText(line,800,560+i*47));ctx.font='28px Arial';ctx.fillStyle='#146b74';ctx.fillText('Tiến độ 11/11 mục • Kiểm tra cuối: '+cert.score+'/8 câu',800,660);ctx.fillStyle='#405e70';ctx.font='25px Arial';ctx.fillText('Ngày hoàn thành: '+new Date(cert.date).toLocaleDateString('vi-VN'),800,735);ctx.font='20px Arial';ctx.fillText('Mã chứng nhận: '+cert.id,800,795);ctx.font='18px Arial';ctx.fillText('Minh chứng tự đánh giá trên HTML offline · Không phải chứng chỉ do nhà trường xác thực',800,914);ctx.textAlign='left';$('certPane').style.display='block';$('certText').textContent=codeCertificate(cert);$('certPane').scrollIntoView({behavior:'smooth',block:'center'});}
+function downloadCertificate(){if(!progress.certificate)return;const a=document.createElement('a');a.href=$('certCanvas').toDataURL('image/png');a.download='chung_nhan_bai_2_'+profile.studentId.replace(/[^A-Za-z0-9_-]/g,'_')+'.png';a.click()}
+async function copyText(){if(!progress.certificate)return;const t=codeCertificate(progress.certificate);try{await navigator.clipboard.writeText(t);alert('Đã sao chép nội dung chứng nhận.')}catch{const el=document.createElement('textarea');el.value=t;document.body.appendChild(el);el.select();document.execCommand('copy');el.remove();alert('Đã sao chép nội dung chứng nhận.')}}
+async function copyImage(){if(!progress.certificate)return;try{const blob=await new Promise(resolve=>$('certCanvas').toBlob(resolve,'image/png'));await navigator.clipboard.write([new ClipboardItem({'image/png':blob})]);alert('Đã sao chép ảnh chứng nhận.')}catch{alert('Trình duyệt không hỗ trợ sao chép ảnh từ file offline. Hãy dùng nút Tải chứng nhận PNG.')}}
+function activateDemos(){function money(x){return x.toLocaleString('vi-VN')};const pricing=()=>{$('priceOut').textContent='3 × '+money(Math.max(0,Number($('priceInput').value)||0))+' = '+money(Math.max(0,Number($('priceInput').value)||0)*3)+' VNĐ'};$('priceGo').addEventListener('click',pricing);
+ const bill=()=>{let a=Number($('nSua').value)||0,b=Number($('nTra').value)||0,c=Number($('nDen').value)||0;if(a<0||b<0||c<0){$('billOut').textContent='Số lượng không được âm.';return}$('billOut').textContent='Tổng: '+money(a*25000+b*35000+c*20000)+' VNĐ'};$('calcBill').addEventListener('click',bill);
+ $('checkDiscount').addEventListener('click',()=>{$('discountOut').textContent=($('isMember').checked&&Number($('discountTotal').value)>=50000)?'Đủ điều kiện: thành viên và hóa đơn từ 50.000đ.':'Chưa đủ điều kiện: cần là thành viên VÀ hóa đơn ≥50.000đ.'});
+ const defaultMenu=['Cà phê đen','Cà phê sữa','Bạc xỉu','Trà đào'];let menu=[...defaultMenu];const showMenu=()=>$('menuPreview').textContent=JSON.stringify(menu);$('replaceMenu').addEventListener('click',()=>{menu[1]='Cà phê muối';showMenu()});$('resetMenu').addEventListener('click',()=>{menu=[...defaultMenu];showMenu()});
+ $('indexChips').innerHTML=defaultMenu.map((x,i)=>'<span class="chip">'+i+' / '+(i-4)+'<br>'+x+'</span>').join('');const updateIndex=()=>{let i=Number($('indexSelect').value),index=i<0?defaultMenu.length+i:i;$('indexOut').textContent='thuc_don['+i+'] → '+defaultMenu[index]};$('indexSelect').addEventListener('change',updateIndex);updateIndex();
+ $('calcSlice').addEventListener('click',()=>{let a=Number($('sliceFrom').value),b=Number($('sliceTo').value);$('sliceOut').textContent='thuc_don['+a+':'+b+'] → '+JSON.stringify(defaultMenu.slice(a,b))});}
+function init(){const fields=[['studentName','fullName'],['studentId','studentId'],['classCode','classCode']];fields.forEach(([id,key])=>{$(id).value=profile[key]||''});progress=readState();
+ fields.forEach(([id])=>$(id).addEventListener('change',()=>{const oldKey=stateKey();saveProfile();if(stateKey()!==oldKey){progress=readState();current=0;document.querySelectorAll('.check-result').forEach(x=>x.textContent='');$('certPane').style.display='none';$('certActions').style.display='none';show(0)}else saveState()}));
+ fields.forEach(([id])=>$(id).addEventListener('input',()=>{$('profileMessage').textContent='Thông tin đã chỉnh sửa. Rời ô nhập để lưu tiến độ theo mã sinh viên.'}));
+ document.querySelectorAll('[data-check]').forEach(b=>b.addEventListener('click',()=>checkGate(Number(b.dataset.check))));
+ document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>show(Number(b.dataset.next)+1)));
+ $('gradeFinal').addEventListener('click',gradeFinal);$('issueCert').addEventListener('click',issueCert);$('downloadCert').addEventListener('click',downloadCertificate);$('copyCert').addEventListener('click',copyText);$('copyCertImage').addEventListener('click',copyImage);
+ activateDemos();show(Math.min(openLimit(),LESSONS.length));}
+init();
+initEditors();
+</script>
+<script>
+/* Cấu hình riêng cho màu vùng code; không can thiệp dữ liệu trả lời hoặc tiến độ. */
+(function(){
+ const key='neu_ds_bai2_code_theme_v1';
+ const btn=document.getElementById('codeThemeToggle');
+ const val=v=>v==='dark'?'dark':'light';
+ function getStored(){try{return localStorage.getItem(key)}catch(e){return null}}
+ function updateNav(v){document.querySelectorAll('.links a[href]').forEach(a=>{
+  try{const url=new URL(a.href,location.href);if(!url.pathname.endsWith('.html'))return;
+   url.searchParams.set('codeTheme',v);a.href=url.href;}catch(e){}
+ });}
+ function setTheme(v,save){v=val(v);document.documentElement.dataset.codeTheme=v;
+  if(btn){btn.textContent=v==='dark'?'🌙 Code: Tối':'☀ Code: Sáng';btn.setAttribute('aria-pressed',String(v==='dark'));
+   btn.title='Đổi giao diện vùng mã sang chế độ '+(v==='dark'?'sáng':'tối');}
+  updateNav(v);
+  if(save){try{localStorage.setItem(key,v)}catch(e){}}
+ }
+ const param=new URLSearchParams(location.search).get('codeTheme');
+ const init=param==='light'||param==='dark'?param:getStored();
+ setTheme(init,false);
+ if(btn)btn.addEventListener('click',()=>setTheme(document.documentElement.dataset.codeTheme==='dark'?'light':'dark',true));
+ window.addEventListener('storage',e=>{if(e.key===key)setTheme(e.newValue,false)});
+})();
+</script>
+</body></html>
