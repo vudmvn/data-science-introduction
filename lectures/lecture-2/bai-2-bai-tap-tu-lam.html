@@ -21,18 +21,18 @@ nav.top{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:
 @media(max-width:750px){.student-grid{grid-template-columns:1fr}.score-cards{grid-template-columns:1fr 1fr}.sticky{position:static}.case-grid{grid-template-columns:1fr}}
 @media(max-width:500px){.score-cards{grid-template-columns:1fr}.work-editor{font-size:12px;padding:12px}}
 </style></head><body>
-<nav class="top"><div class="topinner"><a class="brand" href="../../index.html">NEU / KHOA HỌC DỮ LIỆU · BÀI 2</a><div class="toplinks"><a href="../../index.html">Trang chủ</a><a href="bai_2_bai_giang_tuong_tac.html">Bài giảng</a><a href="bai_2_quiz_tu_cham.html">Quiz tự chấm</a><a class="here" href="#dau">Bài tập tự làm</a></div></div></nav>
-<div class="wrapper"><header class="hero" id="dau"><small>HỌC LIỆU TƯƠNG TÁC · GIỚI THIỆU PYTHON</small><h1>Bài tập tự làm · 10 tình huống kinh doanh</h1><p>Đọc đề bài, viết tiếp vào mã Python đã có sẵn dữ liệu mẫu, chạy thử và chấm bằng nhiều bộ dữ liệu. Nội dung tiếp nối 5 bài ví dụ mẫu, sử dụng biến, kiểu dữ liệu, print(), toán tử, các hàm dựng sẵn và list.</p><div class="metrics"><span>10 bài tổng hợp</span><span>5 nhóm kinh tế · kinh doanh · quản lý</span><span>Chấm tối đa 100 điểm</span><span>Lưu bài làm</span></div></header>
+<nav class="top"><div class="topinner"><a class="brand" href="../../index.html">NEU / KHOA HỌC DỮ LIỆU · BÀI 2</a><div class="toplinks"><a href="../../index.html">Trang chủ</a><a href="bai-2-bai-giang-tuong-tac.html">Bài giảng</a><a href="bai-2-quiz-tu-cham.html">Quiz tự chấm</a><a class="here" href="#dau">Bài tập tự làm</a></div></div></nav>
+<div class="wrapper"><header class="hero" id="dau"><small>HỌC LIỆU TƯƠNG TÁC · GIỚI THIỆU PYTHON</small><h1>Bài tập tự làm · 10 tình huống kinh doanh</h1><p>5 bài đầu định dạng điền vào chỗ trống (...), 5 bài sau có chú thích yêu cầu chi tiết ngay trong mã nguồn. Viết mã, chạy thử và chấm điểm tự động trên trình duyệt.</p><div class="metrics"><span>10 bài tổng hợp</span><span>5 bài điền chỗ trống (...)</span><span>5 bài tự viết theo yêu cầu</span><span>Chấm tối đa 100 điểm</span></div></header>
 <div class="layout"><aside class="sidebar"><h3>Điều hướng nhanh</h3><div class="side-links"><a href="#hoso">Hồ sơ sinh viên</a><a href="#tongket">Bảng điểm</a><a href="#p01">01. Tính hóa đơn và giảm giá</a><a href="#p02">02. Hóa đơn có thuế và phí giao hàng</a><a href="#p03">03. Doanh thu, chi phí và lợi nhuận</a><a href="#p04">04. Tính biên lợi nhuận tháng</a><a href="#p05">05. Kiểm kê và nhu cầu nhập hàng</a><a href="#p06">06. Cập nhật danh sách hàng hóa</a><a href="#p07">07. Đo chi phí chuyển đổi và ROAS</a><a href="#p08">08. So sánh hai kênh quảng cáo</a><a href="#p09">09. Tính lương và kiểm tra quỹ lương</a><a href="#p10">10. Thống kê danh sách nhân viên</a></div><hr><div class="side-score"><span class="mutedtext">Điểm hiện tại</span><strong id="sideScore">0 / 100</strong><small class="mutedtext" id="sideDone">0/10 bài đã chấm</small><div class="prog"><span id="sideBar"></span></div></div></aside>
 <main><section class="card" id="hoso"><span class="eyebrow">Thông tin sinh viên</span><h2>Hồ sơ học tập</h2><p>Điền thông tin để lưu bài làm riêng cho từng mã sinh viên trên trình duyệt và đưa thông tin vào phiếu kết quả.</p><div class="student-grid"><label>Họ và tên<input id="studentName" type="text" maxlength="100" placeholder="Nguyễn Văn A"></label><label>Mã sinh viên<input id="studentId" type="text" maxlength="40" placeholder="1126xxxxx"></label><label>Mã lớp<input id="classCode" type="text" maxlength="50" placeholder="KHDL_01"></label></div><div class="actions2"><button type="button" id="saveProfile" class="action good">Lưu hồ sơ</button><button type="button" id="switchStudent" class="action">Đổi sinh viên</button><span class="mutedtext" id="profileMsg"></span></div></section>
 <section class="card" id="tongket"><span class="eyebrow">Chấm tự động</span><h2>Bảng điểm và tiến độ</h2><p>Mỗi bài tối đa 10 điểm. <b>Chạy thử</b> chạy toàn bộ mã trong ô, bao gồm phần dữ liệu mẫu; <b>Chấm bài</b> thay phần dữ liệu mẫu bằng ba bộ dữ liệu kiểm thử để chấm phần chương trình sinh viên viết. Điểm được phân bổ theo từng biến kết quả và đầu ra. Mã được thay đổi sau khi chấm sẽ cần chấm lại.</p><div class="score-cards"><div class="score-card"><strong id="scoreNow">0/100</strong><small>Tổng điểm</small></div><div class="score-card"><strong id="doneNow">0/10</strong><small>Bài đã chấm</small></div><div class="score-card"><strong id="perfectNow">0/10</strong><small>Bài đạt tối đa</small></div></div><div class="prog" style="margin-top:17px"><span id="globalBar"></span></div><p class="mutedtext" id="progressMsg" style="margin-top:12px">Bạn chưa chấm bài nào.</p><div class="actions2"><button type="button" class="action good" id="gradeAllTop">✓ Chấm toàn bộ</button><button type="button" class="action" id="exportTop">↓ Xuất kết quả TXT</button><button type="button" class="action" id="imageTop">▣ Xuất phiếu điểm PNG</button><button type="button" class="action" id="clearGrades">↺ Xóa điểm đã chấm</button></div></section>
-<div class="sectionlabel"><h2>10 bài tập tổng hợp</h2><p>Mỗi bài có dữ liệu mẫu được điền sẵn trong chính ô viết code. Sinh viên viết tiếp phía dưới và sử dụng các biến đầu vào để kết quả thay đổi đúng khi dữ liệu thay đổi. Chưa cần câu lệnh if, vòng lặp hay tự định nghĩa hàm.</p></div>
+<div class="sectionlabel"><h2>10 bài tập tổng hợp</h2><p><b>5 bài đầu:</b> Luyện tập dạng điền vào chỗ trống (thay thế <code>...</code> bằng biểu thức thích hợp). <b>5 bài sau:</b> Tự viết mã dựa theo các dòng chú thích yêu cầu chi tiết. Hãy sử dụng đúng tên biến đầu vào để hệ thống chấm điểm tự động.</p></div>
 <article class="card practice-card" id="p01" data-task="0">
- <div class="tags"><span class="tag">BÀI 01</span><span class="tag level">Bán hàng</span><span class="mutedtext">Vận dụng</span><span class="taskscore" data-points>10 điểm</span></div>
+ <div class="tags"><span class="tag">BÀI 01</span><span class="tag level">Bán hàng</span><span class="mutedtext">Điền chỗ trống</span><span class="taskscore" data-points>10 điểm</span></div>
  <h2>Tính hóa đơn và giảm giá</h2><p>NeuTech Coffee bán cà phê sữa và trà đào. Quán giảm một tỷ lệ cố định cho hóa đơn; hãy tính đúng số tiền thanh toán.</p>
  <div class="case-grid"><div class="case-panel"><h4>Yêu cầu thực hiện</h4><ol><li>Tính tổng trước giảm và lưu vào biến tong_goc.</li><li>Tính số tiền giảm vào muc_giam.</li><li>Tính tiền phải trả vào thanh_toan.</li><li>Dùng print() in đúng mẫu: Thanh toán: 137700 (số nguyên, không có chữ VNĐ).</li></ol><p class="mutedtext">Tính tổng trước khi áp dụng ưu đãi; ở đây ưu đãi được giả định áp dụng cho mọi hóa đơn.</p></div>
- <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Thanh toán: 137700</pre><p class="mutedtext">Các biến và giá trị đầu vào mẫu đã được điền sẵn <b>trong ô code ngay bên dưới</b>. Sinh viên viết các câu lệnh tiếp theo ở cuối đoạn mã. Có thể đổi số liệu mẫu để chạy thử.</p></div></div>
- <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Viết tiếp dưới phần dữ liệu mẫu</span></div>
+ <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Thanh toán: 137700</pre><p class="mutedtext">Các biến đầu vào đã cho sẵn. Sinh viên <b>thay thế các dấu <code>...</code></b> bằng biểu thức hoặc biến tương ứng để hoàn thành bài tập.</p></div></div>
+ <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Điền vào chỗ trống (...)</span></div>
  <textarea class="work-editor" data-editor aria-label="Viết mã Python cho bài 1" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off" ># DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)
 gia_sua = 25000
 so_sua = 3
@@ -41,9 +41,18 @@ so_tra = 2
 ty_le_giam = 0.1
 # === KẾT THÚC DỮ LIỆU MẪU ===
 
-# PHẦN SINH VIÊN VIẾT TIẾP
-# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.
+# PHẦN SINH VIÊN VIẾT TIẾP (ĐIỀN VÀO CHỖ TRỐNG ...)
+# Yêu cầu 1: Tính tổng tiền trước khi giảm (giá sữa * số sữa + giá trà * số trà)
+tong_goc = gia_sua * ... + gia_tra * ...
 
+# Yêu cầu 2: Tính số tiền được giảm theo tỷ lệ giảm (tong_goc * ty_le_giam)
+muc_giam = tong_goc * ...
+
+# Yêu cầu 3: Tính số tiền thực tế phải thanh toán sau khi trừ mức giảm
+thanh_toan = tong_goc - ...
+
+# Yêu cầu 4: In kết quả theo đúng mẫu: Thanh toán: 137700 (lưu ý dùng int())
+print("Thanh toán:", int(...))
 </textarea>
  <div class="outhead"><b>Đầu ra</b><span data-status>Chưa chạy</span></div><pre class="out outputbox" data-output><span class="emptyout">Nhấn “Chạy thử” để xem kết quả từ mã của bạn.</span></pre></div>
  <p class="mutedtext">Phần khai báo dữ liệu mẫu nằm trong mã Python. Hãy giữ dòng <code># === KẾT THÚC DỮ LIỆU MẪU ===</code> để hệ thống phân biệt đầu vào và lời giải khi chấm với dữ liệu khác.</p>
@@ -55,21 +64,30 @@ muc_giam = tong_goc * ty_le_giam
 thanh_toan = tong_goc - muc_giam
 print(&quot;Thanh toán:&quot;, int(thanh_toan))</code></pre><p class="mutedtext">Lời giải sử dụng các biến đầu vào đã cho; có thể có nhiều cách viết tương đương.</p></details>
  </article><article class="card practice-card" id="p02" data-task="1">
- <div class="tags"><span class="tag">BÀI 02</span><span class="tag level">Bán hàng</span><span class="mutedtext">Vận dụng</span><span class="taskscore" data-points>10 điểm</span></div>
+ <div class="tags"><span class="tag">BÀI 02</span><span class="tag level">Bán hàng</span><span class="mutedtext">Điền chỗ trống</span><span class="taskscore" data-points>10 điểm</span></div>
  <h2>Hóa đơn có thuế và phí giao hàng</h2><p>Một cửa hàng nhận đơn qua ứng dụng. Đơn giá và số lượng được hệ thống gửi về dưới dạng chuỗi; cần chuyển thành số trước khi tính.</p>
  <div class="case-grid"><div class="case-panel"><h4>Yêu cầu thực hiện</h4><ol><li>Chuyển don_gia và so_luong thành số rồi tính tien_hang.</li><li>Tính tien_thue theo thue_suat trên tiền hàng.</li><li>Tính tong_hoa_don gồm tiền hàng, thuế và phí giao hàng.</li><li>In đúng mẫu: Tổng hóa đơn: 128400 (sử dụng round() hoặc int() với dữ liệu hiện tại).</li></ol><p class="mutedtext">Dữ liệu giả lập dùng thuế suất đã cho; không đại diện cho quy định thuế áp dụng ngoài thực tế.</p></div>
- <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Tổng hóa đơn: 128400</pre><p class="mutedtext">Các biến và giá trị đầu vào mẫu đã được điền sẵn <b>trong ô code ngay bên dưới</b>. Sinh viên viết các câu lệnh tiếp theo ở cuối đoạn mã. Có thể đổi số liệu mẫu để chạy thử.</p></div></div>
- <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Viết tiếp dưới phần dữ liệu mẫu</span></div>
+ <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Tổng hóa đơn: 128400</pre><p class="mutedtext">Các biến đầu vào đã cho sẵn. Sinh viên <b>thay thế các dấu <code>...</code></b> bằng biểu thức hoặc biến tương ứng để hoàn thành bài tập.</p></div></div>
+ <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Điền vào chỗ trống (...)</span></div>
  <textarea class="work-editor" data-editor aria-label="Viết mã Python cho bài 2" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off" ># DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)
-don_gia = &quot;35000&quot;
-so_luong = &quot;3&quot;
+don_gia = "35000"
+so_luong = "3"
 phi_giao = 15000
 thue_suat = 0.08
 # === KẾT THÚC DỮ LIỆU MẪU ===
 
-# PHẦN SINH VIÊN VIẾT TIẾP
-# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.
+# PHẦN SINH VIÊN VIẾT TIẾP (ĐIỀN VÀO CHỖ TRỐNG ...)
+# Yêu cầu 1: Chuyển don_gia và so_luong từ chuỗi sang số nguyên int() rồi tính tien_hang
+tien_hang = int(...) * int(...)
 
+# Yêu cầu 2: Tính tiền thuế theo thuế suất trên tiền hàng (tien_hang * thue_suat)
+tien_thue = ... * ...
+
+# Yêu cầu 3: Tính tổng hóa đơn gồm tiền hàng, tiền thuế và phí giao hàng
+tong_hoa_don = tien_hang + ... + ...
+
+# Yêu cầu 4: In ra màn hình theo đúng mẫu: Tổng hóa đơn: 128400 (dùng round() hoặc int())
+print("Tổng hóa đơn:", round(...))
 </textarea>
  <div class="outhead"><b>Đầu ra</b><span data-status>Chưa chạy</span></div><pre class="out outputbox" data-output><span class="emptyout">Nhấn “Chạy thử” để xem kết quả từ mã của bạn.</span></pre></div>
  <p class="mutedtext">Phần khai báo dữ liệu mẫu nằm trong mã Python. Hãy giữ dòng <code># === KẾT THÚC DỮ LIỆU MẪU ===</code> để hệ thống phân biệt đầu vào và lời giải khi chấm với dữ liệu khác.</p>
@@ -81,11 +99,11 @@ tien_thue = tien_hang * thue_suat
 tong_hoa_don = tien_hang + tien_thue + phi_giao
 print(&quot;Tổng hóa đơn:&quot;, round(tong_hoa_don))</code></pre><p class="mutedtext">Lời giải sử dụng các biến đầu vào đã cho; có thể có nhiều cách viết tương đương.</p></details>
  </article><article class="card practice-card" id="p03" data-task="2">
- <div class="tags"><span class="tag">BÀI 03</span><span class="tag level">Lợi nhuận</span><span class="mutedtext">Vận dụng</span><span class="taskscore" data-points>10 điểm</span></div>
+ <div class="tags"><span class="tag">BÀI 03</span><span class="tag level">Lợi nhuận</span><span class="mutedtext">Điền chỗ trống</span><span class="taskscore" data-points>10 điểm</span></div>
  <h2>Doanh thu, chi phí và lợi nhuận</h2><p>Một quầy đồ uống bán một loại sản phẩm trong ngày. Biết doanh số, giá bán và chi phí biến đổi mỗi ly; cần tính lợi nhuận sau chi phí cố định.</p>
  <div class="case-grid"><div class="case-panel"><h4>Yêu cầu thực hiện</h4><ol><li>Tính doanh_thu = số ly × giá bán.</li><li>Tính chi_phi gồm chi phí biến đổi và chi phí cố định.</li><li>Tính loi_nhuan = doanh thu − chi phí.</li><li>In đúng mẫu: Lợi nhuận: 155000.</li></ol></div>
- <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Lợi nhuận: 155000</pre><p class="mutedtext">Các biến và giá trị đầu vào mẫu đã được điền sẵn <b>trong ô code ngay bên dưới</b>. Sinh viên viết các câu lệnh tiếp theo ở cuối đoạn mã. Có thể đổi số liệu mẫu để chạy thử.</p></div></div>
- <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Viết tiếp dưới phần dữ liệu mẫu</span></div>
+ <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Lợi nhuận: 155000</pre><p class="mutedtext">Các biến đầu vào đã cho sẵn. Sinh viên <b>thay thế các dấu <code>...</code></b> bằng biểu thức hoặc biến tương ứng để hoàn thành bài tập.</p></div></div>
+ <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Điền vào chỗ trống (...)</span></div>
  <textarea class="work-editor" data-editor aria-label="Viết mã Python cho bài 3" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off" ># DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)
 so_ly = 25
 gia_ban = 30000
@@ -93,9 +111,18 @@ chi_phi_moi_ly = 15000
 chi_phi_co_dinh = 220000
 # === KẾT THÚC DỮ LIỆU MẪU ===
 
-# PHẦN SINH VIÊN VIẾT TIẾP
-# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.
+# PHẦN SINH VIÊN VIẾT TIẾP (ĐIỀN VÀO CHỖ TRỐNG ...)
+# Yêu cầu 1: Tính tổng doanh thu trong ngày (số ly * giá bán)
+doanh_thu = so_ly * ...
 
+# Yêu cầu 2: Tính tổng chi phí (chi phí biến đổi của các ly + chi phí cố định)
+chi_phi = so_ly * ... + ...
+
+# Yêu cầu 3: Tính lợi nhuận trong ngày (doanh thu trừ chi phí)
+loi_nhuan = ... - ...
+
+# Yêu cầu 4: In kết quả theo đúng mẫu: Lợi nhuận: 155000
+print("Lợi nhuận:", ...)
 </textarea>
  <div class="outhead"><b>Đầu ra</b><span data-status>Chưa chạy</span></div><pre class="out outputbox" data-output><span class="emptyout">Nhấn “Chạy thử” để xem kết quả từ mã của bạn.</span></pre></div>
  <p class="mutedtext">Phần khai báo dữ liệu mẫu nằm trong mã Python. Hãy giữ dòng <code># === KẾT THÚC DỮ LIỆU MẪU ===</code> để hệ thống phân biệt đầu vào và lời giải khi chấm với dữ liệu khác.</p>
@@ -107,11 +134,11 @@ chi_phi = so_ly * chi_phi_moi_ly + chi_phi_co_dinh
 loi_nhuan = doanh_thu - chi_phi
 print(&quot;Lợi nhuận:&quot;, loi_nhuan)</code></pre><p class="mutedtext">Lời giải sử dụng các biến đầu vào đã cho; có thể có nhiều cách viết tương đương.</p></details>
  </article><article class="card practice-card" id="p04" data-task="3">
- <div class="tags"><span class="tag">BÀI 04</span><span class="tag level">Lợi nhuận</span><span class="mutedtext">Vận dụng</span><span class="taskscore" data-points>10 điểm</span></div>
+ <div class="tags"><span class="tag">BÀI 04</span><span class="tag level">Lợi nhuận</span><span class="mutedtext">Điền chỗ trống</span><span class="taskscore" data-points>10 điểm</span></div>
  <h2>Tính biên lợi nhuận tháng</h2><p>Một doanh nghiệp tổng hợp doanh thu tháng và bốn nhóm chi phí. Hãy đánh giá biên lợi nhuận bằng phép toán số học.</p>
  <div class="case-grid"><div class="case-panel"><h4>Yêu cầu thực hiện</h4><ol><li>Tính tổng chi phí trong biến tong_chi.</li><li>Tính loi_nhuan.</li><li>Tính ty_suat phần trăm = lợi nhuận / doanh thu × 100.</li><li>In: Biên lợi nhuận (%): 20.0 (làm tròn hai chữ số thập phân bằng round()).</li></ol></div>
- <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Biên lợi nhuận (%): 20.0</pre><p class="mutedtext">Các biến và giá trị đầu vào mẫu đã được điền sẵn <b>trong ô code ngay bên dưới</b>. Sinh viên viết các câu lệnh tiếp theo ở cuối đoạn mã. Có thể đổi số liệu mẫu để chạy thử.</p></div></div>
- <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Viết tiếp dưới phần dữ liệu mẫu</span></div>
+ <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Biên lợi nhuận (%): 20.0</pre><p class="mutedtext">Các biến đầu vào đã cho sẵn. Sinh viên <b>thay thế các dấu <code>...</code></b> bằng biểu thức hoặc biến tương ứng để hoàn thành bài tập.</p></div></div>
+ <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Điền vào chỗ trống (...)</span></div>
  <textarea class="work-editor" data-editor aria-label="Viết mã Python cho bài 4" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off" ># DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)
 doanh_thu_thang = 200000000
 nguyen_lieu = 70000000
@@ -120,9 +147,18 @@ mat_bang = 20000000
 chi_phi_khac = 15000000
 # === KẾT THÚC DỮ LIỆU MẪU ===
 
-# PHẦN SINH VIÊN VIẾT TIẾP
-# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.
+# PHẦN SINH VIÊN VIẾT TIẾP (ĐIỀN VÀO CHỖ TRỐNG ...)
+# Yêu cầu 1: Tính tổng các khoản chi phí (nguyên liệu, tiền lương, mặt bằng, chi phí khác)
+tong_chi = nguyen_lieu + ... + ... + ...
 
+# Yêu cầu 2: Tính lợi nhuận tháng (doanh thu tháng trừ tổng chi phí)
+loi_nhuan = doanh_thu_thang - ...
+
+# Yêu cầu 3: Tính tỷ suất lợi nhuận (%) = lợi nhuận / doanh thu tháng * 100
+ty_suat = ... / ... * 100
+
+# Yêu cầu 4: In kết quả theo mẫu: Biên lợi nhuận (%): 20.0 (làm tròn 2 chữ số bằng round())
+print("Biên lợi nhuận (%):", round(..., 2))
 </textarea>
  <div class="outhead"><b>Đầu ra</b><span data-status>Chưa chạy</span></div><pre class="out outputbox" data-output><span class="emptyout">Nhấn “Chạy thử” để xem kết quả từ mã của bạn.</span></pre></div>
  <p class="mutedtext">Phần khai báo dữ liệu mẫu nằm trong mã Python. Hãy giữ dòng <code># === KẾT THÚC DỮ LIỆU MẪU ===</code> để hệ thống phân biệt đầu vào và lời giải khi chấm với dữ liệu khác.</p>
@@ -134,11 +170,11 @@ loi_nhuan = doanh_thu_thang - tong_chi
 ty_suat = loi_nhuan / doanh_thu_thang * 100
 print(&quot;Biên lợi nhuận (%):&quot;, round(ty_suat, 2))</code></pre><p class="mutedtext">Lời giải sử dụng các biến đầu vào đã cho; có thể có nhiều cách viết tương đương.</p></details>
  </article><article class="card practice-card" id="p05" data-task="4">
- <div class="tags"><span class="tag">BÀI 05</span><span class="tag level">Tồn kho</span><span class="mutedtext">Vận dụng</span><span class="taskscore" data-points>10 điểm</span></div>
+ <div class="tags"><span class="tag">BÀI 05</span><span class="tag level">Tồn kho</span><span class="mutedtext">Điền chỗ trống</span><span class="taskscore" data-points>10 điểm</span></div>
  <h2>Kiểm kê và nhu cầu nhập hàng</h2><p>Quản lý cửa hàng cần cập nhật số lượng tồn kho sau khi nhập và bán trong ngày. Cửa hàng muốn biết cần nhập thêm bao nhiêu đơn vị để đáp ứng nhu cầu dự kiến.</p>
  <div class="case-grid"><div class="case-panel"><h4>Yêu cầu thực hiện</h4><ol><li>Tính ton_cuoi = tồn đầu + nhập mới − đã bán.</li><li>Tính can_nhap = max(0, nhu cầu dự kiến − tồn cuối).</li><li>Tạo biến du_hang (bool) cho biết tồn cuối đã đủ nhu cầu.</li><li>In: Cần nhập thêm: 35.</li></ol></div>
- <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Cần nhập thêm: 35</pre><p class="mutedtext">Các biến và giá trị đầu vào mẫu đã được điền sẵn <b>trong ô code ngay bên dưới</b>. Sinh viên viết các câu lệnh tiếp theo ở cuối đoạn mã. Có thể đổi số liệu mẫu để chạy thử.</p></div></div>
- <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Viết tiếp dưới phần dữ liệu mẫu</span></div>
+ <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Cần nhập thêm: 35</pre><p class="mutedtext">Các biến đầu vào đã cho sẵn. Sinh viên <b>thay thế các dấu <code>...</code></b> bằng biểu thức hoặc biến tương ứng để hoàn thành bài tập.</p></div></div>
+ <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Điền vào chỗ trống (...)</span></div>
  <textarea class="work-editor" data-editor aria-label="Viết mã Python cho bài 5" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off" ># DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)
 ton_dau = 65
 nhap_moi = 30
@@ -146,9 +182,18 @@ da_ban = 50
 nhu_cau_du_kien = 80
 # === KẾT THÚC DỮ LIỆU MẪU ===
 
-# PHẦN SINH VIÊN VIẾT TIẾP
-# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.
+# PHẦN SINH VIÊN VIẾT TIẾP (ĐIỀN VÀO CHỖ TRỐNG ...)
+# Yêu cầu 1: Tính số lượng tồn kho cuối ngày (tồn đầu + nhập mới - đã bán)
+ton_cuoi = ton_dau + ... - ...
 
+# Yêu cầu 2: Tính số lượng cần nhập thêm (dùng hàm max() để không bị âm nếu đã đủ hàng)
+can_nhap = max(0, ... - ...)
+
+# Yêu cầu 3: Tạo biến kiểu bool (True/False) kiểm tra xem tồn cuối đã đủ nhu cầu chưa (>=)
+du_hang = ... >= ...
+
+# Yêu cầu 4: In kết quả theo đúng mẫu: Cần nhập thêm: 35
+print("Cần nhập thêm:", ...)
 </textarea>
  <div class="outhead"><b>Đầu ra</b><span data-status>Chưa chạy</span></div><pre class="out outputbox" data-output><span class="emptyout">Nhấn “Chạy thử” để xem kết quả từ mã của bạn.</span></pre></div>
  <p class="mutedtext">Phần khai báo dữ liệu mẫu nằm trong mã Python. Hãy giữ dòng <code># === KẾT THÚC DỮ LIỆU MẪU ===</code> để hệ thống phân biệt đầu vào và lời giải khi chấm với dữ liệu khác.</p>
@@ -160,20 +205,32 @@ can_nhap = max(0, nhu_cau_du_kien - ton_cuoi)
 du_hang = ton_cuoi &gt;= nhu_cau_du_kien
 print(&quot;Cần nhập thêm:&quot;, can_nhap)</code></pre><p class="mutedtext">Lời giải sử dụng các biến đầu vào đã cho; có thể có nhiều cách viết tương đương.</p></details>
  </article><article class="card practice-card" id="p06" data-task="5">
- <div class="tags"><span class="tag">BÀI 06</span><span class="tag level">Tồn kho</span><span class="mutedtext">Vận dụng</span><span class="taskscore" data-points>10 điểm</span></div>
+ <div class="tags"><span class="tag">BÀI 06</span><span class="tag level">Tồn kho</span><span class="mutedtext">Viết theo yêu cầu</span><span class="taskscore" data-points>10 điểm</span></div>
  <h2>Cập nhật danh sách hàng hóa</h2><p>Danh sách mặt hàng của một cửa hàng được lưu bằng list. Người quản lý muốn đổi tên một mặt hàng và trích những món đầu tiên để đưa lên trang chủ.</p>
  <div class="case-grid"><div class="case-panel"><h4>Yêu cầu thực hiện</h4><ol><li>Thay phần tử menu[vi_tri_thay] bằng mon_moi.</li><li>Lưu món đầu tiên vào mon_dau.</li><li>Lưu menu[:so_muc_chon] vào danh_sach_goi_y.</li><li>Tính so_mon = len(menu).</li><li>In danh sách gợi ý theo mẫu: Gợi ý: [&#x27;Cà phê&#x27;, &#x27;Trà đào&#x27;].</li></ol></div>
- <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Gợi ý: [&#x27;Cà phê&#x27;, &#x27;Trà đào&#x27;]</pre><p class="mutedtext">Các biến và giá trị đầu vào mẫu đã được điền sẵn <b>trong ô code ngay bên dưới</b>. Sinh viên viết các câu lệnh tiếp theo ở cuối đoạn mã. Có thể đổi số liệu mẫu để chạy thử.</p></div></div>
- <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Viết tiếp dưới phần dữ liệu mẫu</span></div>
+ <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Gợi ý: [&#x27;Cà phê&#x27;, &#x27;Trà đào&#x27;]</pre><p class="mutedtext">Các biến đầu vào đã cho sẵn. Sinh viên viết các câu lệnh theo từng chú thích yêu cầu bên dưới để hoàn thành bài tập.</p></div></div>
+ <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Viết tiếp theo yêu cầu</span></div>
  <textarea class="work-editor" data-editor aria-label="Viết mã Python cho bài 6" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off" ># DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)
-menu = [&quot;Cà phê&quot;, &quot;Trà xanh&quot;, &quot;Bạc xỉu&quot;, &quot;Nước ép&quot;]
-mon_moi = &quot;Trà đào&quot;
+menu = ["Cà phê", "Trà xanh", "Bạc xỉu", "Nước ép"]
+mon_moi = "Trà đào"
 vi_tri_thay = 1
 so_muc_chon = 2
 # === KẾT THÚC DỮ LIỆU MẪU ===
 
 # PHẦN SINH VIÊN VIẾT TIẾP
-# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.
+# Yêu cầu 1: Thay thế phần tử tại chỉ số vi_tri_thay trong menu bằng mon_moi
+
+
+# Yêu cầu 2: Lưu phần tử đầu tiên của menu vào biến mon_dau
+
+
+# Yêu cầu 3: Cắt lát lấy so_muc_chon món đầu tiên từ menu và lưu vào biến danh_sach_goi_y
+
+
+# Yêu cầu 4: Đếm tổng số món trong menu và lưu vào biến so_mon
+
+
+# Yêu cầu 5: In danh sách gợi ý theo đúng mẫu: Gợi ý: ['Cà phê', 'Trà đào']
 
 </textarea>
  <div class="outhead"><b>Đầu ra</b><span data-status>Chưa chạy</span></div><pre class="out outputbox" data-output><span class="emptyout">Nhấn “Chạy thử” để xem kết quả từ mã của bạn.</span></pre></div>
@@ -187,11 +244,11 @@ danh_sach_goi_y = menu[:so_muc_chon]
 so_mon = len(menu)
 print(&quot;Gợi ý:&quot;, danh_sach_goi_y)</code></pre><p class="mutedtext">Lời giải sử dụng các biến đầu vào đã cho; có thể có nhiều cách viết tương đương.</p></details>
  </article><article class="card practice-card" id="p07" data-task="6">
- <div class="tags"><span class="tag">BÀI 07</span><span class="tag level">Marketing</span><span class="mutedtext">Vận dụng</span><span class="taskscore" data-points>10 điểm</span></div>
+ <div class="tags"><span class="tag">BÀI 07</span><span class="tag level">Marketing</span><span class="mutedtext">Viết theo yêu cầu</span><span class="taskscore" data-points>10 điểm</span></div>
  <h2>Đo chi phí chuyển đổi và ROAS</h2><p>Một chiến dịch quảng cáo có tổng ngân sách, số đơn hàng thu về và doanh thu ghi nhận từ chiến dịch. Cần tính chỉ số đo hiệu quả ngân sách.</p>
  <div class="case-grid"><div class="case-panel"><h4>Yêu cầu thực hiện</h4><ol><li>Tính cpa = ngân sách / số đơn.</li><li>Tính roas = doanh thu từ quảng cáo / ngân sách.</li><li>Tính so_du_sau_quang_cao = doanh thu − ngân sách − phí nền tảng.</li><li>In ROAS làm tròn 2 chữ số theo mẫu: ROAS: 4.2.</li></ol><p class="mutedtext">Số dư sau quảng cáo chưa trừ giá vốn và các chi phí hoạt động khác; không được gọi là lợi nhuận ròng.</p></div>
- <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>ROAS: 4.2</pre><p class="mutedtext">Các biến và giá trị đầu vào mẫu đã được điền sẵn <b>trong ô code ngay bên dưới</b>. Sinh viên viết các câu lệnh tiếp theo ở cuối đoạn mã. Có thể đổi số liệu mẫu để chạy thử.</p></div></div>
- <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Viết tiếp dưới phần dữ liệu mẫu</span></div>
+ <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>ROAS: 4.2</pre><p class="mutedtext">Các biến đầu vào đã cho sẵn. Sinh viên viết các câu lệnh theo từng chú thích yêu cầu bên dưới để hoàn thành bài tập.</p></div></div>
+ <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Viết tiếp theo yêu cầu</span></div>
  <textarea class="work-editor" data-editor aria-label="Viết mã Python cho bài 7" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off" ># DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)
 ngan_sach = 2000000
 so_don = 40
@@ -200,7 +257,16 @@ phi_nen_tang = 400000
 # === KẾT THÚC DỮ LIỆU MẪU ===
 
 # PHẦN SINH VIÊN VIẾT TIẾP
-# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.
+# Yêu cầu 1: Tính chi phí cho mỗi đơn hàng (CPA = ngân sách / số đơn) lưu vào biến cpa
+
+
+# Yêu cầu 2: Tính tỷ suất doanh thu trên chi phí quảng cáo (ROAS = doanh thu QC / ngân sách) lưu vào biến roas
+
+
+# Yêu cầu 3: Tính số dư sau quảng cáo (doanh thu QC - ngân sách - phí nền tảng) lưu vào biến so_du_sau_quang_cao
+
+
+# Yêu cầu 4: In chỉ số ROAS làm tròn 2 chữ số thập phân theo đúng mẫu: ROAS: 4.2
 
 </textarea>
  <div class="outhead"><b>Đầu ra</b><span data-status>Chưa chạy</span></div><pre class="out outputbox" data-output><span class="emptyout">Nhấn “Chạy thử” để xem kết quả từ mã của bạn.</span></pre></div>
@@ -213,19 +279,28 @@ roas = doanh_thu_qc / ngan_sach
 so_du_sau_quang_cao = doanh_thu_qc - ngan_sach - phi_nen_tang
 print(&quot;ROAS:&quot;, round(roas, 2))</code></pre><p class="mutedtext">Lời giải sử dụng các biến đầu vào đã cho; có thể có nhiều cách viết tương đương.</p></details>
  </article><article class="card practice-card" id="p08" data-task="7">
- <div class="tags"><span class="tag">BÀI 08</span><span class="tag level">Marketing</span><span class="mutedtext">Vận dụng</span><span class="taskscore" data-points>10 điểm</span></div>
+ <div class="tags"><span class="tag">BÀI 08</span><span class="tag level">Marketing</span><span class="mutedtext">Viết theo yêu cầu</span><span class="taskscore" data-points>10 điểm</span></div>
  <h2>So sánh hai kênh quảng cáo</h2><p>Bộ phận marketing lưu chi phí và đơn hàng từ hai kênh trong các list có cùng thứ tự. Hãy đánh giá kênh 1 theo chi phí mỗi đơn.</p>
  <div class="case-grid"><div class="case-panel"><h4>Yêu cầu thực hiện</h4><ol><li>Tính cpa_kenh1 và cpa_kenh2 từ hai list.</li><li>Tạo biến kenh_1_tot_hon bằng phép so sánh cpa_kenh1 &lt; cpa_kenh2.</li><li>Tính chenh_lech là chênh lệch tuyệt đối của hai CPA.</li><li>In: Kênh 1 tốt hơn: False.</li></ol><p class="mutedtext">Chỉ đánh giá theo chi phí mỗi đơn (CPA), chưa xét chất lượng khách hàng hay giá trị đơn hàng.</p></div>
- <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Kênh 1 tốt hơn: False</pre><p class="mutedtext">Các biến và giá trị đầu vào mẫu đã được điền sẵn <b>trong ô code ngay bên dưới</b>. Sinh viên viết các câu lệnh tiếp theo ở cuối đoạn mã. Có thể đổi số liệu mẫu để chạy thử.</p></div></div>
- <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Viết tiếp dưới phần dữ liệu mẫu</span></div>
+ <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Kênh 1 tốt hơn: False</pre><p class="mutedtext">Các biến đầu vào đã cho sẵn. Sinh viên viết các câu lệnh theo từng chú thích yêu cầu bên dưới để hoàn thành bài tập.</p></div></div>
+ <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Viết tiếp theo yêu cầu</span></div>
  <textarea class="work-editor" data-editor aria-label="Viết mã Python cho bài 8" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off" ># DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)
-ten_kenh = [&quot;Mạng xã hội&quot;, &quot;Tìm kiếm&quot;]
+ten_kenh = ["Mạng xã hội", "Tìm kiếm"]
 chi_phi = [800000, 720000]
 so_don = [32, 36]
 # === KẾT THÚC DỮ LIỆU MẪU ===
 
 # PHẦN SINH VIÊN VIẾT TIẾP
-# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.
+# Yêu cầu 1: Tính CPA của từng kênh từ các list chi_phi và so_don (lưu vào cpa_kenh1 và cpa_kenh2)
+
+
+# Yêu cầu 2: Tạo biến kenh_1_tot_hon kiểu bool so sánh xem kênh 1 có CPA thấp hơn kênh 2 không (<)
+
+
+# Yêu cầu 3: Tính chênh lệch chi phí tuyệt đối giữa 2 kênh bằng hàm abs() lưu vào biến chenh_lech
+
+
+# Yêu cầu 4: In kết quả theo đúng mẫu: Kênh 1 tốt hơn: False
 
 </textarea>
  <div class="outhead"><b>Đầu ra</b><span data-status>Chưa chạy</span></div><pre class="out outputbox" data-output><span class="emptyout">Nhấn “Chạy thử” để xem kết quả từ mã của bạn.</span></pre></div>
@@ -239,11 +314,11 @@ kenh_1_tot_hon = cpa_kenh1 &lt; cpa_kenh2
 chenh_lech = abs(cpa_kenh1 - cpa_kenh2)
 print(&quot;Kênh 1 tốt hơn:&quot;, kenh_1_tot_hon)</code></pre><p class="mutedtext">Lời giải sử dụng các biến đầu vào đã cho; có thể có nhiều cách viết tương đương.</p></details>
  </article><article class="card practice-card" id="p09" data-task="8">
- <div class="tags"><span class="tag">BÀI 09</span><span class="tag level">Nhân sự</span><span class="mutedtext">Vận dụng</span><span class="taskscore" data-points>10 điểm</span></div>
+ <div class="tags"><span class="tag">BÀI 09</span><span class="tag level">Nhân sự</span><span class="mutedtext">Viết theo yêu cầu</span><span class="taskscore" data-points>10 điểm</span></div>
  <h2>Tính lương và kiểm tra quỹ lương</h2><p>Cửa hàng có hai nhân viên. Lương tháng gồm lương cơ bản và khoản thưởng; phòng nhân sự cần đối chiếu tổng lương với ngân sách.</p>
  <div class="case-grid"><div class="case-panel"><h4>Yêu cầu thực hiện</h4><ol><li>Tính luong_a và luong_b.</li><li>Tính tong_luong.</li><li>Tính con_lai = ngân sách − tổng lương.</li><li>Tạo vuot_quy là bool xác định quỹ lương vượt ngân sách.</li><li>In: Vượt quỹ: False.</li></ol></div>
- <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Vượt quỹ: False</pre><p class="mutedtext">Các biến và giá trị đầu vào mẫu đã được điền sẵn <b>trong ô code ngay bên dưới</b>. Sinh viên viết các câu lệnh tiếp theo ở cuối đoạn mã. Có thể đổi số liệu mẫu để chạy thử.</p></div></div>
- <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Viết tiếp dưới phần dữ liệu mẫu</span></div>
+ <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Vượt quỹ: False</pre><p class="mutedtext">Các biến đầu vào đã cho sẵn. Sinh viên viết các câu lệnh theo từng chú thích yêu cầu bên dưới để hoàn thành bài tập.</p></div></div>
+ <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Viết tiếp theo yêu cầu</span></div>
  <textarea class="work-editor" data-editor aria-label="Viết mã Python cho bài 9" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off" ># DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)
 luong_co_ban_a = 12000000
 thuong_a = 2000000
@@ -253,7 +328,19 @@ ngan_sach_quy = 27000000
 # === KẾT THÚC DỮ LIỆU MẪU ===
 
 # PHẦN SINH VIÊN VIẾT TIẾP
-# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.
+# Yêu cầu 1: Tính thu nhập thực nhận của từng nhân viên (lương cơ bản + thưởng) lưu vào luong_a và luong_b
+
+
+# Yêu cầu 2: Tính tổng quỹ lương cần chi trả (luong_a + luong_b) lưu vào biến tong_luong
+
+
+# Yêu cầu 3: Tính số tiền ngân sách còn lại (ngân sách quỹ - tổng lương) lưu vào biến con_lai
+
+
+# Yêu cầu 4: Tạo biến vuot_quy kiểu bool kiểm tra xem tổng lương có vượt quá ngân sách quỹ không (>)
+
+
+# Yêu cầu 5: In kết quả theo đúng mẫu: Vượt quỹ: False
 
 </textarea>
  <div class="outhead"><b>Đầu ra</b><span data-status>Chưa chạy</span></div><pre class="out outputbox" data-output><span class="emptyout">Nhấn “Chạy thử” để xem kết quả từ mã của bạn.</span></pre></div>
@@ -268,18 +355,30 @@ con_lai = ngan_sach_quy - tong_luong
 vuot_quy = tong_luong &gt; ngan_sach_quy
 print(&quot;Vượt quỹ:&quot;, vuot_quy)</code></pre><p class="mutedtext">Lời giải sử dụng các biến đầu vào đã cho; có thể có nhiều cách viết tương đương.</p></details>
  </article><article class="card practice-card" id="p10" data-task="9">
- <div class="tags"><span class="tag">BÀI 10</span><span class="tag level">Nhân sự</span><span class="mutedtext">Vận dụng</span><span class="taskscore" data-points>10 điểm</span></div>
+ <div class="tags"><span class="tag">BÀI 10</span><span class="tag level">Nhân sự</span><span class="mutedtext">Viết theo yêu cầu</span><span class="taskscore" data-points>10 điểm</span></div>
  <h2>Thống kê danh sách nhân viên</h2><p>Bộ phận nhân sự lưu tên và mức lương từng người trong hai list song song. Hãy dùng các hàm dựng sẵn và slicing để thống kê.</p>
  <div class="case-grid"><div class="case-panel"><h4>Yêu cầu thực hiện</h4><ol><li>Tính so_nhan_vien = len(nhan_su).</li><li>Tính luong_binh_quan = sum(luong) / len(luong).</li><li>Tính luong_cao_nhat = max(luong).</li><li>Lấy hai_nhan_vien_dau = nhan_su[:2].</li><li>In: Số nhân viên: 4.</li></ol></div>
- <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Số nhân viên: 4</pre><p class="mutedtext">Các biến và giá trị đầu vào mẫu đã được điền sẵn <b>trong ô code ngay bên dưới</b>. Sinh viên viết các câu lệnh tiếp theo ở cuối đoạn mã. Có thể đổi số liệu mẫu để chạy thử.</p></div></div>
- <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Viết tiếp dưới phần dữ liệu mẫu</span></div>
+ <div class="case-panel"><h4>Đầu ra mẫu cần đạt</h4><pre>Số nhân viên: 4</pre><p class="mutedtext">Các biến đầu vào đã cho sẵn. Sinh viên viết các câu lệnh theo từng chú thích yêu cầu bên dưới để hoàn thành bài tập.</p></div></div>
+ <div class="work-card"><div class="codehead"><span>PYTHON · Dữ liệu mẫu + bài làm</span><span class="pill">Viết tiếp theo yêu cầu</span></div>
  <textarea class="work-editor" data-editor aria-label="Viết mã Python cho bài 10" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off" ># DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)
-nhan_su = [&quot;An&quot;, &quot;Bình&quot;, &quot;Chi&quot;, &quot;Dung&quot;]
+nhan_su = ["An", "Bình", "Chi", "Dung"]
 luong = [12000000, 15000000, 18000000, 11000000]
 # === KẾT THÚC DỮ LIỆU MẪU ===
 
 # PHẦN SINH VIÊN VIẾT TIẾP
-# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.
+# Yêu cầu 1: Đếm số lượng nhân sự trong danh sách nhan_su lưu vào biến so_nhan_vien
+
+
+# Yêu cầu 2: Tính lương bình quân của nhân viên (tổng lương / số lượng) lưu vào biến luong_binh_quan
+
+
+# Yêu cầu 3: Tìm mức lương cao nhất trong danh sách luong lưu vào biến luong_cao_nhat
+
+
+# Yêu cầu 4: Cắt lát lấy 2 nhân viên đầu tiên trong danh sách nhan_su lưu vào biến hai_nhan_vien_dau
+
+
+# Yêu cầu 5: In kết quả theo đúng mẫu: Số nhân viên: 4
 
 </textarea>
  <div class="outhead"><b>Đầu ra</b><span data-status>Chưa chạy</span></div><pre class="out outputbox" data-output><span class="emptyout">Nhấn “Chạy thử” để xem kết quả từ mã của bạn.</span></pre></div>
@@ -297,12 +396,11 @@ print(&quot;Số nhân viên:&quot;, so_nhan_vien)</code></pre><p class="mutedte
 </main></div><footer class="footer">NEU · Bộ học liệu giới thiệu Python · Dữ liệu và các bài tập kinh doanh được mô phỏng phục vụ giảng dạy.</footer></div><script>
 (()=>{
 'use strict';
-const TASKS=[{"id":"p01","group":"Bán hàng","title":"Tính hóa đơn và giảm giá","hint":"Có thể dùng int() khi in; tỷ lệ giảm là số thập phân như 0.1.","criteria":[{"label":"Tổng tiền trước giảm","field":"tong_goc","points":2},{"label":"Mức giảm","field":"muc_giam","points":2},{"label":"Tiền thanh toán","field":"thanh_toan","points":3},{"label":"Đầu ra theo mẫu","field":"__output__","points":3}],"testcases":[{"setup":"gia_sua = 25000\nso_sua = 3\ngia_tra = 39000\nso_tra = 2\nty_le_giam = 0.1","expected":{"tong_goc":153000,"muc_giam":15300.0,"thanh_toan":137700.0,"__output__":"Thanh toán: 137700"}},{"setup":"gia_sua = 30000\nso_sua = 2\ngia_tra = 20000\nso_tra = 4\nty_le_giam = 0.05","expected":{"tong_goc":140000,"muc_giam":7000.0,"thanh_toan":133000.0,"__output__":"Thanh toán: 133000"}},{"setup":"gia_sua = 45000\nso_sua = 1\ngia_tra = 25000\nso_tra = 5\nty_le_giam = 0","expected":{"tong_goc":170000,"muc_giam":0,"thanh_toan":170000,"__output__":"Thanh toán: 170000"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\ngia_sua = 25000\nso_sua = 3\ngia_tra = 39000\nso_tra = 2\nty_le_giam = 0.1\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP\n# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.\n\n"},{"id":"p02","group":"Bán hàng","title":"Hóa đơn có thuế và phí giao hàng","hint":"int(\"35000\") = 35000; thuế chỉ tính trên tiền hàng, không tính trên phí giao.","criteria":[{"label":"Tiền hàng","field":"tien_hang","points":2},{"label":"Tiền thuế","field":"tien_thue","points":2},{"label":"Tổng hóa đơn","field":"tong_hoa_don","points":3},{"label":"Đầu ra theo mẫu","field":"__output__","points":3}],"testcases":[{"setup":"don_gia = \"35000\"\nso_luong = \"3\"\nphi_giao = 15000\nthue_suat = 0.08","expected":{"tien_hang":105000,"tien_thue":8400.0,"tong_hoa_don":128400.0,"__output__":"Tổng hóa đơn: 128400"}},{"setup":"don_gia = \"45000\"\nso_luong = \"2\"\nphi_giao = 20000\nthue_suat = 0.1","expected":{"tien_hang":90000,"tien_thue":9000.0,"tong_hoa_don":119000.0,"__output__":"Tổng hóa đơn: 119000"}},{"setup":"don_gia = \"12500\"\nso_luong = \"8\"\nphi_giao = 5000\nthue_suat = 0.05","expected":{"tien_hang":100000,"tien_thue":5000.0,"tong_hoa_don":110000.0,"__output__":"Tổng hóa đơn: 110000"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\ndon_gia = \"35000\"\nso_luong = \"3\"\nphi_giao = 15000\nthue_suat = 0.08\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP\n# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.\n\n"},{"id":"p03","group":"Lợi nhuận","title":"Doanh thu, chi phí và lợi nhuận","hint":"Chi phí biến đổi = số ly × chi phí nguyên liệu của mỗi ly.","criteria":[{"label":"Doanh thu","field":"doanh_thu","points":2},{"label":"Tổng chi phí","field":"chi_phi","points":2},{"label":"Lợi nhuận","field":"loi_nhuan","points":3},{"label":"Đầu ra theo mẫu","field":"__output__","points":3}],"testcases":[{"setup":"so_ly = 25\ngia_ban = 30000\nchi_phi_moi_ly = 15000\nchi_phi_co_dinh = 220000","expected":{"doanh_thu":750000,"chi_phi":595000,"loi_nhuan":155000,"__output__":"Lợi nhuận: 155000"}},{"setup":"so_ly = 40\ngia_ban = 25000\nchi_phi_moi_ly = 12500\nchi_phi_co_dinh = 310000","expected":{"doanh_thu":1000000,"chi_phi":810000,"loi_nhuan":190000,"__output__":"Lợi nhuận: 190000"}},{"setup":"so_ly = 10\ngia_ban = 20000\nchi_phi_moi_ly = 14000\nchi_phi_co_dinh = 150000","expected":{"doanh_thu":200000,"chi_phi":290000,"loi_nhuan":-90000,"__output__":"Lợi nhuận: -90000"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\nso_ly = 25\ngia_ban = 30000\nchi_phi_moi_ly = 15000\nchi_phi_co_dinh = 220000\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP\n# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.\n\n"},{"id":"p04","group":"Lợi nhuận","title":"Tính biên lợi nhuận tháng","hint":"Tỷ suất có thể âm khi lỗ. Dùng round(ty_suat, 2) khi in.","criteria":[{"label":"Tổng chi phí","field":"tong_chi","points":2},{"label":"Lợi nhuận","field":"loi_nhuan","points":2},{"label":"Tỷ suất lợi nhuận","field":"ty_suat","points":3},{"label":"Đầu ra theo mẫu","field":"__output__","points":3}],"testcases":[{"setup":"doanh_thu_thang = 200000000\nnguyen_lieu = 70000000\ntien_luong = 55000000\nmat_bang = 20000000\nchi_phi_khac = 15000000","expected":{"tong_chi":160000000,"loi_nhuan":40000000,"ty_suat":20.0,"__output__":"Biên lợi nhuận (%): 20.0"}},{"setup":"doanh_thu_thang = 120000000\nnguyen_lieu = 40000000\ntien_luong = 32000000\nmat_bang = 18000000\nchi_phi_khac = 10000000","expected":{"tong_chi":100000000,"loi_nhuan":20000000,"ty_suat":16.666666666666664,"__output__":"Biên lợi nhuận (%): 16.67"}},{"setup":"doanh_thu_thang = 90000000\nnguyen_lieu = 39000000\ntien_luong = 30000000\nmat_bang = 19000000\nchi_phi_khac = 9000000","expected":{"tong_chi":97000000,"loi_nhuan":-7000000,"ty_suat":-7.777777777777778,"__output__":"Biên lợi nhuận (%): -7.78"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\ndoanh_thu_thang = 200000000\nnguyen_lieu = 70000000\ntien_luong = 55000000\nmat_bang = 20000000\nchi_phi_khac = 15000000\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP\n# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.\n\n"},{"id":"p05","group":"Tồn kho","title":"Kiểm kê và nhu cầu nhập hàng","hint":"Sử dụng max(0, ...) để không sinh ra số lượng cần nhập âm.","criteria":[{"label":"Tồn cuối","field":"ton_cuoi","points":2},{"label":"Nhu cầu nhập thêm","field":"can_nhap","points":3},{"label":"Đủ hàng (bool)","field":"du_hang","points":2},{"label":"Đầu ra theo mẫu","field":"__output__","points":3}],"testcases":[{"setup":"ton_dau = 65\nnhap_moi = 30\nda_ban = 50\nnhu_cau_du_kien = 80","expected":{"ton_cuoi":45,"can_nhap":35,"du_hang":false,"__output__":"Cần nhập thêm: 35"}},{"setup":"ton_dau = 100\nnhap_moi = 30\nda_ban = 40\nnhu_cau_du_kien = 75","expected":{"ton_cuoi":90,"can_nhap":0,"du_hang":true,"__output__":"Cần nhập thêm: 0"}},{"setup":"ton_dau = 20\nnhap_moi = 15\nda_ban = 28\nnhu_cau_du_kien = 30","expected":{"ton_cuoi":7,"can_nhap":23,"du_hang":false,"__output__":"Cần nhập thêm: 23"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\nton_dau = 65\nnhap_moi = 30\nda_ban = 50\nnhu_cau_du_kien = 80\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP\n# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.\n\n"},{"id":"p06","group":"Tồn kho","title":"Cập nhật danh sách hàng hóa","hint":"Chỉ số list bắt đầu từ 0; phép cắt [:k] không lấy phần tử thứ k.","criteria":[{"label":"Món đầu","field":"mon_dau","points":1},{"label":"Danh sách đã cập nhật","field":"menu","points":2},{"label":"Danh sách gợi ý","field":"danh_sach_goi_y","points":2},{"label":"Số món","field":"so_mon","points":2},{"label":"Đầu ra theo mẫu","field":"__output__","points":3}],"testcases":[{"setup":"menu = [\"Cà phê\", \"Trà xanh\", \"Bạc xỉu\", \"Nước ép\"]\nmon_moi = \"Trà đào\"\nvi_tri_thay = 1\nso_muc_chon = 2","expected":{"mon_dau":"Cà phê","menu":["Cà phê","Trà đào","Bạc xỉu","Nước ép"],"danh_sach_goi_y":["Cà phê","Trà đào"],"so_mon":4,"__output__":"Gợi ý: ['Cà phê', 'Trà đào']"}},{"setup":"menu = [\"Trà\", \"Cacao\", \"Sữa chua\", \"Chanh\"]\nmon_moi = \"Cacao nóng\"\nvi_tri_thay = 1\nso_muc_chon = 3","expected":{"mon_dau":"Trà","menu":["Trà","Cacao nóng","Sữa chua","Chanh"],"danh_sach_goi_y":["Trà","Cacao nóng","Sữa chua"],"so_mon":4,"__output__":"Gợi ý: ['Trà', 'Cacao nóng', 'Sữa chua']"}},{"setup":"menu = [\"Đen đá\", \"Sữa đá\", \"Trà\", \"Kem\", \"Bánh\"]\nmon_moi = \"Bánh mì\"\nvi_tri_thay = 4\nso_muc_chon = 2","expected":{"mon_dau":"Đen đá","menu":["Đen đá","Sữa đá","Trà","Kem","Bánh mì"],"danh_sach_goi_y":["Đen đá","Sữa đá"],"so_mon":5,"__output__":"Gợi ý: ['Đen đá', 'Sữa đá']"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\nmenu = [\"Cà phê\", \"Trà xanh\", \"Bạc xỉu\", \"Nước ép\"]\nmon_moi = \"Trà đào\"\nvi_tri_thay = 1\nso_muc_chon = 2\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP\n# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.\n\n"},{"id":"p07","group":"Marketing","title":"Đo chi phí chuyển đổi và ROAS","hint":"ROAS là hệ số doanh thu trên chi quảng cáo, không phải tỷ suất lợi nhuận. Chi phí nền tảng chỉ dùng ở biến số dư.","criteria":[{"label":"CPA","field":"cpa","points":2},{"label":"ROAS","field":"roas","points":3},{"label":"Số dư sau quảng cáo","field":"so_du_sau_quang_cao","points":2},{"label":"Đầu ra theo mẫu","field":"__output__","points":3}],"testcases":[{"setup":"ngan_sach = 2000000\nso_don = 40\ndoanh_thu_qc = 8400000\nphi_nen_tang = 400000","expected":{"cpa":50000.0,"roas":4.2,"so_du_sau_quang_cao":6000000,"__output__":"ROAS: 4.2"}},{"setup":"ngan_sach = 1600000\nso_don = 25\ndoanh_thu_qc = 4200000\nphi_nen_tang = 250000","expected":{"cpa":64000.0,"roas":2.625,"so_du_sau_quang_cao":2350000,"__output__":"ROAS: 2.62"}},{"setup":"ngan_sach = 3000000\nso_don = 60\ndoanh_thu_qc = 11250000\nphi_nen_tang = 750000","expected":{"cpa":50000.0,"roas":3.75,"so_du_sau_quang_cao":7500000,"__output__":"ROAS: 3.75"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\nngan_sach = 2000000\nso_don = 40\ndoanh_thu_qc = 8400000\nphi_nen_tang = 400000\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP\n# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.\n\n"},{"id":"p08","group":"Marketing","title":"So sánh hai kênh quảng cáo","hint":"Dùng các chỉ số [0] và [1]; abs() nhận giá trị tuyệt đối.","criteria":[{"label":"CPA kênh 1","field":"cpa_kenh1","points":2},{"label":"CPA kênh 2","field":"cpa_kenh2","points":2},{"label":"So sánh bool","field":"kenh_1_tot_hon","points":2},{"label":"Chênh lệch","field":"chenh_lech","points":2},{"label":"Đầu ra theo mẫu","field":"__output__","points":2}],"testcases":[{"setup":"ten_kenh = [\"Mạng xã hội\", \"Tìm kiếm\"]\nchi_phi = [800000, 720000]\nso_don = [32, 36]","expected":{"cpa_kenh1":25000.0,"cpa_kenh2":20000.0,"kenh_1_tot_hon":false,"chenh_lech":5000.0,"__output__":"Kênh 1 tốt hơn: False"}},{"setup":"ten_kenh = [\"Kênh A\", \"Kênh B\"]\nchi_phi = [300000, 360000]\nso_don = [30, 18]","expected":{"cpa_kenh1":10000.0,"cpa_kenh2":20000.0,"kenh_1_tot_hon":true,"chenh_lech":10000.0,"__output__":"Kênh 1 tốt hơn: True"}},{"setup":"ten_kenh = [\"Kênh X\", \"Kênh Y\"]\nchi_phi = [1000000, 750000]\nso_don = [50, 50]","expected":{"cpa_kenh1":20000.0,"cpa_kenh2":15000.0,"kenh_1_tot_hon":false,"chenh_lech":5000.0,"__output__":"Kênh 1 tốt hơn: False"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\nten_kenh = [\"Mạng xã hội\", \"Tìm kiếm\"]\nchi_phi = [800000, 720000]\nso_don = [32, 36]\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP\n# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.\n\n"},{"id":"p09","group":"Nhân sự","title":"Tính lương và kiểm tra quỹ lương","hint":"Dùng phép > so sánh tong_luong với ngan_sach_quy.","criteria":[{"label":"Lương nhân viên A","field":"luong_a","points":1},{"label":"Lương nhân viên B","field":"luong_b","points":1},{"label":"Tổng quỹ lương","field":"tong_luong","points":2},{"label":"Ngân sách còn lại","field":"con_lai","points":2},{"label":"Có vượt quỹ?","field":"vuot_quy","points":2},{"label":"Đầu ra theo mẫu","field":"__output__","points":2}],"testcases":[{"setup":"luong_co_ban_a = 12000000\nthuong_a = 2000000\nluong_co_ban_b = 10000000\nthuong_b = 1500000\nngan_sach_quy = 27000000","expected":{"luong_a":14000000,"luong_b":11500000,"tong_luong":25500000,"con_lai":1500000,"vuot_quy":false,"__output__":"Vượt quỹ: False"}},{"setup":"luong_co_ban_a = 17000000\nthuong_a = 3000000\nluong_co_ban_b = 14000000\nthuong_b = 2000000\nngan_sach_quy = 34000000","expected":{"luong_a":20000000,"luong_b":16000000,"tong_luong":36000000,"con_lai":-2000000,"vuot_quy":true,"__output__":"Vượt quỹ: True"}},{"setup":"luong_co_ban_a = 9000000\nthuong_a = 500000\nluong_co_ban_b = 11500000\nthuong_b = 300000\nngan_sach_quy = 20000000","expected":{"luong_a":9500000,"luong_b":11800000,"tong_luong":21300000,"con_lai":-1300000,"vuot_quy":true,"__output__":"Vượt quỹ: True"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\nluong_co_ban_a = 12000000\nthuong_a = 2000000\nluong_co_ban_b = 10000000\nthuong_b = 1500000\nngan_sach_quy = 27000000\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP\n# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.\n\n"},{"id":"p10","group":"Nhân sự","title":"Thống kê danh sách nhân viên","hint":"Các list đã có sẵn; không cần for hay viết hàm.","criteria":[{"label":"Số nhân viên","field":"so_nhan_vien","points":2},{"label":"Lương bình quân","field":"luong_binh_quan","points":2},{"label":"Lương cao nhất","field":"luong_cao_nhat","points":2},{"label":"Hai nhân viên đầu","field":"hai_nhan_vien_dau","points":2},{"label":"Đầu ra theo mẫu","field":"__output__","points":2}],"testcases":[{"setup":"nhan_su = [\"An\", \"Bình\", \"Chi\", \"Dung\"]\nluong = [12000000, 15000000, 18000000, 11000000]","expected":{"so_nhan_vien":4,"luong_binh_quan":14000000.0,"luong_cao_nhat":18000000,"hai_nhan_vien_dau":["An","Bình"],"__output__":"Số nhân viên: 4"}},{"setup":"nhan_su = [\"Hà\", \"Nam\", \"Mai\"]\nluong = [9000000, 10000000, 14000000]","expected":{"so_nhan_vien":3,"luong_binh_quan":11000000.0,"luong_cao_nhat":14000000,"hai_nhan_vien_dau":["Hà","Nam"],"__output__":"Số nhân viên: 3"}},{"setup":"nhan_su = [\"Tuấn\", \"Minh\", \"Lan\", \"Hải\", \"Nga\"]\nluong = [13000000, 17000000, 14000000, 20000000, 16000000]","expected":{"so_nhan_vien":5,"luong_binh_quan":16000000.0,"luong_cao_nhat":20000000,"hai_nhan_vien_dau":["Tuấn","Minh"],"__output__":"Số nhân viên: 5"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\nnhan_su = [\"An\", \"Bình\", \"Chi\", \"Dung\"]\nluong = [12000000, 15000000, 18000000, 11000000]\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP\n# Hãy viết các câu lệnh xử lý và print() kết quả tại đây.\n\n"}];
+const TASKS=[{"id":"p01","group":"Bán hàng","title":"Tính hóa đơn và giảm giá","hint":"Có thể dùng int() khi in; tỷ lệ giảm là số thập phân như 0.1.","criteria":[{"label":"Tổng tiền trước giảm","field":"tong_goc","points":2},{"label":"Mức giảm","field":"muc_giam","points":2},{"label":"Tiền thanh toán","field":"thanh_toan","points":3},{"label":"Đầu ra theo mẫu","field":"__output__","points":3}],"testcases":[{"setup":"gia_sua = 25000\nso_sua = 3\ngia_tra = 39000\nso_tra = 2\nty_le_giam = 0.1","expected":{"tong_goc":153000,"muc_giam":15300.0,"thanh_toan":137700.0,"__output__":"Thanh toán: 137700"}},{"setup":"gia_sua = 30000\nso_sua = 2\ngia_tra = 20000\nso_tra = 4\nty_le_giam = 0.05","expected":{"tong_goc":140000,"muc_giam":7000.0,"thanh_toan":133000.0,"__output__":"Thanh toán: 133000"}},{"setup":"gia_sua = 45000\nso_sua = 1\ngia_tra = 25000\nso_tra = 5\nty_le_giam = 0","expected":{"tong_goc":170000,"muc_giam":0,"thanh_toan":170000,"__output__":"Thanh toán: 170000"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\ngia_sua = 25000\nso_sua = 3\ngia_tra = 39000\nso_tra = 2\nty_le_giam = 0.1\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP (ĐIỀN VÀO CHỖ TRỐNG ...)\n# Yêu cầu 1: Tính tổng tiền trước khi giảm (giá sữa * số sữa + giá trà * số trà)\ntong_goc = gia_sua * ... + gia_tra * ...\n\n# Yêu cầu 2: Tính số tiền được giảm theo tỷ lệ giảm (tong_goc * ty_le_giam)\nmuc_giam = tong_goc * ...\n\n# Yêu cầu 3: Tính số tiền thực tế phải thanh toán sau khi trừ mức giảm\nthanh_toan = tong_goc - ...\n\n# Yêu cầu 4: In kết quả theo đúng mẫu: Thanh toán: 137700 (lưu ý dùng int())\nprint(\"Thanh toán:\", int(...))\n"},{"id":"p02","group":"Bán hàng","title":"Hóa đơn có thuế và phí giao hàng","hint":"int(\"35000\") = 35000; thuế chỉ tính trên tiền hàng, không tính trên phí giao.","criteria":[{"label":"Tiền hàng","field":"tien_hang","points":2},{"label":"Tiền thuế","field":"tien_thue","points":2},{"label":"Tổng hóa đơn","field":"tong_hoa_don","points":3},{"label":"Đầu ra theo mẫu","field":"__output__","points":3}],"testcases":[{"setup":"don_gia = \"35000\"\nso_luong = \"3\"\nphi_giao = 15000\nthue_suat = 0.08","expected":{"tien_hang":105000,"tien_thue":8400.0,"tong_hoa_don":128400.0,"__output__":"Tổng hóa đơn: 128400"}},{"setup":"don_gia = \"45000\"\nso_luong = \"2\"\nphi_giao = 20000\nthue_suat = 0.1","expected":{"tien_hang":90000,"tien_thue":9000.0,"tong_hoa_don":119000.0,"__output__":"Tổng hóa đơn: 119000"}},{"setup":"don_gia = \"12500\"\nso_luong = \"8\"\nphi_giao = 5000\nthue_suat = 0.05","expected":{"tien_hang":100000,"tien_thue":5000.0,"tong_hoa_don":110000.0,"__output__":"Tổng hóa đơn: 110000"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\ndon_gia = \"35000\"\nso_luong = \"3\"\nphi_giao = 15000\nthue_suat = 0.08\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP (ĐIỀN VÀO CHỖ TRỐNG ...)\n# Yêu cầu 1: Chuyển don_gia và so_luong từ chuỗi sang số nguyên int() rồi tính tien_hang\ntien_hang = int(...) * int(...)\n\n# Yêu cầu 2: Tính tiền thuế theo thuế suất trên tiền hàng (tien_hang * thue_suat)\ntien_thue = ... * ...\n\n# Yêu cầu 3: Tính tổng hóa đơn gồm tiền hàng, tiền thuế và phí giao hàng\ntong_hoa_don = tien_hang + ... + ...\n\n# Yêu cầu 4: In ra màn hình theo đúng mẫu: Tổng hóa đơn: 128400 (dùng round() hoặc int())\nprint(\"Tổng hóa đơn:\", round(...))\n"},{"id":"p03","group":"Lợi nhuận","title":"Doanh thu, chi phí và lợi nhuận","hint":"Chi phí biến đổi = số ly × chi phí nguyên liệu của mỗi ly.","criteria":[{"label":"Doanh thu","field":"doanh_thu","points":2},{"label":"Tổng chi phí","field":"chi_phi","points":2},{"label":"Lợi nhuận","field":"loi_nhuan","points":3},{"label":"Đầu ra theo mẫu","field":"__output__","points":3}],"testcases":[{"setup":"so_ly = 25\ngia_ban = 30000\nchi_phi_moi_ly = 15000\nchi_phi_co_dinh = 220000","expected":{"doanh_thu":750000,"chi_phi":595000,"loi_nhuan":155000,"__output__":"Lợi nhuận: 155000"}},{"setup":"so_ly = 40\ngia_ban = 25000\nchi_phi_moi_ly = 12500\nchi_phi_co_dinh = 310000","expected":{"doanh_thu":1000000,"chi_phi":810000,"loi_nhuan":190000,"__output__":"Lợi nhuận: 190000"}},{"setup":"so_ly = 10\ngia_ban = 20000\nchi_phi_moi_ly = 14000\nchi_phi_co_dinh = 150000","expected":{"doanh_thu":200000,"chi_phi":290000,"loi_nhuan":-90000,"__output__":"Lợi nhuận: -90000"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\nso_ly = 25\ngia_ban = 30000\nchi_phi_moi_ly = 15000\nchi_phi_co_dinh = 220000\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP (ĐIỀN VÀO CHỖ TRỐNG ...)\n# Yêu cầu 1: Tính tổng doanh thu trong ngày (số ly * giá bán)\ndoanh_thu = so_ly * ...\n\n# Yêu cầu 2: Tính tổng chi phí (chi phí biến đổi của các ly + chi phí cố định)\nchi_phi = so_ly * ... + ...\n\n# Yêu cầu 3: Tính lợi nhuận trong ngày (doanh thu trừ chi phí)\nloi_nhuan = ... - ...\n\n# Yêu cầu 4: In kết quả theo đúng mẫu: Lợi nhuận: 155000\nprint(\"Lợi nhuận:\", ...)\n"},{"id":"p04","group":"Lợi nhuận","title":"Tính biên lợi nhuận tháng","hint":"Tỷ suất có thể âm khi lỗ. Dùng round(ty_suat, 2) khi in.","criteria":[{"label":"Tổng chi phí","field":"tong_chi","points":2},{"label":"Lợi nhuận","field":"loi_nhuan","points":2},{"label":"Tỷ suất lợi nhuận","field":"ty_suat","points":3},{"label":"Đầu ra theo mẫu","field":"__output__","points":3}],"testcases":[{"setup":"doanh_thu_thang = 200000000\nnguyen_lieu = 70000000\ntien_luong = 55000000\nmat_bang = 20000000\nchi_phi_khac = 15000000","expected":{"tong_chi":160000000,"loi_nhuan":40000000,"ty_suat":20.0,"__output__":"Biên lợi nhuận (%): 20.0"}},{"setup":"doanh_thu_thang = 120000000\nnguyen_lieu = 40000000\ntien_luong = 32000000\nmat_bang = 18000000\nchi_phi_khac = 10000000","expected":{"tong_chi":100000000,"loi_nhuan":20000000,"ty_suat":16.666666666666664,"__output__":"Biên lợi nhuận (%): 16.67"}},{"setup":"doanh_thu_thang = 90000000\nnguyen_lieu = 39000000\ntien_luong = 30000000\nmat_bang = 19000000\nchi_phi_khac = 9000000","expected":{"tong_chi":97000000,"loi_nhuan":-7000000,"ty_suat":-7.777777777777778,"__output__":"Biên lợi nhuận (%): -7.78"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\ndoanh_thu_thang = 200000000\nnguyen_lieu = 70000000\ntien_luong = 55000000\nmat_bang = 20000000\nchi_phi_khac = 15000000\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP (ĐIỀN VÀO CHỖ TRỐNG ...)\n# Yêu cầu 1: Tính tổng các khoản chi phí (nguyên liệu, tiền lương, mặt bằng, chi phí khác)\ntong_chi = nguyen_lieu + ... + ... + ...\n\n# Yêu cầu 2: Tính lợi nhuận tháng (doanh thu tháng trừ tổng chi phí)\nloi_nhuan = doanh_thu_thang - ...\n\n# Yêu cầu 3: Tính tỷ suất lợi nhuận (%) = lợi nhuận / doanh thu tháng * 100\nty_suat = ... / ... * 100\n\n# Yêu cầu 4: In kết quả theo mẫu: Biên lợi nhuận (%): 20.0 (làm tròn 2 chữ số bằng round())\nprint(\"Biên lợi nhuận (%):\", round(..., 2))\n"},{"id":"p05","group":"Tồn kho","title":"Kiểm kê và nhu cầu nhập hàng","hint":"Sử dụng max(0, ...) để không sinh ra số lượng cần nhập âm.","criteria":[{"label":"Tồn cuối","field":"ton_cuoi","points":2},{"label":"Nhu cầu nhập thêm","field":"can_nhap","points":3},{"label":"Đủ hàng (bool)","field":"du_hang","points":2},{"label":"Đầu ra theo mẫu","field":"__output__","points":3}],"testcases":[{"setup":"ton_dau = 65\nnhap_moi = 30\nda_ban = 50\nnhu_cau_du_kien = 80","expected":{"ton_cuoi":45,"can_nhap":35,"du_hang":false,"__output__":"Cần nhập thêm: 35"}},{"setup":"ton_dau = 100\nnhap_moi = 30\nda_ban = 40\nnhu_cau_du_kien = 75","expected":{"ton_cuoi":90,"can_nhap":0,"du_hang":true,"__output__":"Cần nhập thêm: 0"}},{"setup":"ton_dau = 20\nnhap_moi = 15\nda_ban = 28\nnhu_cau_du_kien = 30","expected":{"ton_cuoi":7,"can_nhap":23,"du_hang":false,"__output__":"Cần nhập thêm: 23"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\nton_dau = 65\nnhap_moi = 30\nda_ban = 50\nnhu_cau_du_kien = 80\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP (ĐIỀN VÀO CHỖ TRỐNG ...)\n# Yêu cầu 1: Tính số lượng tồn kho cuối ngày (tồn đầu + nhập mới - đã bán)\nton_cuoi = ton_dau + ... - ...\n\n# Yêu cầu 2: Tính số lượng cần nhập thêm (dùng hàm max() để không bị âm nếu đã đủ hàng)\ncan_nhap = max(0, ... - ...)\n\n# Yêu cầu 3: Tạo biến kiểu bool (True/False) kiểm tra xem tồn cuối đã đủ nhu cầu chưa (>=)\ndu_hang = ... >= ...\n\n# Yêu cầu 4: In kết quả theo đúng mẫu: Cần nhập thêm: 35\nprint(\"Cần nhập thêm:\", ...)\n"},{"id":"p06","group":"Tồn kho","title":"Cập nhật danh sách hàng hóa","hint":"Chỉ số list bắt đầu từ 0; phép cắt [:k] không lấy phần tử thứ k.","criteria":[{"label":"Món đầu","field":"mon_dau","points":1},{"label":"Danh sách đã cập nhật","field":"menu","points":2},{"label":"Danh sách gợi ý","field":"danh_sach_goi_y","points":2},{"label":"Số món","field":"so_mon","points":2},{"label":"Đầu ra theo mẫu","field":"__output__","points":3}],"testcases":[{"setup":"menu = [\"Cà phê\", \"Trà xanh\", \"Bạc xỉu\", \"Nước ép\"]\nmon_moi = \"Trà đào\"\nvi_tri_thay = 1\nso_muc_chon = 2","expected":{"mon_dau":"Cà phê","menu":["Cà phê","Trà đào","Bạc xỉu","Nước ép"],"danh_sach_goi_y":["Cà phê","Trà đào"],"so_mon":4,"__output__":"Gợi ý: ['Cà phê', 'Trà đào']"}},{"setup":"menu = [\"Trà\", \"Cacao\", \"Sữa chua\", \"Chanh\"]\nmon_moi = \"Cacao nóng\"\nvi_tri_thay = 1\nso_muc_chon = 3","expected":{"mon_dau":"Trà","menu":["Trà","Cacao nóng","Sữa chua","Chanh"],"danh_sach_goi_y":["Trà","Cacao nóng","Sữa chua"],"so_mon":4,"__output__":"Gợi ý: ['Trà', 'Cacao nóng', 'Sữa chua']"}},{"setup":"menu = [\"Đen đá\", \"Sữa đá\", \"Trà\", \"Kem\", \"Bánh\"]\nmon_moi = \"Bánh mì\"\nvi_tri_thay = 4\nso_muc_chon = 2","expected":{"mon_dau":"Đen đá","menu":["Đen đá","Sữa đá","Trà","Kem","Bánh mì"],"danh_sach_goi_y":["Đen đá","Sữa đá"],"so_mon":5,"__output__":"Gợi ý: ['Đen đá', 'Sữa đá']"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\nmenu = [\"Cà phê\", \"Trà xanh\", \"Bạc xỉu\", \"Nước ép\"]\nmon_moi = \"Trà đào\"\nvi_tri_thay = 1\nso_muc_chon = 2\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP\n# Yêu cầu 1: Thay thế phần tử tại chỉ số vi_tri_thay trong menu bằng mon_moi\n\n\n# Yêu cầu 2: Lưu phần tử đầu tiên của menu vào biến mon_dau\n\n\n# Yêu cầu 3: Cắt lát lấy so_muc_chon món đầu tiên từ menu và lưu vào biến danh_sach_goi_y\n\n\n# Yêu cầu 4: Đếm tổng số món trong menu và lưu vào biến so_mon\n\n\n# Yêu cầu 5: In danh sách gợi ý theo đúng mẫu: Gợi ý: ['Cà phê', 'Trà đào']\n\n"},{"id":"p07","group":"Marketing","title":"Đo chi phí chuyển đổi và ROAS","hint":"ROAS là hệ số doanh thu trên chi quảng cáo, không phải tỷ suất lợi nhuận. Chi phí nền tảng chỉ dùng ở biến số dư.","criteria":[{"label":"CPA","field":"cpa","points":2},{"label":"ROAS","field":"roas","points":3},{"label":"Số dư sau quảng cáo","field":"so_du_sau_quang_cao","points":2},{"label":"Đầu ra theo mẫu","field":"__output__","points":3}],"testcases":[{"setup":"ngan_sach = 2000000\nso_don = 40\ndoanh_thu_qc = 8400000\nphi_nen_tang = 400000","expected":{"cpa":50000.0,"roas":4.2,"so_du_sau_quang_cao":6000000,"__output__":"ROAS: 4.2"}},{"setup":"ngan_sach = 1600000\nso_don = 25\ndoanh_thu_qc = 4200000\nphi_nen_tang = 250000","expected":{"cpa":64000.0,"roas":2.625,"so_du_sau_quang_cao":2350000,"__output__":"ROAS: 2.62"}},{"setup":"ngan_sach = 3000000\nso_don = 60\ndoanh_thu_qc = 11250000\nphi_nen_tang = 750000","expected":{"cpa":50000.0,"roas":3.75,"so_du_sau_quang_cao":7500000,"__output__":"ROAS: 3.75"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\nngan_sach = 2000000\nso_don = 40\ndoanh_thu_qc = 8400000\nphi_nen_tang = 400000\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP\n# Yêu cầu 1: Tính chi phí cho mỗi đơn hàng (CPA = ngân sách / số đơn) lưu vào biến cpa\n\n\n# Yêu cầu 2: Tính tỷ suất doanh thu trên chi phí quảng cáo (ROAS = doanh thu QC / ngân sách) lưu vào biến roas\n\n\n# Yêu cầu 3: Tính số dư sau quảng cáo (doanh thu QC - ngân sách - phí nền tảng) lưu vào biến so_du_sau_quang_cao\n\n\n# Yêu cầu 4: In chỉ số ROAS làm tròn 2 chữ số thập phân theo đúng mẫu: ROAS: 4.2\n\n"},{"id":"p08","group":"Marketing","title":"So sánh hai kênh quảng cáo","hint":"Dùng các chỉ số [0] và [1]; abs() nhận giá trị tuyệt đối.","criteria":[{"label":"CPA kênh 1","field":"cpa_kenh1","points":2},{"label":"CPA kênh 2","field":"cpa_kenh2","points":2},{"label":"So sánh bool","field":"kenh_1_tot_hon","points":2},{"label":"Chênh lệch","field":"chenh_lech","points":2},{"label":"Đầu ra theo mẫu","field":"__output__","points":2}],"testcases":[{"setup":"ten_kenh = [\"Mạng xã hội\", \"Tìm kiếm\"]\nchi_phi = [800000, 720000]\nso_don = [32, 36]","expected":{"cpa_kenh1":25000.0,"cpa_kenh2":20000.0,"kenh_1_tot_hon":false,"chenh_lech":5000.0,"__output__":"Kênh 1 tốt hơn: False"}},{"setup":"ten_kenh = [\"Kênh A\", \"Kênh B\"]\nchi_phi = [300000, 360000]\nso_don = [30, 18]","expected":{"cpa_kenh1":10000.0,"cpa_kenh2":20000.0,"kenh_1_tot_hon":true,"chenh_lech":10000.0,"__output__":"Kênh 1 tốt hơn: True"}},{"setup":"ten_kenh = [\"Kênh X\", \"Kênh Y\"]\nchi_phi = [1000000, 750000]\nso_don = [50, 50]","expected":{"cpa_kenh1":20000.0,"cpa_kenh2":15000.0,"kenh_1_tot_hon":false,"chenh_lech":5000.0,"__output__":"Kênh 1 tốt hơn: False"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\nten_kenh = [\"Mạng xã hội\", \"Tìm kiếm\"]\nchi_phi = [800000, 720000]\nso_don = [32, 36]\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP\n# Yêu cầu 1: Tính CPA của từng kênh từ các list chi_phi và so_don (lưu vào cpa_kenh1 và cpa_kenh2)\n\n\n# Yêu cầu 2: Tạo biến kenh_1_tot_hon kiểu bool so sánh xem kênh 1 có CPA thấp hơn kênh 2 không (<)\n\n\n# Yêu cầu 3: Tính chênh lệch chi phí tuyệt đối giữa 2 kênh bằng hàm abs() lưu vào biến chenh_lech\n\n\n# Yêu cầu 4: In kết quả theo đúng mẫu: Kênh 1 tốt hơn: False\n\n"},{"id":"p09","group":"Nhân sự","title":"Tính lương và kiểm tra quỹ lương","hint":"Dùng phép > so sánh tong_luong với ngan_sach_quy.","criteria":[{"label":"Lương nhân viên A","field":"luong_a","points":1},{"label":"Lương nhân viên B","field":"luong_b","points":1},{"label":"Tổng quỹ lương","field":"tong_luong","points":2},{"label":"Ngân sách còn lại","field":"con_lai","points":2},{"label":"Có vượt quỹ?","field":"vuot_quy","points":2},{"label":"Đầu ra theo mẫu","field":"__output__","points":2}],"testcases":[{"setup":"luong_co_ban_a = 12000000\nthuong_a = 2000000\nluong_co_ban_b = 10000000\nthuong_b = 1500000\nngan_sach_quy = 27000000","expected":{"luong_a":14000000,"luong_b":11500000,"tong_luong":25500000,"con_lai":1500000,"vuot_quy":false,"__output__":"Vượt quỹ: False"}},{"setup":"luong_co_ban_a = 17000000\nthuong_a = 3000000\nluong_co_ban_b = 14000000\nthuong_b = 2000000\nngan_sach_quy = 34000000","expected":{"luong_a":20000000,"luong_b":16000000,"tong_luong":36000000,"con_lai":-2000000,"vuot_quy":true,"__output__":"Vượt quỹ: True"}},{"setup":"luong_co_ban_a = 9000000\nthuong_a = 500000\nluong_co_ban_b = 11500000\nthuong_b = 300000\nngan_sach_quy = 20000000","expected":{"luong_a":9500000,"luong_b":11800000,"tong_luong":21300000,"con_lai":-1300000,"vuot_quy":true,"__output__":"Vượt quỹ: True"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\nluong_co_ban_a = 12000000\nthuong_a = 2000000\nluong_co_ban_b = 10000000\nthuong_b = 1500000\nngan_sach_quy = 27000000\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP\n# Yêu cầu 1: Tính thu nhập thực nhận của từng nhân viên (lương cơ bản + thưởng) lưu vào luong_a và luong_b\n\n\n# Yêu cầu 2: Tính tổng quỹ lương cần chi trả (luong_a + luong_b) lưu vào biến tong_luong\n\n\n# Yêu cầu 3: Tính số tiền ngân sách còn lại (ngân sách quỹ - tổng lương) lưu vào biến con_lai\n\n\n# Yêu cầu 4: Tạo biến vuot_quy kiểu bool kiểm tra xem tổng lương có vượt quá ngân sách quỹ không (>)\n\n\n# Yêu cầu 5: In kết quả theo đúng mẫu: Vượt quỹ: False\n\n"},{"id":"p10","group":"Nhân sự","title":"Thống kê danh sách nhân viên","hint":"Các list đã có sẵn; không cần for hay viết hàm.","criteria":[{"label":"Số nhân viên","field":"so_nhan_vien","points":2},{"label":"Lương bình quân","field":"luong_binh_quan","points":2},{"label":"Lương cao nhất","field":"luong_cao_nhat","points":2},{"label":"Hai nhân viên đầu","field":"hai_nhan_vien_dau","points":2},{"label":"Đầu ra theo mẫu","field":"__output__","points":2}],"testcases":[{"setup":"nhan_su = [\"An\", \"Bình\", \"Chi\", \"Dung\"]\nluong = [12000000, 15000000, 18000000, 11000000]","expected":{"so_nhan_vien":4,"luong_binh_quan":14000000.0,"luong_cao_nhat":18000000,"hai_nhan_vien_dau":["An","Bình"],"__output__":"Số nhân viên: 4"}},{"setup":"nhan_su = [\"Hà\", \"Nam\", \"Mai\"]\nluong = [9000000, 10000000, 14000000]","expected":{"so_nhan_vien":3,"luong_binh_quan":11000000.0,"luong_cao_nhat":14000000,"hai_nhan_vien_dau":["Hà","Nam"],"__output__":"Số nhân viên: 3"}},{"setup":"nhan_su = [\"Tuấn\", \"Minh\", \"Lan\", \"Hải\", \"Nga\"]\nluong = [13000000, 17000000, 14000000, 20000000, 16000000]","expected":{"so_nhan_vien":5,"luong_binh_quan":16000000.0,"luong_cao_nhat":20000000,"hai_nhan_vien_dau":["Tuấn","Minh"],"__output__":"Số nhân viên: 5"}}],"starter":"# DỮ LIỆU ĐẦU VÀO MẪU (ĐÃ CHO)\nnhan_su = [\"An\", \"Bình\", \"Chi\", \"Dung\"]\nluong = [12000000, 15000000, 18000000, 11000000]\n# === KẾT THÚC DỮ LIỆU MẪU ===\n\n# PHẦN SINH VIÊN VIẾT TIẾP\n# Yêu cầu 1: Đếm số lượng nhân sự trong danh sách nhan_su lưu vào biến so_nhan_vien\n\n\n# Yêu cầu 2: Tính lương bình quân của nhân viên (tổng lương / số lượng) lưu vào biến luong_binh_quan\n\n\n# Yêu cầu 3: Tìm mức lương cao nhất trong danh sách luong lưu vào biến luong_cao_nhat\n\n\n# Yêu cầu 4: Cắt lát lấy 2 nhân viên đầu tiên trong danh sách nhan_su lưu vào biến hai_nhan_vien_dau\n\n\n# Yêu cầu 5: In kết quả theo đúng mẫu: Số nhân viên: 4\n\n"}];
 const $=id=>document.getElementById(id);
 const cards=[...document.querySelectorAll('[data-task]')];
-const profileKey='neu_bai2_practice_profile_v5';
-const baseKey='neu_bai2_practice_v6_';
-const oldBaseKey='neu_bai2_practice_v5_';
+const profileKey='neu_bai2_practice_profile_v7';
+const baseKey='neu_bai2_practice_v7_';
 const END_MARKER='# === KẾT THÚC DỮ LIỆU MẪU ===';
 let profile={fullName:'',studentId:'',classCode:''};
 let state={};
@@ -353,15 +451,7 @@ function restore(){
  try{
   const existing=storage.get(key());
   if(existing) return JSON.parse(existing)||{};
-  // Tự chuyển mã bài làm cũ sang bản mới, không mang theo điểm cũ.
-  const oldKey=key().replace(baseKey,oldBaseKey);
-  const previous=JSON.parse(storage.get(oldKey)||'{}');
-  const converted={};
-  TASKS.forEach(t=>{const old=previous[t.id];if(!old)return;
-   const v=String(old.code||'');
-   converted[t.id]={code:v.includes(END_MARKER)?v:t.starter+v,grade:null};
-  });
-  return converted;
+  return {};
  }catch(e){return {}}
 }
 function save(){storage.set(key(),JSON.stringify(state))}

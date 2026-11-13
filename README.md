@@ -13,14 +13,14 @@ Cổng thông tin môn học, lộ trình 10 tuần, đề cương tương tác 
 - `thuc_hanh.html`: Trang phòng thực hành mã nguồn Python, tổng hợp ví dụ Pandas, Data Cleaning, Chuẩn hóa đặc trưng và trực quan hóa Seaborn (hỗ trợ sao chép mã Colab).
 - `lectures/`: Thư mục bài giảng và đề cương chi tiết:
   - `de_cuong_KHDL_kinh_te_kinh_doanh_tuong_tac.html`: Đề cương chi tiết tương tác (tự kiểm tra hiểu biết và xuất chứng nhận hoàn thành file .PNG).
-  - `lecture 1/`:
-    - `bai_1_bai_giang_tuong_tac.html`: Bài 1 – Bài giảng tương tác & bài tập mẫu.
-    - `bai_1_bai_tap_tu_lam.html`: Bài 1 – Bài tập tự làm (chấm tự động).
-    - `bai_1_quiz_tu_cham.html`: Bài 1 – Quiz tự chấm trắc nghiệm.
-  - `lecture 2/`:
-    - `bai_2_bai_giang_tuong_tac.html`: Bài 2 – Bài giảng Python tương tác & bài tập mẫu.
-    - `bai_2_bai_tap_tu_lam.html`: Bài 2 – Bài tập tự làm (chấm tự động, 10 bài tổng hợp 100đ).
-    - `bai_2_quiz_tu_cham.html`: Bài 2 – Quiz tự chấm trắc nghiệm.
+  - `lecture-1/`:
+    - `bai-1-bai-giang-tuong-tac.html`: Bài 1 – Bài giảng tương tác & bài tập mẫu.
+    - `bai-1-bai-tap-tu-lam.html`: Bài 1 – Bài tập tự làm (chấm tự động).
+    - `bai-1-quiz-tu-cham.html`: Bài 1 – Quiz tự chấm trắc nghiệm.
+  - `lecture-2/`:
+    - `bai-2-bai-giang-tuong-tac.html`: Bài 2 – Bài giảng Python tương tác & bài tập mẫu.
+    - `bai-2-bai-tap-tu-lam.html`: Bài 2 – Bài tập tự làm (chấm tự động, 10 bài tổng hợp 100đ).
+    - `bai-2-quiz-tu-cham.html`: Bài 2 – Quiz tự chấm trắc nghiệm.
 
 ## 🚀 Trực tuyến qua GitHub Pages
 
