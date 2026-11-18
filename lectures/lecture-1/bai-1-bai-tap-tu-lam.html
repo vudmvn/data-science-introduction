@@ -25,6 +25,26 @@
 .score-weights .wt-row{display:flex;gap:12px;align-items:baseline;justify-content:space-between;border-bottom:1px solid #dfebf1;padding:8px 3px;min-width:0}
 .score-weights .wt-row span{min-width:0}.score-weights .wt-row b{white-space:nowrap;color:#096773}
 @media(max-width:650px){.score-weights{grid-template-columns:1fr}}
+
+/* Tối ưu format chọn nhanh cho sinh viên */
+.q-title{display:flex;align-items:flex-start;gap:8px;font-size:.92rem;font-weight:750;line-height:1.45;color:var(--navy);margin-bottom:10px}
+.q-badge{display:inline-flex;align-items:center;justify-content:center;background:#e9f2f8;color:var(--navy);border:1px solid #c9daea;border-radius:6px;font-size:.74rem;font-weight:850;padding:1px 7px;flex-shrink:0;margin-top:2px}
+.opt-pills{display:flex;flex-wrap:wrap;gap:8px}
+.opt-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1.5px solid #cbd8e5;border-radius:9px;background:#fff;cursor:pointer;font-size:.86rem;font-weight:550;color:#213c54;transition:all .15s ease;user-select:none;line-height:1.35}
+.opt-pill:hover{border-color:var(--teal);background:#f2fafb;color:#06696e}
+.opt-pill:has(input:checked),.opt-pill.is-selected{border-color:var(--teal);background:#e7f6f6;color:#065b61;font-weight:750;box-shadow:0 0 0 2px #087f8622}
+.opt-pill input[type="radio"]{accent-color:var(--teal);margin:0;width:16px;height:16px;cursor:pointer;flex-shrink:0}
+.opt-stack{display:grid;gap:8px}
+.opt-card{display:flex;align-items:flex-start;gap:10px;padding:10px 13px;border:1.5px solid #cbd8e5;border-radius:10px;background:#fff;cursor:pointer;font-size:.87rem;line-height:1.45;color:#1e354a;transition:all .15s ease;user-select:none}
+.opt-card:hover{border-color:var(--teal);background:#f4fafb}
+.opt-card:has(input:checked),.opt-card.is-selected{border-color:var(--teal);background:#e7f6f6;color:#054f54;font-weight:680;box-shadow:0 0 0 2px #087f861e}
+.opt-card input{accent-color:var(--teal);margin-top:3px;flex-shrink:0;width:17px;height:17px;cursor:pointer}
+.opt-pill.opt-correct,.opt-card.opt-correct{border-color:#279e68!important;background:#edf8f2!important;color:#0c5933!important;font-weight:750!important}
+.opt-pill.opt-incorrect,.opt-card.opt-incorrect{border-color:#d96275!important;background:#fff1f3!important;color:#931d2e!important}
+.num-wrap input{width:100%;padding:10px 12px;border:1.5px solid #bbcbd9;border-radius:9px;color:var(--text);background:#fff;font-size:.95rem;font-weight:600;font-variant-numeric:tabular-nums}
+.num-wrap input:focus{border-color:var(--teal);box-shadow:0 0 0 3px #087f8620;outline:none}
+@media(max-width:768px){.formgrid{grid-template-columns:1fr}}
+
 </style></head><body>
 <header class="top"><div class="topin"><a class="logo" href="bai-1-bai-giang-tuong-tac.html">NEU <span class="dot">/</span> KHOA HỌC DỮ LIỆU <span style="color:#7b8ca0;font-weight:600">• BÀI 1</span></a><nav class="links" aria-label="Ba hoạt động học"><a href="bai-1-bai-giang-tuong-tac.html" >Bài giảng</a><a href="bai-1-quiz-tu-cham.html" >Quiz tự chấm</a><a href="bai-1-bai-tap-tu-lam.html" aria-current="page">Bài tập tự làm</a></nav></div></header>
 <div class="shell"><div class="hero"><div class="kicker">Khoa Khoa học dữ liệu và Trí tuệ nhân tạo · Bộ học liệu tương tác</div><h1>Bài tập tự làm · Bài 1</h1><p>Tự giải bài tập từ mức nhận biết đến vận dụng: biến dữ liệu, CRISP-DM, chất lượng dữ liệu, tính toán bán lẻ và quyết định chiến dịch ngân hàng.</p><div class="metrics"><span class="metric">12 bài tập</span><span class="metric">66 ý tự chấm</span><span class="metric">Lời giải theo từng ý</span><span class="metric">Thang điểm tối đa 100</span></div></div><div class="layout"><aside class="aside"><h3>Điều hướng nhanh</h3><a href="#summary">Bảng điểm tổng</a><a href="#p01">01. Phân loại biến dữ liệu</a><a href="#p02">02. Sắp xếp quy trình CRISP-DM</a><a href="#p03">03. Xác định giai đoạn xử lý công việc</a><a href="#p04">04. Xác định đúng bài toán kinh doanh</a><a href="#p05">05. Kiểm tra chất lượng dữ liệu</a><a href="#p06">06. Tính toán số liệu bán lẻ</a><a href="#p07">07. Phân biệt bốn loại phân tích</a><a href="#p08">08. Chọn biểu đồ đúng mục tiêu</a><a href="#p09">09. Bài toán chiến dịch ngân hàng (tính kỳ vọng)</a><a href="#p10">10. Đánh giá tình huống ngân hàng</a><a href="#p11">11. Diễn giải kết quả và hạn chế</a><a href="#p12">12. Dự án tổng hợp: giảm tồn kho thiếu hụt</a></aside><main class="main"><section id="student-info" class="card student-card" aria-labelledby="student-heading">
@@ -38,7 +58,7 @@
   <p class="student-guidance">Thông tin được tự lưu khi nhập và được đính kèm trong file kết quả xuất ra. Nút “Làm lại” chỉ xóa câu trả lời, không xóa thông tin sinh viên. Nếu dùng chung máy, chọn “Đổi sinh viên” để xóa cả thông tin lẫn bài làm của người trước. Dữ liệu lưu cục bộ, không tự gửi về giảng viên; có thể mất khi xóa dữ liệu trình duyệt.</p>
 </section>
 
-<section class="card"><span class="tag">Bài tập vận dụng độc lập</span><h2>Phiếu bài tập tự làm</h2><p>Gồm <b>12 bài</b> với <b>66 ý</b>, có bài tập phân loại, ghép CRISP-DM, tính toán, lựa chọn xử lý dữ liệu và tình huống kinh doanh. Mỗi ý được <b>chấm tự động</b>; ý sai được giải thích và công bố đáp án khi chấm.</p><div class="panel gold"><b>Cách làm:</b> đọc tình huống → tự trả lời trong ô nhập/chọn → “Chấm bài” để nhận điểm riêng và lời giải, hoặc “Chấm toàn bộ” để có tổng điểm. Có thể sửa và chấm lại; với câu chọn nhiều đáp án phải chọn chính xác cả tập hợp. <b>Số thập phân được chấp nhận dấu phẩy hoặc dấu chấm.</b></div><div class="score-grid"><div><div class="num" id="doneTasks">0/12</div><small>Bài đã chấm</small></div><div><div class="num" id="gotPoints">0/0</div><small>Điểm tích lũy</small></div><div><div class="num" id="score100">0/100</div><small>Tổng điểm thang 100</small></div></div><div class="progress" style="margin-top:15px"><span id="bar"></span></div></section>
+<section class="card"><span class="tag">Bài tập vận dụng độc lập</span><h2>Phiếu bài tập tự làm</h2><p>Gồm <b>12 bài</b> với <b>66 ý</b>, có bài tập phân loại, ghép CRISP-DM, tính toán, lựa chọn xử lý dữ liệu và tình huống kinh doanh. Mỗi ý được <b>chấm tự động</b>; ý sai được giải thích và công bố đáp án khi chấm.</p><div class="panel gold"><b>Cách làm:</b> Đọc tình huống → <b>chọn nhanh đáp án bằng một cú nhấp (nút bấm / thẻ chọn trực tiếp)</b> hoặc nhập số → bấm <b>“Chấm bài”</b> để nhận điểm riêng và lời giải, hoặc <b>“Chấm toàn bộ bài tập”</b> để có tổng điểm. Sau khi chấm, đáp án đúng tự động tô xanh, lựa chọn chưa đúng tô đỏ; có thể đổi đáp án và chấm lại bất cứ lúc nào. <b>Số thập phân chấp nhận cả dấu phẩy và dấu chấm.</b></div><div class="score-grid"><div><div class="num" id="doneTasks">0/12</div><small>Bài đã chấm</small></div><div><div class="num" id="gotPoints">0/0</div><small>Điểm tích lũy</small></div><div><div class="num" id="score100">0/100</div><small>Tổng điểm thang 100</small></div></div><div class="progress" style="margin-top:15px"><span id="bar"></span></div></section>
 <section id="summary" class="card resultbox"><span class="tag">Bảng điểm tự động</span><h2>Tiến độ và kết quả bài tập</h2><p id="resultStudentInfo" class="student-result-info"></p><p id="finalText">...</p><p class="small muted">Thang điểm có trọng số theo độ khó: mỗi bài được phân bổ từ 6 đến 14 điểm, mỗi ý được cho điểm theo độ khó; câu chưa trả lời/sai đạt 0 điểm. Tổng điểm tối đa <b id="totalMax">0</b>, theo thang 100. Kết quả chỉ là điểm thực hành, không phải điểm học phần chính thức.</p></section>
 <section class="card" id="point-weights"><span class="tag">Thang điểm theo độ khó</span><h2>Phân bổ 100 điểm cho 12 bài</h2><p>Bài cơ bản có ít điểm hơn bài tính toán, đánh giá và vận dụng tổng hợp. Điểm tối đa của mỗi bài được công bố trước khi làm; các ý bên trong nhận trọng số theo độ khó. <b>Tổng tối đa: 100 điểm, không quy đổi hệ 10.</b></p><div id="weightTable" class="score-weights"></div></section><div id="tasks"></div><div class="sticky-actions"><button class="btn primary" id="gradeAll">✓ Chấm toàn bộ bài tập</button><button class="btn" id="export">↓ Xuất bài làm & kết quả</button><button class="btn" id="exportImage">🖼 Xuất phiếu điểm PNG</button><button class="btn outline-danger" id="reset">↺ Xóa để làm lại</button><span class="live">Tự lưu tại thiết bị này.</span></div>
 </main></div><footer class="footer">Từ PDF “Bài 1 – Giới thiệu về Khoa học dữ liệu” (18 trang) · Ví dụ số và bài tập bổ sung là dữ liệu mô phỏng phục vụ giảng dạy · Hoạt động trong trình duyệt, không cần máy chủ.</footer></div><script>
@@ -85,16 +105,93 @@ function correctAnswer(r){if(r.type==='number')return String(r.answer).replace('
 function render(){const weightEl=$('weightTable');if(weightEl)weightEl.innerHTML=TASKS.map((t,i)=>`<div class="wt-row"><span>${String(i+1).padStart(2,'0')}. ${esc(t.title)}</span><b>${taskMax(t)} điểm</b></div>`).join('');const html=TASKS.map((t,ti)=>{let p=taskMax(t);return `<section id="${t.id}" class="card sect" data-task="${t.id}"><div class="taskhead"><div><span class="tag ${t.level==='Nâng cao'?'orange':''}">BÀI ${String(ti+1).padStart(2,'0')} · ${esc(t.level)}</span><h3>${esc(t.title)}</h3><div class="small muted">${esc(t.ref)} · ${t.rows.length} ý</div></div><div class="taskscore" id="score-${t.id}">Chưa chấm · ${p} điểm</div></div><p style="margin:16px 0">${t.intro}</p><details class="panel gold" style="margin:10px 0 19px"><summary style="font-weight:750;cursor:pointer">Gợi ý cách làm (không hiện đáp án)</summary><p style="margin-top:9px">${esc(t.hint)}</p></details><div class="formgrid">${t.rows.map((r,ri)=>renderRow(t,r,ri)).join('')}</div><div class="toolbar"><button class="btn teal" data-action="grade-task" data-task="${t.id}">✓ Chấm bài ${ti+1}</button><span class="small muted" id="status-${t.id}">Chưa nộp</span></div></section>`}).join('');$('tasks').innerHTML=html;$('totalMax').textContent=maxTotal;
 $('tasks').addEventListener('input',onChange);$('tasks').addEventListener('change',onChange);$('tasks').addEventListener('click',e=>{let b=e.target.closest('button[data-action]');if(b)gradeTask(b.dataset.task)});
 TASKS.forEach(t=>{if(submitted[t.id])updateTask(t,true)});updateSummary()}
-function renderRow(t,r,ri){let ctl='';const a=answers[r.id];if(r.type==='select')ctl=`<select id="${r.id}" data-row="${r.id}" data-task="${t.id}" aria-label="${esc(r.label)}"><option value="">— Chọn đáp án —</option>${r.opts.map(([val,label])=>`<option value="${esc(val)}" ${a===val?'selected':''}>${esc(label)}</option>`).join('')}</select>`;
-if(r.type==='number')ctl=`<input type="text" inputmode="decimal" id="${r.id}" data-row="${r.id}" data-task="${t.id}" value="${esc(a??'')}" placeholder="${esc(r.placeholder||'Nhập một số')}" autocomplete="off">`;
-if(r.type==='multi')ctl=`<div class="multi">${r.opts.map(([val,label])=>`<label><input type="checkbox" data-row="${r.id}" data-task="${t.id}" value="${esc(val)}" ${Array.isArray(a)&&a.includes(val)?'checked':''}>${esc(label)}</label>`).join('')}</div>`;
-return `<div class="field" id="field-${r.id}"><label for="${r.id}"><b>${ri+1}.</b> ${esc(r.label)}</label>${ctl}<div class="explanation" id="ex-${r.id}"></div></div>`}
-function onChange(e){let rId=e.target.dataset.row,tId=e.target.dataset.task;if(!rId)return;let r=allRows.find(x=>x.id===rId);
-if(r.type==='multi'){answers[rId]=[...document.querySelectorAll(`[data-row="${rId}"]:checked`)].map(el=>el.value)}else{answers[rId]=e.target.value}
-if(submitted[tId]){delete submitted[tId];let t=TASKS.find(t=>t.id===tId);t.rows.forEach(r=>{let box=$('field-'+r.id),ex=$('ex-'+r.id);box.classList.remove('isok','isbad');ex.classList.remove('visible')});$('score-'+tId).textContent=`Chưa chấm · ${taskMax(t)} điểm`;$('status-'+tId).textContent='Đã sửa, vui lòng chấm lại'}
-save();updateSummary()}
-function updateTask(t,show){let max=taskMax(t),score=0;for(let r of t.rows){let ok=equals(r);if(ok)score+=r.points;let box=$('field-'+r.id),ex=$('ex-'+r.id);box.classList.toggle('isok',show&&ok);box.classList.toggle('isbad',show&&!ok);ex.classList.toggle('visible',show);if(show)ex.innerHTML=`<b>${ok?'✓ Đúng':'✗ Chưa đúng'} · ${r.points} điểm</b><div><b>Đáp án:</b> ${esc(correctAnswer(r))}</div><div>${esc(r.ex)}</div>`}
-if(show){$('score-'+t.id).textContent=`${score}/${max} điểm`;$('status-'+t.id).textContent=`Đã chấm ${t.rows.length} ý; ${t.rows.filter(r=>equals(r)).length} ý đúng.`}return {score,max}}
+function renderRow(t,r,ri){
+  let ctl='';
+  const a=answers[r.id];
+  if(r.type==='select'){
+    const maxLen=Math.max(...r.opts.map(o=>o[1].length));
+    const isPill=maxLen<=25;
+    const containerClass=isPill?'opt-pills':'opt-stack';
+    const itemClass=isPill?'opt-pill':'opt-card';
+    const optsHtml=r.opts.map(([val,label])=>{
+      const isChecked=a===val;
+      return `<label class="${itemClass} ${isChecked?'is-selected':''}">`+
+        `<input type="radio" name="row-${r.id}" data-row="${r.id}" data-task="${t.id}" value="${esc(val)}" ${isChecked?'checked':''}>`+
+        `<span>${esc(label)}</span></label>`;
+    }).join('');
+    ctl=`<div class="${containerClass}" role="radiogroup" aria-label="${esc(r.label)}">${optsHtml}</div>`;
+  }else if(r.type==='multi'){
+    const optsHtml=r.opts.map(([val,label])=>{
+      const isChecked=Array.isArray(a)&&a.includes(val);
+      return `<label class="opt-card multi-opt ${isChecked?'is-selected':''}">`+
+        `<input type="checkbox" data-row="${r.id}" data-task="${t.id}" value="${esc(val)}" ${isChecked?'checked':''}>`+
+        `<span>${esc(label)}</span></label>`;
+    }).join('');
+    ctl=`<div class="opt-stack multi" role="group" aria-label="${esc(r.label)}">${optsHtml}</div>`;
+  }else if(r.type==='number'){
+    ctl=`<div class="num-wrap"><input type="text" inputmode="decimal" id="${r.id}" data-row="${r.id}" data-task="${t.id}" value="${esc(a??'')}" placeholder="${esc(r.placeholder||'Nhập một số')}" autocomplete="off"></div>`;
+  }
+  return `<div class="field" id="field-${r.id}"><div class="q-title"><span class="q-badge">Ý ${ri+1}</span><span>${esc(r.label)}</span></div>${ctl}<div class="explanation" id="ex-${r.id}"></div></div>`;
+}
+function onChange(e){
+  let rId=e.target.dataset.row,tId=e.target.dataset.task;if(!rId)return;let r=allRows.find(x=>x.id===rId);if(!r)return;
+  if(r.type==='multi'){answers[rId]=[...document.querySelectorAll(`[data-row="${rId}"]:checked`)].map(el=>el.value)}else{answers[rId]=e.target.value}
+  const field=$('field-'+rId);
+  if(field){
+    if(r.type==='select'){
+      field.querySelectorAll('.opt-pill, .opt-card').forEach(el=>{const inp=el.querySelector('input');el.classList.toggle('is-selected',!!(inp&&inp.checked))});
+    }else if(r.type==='multi'){
+      field.querySelectorAll('.multi-opt').forEach(el=>{const inp=el.querySelector('input');el.classList.toggle('is-selected',!!(inp&&inp.checked))});
+    }
+  }
+  if(submitted[tId]){
+    delete submitted[tId];
+    let t=TASKS.find(t=>t.id===tId);
+    t.rows.forEach(row=>{
+      let box=$('field-'+row.id),ex=$('ex-'+row.id);
+      if(box){
+        box.classList.remove('isok','isbad');
+        box.querySelectorAll('.opt-correct, .opt-incorrect').forEach(el=>el.classList.remove('opt-correct','opt-incorrect'));
+      }
+      if(ex)ex.classList.remove('visible');
+    });
+    $('score-'+tId).textContent=`Chưa chấm · ${taskMax(t)} điểm`;
+    $('status-'+tId).textContent='Đã sửa, vui lòng chấm lại';
+  }
+  save();updateSummary();
+}
+function updateTask(t,show){
+  let max=taskMax(t),score=0;
+  for(let r of t.rows){
+    let ok=equals(r);
+    if(ok)score+=r.points;
+    let box=$('field-'+r.id),ex=$('ex-'+r.id);
+    if(box){
+      box.classList.toggle('isok',show&&ok);
+      box.classList.toggle('isbad',show&&!ok);
+      const optLabels=box.querySelectorAll('.opt-pill, .opt-card');
+      optLabels.forEach(lbl=>{
+        lbl.classList.remove('opt-correct','opt-incorrect');
+        if(show){
+          const inp=lbl.querySelector('input');
+          if(inp){
+            let isCorrect=false;
+            if(r.type==='multi')isCorrect=r.answer.includes(inp.value);
+            else isCorrect=inp.value===String(r.answer);
+            if(isCorrect)lbl.classList.add('opt-correct');
+            else if(inp.checked)lbl.classList.add('opt-incorrect');
+          }
+        }
+      });
+    }
+    if(ex){
+      ex.classList.toggle('visible',show);
+      if(show)ex.innerHTML=`<b>${ok?'✓ Đúng':'✗ Chưa đúng'} · ${r.points} điểm</b><div><b>Đáp án:</b> ${esc(correctAnswer(r))}</div><div>${esc(r.ex)}</div>`;
+    }
+  }
+  if(show){$('score-'+t.id).textContent=`${score}/${max} điểm`;$('status-'+t.id).textContent=`Đã chấm ${t.rows.length} ý; ${t.rows.filter(r=>equals(r)).length} ý đúng.`}
+  return {score,max};
+}
 function gradeTask(id){let t=TASKS.find(t=>t.id===id);submitted[id]=true;save();updateTask(t,true);updateSummary();$('score-'+id).scrollIntoView({behavior:'smooth',block:'center'})}
 function gradeAll(){TASKS.forEach(t=>{submitted[t.id]=true;updateTask(t,true)});save();updateSummary();$('summary').scrollIntoView({behavior:'smooth',block:'center'})}
 function updateSummary(){let done=TASKS.filter(t=>submitted[t.id]),score=done.reduce((s,t)=>s+t.rows.filter(equals).reduce((ss,r)=>ss+r.points,0),0);$('doneTasks').textContent=done.length+'/'+TASKS.length;$('gotPoints').textContent=score+'/'+maxTotal;$('score100').textContent=score+'/'+maxTotal;$('bar').style.width=(done.length/TASKS.length*100)+'%';$('finalText').textContent=done.length===TASKS.length?`Đã chấm toàn bộ ${TASKS.length} bài. Điểm số theo thang 100 có trọng số theo độ khó; các câu chưa làm hoặc sai được tính 0 điểm.`:`Đã chấm ${done.length}/${TASKS.length} bài. Điểm hiện tại là tổng của các bài đã chấm; bấm “Chấm toàn bộ” để có kết quả cuối cùng.`}

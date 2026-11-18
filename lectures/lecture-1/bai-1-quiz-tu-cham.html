@@ -26,9 +26,29 @@
 .grade-notice strong{color:#0d646c}.grade-notice.status-graded{background:#edf8f1;border-color:#b7ddc3}
 .grade-controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:12px}.grade-controls .btn{min-width:146px}
 @media(max-width:560px){.grade-controls .btn{flex:1}}
+
+/* Điều hướng và chấm điểm theo nhóm chủ đề */
+.aside .nav-topic{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:8px 10px;border-radius:8px;text-decoration:none;font-size:.83rem;color:#3e5974;line-height:1.35;transition:all .15s ease;cursor:pointer}
+.aside .nav-topic:hover{background:#ecf7fa;color:#045f75}
+.aside .nav-topic.active{background:var(--navy);color:#fff!important;font-weight:700}
+.aside .nav-topic.active .aside-pill{background:#ffffff33;color:#fff;border-color:transparent}
+.aside-pill{font-size:.72rem;font-weight:700;padding:2px 7px;border-radius:100px;border:1px solid var(--line);background:#f8fafc;color:var(--muted);white-space:nowrap}
+.aside-pill.ok{background:#e2f6e9;color:#11643e;border-color:#b3e6c6}
+.aside-pill.doing{background:#e6f3fa;color:#105988;border-color:#b8daf0}
+.grade-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}
+.topic-banner{background:#edf7fa;border:1px solid #cce8ee;border-radius:12px;padding:12px 16px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topic-banner h3{margin:0;font-size:1.05rem;color:var(--navy)}
+.topic-banner .topic-stats{font-size:.85rem;font-weight:600;color:#155e69}
+.badge-ok{display:inline-block;background:#e2f6e9;color:#11643e;border-radius:6px;font-size:.72rem;font-weight:800;padding:2px 6px;margin-left:6px}
+.badge-bad{display:inline-block;background:#ffeaed;color:#9d2f45;border-radius:6px;font-size:.72rem;font-weight:800;padding:2px 6px;margin-left:6px}
+
 </style></head><body>
 <header class="top"><div class="topin"><a class="logo" href="bai-1-bai-giang-tuong-tac.html">NEU <span class="dot">/</span> KHOA HỌC DỮ LIỆU <span style="color:#7b8ca0;font-weight:600">• BÀI 1</span></a><nav class="links" aria-label="Ba hoạt động học"><a href="bai-1-bai-giang-tuong-tac.html" >Bài giảng</a><a href="bai-1-quiz-tu-cham.html" aria-current="page">Quiz tự chấm</a><a href="bai-1-bai-tap-tu-lam.html" >Bài tập tự làm</a></nav></div></header>
-<div class="shell"><div class="hero"><div class="kicker">Khoa Khoa học dữ liệu và Trí tuệ nhân tạo · Bộ học liệu tương tác</div><h1>Quiz trắc nghiệm · Bài 1</h1><p>Tự kiểm tra kiến thức theo mục tiêu của Bài 1: hiểu khoa học dữ liệu, ứng dụng trong kinh doanh, vòng đời CRISP-DM, loại dữ liệu và lựa chọn biểu đồ.</p><div class="metrics"><span class="metric">30 câu hỏi</span><span class="metric">Chỉ chấm khi nộp</span><span class="metric">Giải thích từng đáp án</span><span class="metric">Lưu tiến độ</span></div></div><div class="layout"><aside class="aside"><h3>Điều hướng nhanh</h3><a href="#results">Kết quả bài làm</a><a href="#questions" onclick="document.getElementById('filter').value='Khái niệm';document.getElementById('filter').dispatchEvent(new Event('change'))">Khái niệm</a><a href="#questions" onclick="document.getElementById('filter').value='Quy trình';document.getElementById('filter').dispatchEvent(new Event('change'))">Quy trình</a><a href="#questions" onclick="document.getElementById('filter').value='Dữ liệu';document.getElementById('filter').dispatchEvent(new Event('change'))">Dữ liệu</a><a href="#questions" onclick="document.getElementById('filter').value='Ứng dụng';document.getElementById('filter').dispatchEvent(new Event('change'))">Ứng dụng</a><a href="#questions" onclick="document.getElementById('filter').value='Phân tích';document.getElementById('filter').dispatchEvent(new Event('change'))">Phân tích</a><a href="#questions" onclick="document.getElementById('filter').value='Trực quan';document.getElementById('filter').dispatchEvent(new Event('change'))">Trực quan</a><a href="#questions" onclick="document.getElementById('filter').value='Tình huống';document.getElementById('filter').dispatchEvent(new Event('change'))">Tình huống</a><a href="#questions">Toàn bộ câu hỏi</a></aside><main class="main"><section id="student-info" class="card student-card" aria-labelledby="student-heading">
+<div class="shell"><div class="hero"><div class="kicker">Khoa Khoa học dữ liệu và Trí tuệ nhân tạo · Bộ học liệu tương tác</div><h1>Quiz trắc nghiệm · Bài 1</h1><p>Tự kiểm tra kiến thức theo mục tiêu của Bài 1: hiểu khoa học dữ liệu, ứng dụng trong kinh doanh, vòng đời CRISP-DM, loại dữ liệu và lựa chọn biểu đồ.</p><div class="metrics"><span class="metric">30 câu hỏi</span><span class="metric">Chỉ chấm khi nộp</span><span class="metric">Giải thích từng đáp án</span><span class="metric">Lưu tiến độ</span></div></div><div class="layout"><aside class="aside" id="quickNav">
+  <h3>Điều hướng theo nhóm</h3>
+  <div id="navLinks"></div>
+  <a href="#summary" class="nav-topic" style="margin-top:8px;border-top:1px dashed var(--line);padding-top:10px"><span>📊 Phiếu kết quả tổng</span></a>
+</aside><main class="main"><section id="student-info" class="card student-card" aria-labelledby="student-heading">
   <div class="student-title-row"><div><span class="tag">Thông tin người làm bài</span><h2 id="student-heading" style="margin:8px 0 0">Thông tin sinh viên</h2></div><span class="pill">Lưu trên trình duyệt</span></div>
   <div class="student-form-grid">
     <div class="student-field"><label for="studentFullName">Họ và tên</label><input id="studentFullName" type="text" maxlength="100" autocomplete="name" placeholder="Ví dụ: Nguyễn Văn An"></div>
@@ -39,18 +59,42 @@
   <p class="student-guidance">Thông tin được tự lưu khi nhập và được đính kèm trong file kết quả xuất ra. Nút “Làm lại” chỉ xóa câu trả lời, không xóa thông tin sinh viên. Nếu dùng chung máy, chọn “Đổi sinh viên” để xóa cả thông tin lẫn bài làm của người trước. Dữ liệu lưu cục bộ, không tự gửi về giảng viên; có thể mất khi xóa dữ liệu trình duyệt.</p>
 </section>
 
-<section class="card"><span class="tag">Hướng dẫn kiểm tra</span><h2>Trắc nghiệm kiến thức và vận dụng</h2><p>Gồm <b>30 câu hỏi</b>, phân bổ 100 điểm theo độ khó: nhận biết 2 điểm/câu, thông hiểu 3 điểm/câu, vận dụng 5 điểm/câu. Ba câu đầu lấy từ mục “Câu hỏi ôn tập nhanh” của tài liệu (PDF tr. 17); các câu còn lại được bổ sung để sinh viên luyện tập. Có thể lọc theo chủ đề để ôn tập; khi chấm, toàn bộ 30 câu được tính vào tổng 100 điểm, câu chưa làm được 0 điểm.</p><div class="panel gold"><b>Cách làm:</b> (1) Chọn đáp án (có thể đổi lại nhiều lần, <b>không hiện đúng/sai</b>) → (2) Bấm <b>“Chấm bài”</b> để nộp → (3) Xem tổng điểm, câu đúng/sai và lời giải. Câu bỏ trống được tính 0 điểm. Khi chấm, hệ thống chuyển về xem toàn bộ 30 câu, đáp án và bộ lọc được khóa; chọn “Làm lại” để bắt đầu lượt mới. Có thể lọc chủ đề <b>trước khi chấm</b> để luyện từng phần.</div><div class="toolbar"><label for="filter" style="font-weight:750">Chọn chủ đề:</label><select id="filter" class="btn" style="max-width:240px"><option value="all">Toàn bộ 30 câu</option><option value="Khái niệm">Khái niệm</option><option value="Quy trình">Quy trình</option><option value="Dữ liệu">Dữ liệu</option><option value="Ứng dụng">Ứng dụng</option><option value="Phân tích">Phân tích</option><option value="Trực quan">Trực quan</option><option value="Tình huống">Tình huống</option></select><span class="pill">Đã trả lời <b id="answered">0</b>/<b id="qcount">30</b></span></div><div class="progress" aria-label="Tiến độ trả lời"><span id="bar"></span></div><div class="grade-notice" id="gradeNotice" role="status"><strong id="gradeStatus">Chưa chấm bài</strong><span id="gradeHint" class="muted">Chọn đáp án sẽ chỉ lưu lựa chọn, không hiện kết quả.</span></div><div class="grade-controls"><button type="button" id="gradeTop" class="btn primary">✓ Chấm bài</button><span class="small muted">Kết quả chỉ hiển thị sau khi bấm “Chấm bài”.</span></div></section>
+<section class="card"><span class="tag">Hướng dẫn kiểm tra</span><h2>Trắc nghiệm kiến thức và vận dụng</h2><p>Gồm <b>30 câu hỏi</b>, phân bổ 100 điểm theo độ khó: nhận biết 2 điểm/câu, thông hiểu 3 điểm/câu, vận dụng 5 điểm/câu qua 7 nhóm chủ đề. Bạn có thể <b>làm và chấm riêng từng nhóm</b> để ôn tập chắc chắn từng phần, hoặc làm toàn bộ rồi nộp một lượt.</p><div class="panel gold"><b>Chấm bài linh hoạt theo từng nhóm:</b> (1) Chọn chủ đề muốn làm → (2) Trả lời các câu hỏi trong nhóm → (3) Bấm <b>“Chấm nhóm này”</b> để xem điểm và lời giải chi tiết ngay lập tức → (4) Bấm <i>“Nhóm tiếp theo →”</i> để tiếp tục. Nhóm đã chấm vẫn có thể bấm <i>“Làm lại nhóm này”</i> để luyện lại mà không ảnh hưởng nhóm khác. Hoặc bạn có thể bấm <b>“Chấm toàn bộ 30 câu”</b> bất kỳ lúc nào.</div><div class="toolbar"><label for="filter" style="font-weight:750">Đang xem chủ đề:</label><select id="filter" class="btn" style="max-width:260px"><option value="all">Toàn bộ 30 câu (Tất cả chủ đề)</option><option value="Khái niệm">1. Khái niệm (6 câu · 18đ)</option><option value="Quy trình">2. Quy trình (6 câu · 18đ)</option><option value="Dữ liệu">3. Dữ liệu (4 câu · 12đ)</option><option value="Ứng dụng">4. Ứng dụng (3 câu · 9đ)</option><option value="Phân tích">5. Phân tích (4 câu · 14đ)</option><option value="Trực quan">6. Trực quan (4 câu · 14đ)</option><option value="Tình huống">7. Tình huống (3 câu · 15đ)</option></select><span class="pill">Đã trả lời <b id="answered">0</b>/<b id="qcount">30</b></span></div><div class="progress" aria-label="Tiến độ trả lời"><span id="bar"></span></div><div class="grade-notice" id="gradeNotice" role="status"><strong id="gradeStatus">Chưa chấm bài</strong><span id="gradeHint" class="muted">Chọn đáp án sẽ lưu lựa chọn; bấm chấm nhóm hoặc chấm toàn bộ để xem lời giải.</span></div><div class="grade-controls" id="gradeControlsTop"></div></section>
 <section id="summary" class="card resultbox hide" aria-live="polite"><span class="tag">Kết quả bài làm</span><h2>Phiếu kết quả tự động</h2><p id="resultStudentInfo" class="student-result-info"></p><div class="score-grid"><div><div class="num" id="totalScore">0</div><small>Điểm đạt / 100 điểm</small></div><div><div class="num" id="percent">0%</div><small>Tỷ lệ câu đúng</small></div><div><div class="num" id="answeredFinal">0</div><small>Số câu đã làm</small></div></div><h3 style="margin:20px 0 12px">Kết quả theo chủ đề</h3><div id="topicResults"></div><div class="panel" id="resultAdvice"></div></section>
-<div id="questions"></div><div class="sticky-actions"><button class="btn primary" id="gradeAll" type="button">✓ Chấm bài</button><button class="btn" type="button" id="export" disabled title="Chấm bài trước khi xuất kết quả">↓ Xuất kết quả TXT</button><button class="btn" type="button" id="exportImage" disabled title="Chấm bài trước khi xuất phiếu điểm ảnh">🖼 Xuất phiếu điểm PNG</button><button class="btn outline-danger" id="reset">↺ Làm lại</button><span class="live">Điểm chỉ lưu tại trình duyệt đang sử dụng.</span></div>
+<div id="questions"></div><div class="sticky-actions" id="stickyActions"></div>
 </main></div><footer class="footer">Từ PDF “Bài 1 – Giới thiệu về Khoa học dữ liệu” (18 trang) · Ví dụ số và bài tập bổ sung là dữ liệu mô phỏng phục vụ giảng dạy · Hoạt động trong trình duyệt, không cần máy chủ.</footer></div><script>
 const BANK = [{"topic":"Khái niệm","q":"Khoa học dữ liệu là gì?","options":["Một lĩnh vực chỉ tập trung vào lập trình","Lĩnh vực kết hợp toán học, khoa học máy tính và kiến thức chuyên ngành","Một ngành chỉ nghiên cứu thống kê","Chỉ là quá trình trực quan hóa dữ liệu"],"answer":1,"why":"KHDL là lĩnh vực liên ngành: thống kê/toán học, máy tính và hiểu biết chuyên ngành (PDF tr. 5–6).","original":true,"points":2,"level":"Nhận biết"},{"topic":"Quy trình","q":"Thành phần nào KHÔNG thuộc quy trình khoa học dữ liệu?","options":["Thu thập dữ liệu","Phân tích dữ liệu","Phát triển phần cứng máy tính","Trực quan hóa dữ liệu"],"answer":2,"why":"Phát triển phần cứng không phải một giai đoạn của quy trình khoa học dữ liệu nêu trong bài (PDF tr. 9–15).","original":true,"points":2,"level":"Nhận biết"},{"topic":"Dữ liệu","q":"Nguồn dữ liệu phổ biến trong kinh tế và kinh doanh bao gồm:","options":["Hệ thống ERP, CRM, dữ liệu giao dịch, dữ liệu khách hàng","Chỉ dữ liệu vật lý thiên văn","Chỉ dữ liệu gen","Chỉ dữ liệu mạng máy tính"],"answer":0,"why":"Ví dụ tiêu biểu là CRM, ERP, dữ liệu giao dịch, website và khảo sát khách hàng (PDF tr. 12, 17).","original":true,"points":2,"level":"Nhận biết"},{"topic":"Khái niệm","q":"Mục tiêu cuối cùng của KHDL trong kinh doanh là gì?","options":["Tạo ra thật nhiều tập tin","Thay thế hoàn toàn mọi quyết định của con người","Tạo tri thức có giá trị để hỗ trợ quyết định","Chỉ làm báo cáo đẹp"],"answer":2,"why":"Kết quả phải có thể dùng để cải thiện quyết định và tạo giá trị kinh tế (PDF tr. 5, 7).","original":false,"points":2,"level":"Nhận biết"},{"topic":"Khái niệm","q":"Trong ba trụ cột KHDL, thành phần nào giúp kiểm định giả thuyết và ước lượng độ tin cậy?","options":["Toán học & thống kê","Thiết kế đồ họa","Kiến thức luật giao thông","Bán hàng trực tiếp"],"answer":0,"why":"Thống kê cung cấp phương pháp đo lường, ước lượng, kiểm định và đánh giá độ tin cậy (PDF tr. 6).","original":false,"points":2,"level":"Nhận biết"},{"topic":"Khái niệm","q":"Vai trò chính của khoa học máy tính trong KHDL là gì?","options":["Đặt mục tiêu lợi nhuận","Lưu trữ, xử lý và tự động hóa tính toán","Bảo đảm mọi dữ liệu luôn đúng","Quyết định thay ban lãnh đạo"],"answer":1,"why":"Khoa học máy tính giúp xây dựng pipeline, quản lý dữ liệu và tính toán hiệu quả (PDF tr. 6).","original":false,"points":2,"level":"Nhận biết"},{"topic":"Khái niệm","q":"Vì sao cần kiến thức chuyên ngành trong KHDL?","options":["Để khỏi cần kiểm tra dữ liệu","Để lựa chọn màu biểu đồ","Để đặt câu hỏi đúng và diễn giải đúng bối cảnh","Để tăng số lượng thuật toán"],"answer":2,"why":"Hiểu nghiệp vụ giúp tránh giải bài toán kỹ thuật không gắn với quyết định thực tế (PDF tr. 6–7).","original":false,"points":5,"level":"Vận dụng"},{"topic":"Khái niệm","q":"Đặc thù quan trọng của mô hình dữ liệu trong kinh tế – kinh doanh là:","options":["Chỉ tối đa hóa độ chính xác","Quan tâm cả tính giải thích và giá trị quyết định","Không cần đánh giá","Không bao giờ chịu ảnh hưởng hành vi con người"],"answer":1,"why":"Ngoài chất lượng dự đoán, mô hình cần minh bạch, phù hợp nghiệp vụ và hữu ích khi ra quyết định (PDF tr. 7).","original":false,"points":5,"level":"Vận dụng"},{"topic":"Ứng dụng","q":"Phân nhóm khách hàng và đánh giá hiệu quả quảng cáo thường thuộc lĩnh vực nào?","options":["Nhân sự","Marketing","Khí tượng","Cơ học"],"answer":1,"why":"Hai ví dụ thuộc ứng dụng marketing của KHDL (PDF tr. 8).","original":false,"points":2,"level":"Nhận biết"},{"topic":"Ứng dụng","q":"Phát hiện giao dịch bất thường thuộc ứng dụng nào?","options":["Tài chính – ngân hàng","Thiết kế nội thất","Giáo dục thể chất","Quản lý thư viện"],"answer":0,"why":"Phát hiện giao dịch đáng ngờ là ví dụ trong tài chính–ngân hàng (PDF tr. 8).","original":false,"points":2,"level":"Nhận biết"},{"topic":"Ứng dụng","q":"Một chuỗi bán lẻ muốn giảm hàng tồn nhưng tránh thiếu hàng. Vấn đề KHDL phù hợp nhất là:","options":["Chấm điểm tín dụng","Dự báo nhu cầu và tối ưu tồn kho","Dự báo nghỉ việc nhân viên","Phân tích gen"],"answer":1,"why":"Dự báo nhu cầu làm đầu vào cho quyết định tồn kho (PDF tr. 8).","original":false,"points":5,"level":"Vận dụng"},{"topic":"Quy trình","q":"Giai đoạn đầu tiên trong CRISP-DM là gì?","options":["Modeling","Business Understanding","Deployment","Data Preparation"],"answer":1,"why":"Bắt đầu từ mục tiêu và câu hỏi nghiệp vụ (PDF tr. 10–11).","original":false,"points":2,"level":"Nhận biết"},{"topic":"Quy trình","q":"Kiểm tra cấu trúc, biến và chất lượng dữ liệu thuộc giai đoạn nào?","options":["Deployment","Modeling","Data Understanding","Evaluation"],"answer":2,"why":"Data Understanding giúp khám phá bản chất và hạn chế của dữ liệu hiện có (PDF tr. 10, 12).","original":false,"points":3,"level":"Thông hiểu"},{"topic":"Quy trình","q":"Xử lý bản ghi trùng, định dạng ngày sai và dữ liệu thiếu thuộc:","options":["Data Preparation","Business Understanding","Deployment","Evaluation"],"answer":0,"why":"Data Preparation làm sạch và biến đổi dữ liệu (PDF tr. 10, 13).","original":false,"points":3,"level":"Thông hiểu"},{"topic":"Quy trình","q":"Đưa kết quả vào hệ thống và theo dõi chất lượng sau vận hành là:","options":["Hiểu dữ liệu","Triển khai – Deployment","Chuẩn bị dữ liệu","Kiểm định giả thuyết"],"answer":1,"why":"Deployment gồm vận hành, giám sát và bảo trì (PDF tr. 10).","original":false,"points":3,"level":"Thông hiểu"},{"topic":"Quy trình","q":"Phát biểu nào đúng nhất về CRISP-DM?","options":["Luôn đi thẳng một lần rồi kết thúc","Là quy trình mang tính lặp, có thể quay lại bước trước","Không bao giờ được thay đổi câu hỏi kinh doanh","Chỉ dùng khi có học sâu"],"answer":1,"why":"CRISP-DM có tính chu kỳ, cho phép điều chỉnh dữ liệu/mô hình và vấn đề kinh doanh (PDF tr. 9–10).","original":false,"points":5,"level":"Vận dụng"},{"topic":"Dữ liệu","q":"Số lượng đơn hàng trong ngày thuộc kiểu dữ liệu nào?","options":["Định tính danh nghĩa","Định lượng rời rạc","Định tính thứ bậc","Văn bản tự do"],"answer":1,"why":"Số đếm đơn hàng là số nguyên không âm, điển hình cho dữ liệu định lượng rời rạc (mở rộng từ sơ đồ tr. 12).","original":false,"points":2,"level":"Nhận biết"},{"topic":"Dữ liệu","q":"“Kênh bán hàng: trực tuyến / tại cửa hàng” thuộc kiểu dữ liệu nào?","options":["Định lượng liên tục","Định lượng rời rạc","Định tính danh nghĩa","Dữ liệu khoảng cách"],"answer":2,"why":"Kênh bán hàng là nhãn nhóm không có thứ tự tự nhiên (mở rộng từ tr. 12).","original":false,"points":3,"level":"Thông hiểu"},{"topic":"Dữ liệu","q":"Khi thiếu giá bán trong một số giao dịch, lựa chọn phù hợp nhất là:","options":["Luôn thay bằng 0 ngay","Xóa toàn bộ hệ thống dữ liệu","Kiểm tra nguồn, nguyên nhân và chọn cách xử lý phù hợp","Giữ lại mọi giá trị và xem như đúng"],"answer":2,"why":"Cần tìm nguyên nhân, đối soát và đánh giá hệ quả trước khi điền/xóa (PDF tr. 12–13).","original":false,"points":5,"level":"Vận dụng"},{"topic":"Phân tích","q":"Câu hỏi “Doanh thu quý vừa qua là bao nhiêu?” thuộc:","options":["Mô tả","Chẩn đoán","Dự báo","Đề xuất"],"answer":0,"why":"Descriptive Analytics trả lời điều gì đã xảy ra (PDF tr. 14).","original":false,"points":3,"level":"Thông hiểu"},{"topic":"Phân tích","q":"Câu hỏi “Vì sao doanh thu tháng 5 giảm?” thuộc:","options":["Đề xuất","Chẩn đoán","Mô tả","Dự báo"],"answer":1,"why":"Diagnostic Analytics tìm hiểu nguyên nhân và yếu tố liên quan (PDF tr. 14).","original":false,"points":3,"level":"Thông hiểu"},{"topic":"Phân tích","q":"“Dự kiến doanh thu tháng 12” thuộc:","options":["Dự báo","Mô tả","Chẩn đoán","Đề xuất"],"answer":0,"why":"Predictive Analytics dự đoán diễn biến tương lai (PDF tr. 14).","original":false,"points":3,"level":"Thông hiểu"},{"topic":"Phân tích","q":"“Nên phân bổ ngân sách khuyến mãi cho nhóm nào?” thuộc:","options":["Mô tả","Chẩn đoán","Đề xuất","Dự báo"],"answer":2,"why":"Prescriptive Analytics hỗ trợ lựa chọn hành động (PDF tr. 14).","original":false,"points":5,"level":"Vận dụng"},{"topic":"Trực quan","q":"Biểu đồ phù hợp nhất với doanh thu theo 12 tháng là:","options":["Boxplot","Biểu đồ đường","Scatter plot","Biểu đồ tròn"],"answer":1,"why":"Biểu đồ đường dùng để theo dõi xu hướng theo thời gian (PDF tr. 15).","original":false,"points":3,"level":"Thông hiểu"},{"topic":"Trực quan","q":"Để xem mối quan hệ giữa chi tiêu quảng cáo và doanh thu trên nhiều chiến dịch, nên chọn:","options":["Histogram","Boxplot","Scatter plot","Biểu đồ cột đơn"],"answer":2,"why":"Scatter plot thể hiện quan hệ giữa hai biến định lượng (PDF tr. 15).","original":false,"points":5,"level":"Vận dụng"},{"topic":"Trực quan","q":"Histogram phù hợp nhất khi muốn:","options":["Theo dõi giá cổ phiếu mỗi ngày","Xem phân phối giá trị đơn hàng","Xếp hạng nhân viên theo phòng ban","Mô tả quy trình 6 bước"],"answer":1,"why":"Histogram mô tả tần suất của một biến số theo các khoảng giá trị (PDF tr. 15).","original":false,"points":3,"level":"Thông hiểu"},{"topic":"Trực quan","q":"Biểu đồ nào hỗ trợ quan sát trung vị, khoảng tứ phân vị và ngoại lệ?","options":["Boxplot","Biểu đồ đường","Sơ đồ quy trình","Biểu đồ tròn"],"answer":0,"why":"Boxplot phù hợp so sánh phân phối và phát hiện ngoại lệ (PDF tr. 15).","original":false,"points":3,"level":"Thông hiểu"},{"topic":"Tình huống","q":"Trong tình huống ngân hàng mời khách gửi tiết kiệm, kết quả đầu ra hữu ích nhất là:","options":["Danh sách khách hàng ưu tiên và khuyến nghị kênh liên hệ","Số dòng dữ liệu càng nhiều càng tốt","Biểu đồ trang trí","Một thuật toán không thể diễn giải"],"answer":0,"why":"Bài giảng nhấn mạnh danh sách ưu tiên, chân dung khách hàng và hành động có thể thực hiện (PDF tr. 16).","original":false,"points":5,"level":"Vận dụng"},{"topic":"Tình huống","q":"KPI nào phù hợp để đánh giá chiến dịch ngân hàng?","options":["Số biểu đồ đã tạo","Tỷ lệ phản hồi, chi phí trên mỗi khách hàng chuyển đổi","Số dòng code","Số lượng trường nhập liệu"],"answer":1,"why":"Tỷ lệ phản hồi và chi phí mỗi khách hàng chuyển đổi là những tiêu chí thành công trong PDF tr. 16.","original":false,"points":5,"level":"Vận dụng"},{"topic":"Tình huống","q":"Trong báo cáo kết quả, trình tự truyền đạt nên là:","options":["Đề xuất → tình huống → lập trình","Bối cảnh → phát hiện → ý nghĩa → đề xuất","Mô hình → triển khai → bỏ qua kết quả","Chỉ gửi dữ liệu thô"],"answer":1,"why":"Cách kể chuyện bằng dữ liệu: bối cảnh, phát hiện, ý nghĩa, đề xuất (PDF tr. 15).","original":false,"points":5,"level":"Vận dụng"}];
 const STORE='ds1_quiz_v3';
 const $ = id=>document.getElementById(id);
 const safe = x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ALL_TOPICS = ['Khái niệm','Quy trình','Dữ liệu','Ứng dụng','Phân tích','Trực quan','Tình huống'];
 function load(){try{return JSON.parse(localStorage.getItem(STORE)||'{}')}catch{return {}}}
 const PROFILE_STORE='ds1_student_profile_v1';
-const old=load(); let answers=old.answers||{},graded=!!old.graded;let student=cleanStudent(hasStudent(old.student||{})?old.student:readSharedProfile());
-function save(){try{localStorage.setItem(STORE,JSON.stringify({answers,graded,student,topic:$('filter')?.value||old.topic||'all',date:new Date().toISOString()}))}catch{}}
+const old=load();
+let answers=old.answers||{};
+let gradedTopics=old.gradedTopics||{};
+if(old.graded && Object.keys(gradedTopics).length===0){
+  ALL_TOPICS.forEach(t=>{gradedTopics[t]=true;});
+}
+let student=cleanStudent(hasStudent(old.student||{})?old.student:readSharedProfile());
+
+const isTopicGraded = t => !!gradedTopics[t];
+const isQuestionGraded = i => !!(BANK[i] && gradedTopics[BANK[i].topic]);
+const isAllGraded = () => ALL_TOPICS.every(t => gradedTopics[t]);
+const anyTopicGraded = () => ALL_TOPICS.some(t => gradedTopics[t]);
+
+function save(){
+  try{
+    localStorage.setItem(STORE,JSON.stringify({
+      answers,
+      gradedTopics,
+      graded: isAllGraded(),
+      student,
+      topic: $('filter')?.value||old.topic||'all',
+      date: new Date().toISOString()
+    }));
+  }catch{}
+}
 
 function cleanStudent(source){return {fullName:String(source?.fullName||'').slice(0,100),studentId:String(source?.studentId||'').slice(0,40),classCode:String(source?.classCode||'').slice(0,50)}}
 function readSharedProfile(){try{return cleanStudent(JSON.parse(localStorage.getItem(PROFILE_STORE)||'{}'))}catch{return cleanStudent({})}}
@@ -75,52 +119,309 @@ function setupStudentForm(){
 }
 function switchStudent(){
   if(!confirm('Đổi sinh viên sẽ xóa thông tin sinh viên hiện tại, mọi câu trả lời và kết quả quiz trên thiết bị này. Bạn có muốn tiếp tục?'))return;
-  answers={};graded=false;student=cleanStudent({});
+  answers={};gradedTopics={};student=cleanStudent({});
   try{localStorage.removeItem(PROFILE_STORE)}catch{}
   save();setupStudentValues();render();
   $('profileStatus').textContent='Đã xóa thông tin và bài làm. Mời sinh viên mới nhập thông tin.';
   $('studentFullName').focus();
 }
 function setupStudentValues(){ $('studentFullName').value=student.fullName;$('studentId').value=student.studentId;$('classCode').value=student.classCode;refreshStudentResult()}
-function selectTopics(){const q=$('filter').value;return q==='all'?BANK.map((_,i)=>i):BANK.map((x,i)=>x.topic===q?i:-1).filter(i=>i>=0)}
-function render(){const indices=selectTopics();$('qcount').textContent=indices.length;$('answered').textContent=indices.filter(i=>Number.isInteger(answers[i])).length;
-$('bar').style.width=(indices.length?indices.filter(i=>Number.isInteger(answers[i])).length/indices.length*100:0)+'%';
-$('questions').innerHTML=indices.map(i=>{let q=BANK[i],v=answers[i],did=graded,correct=v===q.answer;
-let opts=q.options.map((o,j)=>`<label class="choice ${did&&j===q.answer?'correct':''} ${did&&v===j&&!correct?'incorrect':''}"><input type="radio" name="q${i}" value="${j}" ${v===j?'checked':''} ${did?'disabled':''} data-qi="${i}"><span><b>${String.fromCharCode(65+j)}.</b> ${safe(o)}</span></label>`).join('');
-return `<article id="q${i+1}" class="card question"><div class="qhead"><div><div class="qnum">CÂU ${i+1} • ${safe(q.topic)} ${q.original?'• Câu hỏi từ PDF':''}</div><h3>${safe(q.q)}</h3></div><span class="pill">${q.points} điểm · ${safe(q.level)}</span></div><div class="choices">${opts}</div><div class="feedback ${did?'visible':''} ${did&&!correct?'bad':''}"><b>${correct?'✓ Chính xác':`✗ ${Number.isInteger(v)?'Chưa chính xác':'Chưa trả lời'}`}</b> · Đáp án: <b>${String.fromCharCode(65+q.answer)}. ${safe(q.options[q.answer])}</b><div>${safe(q.why)}</div></div></article>`}).join('');
-$('questions').querySelectorAll('input[type=radio]').forEach(el=>el.addEventListener('change',e=>{answers[e.target.dataset.qi]=Number(e.target.value);save();updateProgressOnly()}));
-$('gradeAll').disabled=graded;
-$('gradeTop').disabled=graded;
-$('filter').disabled=graded;
-$('export').disabled=!graded;
-$('exportImage').disabled=!graded;
-$('gradeNotice').classList.toggle('status-graded',graded);
-$('gradeStatus').textContent=graded?'✓ Đã chấm bài':'Chưa chấm bài';
-$('gradeHint').textContent=graded?'Kết quả và giải thích đã được hiển thị. Bấm “Làm lại” nếu muốn làm lượt mới.':'Chọn đáp án sẽ chỉ lưu lựa chọn, không hiện kết quả.';
-if(graded){showResults(indices)}else{$('summary').classList.add('hide')}
+
+function selectTopics(){
+  const q=$('filter').value;
+  return q==='all'?BANK.map((_,i)=>i):BANK.map((x,i)=>x.topic===q?i:-1).filter(i=>i>=0);
 }
-function updateProgressOnly(){const idx=selectTopics();let n=idx.filter(i=>Number.isInteger(answers[i])).length;$('answered').textContent=n;$('bar').style.width=(n/idx.length*100)+'%'}
-function showResults(indices){let correct=indices.filter(i=>answers[i]===BANK[i].answer).length,total=indices.length,answered=indices.filter(i=>Number.isInteger(answers[i])).length;
-$('summary').classList.remove('hide');const weighted=indices.reduce((s,i)=>s+(answers[i]===BANK[i].answer?BANK[i].points:0),0);$('totalScore').textContent=weighted+'/100';$('percent').textContent=(100*correct/total).toFixed(0)+'%';$('answeredFinal').textContent=answered+'/'+total;
-const topics=[...new Set(indices.map(i=>BANK[i].topic))];$('topicResults').innerHTML=topics.map(t=>{let qs=indices.filter(i=>BANK[i].topic===t);let mx=qs.reduce((s,i)=>s+BANK[i].points,0),c=qs.reduce((s,i)=>s+(answers[i]===BANK[i].answer?BANK[i].points:0),0);return `<div class="row" style="margin:8px 0"><b style="min-width:126px">${safe(t)}</b><div class="progress" style="flex:1;min-width:90px"><span style="width:${100*c/mx}%"></span></div><small>${c}/${mx} điểm</small></div>`}).join('');
-$('resultAdvice').textContent=correct===total?'Xuất sắc! Bạn đã trả lời đúng tất cả câu được hiển thị.':correct/total>=.8?'Nắm khá vững kiến thức. Xem phần giải thích tại các câu chưa đúng.':'Nên ôn lại các nhóm có tỷ lệ đúng thấp và làm lại bài.';
+
+function setTopic(topic){
+  $('filter').value = topic;
+  save();
+  render();
+  const qEl = $('questions');
+  if(qEl) qEl.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function getNextTopic(current){
+  const idx = ALL_TOPICS.indexOf(current);
+  if(idx >= 0 && idx < ALL_TOPICS.length - 1) return ALL_TOPICS[idx+1];
+  return 'all';
+}
+
+function render(){
+  const currentTopic = $('filter').value;
+  const indices = selectTopics();
+  $('qcount').textContent = indices.length;
+  const doneInSelection = indices.filter(i=>Number.isInteger(answers[i])).length;
+  $('answered').textContent = doneInSelection;
+  $('bar').style.width = (indices.length ? doneInSelection/indices.length*100 : 0)+'%';
+  
+  // Banner khi đang xem 1 chủ đề cụ thể
+  let bannerHtml = '';
+  if(currentTopic !== 'all'){
+    const isG = isTopicGraded(currentTopic);
+    const qs = BANK.filter(q=>q.topic===currentTopic);
+    const mx = qs.reduce((s,q)=>s+q.points,0);
+    const c = BANK.map((q,i)=>({q,i})).filter(x=>x.q.topic===currentTopic).reduce((s,x)=>s+(answers[x.i]===x.q.answer?x.q.points:0),0);
+    bannerHtml = `<div class="topic-banner"><div><span class="tag">Nhóm chủ đề</span><h3>${safe(currentTopic)}</h3><div class="topic-stats">${qs.length} câu hỏi · Tổng ${mx} điểm · ${isG ? `Đã chấm: <b style="color:#11643e">${c}/${mx} điểm</b>` : `Đã làm: ${doneInSelection}/${qs.length} câu`}</div></div><div>${isG ? `<button type="button" class="btn small outline-danger" onclick="resetTopic('${safe(currentTopic)}')">↺ Làm lại nhóm này</button>` : `<button type="button" class="btn small teal" onclick="gradeTopic('${safe(currentTopic)}')">✓ Chấm nhóm ${safe(currentTopic)}</button>`}</div></div>`;
+  }
+  
+  $('questions').innerHTML = bannerHtml + indices.map(i=>{
+    let q=BANK[i], v=answers[i], did=isQuestionGraded(i), correct=v===q.answer;
+    let opts=q.options.map((o,j)=>{
+      let isCorrectChoice = did && j===q.answer;
+      let isWrongChoice = did && v===j && !correct;
+      return `<label class="choice ${isCorrectChoice?'correct':''} ${isWrongChoice?'incorrect':''}">`+
+        `<input type="radio" name="q${i}" value="${j}" ${v===j?'checked':''} ${did?'disabled':''} data-qi="${i}">`+
+        `<span><b>${String.fromCharCode(65+j)}.</b> ${safe(o)}</span></label>`;
+    }).join('');
+    
+    let statusBadge = did ? (correct ? '<span class="badge-ok">✓ Đúng</span>' : '<span class="badge-bad">✗ Chưa đúng</span>') : '';
+    
+    return `<article id="q${i+1}" class="card question" data-topic="${safe(q.topic)}">`+
+      `<div class="qhead"><div><div class="qnum">CÂU ${i+1} • ${safe(q.topic)} ${q.original?'• Câu hỏi từ PDF':''} ${statusBadge}</div><h3>${safe(q.q)}</h3></div><span class="pill">${q.points} điểm · ${safe(q.level)}</span></div>`+
+      `<div class="choices">${opts}</div>`+
+      `<div class="feedback ${did?'visible':''} ${did&&!correct?'bad':''}"><b>${correct?'✓ Chính xác':`✗ ${Number.isInteger(v)?'Chưa chính xác':'Chưa trả lời'}`}</b> · Đáp án: <b>${String.fromCharCode(65+q.answer)}. ${safe(q.options[q.answer])}</b><div>${safe(q.why)}</div></div>`+
+      `</article>`;
+  }).join('');
+  
+  $('questions').querySelectorAll('input[type=radio]').forEach(el=>{
+    el.addEventListener('change',e=>{
+      answers[e.target.dataset.qi]=Number(e.target.value);
+      save();
+      updateProgressOnly();
+      updateAsideBadges();
+    });
+  });
+  
+  updateControls(currentTopic);
+  updateAsideBadges();
+  
+  if(anyTopicGraded()){
+    showResults();
+  }else{
+    $('summary').classList.add('hide');
+  }
+}
+
+function updateProgressOnly(){
+  const idx=selectTopics();
+  let n=idx.filter(i=>Number.isInteger(answers[i])).length;
+  $('answered').textContent=n;
+  $('bar').style.width=(idx.length ? n/idx.length*100 : 0)+'%';
+}
+
+function updateAsideBadges(){
+  const navContainer = $('navLinks');
+  if(!navContainer) return;
+  const current = $('filter').value;
+  
+  let html = `<a href="#questions" class="nav-topic ${current==='all'?'active':''}" onclick="setTopic('all')"><span>Toàn bộ 30 câu</span><span class="aside-pill ${isAllGraded()?'ok':''}">${isAllGraded()?'✓ Đã chấm':BANK.filter((_,i)=>Number.isInteger(answers[i])).length+'/30'}</span></a>`;
+  
+  ALL_TOPICS.forEach((t, idx)=>{
+    const qs = BANK.map((q,i)=>({q,i})).filter(x=>x.q.topic===t);
+    const isG = isTopicGraded(t);
+    const ansCount = qs.filter(x=>Number.isInteger(answers[x.i])).length;
+    let pillHtml = '';
+    if(isG){
+      const c = qs.reduce((s,x)=>s+(answers[x.i]===x.q.answer?x.q.points:0),0);
+      const mx = qs.reduce((s,x)=>s+x.q.points,0);
+      pillHtml = `<span class="aside-pill ok">✓ ${c}/${mx}đ</span>`;
+    }else if(ansCount > 0){
+      pillHtml = `<span class="aside-pill doing">${ansCount}/${qs.length}</span>`;
+    }else{
+      pillHtml = `<span class="aside-pill">${qs.length} câu</span>`;
+    }
+    html += `<a href="#questions" class="nav-topic ${current===t?'active':''}" onclick="setTopic('${safe(t)}')"><span>${idx+1}. ${safe(t)}</span>${pillHtml}</a>`;
+  });
+  navContainer.innerHTML = html;
+}
+
+function updateControls(currentTopic){
+  const notice = $('gradeNotice');
+  const status = $('gradeStatus');
+  const hint = $('gradeHint');
+  const topControls = $('gradeControlsTop');
+  const stickyActions = $('stickyActions');
+  
+  const isG = currentTopic==='all' ? isAllGraded() : isTopicGraded(currentTopic);
+  const anyG = anyTopicGraded();
+  
+  if(currentTopic !== 'all'){
+    const qs = BANK.filter(q=>q.topic===currentTopic);
+    const mx = qs.reduce((s,q)=>s+q.points,0);
+    const c = BANK.map((q,i)=>({q,i})).filter(x=>x.q.topic===currentTopic).reduce((s,x)=>s+(answers[x.i]===x.q.answer?x.q.points:0),0);
+    const correctCount = BANK.map((q,i)=>({q,i})).filter(x=>x.q.topic===currentTopic && answers[x.i]===x.q.answer).length;
+    
+    notice.classList.toggle('status-graded', isG);
+    if(isG){
+      status.textContent = `✓ Đã chấm nhóm: ${currentTopic}`;
+      hint.textContent = `Điểm nhóm: ${c}/${mx} điểm (${correctCount}/${qs.length} câu đúng). Lời giải từng câu đã hiển thị.`;
+    }else{
+      status.textContent = `Chưa chấm nhóm: ${currentTopic}`;
+      hint.textContent = `Chọn đáp án cho các câu trong nhóm ${currentTopic}, sau đó bấm “Chấm nhóm này”.`;
+    }
+    
+    const nextT = getNextTopic(currentTopic);
+    let topBtns = '';
+    if(isG){
+      topBtns = `<button type="button" class="btn outline-danger" onclick="resetTopic('${safe(currentTopic)}')">↺ Làm lại nhóm này</button>`+
+        (nextT !== 'all' ? `<button type="button" class="btn primary" onclick="setTopic('${safe(nextT)}')">Tiếp tục: Sang nhóm ${safe(nextT)} →</button>` : `<button type="button" class="btn primary" onclick="setTopic('all')">Xem kết quả toàn bộ 30 câu →</button>`)+
+        (!isAllGraded() ? `<button type="button" class="btn teal" onclick="gradeAll()">✓ Chấm toàn bộ 30 câu</button>` : '');
+    }else{
+      topBtns = `<button type="button" class="btn primary" onclick="gradeTopic('${safe(currentTopic)}')">✓ Chấm nhóm ${safe(currentTopic)} (${qs.length} câu)</button>`+
+        `<button type="button" class="btn teal" onclick="gradeAll()">✓ Chấm toàn bộ 30 câu</button>`;
+    }
+    if(topControls) topControls.innerHTML = topBtns;
+    
+    let stickyBtns = '';
+    if(isG){
+      stickyBtns = `<button type="button" class="btn outline-danger" onclick="resetTopic('${safe(currentTopic)}')">↺ Làm lại nhóm này</button>`+
+        (nextT !== 'all' ? `<button type="button" class="btn primary" onclick="setTopic('${safe(nextT)}')">Nhóm tiếp theo →</button>` : `<button type="button" class="btn primary" onclick="setTopic('all')">Xem toàn bộ 30 câu</button>`)+
+        (!isAllGraded() ? `<button type="button" class="btn teal" onclick="gradeAll()">✓ Chấm toàn bộ</button>` : '');
+    }else{
+      stickyBtns = `<button type="button" class="btn primary" onclick="gradeTopic('${safe(currentTopic)}')">✓ Chấm nhóm ${safe(currentTopic)}</button>`+
+        `<button type="button" class="btn teal" onclick="gradeAll()">✓ Chấm toàn bộ</button>`;
+    }
+    stickyBtns += `<button class="btn" type="button" onclick="downloadReport()" ${anyG?'':'disabled'} title="Xuất kết quả TXT">↓ Xuất TXT</button>`+
+      `<button class="btn" type="button" onclick="downloadImageReport()" ${anyG?'':'disabled'} title="Xuất phiếu điểm PNG">🖼 Xuất PNG</button>`+
+      `<button class="btn outline-danger" type="button" onclick="resetAll()">↺ Làm lại từ đầu</button>`;
+    if(stickyActions) stickyActions.innerHTML = stickyBtns;
+  }else{
+    const allG = isAllGraded();
+    const gradedCount = ALL_TOPICS.filter(t=>gradedTopics[t]).length;
+    const totalPts = BANK.reduce((s,q,i)=>s+(isQuestionGraded(i)&&answers[i]===q.answer?q.points:0),0);
+    
+    notice.classList.toggle('status-graded', allG);
+    if(allG){
+      status.textContent = '✓ Đã chấm toàn bộ bài thi (30/30 câu)';
+      hint.textContent = `Tổng điểm: ${totalPts}/100 điểm. Toàn bộ 7 nhóm chủ đề đã được chấm và hiển thị lời giải.`;
+    }else if(anyG){
+      status.textContent = `Đang làm: Đã chấm ${gradedCount}/7 nhóm chủ đề`;
+      hint.textContent = `Điểm tạm tính: ${totalPts}/100 điểm. Bạn có thể bấm “Chấm toàn bộ 30 câu” hoặc lọc từng nhóm để làm tiếp.`;
+    }else{
+      status.textContent = 'Chưa chấm bài';
+      hint.textContent = 'Bạn có thể chọn lọc từng chủ đề để làm và chấm riêng, hoặc làm hết rồi bấm “Chấm toàn bộ 30 câu”.';
+    }
+    
+    let topBtns = `<button type="button" class="btn primary" onclick="gradeAll()" ${allG?'disabled':''}>✓ Chấm toàn bộ 30 câu</button>`+
+      (anyG ? `<button type="button" class="btn outline-danger" onclick="resetAll()">↺ Làm lại toàn bộ</button>` : '');
+    if(topControls) topControls.innerHTML = topBtns;
+    
+    let stickyBtns = `<button type="button" class="btn primary" onclick="gradeAll()" ${allG?'disabled':''}>✓ Chấm toàn bộ 30 câu</button>`+
+      `<button class="btn" type="button" onclick="downloadReport()" ${anyG?'':'disabled'} title="Xuất kết quả TXT">↓ Xuất TXT</button>`+
+      `<button class="btn" type="button" onclick="downloadImageReport()" ${anyG?'':'disabled'} title="Xuất phiếu điểm PNG">🖼 Xuất PNG</button>`+
+      `<button class="btn outline-danger" type="button" onclick="resetAll()">↺ Làm lại từ đầu</button>`;
+    if(stickyActions) stickyActions.innerHTML = stickyBtns;
+  }
+}
+
+function gradeTopic(topicName){
+  const qs = BANK.map((q,i)=>({q,i})).filter(x=>x.q.topic===topicName);
+  const doneCount = qs.filter(x=>Number.isInteger(answers[x.i])).length;
+  if(doneCount === 0){
+    alert(`Bạn chưa chọn câu trả lời nào trong nhóm "${topicName}". Hãy làm ít nhất một câu trước khi chấm.`);
+    return;
+  }
+  if(doneCount < qs.length){
+    if(!confirm(`Bạn mới trả lời ${doneCount}/${qs.length} câu trong nhóm "${topicName}". ${qs.length - doneCount} câu chưa làm sẽ tính 0 điểm. Bạn vẫn muốn chấm nhóm này?`)){
+      return;
+    }
+  }
+  gradedTopics[topicName] = true;
+  save();
+  render();
+  $('gradeNotice').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function resetTopic(topicName){
+  if(!confirm(`Xóa câu trả lời và điểm của riêng nhóm "${topicName}" để làm lại?`)) return;
+  BANK.forEach((q,i)=>{
+    if(q.topic===topicName) delete answers[i];
+  });
+  delete gradedTopics[topicName];
+  save();
+  render();
+}
+
+function gradeAll(){
+  const indices = BANK.map((_,i)=>i);
+  const count = indices.filter(i=>Number.isInteger(answers[i])).length;
+  if(!count){
+    alert('Bạn chưa chọn đáp án nào. Hãy trả lời ít nhất một câu trước khi chấm.');
+    return;
+  }
+  if(count < indices.length){
+    if(!confirm(`Bạn mới trả lời ${count}/${indices.length} câu. ${indices.length - count} câu chưa làm sẽ tính 0 điểm. Bạn vẫn muốn chấm toàn bộ các nhóm còn lại?`)){
+      return;
+    }
+  }
+  ALL_TOPICS.forEach(t=>{ gradedTopics[t] = true; });
+  save();
+  render();
+  $('summary').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function resetAll(){
+  if(!confirm('Xóa toàn bộ câu trả lời và điểm của tất cả các nhóm để bắt đầu lại từ đầu?')) return;
+  answers = {};
+  gradedTopics = {};
+  save();
+  render();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function showResults(){
+  $('summary').classList.remove('hide');
+  const gradedIndices = BANK.map((_,i)=>i).filter(i=>isQuestionGraded(i));
+  const totalGraded = gradedIndices.length;
+  const correctCount = gradedIndices.filter(i=>answers[i]===BANK[i].answer).length;
+  const weighted = gradedIndices.reduce((s,i)=>s+(answers[i]===BANK[i].answer?BANK[i].points:0),0);
+  const answeredTotal = BANK.filter((_,i)=>Number.isInteger(answers[i])).length;
+  
+  $('totalScore').textContent = weighted + '/100';
+  $('percent').textContent = totalGraded ? (100*correctCount/totalGraded).toFixed(0)+'%' : '0%';
+  $('answeredFinal').textContent = answeredTotal + '/30';
+  
+  $('topicResults').innerHTML = ALL_TOPICS.map(t=>{
+    const qs = BANK.map((q,i)=>({q,i})).filter(x=>x.q.topic===t);
+    const mx = qs.reduce((s,x)=>s+x.q.points,0);
+    const isG = isTopicGraded(t);
+    const c = qs.reduce((s,x)=>s+(isG && answers[x.i]===x.q.answer?x.q.points:0),0);
+    const ansCount = qs.filter(x=>Number.isInteger(answers[x.i])).length;
+    
+    return `<div class="row" style="margin:8px 0;align-items:center">`+
+      `<b style="min-width:130px;cursor:pointer" onclick="setTopic('${safe(t)}')">${safe(t)} ${isG?'<span style="color:#127b54;font-size:.78rem">✓</span>':''}</b>`+
+      `<div class="progress" style="flex:1;min-width:90px"><span style="width:${isG ? 100*c/mx : 100*ansCount/qs.length}%;background:${isG?'linear-gradient(90deg,#138c91,#3cab8e)':'#9bb3c7'}"></span></div>`+
+      `<small style="min-width:110px;text-align:right">${isG ? `<b>${c}/${mx}đ</b> (đã chấm)` : `<span class="muted">${ansCount}/${qs.length} câu</span>`}</small>`+
+      `</div>`;
+  }).join('');
+  
+  if(isAllGraded()){
+    $('resultAdvice').textContent = correctCount === BANK.length ? 'Xuất sắc! Bạn đã trả lời đúng tất cả 30 câu hỏi của bài học.' : (weighted >= 80 ? 'Nắm rất vững kiến thức. Hãy xem phần giải thích tại các câu chưa đúng để hoàn thiện.' : 'Nên bấm “Làm lại nhóm này” tại các nhóm có tỷ lệ đúng thấp để ôn tập lại.');
+  }else{
+    const nGraded = ALL_TOPICS.filter(t=>gradedTopics[t]).length;
+    $('resultAdvice').innerHTML = `Đã chấm <b>${nGraded}/7 nhóm chủ đề</b> (Điểm tạm tính: <b>${weighted}/100</b>). Bạn có thể bấm chọn các nhóm tiếp theo ở thanh điều hướng để làm và chấm riêng, hoặc bấm “Chấm toàn bộ 30 câu”.`;
+  }
 }
 
 function roundRect(ctx,x,y,w,h,r,fill,stroke){if(w<2*r)r=w/2;if(h<2*r)r=h/2;ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();if(fill)ctx.fill();if(stroke)ctx.stroke();}
 function saveCanvasAsPng(canvas,filename){const a=document.createElement('a');a.href=canvas.toDataURL('image/png');a.download=filename;a.click();}
+
 function downloadImageReport(){
-  if(!graded){alert('Hãy bấm “Chấm bài” trước khi xuất phiếu điểm ảnh.');return;}
+  if(!anyTopicGraded()){alert('Hãy chấm ít nhất một nhóm chủ đề trước khi xuất phiếu điểm ảnh.');return;}
   const indices=BANK.map((_,i)=>i);
-  const nCorrect=indices.filter(i=>answers[i]===BANK[i].answer).length;
+  const gradedIndices=indices.filter(i=>isQuestionGraded(i));
+  const nCorrect=gradedIndices.filter(i=>answers[i]===BANK[i].answer).length;
   const nDone=indices.filter(i=>Number.isInteger(answers[i])).length;
-  const weighted=indices.reduce((s,i)=>s+(answers[i]===BANK[i].answer?BANK[i].points:0),0);
-  const topics=[...new Set(BANK.map(q=>q.topic))].map(name=>{
+  const weighted=gradedIndices.reduce((s,i)=>s+(answers[i]===BANK[i].answer?BANK[i].points:0),0);
+  const topics=ALL_TOPICS.map(name=>{
     const subset=indices.filter(i=>BANK[i].topic===name);
-    return {name,got:subset.reduce((s,i)=>s+(answers[i]===BANK[i].answer?BANK[i].points:0),0),max:subset.reduce((s,i)=>s+BANK[i].points,0)};
+    const isG = isTopicGraded(name);
+    return {name, isG, got:isG?subset.reduce((s,i)=>s+(answers[i]===BANK[i].answer?BANK[i].points:0),0):0, max:subset.reduce((s,i)=>s+BANK[i].points,0)};
   });
   const heading='PHIẾU ĐIỂM TỔNG KẾT · QUIZ';
-  const stats=[['Tổng điểm',weighted+'/100'],['Câu đúng',nCorrect+'/30'],['Đã trả lời',nDone+'/30'],['Thang điểm','100 điểm']];
-  const H=1630;
+  const nGradedTopics = ALL_TOPICS.filter(t=>gradedTopics[t]).length;
+  const stats=[['Tổng điểm',weighted+'/100'],['Câu đúng',nCorrect+'/'+gradedIndices.length],['Đã trả lời',nDone+'/30'],['Nhóm đã chấm',nGradedTopics+'/7 nhóm']];
+  const H=1560;
 
   const W=1600, left=70, inner=W-140;
   const canvas=document.createElement('canvas');
@@ -153,10 +454,10 @@ function downloadImageReport(){
     const y=tY+90+i*31;
     line(t.name,left+34,y,20,'#2b546d','600',280);
     block(left+310,y-18,850,15,'#e5edf2',8);
-    if(t.got>0)block(left+310,y-18,850*t.got/t.max,15,'#28a9a1',8);
-    line(t.got+'/'+t.max+' điểm',left+1210,y,21,'#164c68','700');
+    if(t.isG && t.got>0)block(left+310,y-18,850*t.got/t.max,15,'#28a9a1',8);
+    line(t.isG ? t.got+'/'+t.max+' điểm' : 'Chưa chấm',left+1210,y,21,t.isG?'#164c68':'#7e94a5','700');
   });
-  const dY=852,dH=704;
+  const dY=852,dH=632;
   block(left,dY,inner,dH,'#ffffff');
   line('ĐIỂM CHI TIẾT THEO CÂU',left+30,dY+44,25,'#154969','700');
   const colW=676,colGap=24,rowH=36,start=dY+88;
@@ -166,23 +467,51 @@ function downloadImageReport(){
     block(x,y-22,colW,29,row%2===0?'#f0f6fa':'#f8fbfd',8);
     line('Câu '+(i+1),x+11,y-2,18,'#224b65','700');
     line(q.topic,x+120,y-2,17,'#667f93','400',370);
-    const points=answers[i]===q.answer?q.points:0;
-    line(points+'/'+q.points,x+colW-70,y-2,19,points===q.points?'#14795d':'#ad4942','700');
+    const did = isQuestionGraded(i);
+    if(did){
+      const points=answers[i]===q.answer?q.points:0;
+      line(points+'/'+q.points,x+colW-70,y-2,19,points===q.points?'#14795d':'#ad4942','700');
+    }else{
+      line('—/'+q.points,x+colW-70,y-2,19,'#8fa4b4','700');
+    }
   });
-  line('Phiếu điểm tự động từ bài trắc nghiệm HTML chạy offline · Dữ liệu trên thiết bị người học.',left,H-28,17,'#657f92');
+  line('Phiếu điểm tự động từ bài trắc nghiệm HTML chạy offline · Hỗ trợ chấm từng nhóm chủ đề.',left,H-28,17,'#657f92');
   saveCanvasAsPng(canvas,'phieu_diem_quiz_bai_1'+studentFileSuffix()+'.png');
 }
 
-function gradeAll(){
-  if(graded)return;
-  const indices=BANK.map((_,i)=>i);
-  const count=indices.filter(i=>Number.isInteger(answers[i])).length;
-  if(!count){alert('Bạn chưa chọn đáp án nào. Hãy trả lời ít nhất một câu trước khi chấm.');return;}
-  if(count<indices.length&&!confirm(`Bạn mới trả lời ${count}/${indices.length} câu. ${indices.length-count} câu chưa làm sẽ tính 0 điểm. Bạn vẫn muốn chấm bài?`))return;
-  $('filter').value='all';graded=true;save();render();$('summary').scrollIntoView({behavior:'smooth',block:'center'});
+function downloadReport(){
+  if(!anyTopicGraded()){alert('Hãy chấm ít nhất một nhóm câu hỏi trước khi xuất kết quả.');return;}
+  const indices=selectTopics();
+  const gradedIndices = BANK.map((_,i)=>i).filter(i=>isQuestionGraded(i));
+  const c = gradedIndices.filter(i=>answers[i]===BANK[i].answer).length;
+  const totalScore = gradedIndices.reduce((s,i)=>s+(answers[i]===BANK[i].answer?BANK[i].points:0),0);
+  const nGradedTopics = ALL_TOPICS.filter(t=>gradedTopics[t]).length;
+  
+  const txt=['BÀI 1 — QUIZ TỰ CHẤM (CHẤM THEO NHÓM CHỦ ĐỀ)',
+    ...getStudentLines(),
+    'Ngày xuất: '+new Date().toLocaleString('vi-VN'),
+    'Trạng thái: Đã chấm '+nGradedTopics+'/7 nhóm chủ đề',
+    'Phạm vi đang xem: '+($('filter').selectedOptions[0]?.textContent||'Tất cả'),
+    `Điểm đạt: ${totalScore}/100; Số câu đúng: ${c}/${gradedIndices.length} (trên các câu đã chấm)`,
+    '',
+    ...BANK.map((q,i)=>{
+      const did = isQuestionGraded(i);
+      if(did){
+        const ok = answers[i]===q.answer;
+        return `Câu ${i+1} [${q.topic}]: ${q.q}\nĐiểm: ${ok?q.points:0}/${q.points} (${q.level})\nTrả lời: ${Number.isInteger(answers[i])?q.options[answers[i]]:'(bỏ trống)'}\nĐáp án: ${q.options[q.answer]}\nGiải thích: ${q.why}\n`;
+      }else{
+        return `Câu ${i+1} [${q.topic}]: ${q.q}\nTrạng thái: Chưa chấm nhóm này (${q.points} điểm · ${q.level})\nTrả lời: ${Number.isInteger(answers[i])?q.options[answers[i]]:'(chưa làm)'}\n`;
+      }
+    })
+  ].join('\n');
+  
+  let b=new Blob(['\ufeff'+txt],{type:'text/plain;charset=utf-8'}),u=URL.createObjectURL(b),a=document.createElement('a');
+  a.href=u;a.download='ket_qua_quiz_bai_1'+studentFileSuffix()+'.txt';a.click();
+  setTimeout(()=>URL.revokeObjectURL(u),1500);
 }
-function resetAll(){if(!confirm('Xóa câu trả lời và điểm quiz để bắt đầu lại?'))return;answers={};graded=false;save();render();window.scrollTo({top:0,behavior:'smooth'})}
-function downloadReport(){if(!graded){alert('Hãy bấm “Chấm bài” trước khi xuất kết quả.');return;}const indices=selectTopics();let c=indices.filter(i=>answers[i]===BANK[i].answer).length;const txt=['BÀI 1 — QUIZ TỰ CHẤM',...getStudentLines(),'Ngày xuất: '+new Date().toLocaleString('vi-VN'),'Trạng thái: '+(graded?'Đã chấm':'Chưa nộp chấm'),'Phạm vi: '+($('filter').selectedOptions[0]?.textContent||'Tất cả'),`Điểm: ${indices.reduce((s,i)=>s+(answers[i]===BANK[i].answer?BANK[i].points:0),0)}/100; câu đúng: ${c}/${indices.length}`,'',...indices.map(i=>`Câu ${i+1}: ${BANK[i].q}\nĐiểm: ${answers[i]===BANK[i].answer?BANK[i].points:0}/${BANK[i].points} (${BANK[i].level})\nTrả lời: ${Number.isInteger(answers[i])?BANK[i].options[answers[i]]:'(bỏ trống)'}\nĐáp án: ${BANK[i].options[BANK[i].answer]}\nGiải thích: ${BANK[i].why}\n`)].join('\n');let b=new Blob(['\ufeff'+txt],{type:'text/plain;charset=utf-8'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='ket_qua_quiz_bai_1'+studentFileSuffix()+'.txt';a.click();setTimeout(()=>URL.revokeObjectURL(u),1500)}
-setupStudentForm();$('filter').value=graded?'all':([...$('filter').options].some(o=>o.value===old.topic)?old.topic:'all');$('filter').addEventListener('change',()=>{save();render()});$('gradeTop').addEventListener('click',gradeAll);$('gradeAll').addEventListener('click',gradeAll);$('reset').addEventListener('click',resetAll);$('export').addEventListener('click',downloadReport);$('exportImage').addEventListener('click',downloadImageReport);
+
+setupStudentForm();
+$('filter').value = [...$('filter').options].some(o=>o.value===old.topic)?old.topic:'all';
+$('filter').addEventListener('change',()=>{save();render()});
 render();
 </script></body></html>
