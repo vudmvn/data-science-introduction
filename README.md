@@ -16,7 +16,9 @@ Cổng thông tin môn học, lộ trình 10 tuần, đề cương tương tác 
   - `lecture-1/`:
     - `bai-1-bai-giang-tuong-tac.html`: Bài 1 – Bài giảng tương tác & bài tập mẫu.
     - `bai-1-bai-tap-tu-lam.html`: Bài 1 – Bài tập tự làm (chấm tự động).
-    - `bai-1-quiz-tu-cham.html`: Bài 1 – Quiz tự chấm trắc nghiệm.
+    - `bai-1-quiz-tu-cham.html`: Bài 1 – Quiz tự chấm trắc nghiệm (HTML).
+    - `bai-1-quiz-tu-cham.md`: Bài 1 – Đề trắc nghiệm tự luyện không đáp án (.md).
+    - `bai-1-quiz-dap-an.md`: Bài 1 – Ngân hàng trắc nghiệm kèm đáp án & giải thích (.md).
   - `lecture-2/`:
     - `bai-2-bai-giang-tuong-tac.html`: Bài 2 – Bài giảng Python tương tác & bài tập mẫu.
     - `bai-2-bai-tap-tu-lam.html`: Bài 2 – Bài tập tự làm (chấm tự động, 10 bài tổng hợp 100đ).
