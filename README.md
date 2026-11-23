@@ -22,9 +22,14 @@ Cổng thông tin môn học, lộ trình 10 tuần, đề cương tương tác 
     - `bai-1-quiz-tu-cham.md`: Bài 1 – Đề trắc nghiệm tự luyện không đáp án (.md).
     - `bai-1-quiz-dap-an.md`: Bài 1 – Ngân hàng trắc nghiệm kèm đáp án & giải thích (.md).
   - `lecture-2/`:
-    - `bai-2-bai-giang-tuong-tac.html`: Bài 2 – Bài giảng Python tương tác & bài tập mẫu.
+    - `bai-2-bai-giang-tuong-tac.html`: Bài 2 – Bài giảng Python tương tác & bài tập mẫu (HTML).
+    - `bai-2-bai-giang-tuong-tac.md`: Bài 2 – Nội dung toàn bộ bài giảng lý thuyết & thực hành Python (.md).
     - `bai-2-bai-tap-tu-lam.html`: Bài 2 – Bài tập tự làm (chấm tự động, 10 bài tổng hợp 100đ).
-    - `bai-2-quiz-tu-cham.html`: Bài 2 – Quiz tự chấm trắc nghiệm.
+    - `bai-2-bai-tap-tu-lam.md`: Bài 2 – Đề bài tập tự làm tự luyện không đáp án (.md).
+    - `bai-2-bai-tap-dap-an.md`: Bài 2 – Ngân hàng bài tập tự làm kèm đáp án & lời giải (.md).
+    - `bai-2-quiz-tu-cham.html`: Bài 2 – Quiz tự chấm trắc nghiệm (HTML).
+    - `bai-2-quiz-tu-cham.md`: Bài 2 – Đề trắc nghiệm tự luyện không đáp án (.md).
+    - `bai-2-quiz-dap-an.md`: Bài 2 – Ngân hàng trắc nghiệm kèm đáp án & giải thích (.md).
 
 ## 🚀 Trực tuyến qua GitHub Pages
 
