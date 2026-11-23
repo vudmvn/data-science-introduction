@@ -3,7 +3,7 @@
 
 > **Đề bài tự luyện không đáp án:** [`bai-2-quiz-tu-cham.md`](./bai-2-quiz-tu-cham.md)  
 > **Giao diện làm bài trực tuyến:** [`bai-2-quiz-tu-cham.html`](./bai-2-quiz-tu-cham.html)  
-> **Quy mô:** 34 câu hỏi trắc nghiệm · Thang điểm: 100 điểm
+> **Quy mô:** 30 câu hỏi trắc nghiệm · Thang điểm: 100 điểm
 
 ---
 
@@ -11,27 +11,25 @@
 
 | Câu | Chủ đề | Mức độ | Điểm | Đáp án | Câu | Chủ đề | Mức độ | Điểm | Đáp án |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
-| **1** | Kiểu dữ liệu | Nhận biết | 2đ | **C** | **18** | Toán tử | Thông hiểu | 3đ | **B** |
-| **2** | Biến | Nhận biết | 2đ | **D** | **19** | Chuỗi & logic | Thông hiểu | 3đ | **C** |
-| **3** | Toán tử | Nhận biết | 2đ | **B** | **20** | Chuỗi & logic | Thông hiểu | 3đ | **A** |
-| **4** | Toán tử | Nhận biết | 2đ | **C** | **21** | Chuỗi & logic | Thông hiểu | 3đ | **C** |
-| **5** | Ép kiểu | Nhận biết | 2đ | **D** | **22** | Ép kiểu | Thông hiểu | 3đ | **B** |
-| **6** | Cấu trúc dữ liệu | Nhận biết | 2đ | **C** | **23** | Indexing | Thông hiểu | 3đ | **C** |
-| **7** | Indexing | Nhận biết | 2đ | **C** | **24** | Slicing | Thông hiểu | 3đ | **B** |
-| **8** | Indexing | Nhận biết | 2đ | **D** | **25** | Cấu trúc dữ liệu | Thông hiểu | 3đ | **B** |
-| **9** | Cấu trúc dữ liệu | Nhận biết | 2đ | **C** | **26** | Cấu trúc dữ liệu | Thông hiểu | 3đ | **B** |
-| **10** | Cấu trúc dữ liệu | Nhận biết | 2đ | **C** | **27** | Toán tử | Vận dụng | 4đ | **A** |
-| **11** | Python/Colab | Thông hiểu | 3đ | **B** | **28** | Chuỗi & logic | Vận dụng | 4đ | **B** |
-| **12** | Python/Colab | Thông hiểu | 3đ | **C** | **29** | Ép kiểu | Vận dụng | 4đ | **B** |
-| **13** | Python/Colab | Thông hiểu | 3đ | **B** | **30** | Slicing | Vận dụng | 4đ | **B** |
-| **14** | Biến | Thông hiểu | 3đ | **C** | **31** | Toán tử | Vận dụng | 4đ | **C** |
-| **15** | Kiểu dữ liệu | Thông hiểu | 3đ | **C** | **32** | Cấu trúc dữ liệu | Vận dụng | 4đ | **A** |
-| **16** | Kiểu dữ liệu | Thông hiểu | 3đ | **B** | **33** | Kiểu dữ liệu | Vận dụng | 4đ | **C** |
-| **17** | Toán tử | Thông hiểu | 3đ | **B** | **34** | Chuỗi & logic | Vận dụng | 4đ | **A** |
+| **1** | Kiểu dữ liệu | Nhận biết | 2đ | **C** | **16** | Chuỗi & logic | Thông hiểu | 3đ | **A** |
+| **2** | Biến | Nhận biết | 2đ | **D** | **17** | Chuỗi & logic | Thông hiểu | 3đ | **C** |
+| **3** | Toán tử | Nhận biết | 2đ | **B** | **18** | Ép kiểu | Thông hiểu | 3đ | **B** |
+| **4** | Toán tử | Nhận biết | 2đ | **C** | **19** | Indexing | Thông hiểu | 3đ | **C** |
+| **5** | Ép kiểu | Nhận biết | 2đ | **D** | **20** | Slicing | Thông hiểu | 3đ | **B** |
+| **6** | Cấu trúc dữ liệu | Nhận biết | 2đ | **C** | **21** | Cấu trúc dữ liệu | Vận dụng | 5đ | **B** |
+| **7** | Indexing | Nhận biết | 2đ | **C** | **22** | Cấu trúc dữ liệu | Vận dụng | 5đ | **B** |
+| **8** | Indexing | Nhận biết | 2đ | **D** | **23** | Toán tử | Vận dụng | 5đ | **A** |
+| **9** | Cấu trúc dữ liệu | Nhận biết | 2đ | **C** | **24** | Chuỗi & logic | Vận dụng | 5đ | **B** |
+| **10** | Cấu trúc dữ liệu | Nhận biết | 2đ | **C** | **25** | Ép kiểu | Vận dụng | 5đ | **B** |
+| **11** | Python/Colab | Thông hiểu | 3đ | **B** | **26** | Slicing | Vận dụng | 5đ | **B** |
+| **12** | Python/Colab | Thông hiểu | 3đ | **C** | **27** | Toán tử | Vận dụng | 5đ | **C** |
+| **13** | Kiểu dữ liệu | Thông hiểu | 3đ | **C** | **28** | Cấu trúc dữ liệu | Vận dụng | 5đ | **A** |
+| **14** | Kiểu dữ liệu | Thông hiểu | 3đ | **B** | **29** | Kiểu dữ liệu | Vận dụng | 5đ | **C** |
+| **15** | Toán tử | Thông hiểu | 3đ | **B** | **30** | Chuỗi & logic | Vận dụng | 5đ | **A** |
 
 ---
 
-## 📝 Danh sách câu hỏi kèm đáp án & giải thích chi tiết
+## 📝 Danh sách câu hỏi & Lời giải chi tiết
 
 ### Câu 1. Kiểu dữ liệu nào dùng để lưu giá trị Đúng hoặc Sai trong Python?
 - **Chủ đề:** `Kiểu dữ liệu` | **Cấp độ:** `Nhận biết` | **Thang điểm:** `2 điểm`  
@@ -189,33 +187,7 @@
 
 ---
 
-### Câu 13. Lệnh nào in ra dòng chữ NeuTech Coffee?
-- **Chủ đề:** `Python/Colab` | **Cấp độ:** `Thông hiểu` | **Thang điểm:** `3 điểm`  
-
-- [ ] **A.** echo("NeuTech Coffee")
-- [x] **B.** print("NeuTech Coffee")
-- [ ] **C.** show("NeuTech Coffee")
-- [ ] **D.** output("NeuTech Coffee")
-
-> **Đáp án đúng:** **B. print("NeuTech Coffee")**  
-> **Giải thích:** Python dùng print() để hiển thị thông tin.
-
----
-
-### Câu 14. Sau khi thực hiện so_ban = 12 rồi so_ban = 15, giá trị so_ban là gì?
-- **Chủ đề:** `Biến` | **Cấp độ:** `Thông hiểu` | **Thang điểm:** `3 điểm`  
-
-- [ ] **A.** 12
-- [ ] **B.** 27
-- [x] **C.** 15
-- [ ] **D.** "12 15"
-
-> **Đáp án đúng:** **C. 15**  
-> **Giải thích:** Toán tử = gán lại giá trị mới; phép gán sau thay giá trị trước.
-
----
-
-### Câu 15. Với don_gia = 25000, type(don_gia).__name__ là gì?
+### Câu 13. Với don_gia = 25000, type(don_gia).__name__ là gì?
 - **Chủ đề:** `Kiểu dữ liệu` | **Cấp độ:** `Thông hiểu` | **Thang điểm:** `3 điểm`  
 
 - [ ] **A.** "float"
@@ -228,7 +200,7 @@
 
 ---
 
-### Câu 16. Kết quả của 6 / 3 trong Python 3 là gì?
+### Câu 14. Kết quả của 6 / 3 trong Python 3 là gì?
 - **Chủ đề:** `Kiểu dữ liệu` | **Cấp độ:** `Thông hiểu` | **Thang điểm:** `3 điểm`  
 
 - [ ] **A.** 2
@@ -241,20 +213,7 @@
 
 ---
 
-### Câu 17. Kết quả của 2 ** 3 là gì?
-- **Chủ đề:** `Toán tử` | **Cấp độ:** `Thông hiểu` | **Thang điểm:** `3 điểm`  
-
-- [ ] **A.** 6
-- [x] **B.** 8
-- [ ] **C.** 9
-- [ ] **D.** 1
-
-> **Đáp án đúng:** **B. 8**  
-> **Giải thích:** ** là toán tử lũy thừa, 2³ = 8.
-
----
-
-### Câu 18. Kết quả của 17 // 5 là gì?
+### Câu 15. Kết quả của 17 // 5 là gì?
 - **Chủ đề:** `Toán tử` | **Cấp độ:** `Thông hiểu` | **Thang điểm:** `3 điểm`  
 
 - [ ] **A.** 2
@@ -267,20 +226,7 @@
 
 ---
 
-### Câu 19. Cho mon = "Trà đào". Kiểu của mon là gì?
-- **Chủ đề:** `Chuỗi & logic` | **Cấp độ:** `Thông hiểu` | **Thang điểm:** `3 điểm`  
-
-- [ ] **A.** int
-- [ ] **B.** bool
-- [x] **C.** str
-- [ ] **D.** list
-
-> **Đáp án đúng:** **C. str**  
-> **Giải thích:** Giá trị có dấu nháy là chuỗi str.
-
----
-
-### Câu 20. Kết quả của (80000 >= 50000) and True là gì?
+### Câu 16. Kết quả của (80000 >= 50000) and True là gì?
 - **Chủ đề:** `Chuỗi & logic` | **Cấp độ:** `Thông hiểu` | **Thang điểm:** `3 điểm`  
 
 - [x] **A.** True
@@ -293,7 +239,7 @@
 
 ---
 
-### Câu 21. Với la_thanh_vien = False, not la_thanh_vien trả về gì?
+### Câu 17. Với la_thanh_vien = False, not la_thanh_vien trả về gì?
 - **Chủ đề:** `Chuỗi & logic` | **Cấp độ:** `Thông hiểu` | **Thang điểm:** `3 điểm`  
 
 - [ ] **A.** False
@@ -306,7 +252,7 @@
 
 ---
 
-### Câu 22. Kết quả của int("12") + 3 là gì?
+### Câu 18. Kết quả của int("12") + 3 là gì?
 - **Chủ đề:** `Ép kiểu` | **Cấp độ:** `Thông hiểu` | **Thang điểm:** `3 điểm`  
 
 - [ ] **A.** "123"
@@ -319,7 +265,7 @@
 
 ---
 
-### Câu 23. Danh sách a = [10, 20, 30, 40]. Giá trị a[-2] là gì?
+### Câu 19. Danh sách a = [10, 20, 30, 40]. Giá trị a[-2] là gì?
 - **Chủ đề:** `Indexing` | **Cấp độ:** `Thông hiểu` | **Thang điểm:** `3 điểm`  
 
 - [ ] **A.** 10
@@ -332,7 +278,7 @@
 
 ---
 
-### Câu 24. Với a = ["Đen", "Sữa", "Bạc xỉu", "Trà đào"], a[1:3] là gì?
+### Câu 20. Với a = ["Đen", "Sữa", "Bạc xỉu", "Trà đào"], a[1:3] là gì?
 - **Chủ đề:** `Slicing` | **Cấp độ:** `Thông hiểu` | **Thang điểm:** `3 điểm`  
 
 - [ ] **A.** ["Đen", "Sữa", "Bạc xỉu"]
@@ -345,8 +291,8 @@
 
 ---
 
-### Câu 25. Với a = {"trà", "cà phê", "trà"}, len(a) bằng bao nhiêu?
-- **Chủ đề:** `Cấu trúc dữ liệu` | **Cấp độ:** `Thông hiểu` | **Thang điểm:** `3 điểm`  
+### Câu 21. Với a = {"trà", "cà phê", "trà"}, len(a) bằng bao nhiêu?
+- **Chủ đề:** `Cấu trúc dữ liệu` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `5 điểm`  
 
 - [ ] **A.** 1
 - [x] **B.** 2
@@ -358,8 +304,8 @@
 
 ---
 
-### Câu 26. Dòng lệnh nào thay món đầu của list thuc_don bằng "Cà phê muối"?
-- **Chủ đề:** `Cấu trúc dữ liệu` | **Cấp độ:** `Thông hiểu` | **Thang điểm:** `3 điểm`  
+### Câu 22. Dòng lệnh nào thay món đầu của list thuc_don bằng "Cà phê muối"?
+- **Chủ đề:** `Cấu trúc dữ liệu` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `5 điểm`  
 
 - [ ] **A.** thuc_don(0) = "Cà phê muối"
 - [x] **B.** thuc_don[0] = "Cà phê muối"
@@ -371,8 +317,8 @@
 
 ---
 
-### Câu 27. Quán bán 3 ly 35.000đ và 2 ly 25.000đ, tổng tiền trước ưu đãi là bao nhiêu?
-- **Chủ đề:** `Toán tử` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `4 điểm`  
+### Câu 23. Quán bán 3 ly 35.000đ và 2 ly 25.000đ, tổng tiền trước ưu đãi là bao nhiêu?
+- **Chủ đề:** `Toán tử` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `5 điểm`  
 
 - [x] **A.** 155000
 - [ ] **B.** 130000
@@ -384,8 +330,8 @@
 
 ---
 
-### Câu 28. Chính sách: khách được giảm khi là thành viên VÀ hóa đơn từ 50.000đ. Với thanh_vien=True và tong=49000, biểu thức thanh_vien and tong>=50000 trả về gì?
-- **Chủ đề:** `Chuỗi & logic` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `4 điểm`  
+### Câu 24. Chính sách: khách được giảm khi là thành viên VÀ hóa đơn từ 50.000đ. Với thanh_vien=True và tong=49000, biểu thức thanh_vien and tong>=50000 trả về gì?
+- **Chủ đề:** `Chuỗi & logic` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `5 điểm`  
 
 - [ ] **A.** True
 - [x] **B.** False
@@ -397,8 +343,8 @@
 
 ---
 
-### Câu 29. Đoạn lệnh nào in chính xác chuỗi "3 ly Trà đào = 105000đ" khi don_gia=35000, so_ly=3 và mon="Trà đào"?
-- **Chủ đề:** `Ép kiểu` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `4 điểm`  
+### Câu 25. Đoạn lệnh nào in chính xác chuỗi "3 ly Trà đào = 105000đ" khi don_gia=35000, so_ly=3 và mon="Trà đào"?
+- **Chủ đề:** `Ép kiểu` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `5 điểm`  
 
 - [ ] **A.** print(so_ly + " ly " + mon + " = " + don_gia*so_ly + "đ")
 - [x] **B.** print(str(so_ly) + " ly " + mon + " = " + str(don_gia*so_ly) + "đ")
@@ -410,8 +356,8 @@
 
 ---
 
-### Câu 30. Với a = ["A", "B", "C", "D", "E"], kết quả a[1:-1] là gì?
-- **Chủ đề:** `Slicing` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `4 điểm`  
+### Câu 26. Với a = ["A", "B", "C", "D", "E"], kết quả a[1:-1] là gì?
+- **Chủ đề:** `Slicing` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `5 điểm`  
 
 - [ ] **A.** ["A", "B", "C", "D"]
 - [x] **B.** ["B", "C", "D"]
@@ -423,8 +369,8 @@
 
 ---
 
-### Câu 31. Với tong=80000, khách chia đều cho 3 người. Biểu thức tong // 3 cho kết quả nào?
-- **Chủ đề:** `Toán tử` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `4 điểm`  
+### Câu 27. Với tong=80000, khách chia đều cho 3 người. Biểu thức tong // 3 cho kết quả nào?
+- **Chủ đề:** `Toán tử` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `5 điểm`  
 
 - [ ] **A.** 26667
 - [ ] **B.** 26666.666666666668
@@ -436,8 +382,8 @@
 
 ---
 
-### Câu 32. Có thuc_don = ["Đen", "Sữa", "Bạc xỉu", "Trà đào"]. Sau thuc_don[1] = "Cà phê muối", thuc_don[:2] là gì?
-- **Chủ đề:** `Cấu trúc dữ liệu` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `4 điểm`  
+### Câu 28. Có thuc_don = ["Đen", "Sữa", "Bạc xỉu", "Trà đào"]. Sau thuc_don[1] = "Cà phê muối", thuc_don[:2] là gì?
+- **Chủ đề:** `Cấu trúc dữ liệu` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `5 điểm`  
 
 - [x] **A.** ["Đen", "Cà phê muối"]
 - [ ] **B.** ["Cà phê muối", "Bạc xỉu"]
@@ -449,8 +395,8 @@
 
 ---
 
-### Câu 33. Sau khi chạy x = 12; x = "12", type(x).__name__ là gì?
-- **Chủ đề:** `Kiểu dữ liệu` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `4 điểm`  
+### Câu 29. Sau khi chạy x = 12; x = "12", type(x).__name__ là gì?
+- **Chủ đề:** `Kiểu dữ liệu` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `5 điểm`  
 
 - [ ] **A.** "int"
 - [ ] **B.** "float"
@@ -462,8 +408,8 @@
 
 ---
 
-### Câu 34. Chính sách: giảm giá nếu là thành viên HOẶC hóa đơn ≥100.000đ. Với thanh_vien=False, tong=120000 thì biểu thức thanh_vien or tong>=100000 cho gì?
-- **Chủ đề:** `Chuỗi & logic` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `4 điểm`  
+### Câu 30. Chính sách: giảm giá nếu là thành viên HOẶC hóa đơn ≥100.000đ. Với thanh_vien=False, tong=120000 thì biểu thức thanh_vien or tong>=100000 cho gì?
+- **Chủ đề:** `Chuỗi & logic` | **Cấp độ:** `Vận dụng` | **Thang điểm:** `5 điểm`  
 
 - [x] **A.** True
 - [ ] **B.** False

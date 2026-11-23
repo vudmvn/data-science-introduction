@@ -41,23 +41,12 @@ Buổi 2 sử dụng bối cảnh **NeuTech Coffee**: một quán cần lưu tê
 
 > 📌 **Ghi chú trọng tâm:** Mục tiêu sau bài: đọc và dự đoán được chương trình Python cơ bản, giải thích kiểu dữ liệu và viết các lệnh ngắn về hoạt động kinh doanh.
 
-### Lưu thông tin
-Tên món, giá, số lượng → biến và kiểu dữ liệu.
-
-### Tính tiền
-Các phép cộng, nhân, chia và điều kiện logic.
-
-### Quản lý thực đơn
-Dùng list, tuple, set; truy cập theo chỉ số hoặc cắt lát.
-
 ### Từ bài toán kinh doanh đến câu lệnh Python
 Một bài toán thường đi qua bốn bước: **(1)** xác định đầu vào, **(2)** diễn tả phép xử lý, **(3)** xác định kết quả cần hiển thị và **(4)** kiểm tra kết quả có hợp lý không. Chẳng hạn, để tính doanh thu bán cà phê, đầu vào là *số ly* và *giá mỗi ly*, phép xử lý là nhân, đầu ra là tiền thu được.
 
-Giá 25.000 đồng/ly; số lượng 4 ly.
-
-Doanh thu = đơn giá × số lượng.
-
-100.000 đồng; cần kiểm tra đơn giá và số lượng không âm.
+- **1. Đầu vào:** Giá 25.000 đồng/ly; số lượng 4 ly.
+- **2. Xử lý:** Doanh thu = đơn giá × số lượng.
+- **3. Đầu ra & kiểm tra:** 100.000 đồng; cần kiểm tra đơn giá và số lượng không âm.
 
 ### Ví dụ đầu tiên: cùng một bài toán, nhiều tình huống
 Thay hai giá trị đầu vào rồi nhấn **Run** để kiểm tra kết quả. Khác với một máy tính bỏ túi chỉ có công thức cố định, khi lập trình ta có thể thay đổi quy trình tính toán và trình bày kết quả.
@@ -83,11 +72,8 @@ Doanh thu: 100000 đồng
 **Câu hỏi:** Quán muốn đổi món thứ hai trên thực đơn khi cần. Khái niệm nào sẽ giúp thực hiện việc này?
 
 - [ ] **A.** Chỉ có thể dùng số nguyên
-- [x] **B.** Dùng danh sách list có thể chỉnh sửa
+- [ ] **B.** Dùng danh sách list có thể chỉnh sửa
 - [ ] **C.** Chỉ có thể dùng tên tệp
-
-> **Đáp án đúng:** **B**  
-> **Giải thích:** List cho phép thay đổi phần tử theo chỉ số.
 
 ---
 
@@ -102,15 +88,6 @@ Doanh thu: 100000 đồng
 - **Text cell:** Ô ghi chú Markdown, không chạy như lệnh Python.
 
 > 📌 **Ghi chú trọng tâm:** Trong Google Colab, truy cập colab.research.google.com → New notebook → tạo Code cell → chạy Shift + Enter. Các ví dụ trong trang có nút Run: trình chạy offline xử lý một tập con các lệnh Python nhập môn. Để chạy Python đầy đủ và các thư viện chuyên ngành, sử dụng Colab.
-
-### Kiểu động
-Biến không cần khai báo kiểu trước khi gán giá trị.
-
-### Code cell
-Ô chạy Python; dùng `Shift` + `Enter`.
-
-### Text cell
-Ô ghi chú Markdown, không chạy như lệnh Python.
 
 ### Thông dịch, kiểu động và mục đích của Python
 Python là ngôn ngữ lập trình bậc cao, thường được thực thi bằng một **trình thông dịch**. Cách diễn đạt “chạy từng dòng” hữu ích khi mới học, nhưng trên thực tế Python còn phân tích cú pháp và tạo bytecode trước khi thực thi. **Kiểu động** có nghĩa là ta gán giá trị cho tên mà không khai báo kiểu của tên từ đầu; đối tượng được gán vẫn có một kiểu xác định.
@@ -157,11 +134,8 @@ Python có thể tính: 75000
 **Câu hỏi:** Muốn thực thi một đoạn print("Hello!") trên Colab, bạn dùng ô nào?
 
 - [ ] **A.** Text cell
-- [x] **B.** Code cell
+- [ ] **B.** Code cell
 - [ ] **C.** Tiêu đề notebook
-
-> **Đáp án đúng:** **B**  
-> **Giải thích:** Code cell thực thi Python, Text cell dùng cho phần diễn giải.
 
 ---
 
@@ -173,12 +147,6 @@ Một biến là tên tham chiếu đến giá trị. Hình dung biến là nhã
 ### 💡 Các khái niệm quan trọng:
 - **Tên hợp lệ:** `so_ly`, `gia_1`, `_tong`.
 - **Tên không hợp lệ:** `2so_ly` (bắt đầu bằng số), `gia-ca-phe` (dấu trừ), `while` (từ khóa).
-
-### Tên hợp lệ
-`so_ly`, `gia_1`, `_tong`.
-
-### Tên không hợp lệ
-`2so_ly` (bắt đầu bằng số), `gia-ca-phe` (dấu trừ), `while` (từ khóa).
 
 ### Phân biệt `=` và `==`
 `=` là **gán** (đặt tên tham chiếu tới một giá trị). `==` là **so sánh**, trả về `True` hoặc `False`. Sau khi gán giá trị mới cho cùng tên, biểu thức tiếp theo sử dụng giá trị mới.
@@ -195,6 +163,8 @@ Python **phân biệt chữ hoa và chữ thường**: `Gia` và `gia` là hai t
 | `while` | Sai | Là từ khóa của Python |
 
 ### Từ biến đơn đến biến trung gian
+Sử dụng các biến trung gian như `tien_hang` giúp quy trình tính toán rõ ràng, mạch lạc và dễ kiểm soát lỗi nghiệp vụ hơn (chi tiết minh họa tại **Ví dụ 07**).
+
 > ⚠️ **Lưu ý & Gợi ý:** **Bài tập nhỏ:** đổi phí vận chuyển từ 10.000 xuống 5.000 đồng. Dự đoán kết quả trước khi Run. Nếu bạn thấy `NameError`, hãy kiểm tra chính tả và việc gán biến trước khi sử dụng.
 
 ### 💻 Mã nguồn thực hành & Ví dụ Python:
@@ -282,11 +252,8 @@ Phải trả: 100000
 **Câu hỏi:** Tên nào hợp lệ để lưu số ly khách gọi?
 
 - [ ] **A.** 3ly
-- [x] **B.** so_ly
+- [ ] **B.** so_ly
 - [ ] **C.** so-ly
-
-> **Đáp án đúng:** **B**  
-> **Giải thích:** Python không cho tên biến bắt đầu bằng chữ số hoặc chứa dấu -.
 
 ---
 
@@ -303,44 +270,8 @@ Giá trị trong Python có kiểu dữ liệu. `type()` có thể giúp xem ki�
 
 > 📌 **Ghi chú trọng tâm:** Khác biệt rất quan trọng: `12` là số nguyên nhưng `"12"` là chuỗi. Biểu thức cộng số và nối chuỗi cho kết quả khác nhau.
 
-### int · số nguyên
-Ví dụ: `4`, `25000`.
-
-### float · số thực
-Ví dụ: `3.14159`, `2.0`.
-
-### str · chuỗi
-Ví dụ: `"Bạc xỉu"`.
-
-### bool · logic
-Ví dụ: `True`, `False`.
-
 ### Mỗi giá trị có một kiểu
 Kiểu dữ liệu xác định những phép toán hợp lệ. `25` có kiểu `int`, trong khi `"25"` có kiểu `str`: một giá trị dùng để tính toán, giá trị còn lại là dãy ký tự. Hàm `type()` trả về kiểu đối tượng.
-
-a = 12
-b = "12"
-c = 12.0
-d = True
-print(type(a))
-print(type(b))
-print(type(c))
-print(type(d))
-print(a + 3)
-print(b + "3")
-a = 12
-b = "12"
-c = 12.0
-d = True
-print(type(a))
-print(type(b))
-print(type(c))
-print(type(d))
-print(a + 3)
-print(b + "3")
-Kết quả chạy · chưa chạyBấm Run để xem kết quả.
-
-**Chú ý với tiền:** giá trị `float` có thể có sai số biểu diễn trong một số phép tính thập phân. Trong bài nhập môn ta dùng `int` biểu thị đơn vị VNĐ khi có thể; trong ứng dụng tài chính chính thức thường cân nhắc số nguyên theo đơn vị nhỏ nhất hoặc kiểu số thập phân chính xác.
 
 | Kiểu | Ví dụ | Khi nào dùng? |
 | :--- | :--- | :--- |
@@ -353,17 +284,19 @@ Kết quả chạy · chưa chạyBấm Run để xem kết quả.
 | `set` | `{"Đen", "Sữa"}` | Nhóm phần tử duy nhất |
 | `dict` | `{"Đen": 20000}` | Tra cứu theo khóa; sẽ học sâu ở bài tiếp theo |
 
+> 📌 **Chú ý với tiền:** Giá trị `float` có thể có sai số biểu diễn trong một số phép tính thập phân. Trong bài nhập môn ta dùng `int` biểu thị đơn vị VNĐ khi có thể; trong ứng dụng tài chính chính thức thường cân nhắc số nguyên theo đơn vị nhỏ nhất hoặc kiểu số thập phân chính xác.
+
 ### 💻 Mã nguồn thực hành & Ví dụ Python:
 #### ☕ PYTHON · Ví dụ 08
 ```python
 so_ly = 4
 don_gia = 25000
-print(type(so_ly))   # &lt;class 'int'&gt;
+print(type(so_ly))   # <class 'int'>
 print(so_ly*don_gia) # 100000
 ```
 **Kết quả in ra (Output):**
 ```text
-&lt;class 'int'&gt;
+<class 'int'>
 100000
 ```
 
@@ -382,10 +315,10 @@ print(b + "3")
 ```
 **Kết quả in ra (Output):**
 ```text
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;
-&lt;class 'float'&gt;
-&lt;class 'bool'&gt;
+<class 'int'>
+<class 'str'>
+<class 'float'>
+<class 'bool'>
 15
 123
 ```
@@ -394,11 +327,8 @@ print(b + "3")
 **Câu hỏi:** Biểu thức type("25") trả về kiểu dữ liệu nào?
 
 - [ ] **A.** int
-- [x] **B.** str
+- [ ] **B.** str
 - [ ] **C.** float
-
-> **Đáp án đúng:** **B**  
-> **Giải thích:** Dấu nháy biến 25 thành một chuỗi ký tự.
 
 ---
 
@@ -410,12 +340,6 @@ Python sử dụng các toán tử `+ - * / // % **`. Phép chia `/` trả về 
 ### 💡 Các khái niệm quan trọng:
 - **Ví dụ hóa đơn:** Một khách gọi cà phê sữa (25.000đ), trà đào (35.000đ), cà phê đen (20.000đ): tổng 80.000đ.
 - **Chia hóa đơn:** `80000/3` cho 26.666,666…; `80000//3` cho 26.666.
-
-### Ví dụ hóa đơn
-Một khách gọi cà phê sữa (25.000đ), trà đào (35.000đ), cà phê đen (20.000đ): tổng 80.000đ.
-
-### Chia hóa đơn
-`80000/3` cho 26.666,666…; `80000//3` cho 26.666.
 
 ### Ý nghĩa từng toán tử
 | Toán tử | Ví dụ | Ý nghĩa |
@@ -431,24 +355,10 @@ Một khách gọi cà phê sữa (25.000đ), trà đào (35.000đ), cà phê đ
 ### Thứ tự ưu tiên và dấu ngoặc
 Lũy thừa có ưu tiên cao, sau đó là nhân/chia, rồi cộng/trừ. Dùng `()` khi muốn chỉ rõ phép tính theo nghiệp vụ: tổng tiền trước giảm giá thường là tổng của các dòng hóa đơn, *sau đó* mới áp dụng tỷ lệ giảm.
 
-print(2 + 3 * 4)
-print((2 + 3) * 4)
-print(7 / 2)
-print(7 // 2)
-print(-7 // 2)
-print(-7 % 2)
-print(2 + 3 * 4)
-print((2 + 3) * 4)
-print(7 / 2)
-print(7 // 2)
-print(-7 // 2)
-print(-7 % 2)
-Kết quả chạy · chưa chạyBấm Run để xem kết quả.
-
-**Lưu ý:** phép `//` làm tròn về âm vô cực. Vì thế `-7 // 2` bằng `-4`, không phải `-3`. Với `b ≠ 0`, quan hệ `a = (a // b) * b + (a % b)` luôn đúng theo quy tắc của Python.
+> 📌 **Lưu ý:** Phép `//` làm tròn về âm vô cực. Vì thế `-7 // 2` bằng `-4`, không phải `-3`. Với `b ≠ 0`, quan hệ `a = (a // b) * b + (a % b)` luôn đúng theo quy tắc của Python.
 
 ### Ví dụ thực tiễn: giới hạn tồn kho
-Cửa hàng có 41 chai si-rô và mỗi combo cần 6 chai. Cửa hàng có thể chuẩn bị tối đa bao nhiêu combo trọn vẹn? Còn dư bao nhiêu chai?
+Cửa hàng có 41 chai si-rô và mỗi combo cần 6 chai. Cửa hàng có thể chuẩn bị tối đa bao nhiêu combo trọn vẹn? Còn dư bao nhiêu chai? (Xem minh họa tại **Ví dụ 12** bên dưới).
 
 > ⚠️ **Lưu ý & Gợi ý:** Lỗi hay gặp: nhầm `/` với `//`, dùng dấu `^` thay cho lũy thừa `**`, hoặc chia cho 0 dẫn tới `ZeroDivisionError`.
 
@@ -512,17 +422,29 @@ print(-7 % 2)
 1
 ```
 
+#### ☕ PYTHON · Ví dụ 12
+```python
+ton_kho = 41
+moi_combo = 6
+so_combo = ton_kho // moi_combo
+con_du = ton_kho % moi_combo
+print("Combo hoàn chỉnh:", so_combo)
+print("Chai còn dư:", con_du)
+```
+**Kết quả in ra (Output):**
+```text
+Combo hoàn chỉnh: 6
+Chai còn dư: 5
+```
+
 > ⚠️ **Lời khuyên thực hành:** Lỗi hay gặp: nhầm `/` với `//`, dùng dấu `^` thay cho lũy thừa `**`, hoặc chia cho 0 dẫn tới `ZeroDivisionError`.
 
 ### 🛡️ Câu hỏi chốt chặn qua bài (Kiểm tra trước khi qua mục tiếp theo):
 **Câu hỏi:** Kết quả của 7 // 2 là?
 
-- [x] **A.** 3
+- [ ] **A.** 3
 - [ ] **B.** 3.5
 - [ ] **C.** 1
-
-> **Đáp án đúng:** **A**  
-> **Giải thích:** Với số dương, // cho thương nguyên 3.
 
 ---
 
@@ -534,12 +456,6 @@ print(-7 % 2)
 ### 💡 Các khái niệm quan trọng:
 - **So sánh:** `==`, `!=`, `<`, `>`, `<=`, `>=`.
 - **Logic:** `and`: cả hai đúng; `or`: ít nhất một đúng; `not`: đảo đúng/sai.
-
-### So sánh
-`==`, `!=`, `<`, `>`, `<=`, `>=`.
-
-### Logic
-`and`: cả hai đúng; `or`: ít nhất một đúng; `not`: đảo đúng/sai.
 
 ### Chuỗi: dữ liệu văn bản và thao tác ghép
 Một chuỗi được viết giữa dấu nháy đơn hoặc kép. Ta có thể ghép hai chuỗi bằng `+` hoặc truyền nhiều đối số cho `print()`. Chuỗi mang số vẫn là văn bản cho đến khi được chuyển kiểu.
@@ -554,21 +470,9 @@ Một chuỗi được viết giữa dấu nháy đơn hoặc kép. Ta có thể
 | Logic | `not` | Đảo giá trị logic |
 
 ### Tình huống: quy tắc ưu đãi hai điều kiện
-Giảm giá khi khách là thành viên **và** hóa đơn không dưới 50.000 đồng. Nhấn Run, sau đó thử đặt `la_thanh_vien = False` hoặc giảm giá trị `tong_tien`.
+Giảm giá khi khách là thành viên **và** hóa đơn không dưới 50.000 đồng. Có thể thử đổi giá trị `la_thanh_vien = False` hoặc giảm giá trị `tong_tien` để quan sát sự thay đổi.
 
-la_thanh_vien = True
-tong_tien = 70000
-du_dieu_kien = la_thanh_vien and tong_tien >= 50000
-print("Có ưu đãi:", du_dieu_kien)
-print("Không đủ điều kiện:", not du_dieu_kien)
-la_thanh_vien = True
-tong_tien = 70000
-du_dieu_kien = la_thanh_vien and tong_tien >= 50000
-print("Có ưu đãi:", du_dieu_kien)
-print("Không đủ điều kiện:", not du_dieu_kien)
-Kết quả chạy · chưa chạyBấm Run để xem kết quả.
-
-**Phân biệt:** `=` là gán; `==` là so sánh. Trong Python đầy đủ, `and`/`or` có cơ chế đánh giá ngắn mạch và có thể trả về toán hạng; ở các bài nhập môn ta chủ yếu kết hợp các biểu thức logic.
+> 📌 **Phân biệt:** `=` là gán; `==` là so sánh. Trong Python đầy đủ, `and`/`or` có cơ chế đánh giá ngắn mạch và có thể trả về toán hạng; ở các bài nhập môn ta chủ yếu kết hợp các biểu thức logic.
 
 ### 💻 Mã nguồn thực hành & Ví dụ Python:
 #### ☕ PYTHON · Ví dụ 13
@@ -577,7 +481,7 @@ ten_khach = "Chị An"
 ghi_chu = 'Note: "ít đường, nhiều đá"'
 la_thanh_vien = True
 tong_tien = 80000
-duoc_giam = la_thanh_vien and (tong_tien &gt;= 50000)
+duoc_giam = la_thanh_vien and (tong_tien >= 50000)
 print(duoc_giam)  # True
 ```
 **Kết quả in ra (Output):**
@@ -591,7 +495,7 @@ True
 # Điều kiện ưu đãi: Là thành viên VÀ tổng hóa đơn từ 50.000đ trở lên
 la_thanh_vien = True
 tong_tien = 75000
-# Hãy thay dấu ... bằng toán tử so sánh thích hợp (&gt;=):
+# Hãy thay dấu ... bằng toán tử so sánh thích hợp (>=):
 duoc_giam = la_thanh_vien and (tong_tien ... 50000)
 print("Được giảm giá:", duoc_giam)
 # Kết quả mong đợi: Được giảm giá: True
@@ -600,7 +504,7 @@ print("Được giảm giá:", duoc_giam)
 ```python
 la_thanh_vien = True
 tong_tien = 75000
-duoc_giam = la_thanh_vien and (tong_tien &gt;= 50000)
+duoc_giam = la_thanh_vien and (tong_tien >= 50000)
 print("Được giảm giá:", duoc_giam)
 ```
 **Kết quả chạy trên Console:**
@@ -625,7 +529,7 @@ Phiếu: Minh - Trà đào
 ```python
 la_thanh_vien = True
 tong_tien = 70000
-du_dieu_kien = la_thanh_vien and tong_tien &gt;= 50000
+du_dieu_kien = la_thanh_vien and tong_tien >= 50000
 print("Có ưu đãi:", du_dieu_kien)
 print("Không đủ điều kiện:", not du_dieu_kien)
 ```
@@ -639,11 +543,8 @@ Không đủ điều kiện: False
 **Câu hỏi:** Khi la_thanh_vien=True nhưng tong_tien=40000, biểu thức la_thanh_vien and tong_tien>=50000 cho?
 
 - [ ] **A.** True
-- [x] **B.** False
+- [ ] **B.** False
 - [ ] **C.** "False"
-
-> **Đáp án đúng:** **B**  
-> **Giải thích:** Điều kiện thứ hai không đạt, nên and cho False.
 
 ---
 
@@ -717,11 +618,8 @@ Số ly: 3
 **Câu hỏi:** Cách nào dùng để ghép một biến số nguyên so_ly với chuỗi " ly"?
 
 - [ ] **A.** so_ly + " ly"
-- [x] **B.** str(so_ly) + " ly"
+- [ ] **B.** str(so_ly) + " ly"
 - [ ] **C.** int(" ly") + so_ly
-
-> **Đáp án đúng:** **B**  
-> **Giải thích:** Để nối chuỗi cần biến số thành str().
 
 ---
 
@@ -733,12 +631,6 @@ Cả `list` và `tuple` có thứ tự. List có thể thay đổi sau khi tạo
 ### 💡 Các khái niệm quan trọng:
 - **List · ngoặc vuông:** Phù hợp cho menu và các danh sách cần cập nhật.
 - **Tuple · ngoặc tròn:** Phù hợp cho các nhóm giá trị theo vị trí mà không muốn thay phần tử.
-
-### List · ngoặc vuông
-Phù hợp cho menu và các danh sách cần cập nhật.
-
-### Tuple · ngoặc tròn
-Phù hợp cho các nhóm giá trị theo vị trí mà không muốn thay phần tử.
 
 ### Điểm giống và khác của list – tuple
 Cả hai là **dãy có thứ tự**, truy cập được bằng chỉ số và có thể chứa các kiểu dữ liệu khác nhau. Tuy nhiên `list` có thể thay đổi phần tử, còn `tuple` không thể gán lại phần tử bằng chỉ số. Điều này không có nghĩa là mọi đối tượng nằm bên trong tuple đều bất biến.
@@ -752,7 +644,11 @@ Cả hai là **dãy có thứ tự**, truy cập được bằng chỉ số và 
 | Tình huống | Thực đơn cập nhật thường xuyên | Bộ tọa độ/ngày tháng đã xác định |
 
 ### List có thể đổi theo chỉ số
-### Tuple có thể dùng để lưu bộ giá trị cố định
+`list` trong Python có tính chất thay đổi được (`mutable`). Ta có thể dùng chỉ số để đổi món: `thuc_don[1] = "Cà phê muối"` (chi tiết xem tại **Ví dụ 20** và **Thực hành 04**).
+
+### Tuple dùng để lưu bộ giá trị cố định
+`tuple` có tính chất bất biến (`immutable`). Mọi thao tác gán lại phần tử như `ngay[0] = 17` sẽ báo lỗi `TypeError` (chi tiết xem tại **Ví dụ 21**).
+
 > ⚠️ **Lưu ý & Gợi ý:** Trong Python, tên biến không phải “hộp chứa giá trị” theo nghĩa tuyệt đối mà tham chiếu đến đối tượng. Khi có hai tên cùng tham chiếu tới một list, sửa list qua tên này có thể được nhìn thấy qua tên kia. Phần này sẽ được đào sâu ở các bài lập trình tiếp theo.
 
 ### 💻 Mã nguồn thực hành & Ví dụ Python:
@@ -826,10 +722,7 @@ Số trường: 3
 
 - [ ] **A.** Tuple thay phần tử bằng chỉ số được
 - [ ] **B.** Cả hai không có thứ tự
-- [x] **C.** List có thể thay phần tử, tuple không
-
-> **Đáp án đúng:** **C**  
-> **Giải thích:** Tính mutability là điểm khác biệt quan trọng.
+- [ ] **C.** List có thể thay phần tử, tuple không
 
 ---
 
@@ -849,18 +742,6 @@ Python đánh chỉ số từ **0**. Với bốn phần tử, chỉ số hợp l
 | Chỉ số âm | -4 | -3 | -2 | -1 |
 
 ### Ứng dụng trên dữ liệu giá bán
-gia_ban = [20000, 25000, 28000, 35000]
-print("Giá đầu:", gia_ban[0])
-print("Giá cuối:", gia_ban[-1])
-print("Giá thứ ba:", gia_ban[2])
-print("Số món:", len(gia_ban))
-gia_ban = [20000, 25000, 28000, 35000]
-print("Giá đầu:", gia_ban[0])
-print("Giá cuối:", gia_ban[-1])
-print("Giá thứ ba:", gia_ban[2])
-print("Số món:", len(gia_ban))
-Kết quả chạy · chưa chạyBấm Run để xem kết quả.
-
 Indexing trả về *một* phần tử, còn slicing (học mục tiếp theo) thường trả về *một dãy con*. Phải phân biệt “món thứ ba” (chỉ số 2) với “món có chỉ số 3” (món thứ tư).
 
 ### 💻 Mã nguồn thực hành & Ví dụ Python:
@@ -923,11 +804,8 @@ Số món: 4
 **Câu hỏi:** Với bốn món, thuc_don[-2] chọn món ở vị trí nào?
 
 - [ ] **A.** Thứ hai từ đầu
-- [x] **B.** Thứ hai từ cuối
+- [ ] **B.** Thứ hai từ cuối
 - [ ] **C.** Món cuối
-
-> **Đáp án đúng:** **B**  
-> **Giải thích:** Chỉ số âm -2 là phần tử thứ hai khi đếm từ cuối.
 
 ---
 
@@ -940,15 +818,6 @@ Số món: 4
 - **Mutable:** `list` (cho sửa phần tử).
 - **Immutable:** `tuple` và `str` (không sửa trực tiếp phần tử).
 - **Set:** Không có indexing theo vị trí; bỏ phần tử trùng.
-
-### Mutable
-`list` (cho sửa phần tử).
-
-### Immutable
-`tuple` và `str` (không sửa trực tiếp phần tử).
-
-### Set
-Không có indexing theo vị trí; bỏ phần tử trùng.
 
 ### Cú pháp slicing chi tiết
 `a[start:stop:step]` lấy từ chỉ số `start`, dừng **trước** `stop`, và nhảy theo `step`. Có thể bỏ trống start/stop; chỉ số âm và bước âm cho phép duyệt ngược. Slicing không sửa list gốc mà tạo danh sách phần tử được chọn.
@@ -1030,27 +899,28 @@ True
 **Câu hỏi:** Với a=["A","B","C","D"], a[1:3] trả về gì?
 
 - [ ] **A.** ["A","B","C"]
-- [x] **B.** ["B","C"]
+- [ ] **B.** ["B","C"]
 - [ ] **C.** ["B","C","D"]
-
-> **Đáp án đúng:** **B**  
-> **Giải thích:** Slice lấy chỉ số 1 và 2, dừng trước chỉ số 3.
 
 ---
 
 ## MỤC 11/11: Bài tập mẫu có lời giải
 > 📖 **Tham chiếu bài giảng:** PDF tr. 19–20, 27–28 · **Chủ đề chính:** *Hai bài luyện tập trong PDF và ví dụ mở rộng*
 
-**Bài mẫu 1 – Đơn trà đào.** Dữ liệu: giá 35.000đ/ly, còn hàng. Yêu cầu khai báo biến, xem kiểu và tính ba ly.
+**Bài mẫu 1 – Đơn trà đào.** Dữ liệu: giá 35.000đ/ly, còn hàng. Yêu cầu khai báo biến, xem kiểu và tính ba ly (Ví dụ 27).
+
+**Bài mẫu 2 – Quản lý thực đơn.** In món đầu/cuối, thay món thứ hai, lấy hai món đầu (Ví dụ 28).
+
+**Ví dụ mở rộng – Tính giảm 10% với đơn 155.000đ.** Kiểm tra điều kiện thành viên và tổng tiền để giảm giá (Ví dụ 29).
 
 ### Cách đọc đề và tự xây dựng lời giải
 Với mỗi bài tập Python, sinh viên nên làm theo bốn bước: phân tích dữ liệu đầu vào; lập kế hoạch tính toán/thay đổi; viết chương trình tối giản; kiểm thử với ví dụ thường, ví dụ biên và kiểu dữ liệu bất thường. Nếu kết quả khác dự đoán, dùng `print()` để xem giá trị trung gian.
 
 ### Bài mẫu 3 – Dự toán doanh thu một buổi
-Giả sử quán bán 12 ly cà phê đen (20.000đ), 8 ly cà phê sữa (25.000đ) và 5 ly trà đào (35.000đ). Hãy tính doanh thu, số ly bán được và doanh thu trung bình mỗi ly. Đây là bài bổ sung so với slide.
+Giả sử quán bán 12 ly cà phê đen (20.000đ), 8 ly cà phê sữa (25.000đ) và 5 ly trà đào (35.000đ). Hãy tính doanh thu, số ly bán được và doanh thu trung bình mỗi ly (Ví dụ 30). Đây là bài bổ sung so với slide.
 
 ### Bài mẫu 4 – Phân loại đơn hàng bằng điều kiện
-Quán hỗ trợ miễn phí vận chuyển khi hóa đơn từ 100.000 đồng trở lên. Ví dụ này mở rộng nhẹ tới cú pháp `if`/`else`; nội dung câu lệnh điều kiện sẽ được học kỹ ở buổi sau.
+Quán hỗ trợ miễn phí vận chuyển khi hóa đơn từ 100.000 đồng trở lên (Ví dụ 31). Ví dụ này mở rộng nhẹ tới cú pháp `if`/`else`; nội dung câu lệnh điều kiện sẽ được học kỹ ở buổi sau.
 
 ### Tự đánh giá trước khi chuyển sang quiz
 Hãy thay `tong_tien` lần lượt bằng 100.000, 99.999 và 0. Quan sát sự khác biệt giữa `>` và `>=`, đồng thời kiểm tra số lượng/đơn giá âm có hợp lệ về mặt nghiệp vụ không.
@@ -1063,9 +933,9 @@ Hãy thay `tong_tien` lần lượt bằng 100.000, 99.999 và 0. Quan sát sự
 ten_mon = "Trà đào"
 don_gia = 35000
 con_hang = True
-print(type(ten_mon))  # &lt;class 'str'&gt;
-print(type(don_gia)) # &lt;class 'int'&gt;
-print(type(con_hang))# &lt;class 'bool'&gt;
+print(type(ten_mon))  # <class 'str'>
+print(type(don_gia)) # <class 'int'>
+print(type(con_hang))# <class 'bool'>
 so_ly = 3
 tong_tien = don_gia * so_ly
 print(str(so_ly) + " ly " + ten_mon + " = " + str(tong_tien) + "đ")
@@ -1073,16 +943,63 @@ print(str(so_ly) + " ly " + ten_mon + " = " + str(tong_tien) + "đ")
 ```
 **Kết quả in ra (Output):**
 ```text
-&lt;class 'str'&gt;
-&lt;class 'int'&gt;
-&lt;class 'bool'&gt;
+<class 'str'>
+<class 'int'>
+<class 'bool'>
 3 ly Trà đào = 105000đ
+```
+
+#### ☕ PYTHON · Ví dụ 28
+```python
+thuc_don = ["Cà phê đen", "Cà phê sữa", "Bạc xỉu", "Trà đào"]
+print(thuc_don[0])   # Cà phê đen
+print(thuc_don[-1])  # Trà đào
+thuc_don[1] = "Cà phê muối"
+print(thuc_don[0:2]) # ["Cà phê đen", "Cà phê muối"]
+```
+**Kết quả in ra (Output):**
+```text
+Cà phê đen
+Trà đào
+['Cà phê đen', 'Cà phê muối']
+```
+
+#### ☕ PYTHON · Ví dụ 29
+```python
+tong_tien = 155000
+la_thanh_vien = True
+if la_thanh_vien and tong_tien >= 100000:
+    tong_tien = tong_tien * 0.9
+print(tong_tien) # 139500.0
+```
+**Kết quả in ra (Output):**
+```text
+139500.0
+```
+
+#### ☕ PYTHON · Ví dụ 30
+```python
+so_den = 12
+so_sua = 8
+so_tra = 5
+doanh_thu = so_den * 20000 + so_sua * 25000 + so_tra * 35000
+so_ly = so_den + so_sua + so_tra
+trung_binh = doanh_thu / so_ly
+print("Số ly bán:", so_ly)
+print("Doanh thu:", doanh_thu)
+print("Doanh thu trung bình mỗi ly:", trung_binh)
+```
+**Kết quả in ra (Output):**
+```text
+Số ly bán: 25
+Doanh thu: 615000
+Doanh thu trung bình mỗi ly: 24600.0
 ```
 
 #### ☕ PYTHON · Ví dụ 31
 ```python
 tong_tien = 125000
-if tong_tien &gt;= 100000:
+if tong_tien >= 100000:
     print("Miễn phí vận chuyển")
 else:
     print("Thu phí vận chuyển")
@@ -1096,11 +1013,8 @@ Miễn phí vận chuyển
 **Câu hỏi:** Sau lệnh thuc_don[1] = "Cà phê muối", món nào ở vị trí 1?
 
 - [ ] **A.** Cà phê đen
-- [x] **B.** Cà phê muối
+- [ ] **B.** Cà phê muối
 - [ ] **C.** Bạc xỉu
-
-> **Đáp án đúng:** **B**  
-> **Giải thích:** Danh sách đã thay thế giá trị ở chỉ số 1.
 
 ---
 
@@ -1109,59 +1023,43 @@ Miễn phí vận chuyển
 
 ### Câu 1. Lệnh in chuỗi trong Python là gì?
 - [ ] **A.** show("Hi")
-- [x] **B.** print("Hi")
+- [ ] **B.** print("Hi")
 - [ ] **C.** write("Hi")
-
-> **Đáp án đúng:** **B. print("Hi")**
 
 ### Câu 2. Giá trị "12" thuộc kiểu gì?
 - [ ] **A.** int
-- [x] **B.** str
+- [ ] **B.** str
 - [ ] **C.** bool
 
-> **Đáp án đúng:** **B. str**
-
 ### Câu 3. 7 % 3 trả về gì?
-- [x] **A.** 1
+- [ ] **A.** 1
 - [ ] **B.** 2
 - [ ] **C.** 3
 
-> **Đáp án đúng:** **A. 1**
-
 ### Câu 4. Kết quả của 6 / 3 trong Python 3?
 - [ ] **A.** 2
-- [x] **B.** 2.0
+- [ ] **B.** 2.0
 - [ ] **C.** 3
-
-> **Đáp án đúng:** **B. 2.0**
 
 ### Câu 5. a=["A","B","C"]; a[-1] là gì?
 - [ ] **A.** A
 - [ ] **B.** B
-- [x] **C.** C
-
-> **Đáp án đúng:** **C. C**
+- [ ] **C.** C
 
 ### Câu 6. Tuple có thể gán sửa phần tử không?
 - [ ] **A.** Có
-- [x] **B.** Không
+- [ ] **B.** Không
 - [ ] **C.** Chỉ sửa phần tử đầu
 
-> **Đáp án đúng:** **B. Không**
-
 ### Câu 7. a=[1,2,3,4]; a[1:3] là gì?
-- [x] **A.** [2,3]
+- [ ] **A.** [2,3]
 - [ ] **B.** [1,2,3]
 - [ ] **C.** [2,3,4]
 
-> **Đáp án đúng:** **A. [2,3]**
-
 ### Câu 8. Nếu thành viên=True, tổng=40000, điều kiện member and total>=50000?
 - [ ] **A.** True
-- [x] **B.** False
+- [ ] **B.** False
 - [ ] **C.** 40000
-
-> **Đáp án đúng:** **B. False**
 
 ---
 
@@ -1182,3 +1080,35 @@ Hình thức:     Tự học và đánh giá offline trên trình duyệt tươn
 Mã xác nhận:   DS2-[MãSV]-[MãNgẫuNhiên]
 ========================================================================================
 ```
+
+---
+
+## 🔑 Bảng đáp án & Giải thích (Answer Key)
+
+### 1. Đáp án câu hỏi chốt chặn từng mục (11 Checkpoints)
+| Mục | Tiêu đề chuyên đề | Đáp án | Giải thích ngắn gọn |
+| :---: | :--- | :---: | :--- |
+| **01** | Bắt đầu từ quán cà phê | **B** | List cho phép thay đổi phần tử theo chỉ số. |
+| **02** | Python và Google Colab | **B** | Code cell thực thi Python, Text cell dùng cho phần diễn giải. |
+| **03** | Biến và phép gán | **B** | Python không cho tên biến bắt đầu bằng chữ số hoặc chứa dấu `-`. |
+| **04** | Các kiểu dữ liệu cơ bản | **B** | Dấu nháy biến `25` thành một chuỗi ký tự (`str`). |
+| **05** | Toán tử số học | **A** | Với số dương, `//` cho thương nguyên `3`. |
+| **06** | Chuỗi, bool và so sánh | **B** | Điều kiện thứ hai không đạt (`tong_tien >= 50000` là `False`), nên `and` cho `False`. |
+| **07** | Chuyển đổi kiểu dữ liệu | **B** | Để nối chuỗi với số cần ép kiểu số thành chuỗi bằng `str()`. |
+| **08** | List và tuple | **C** | Tính mutability (khả năng thay đổi phần tử) là điểm khác biệt then chốt giữa list và tuple. |
+| **09** | Indexing | **B** | Chỉ số âm `-2` là phần tử thứ hai khi đếm ngược từ cuối danh sách. |
+| **10** | Slicing, set và tính bất biến | **B** | Slice `[1:3]` lấy từ chỉ số 1 đến trước chỉ số 3 (chỉ số 1 và 2). |
+| **11** | Bài tập mẫu có lời giải | **B** | Lệnh gán `thuc_don[1] = ...` đã thay thế phần tử tại vị trí chỉ số 1 thành `"Cà phê muối"`. |
+
+### 2. Đáp án bài kiểm tra tổng kết cuối bài (8 câu Quiz)
+| Câu | Đáp án đúng | Chi tiết phương án |
+| :---: | :---: | :--- |
+| **1** | **B** | `print("Hi")` |
+| **2** | **B** | `str` |
+| **3** | **A** | `1` |
+| **4** | **B** | `2.0` |
+| **5** | **C** | `C` |
+| **6** | **B** | `Không` |
+| **7** | **A** | `[2,3]` |
+| **8** | **B** | `False` |
+
