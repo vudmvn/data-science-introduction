@@ -407,6 +407,310 @@ html[data-code-theme="dark"] .ruler-item { color: #f1f6fb; }
 html[data-code-theme="dark"] .ruler-pos { background: #1e3a5f; color: #7dd3fc; }
 html[data-code-theme="dark"] .ruler-neg { background: #4c1d24; color: #fca5a5; }
 html[data-code-theme="dark"] .ruler-legend { color: #94a3b8; }
+
+/* Bổ sung phong cách trình bày bài giảng chuyên sâu */
+.theory-h4{font-size:1.08rem;margin:18px 0 8px;color:var(--navy2);font-weight:750}
+.concept-box{background:#f8fbfe;border:1px solid #cce0f0;border-left:4px solid var(--navy);border-radius:10px;padding:14px 16px;margin:16px 0}
+.concept-box p:last-child,.pitfall-box p:last-child,.business-box p:last-child{margin-bottom:0}
+.pitfall-box{background:#fff5f5;border:1px solid #fed7d7;border-left:4px solid var(--red);border-radius:10px;padding:14px 16px;margin:16px 0;color:#742a2a}
+.business-box{background:#f0fdf4;border:1px solid #bbf7d0;border-left:4px solid var(--green);border-radius:10px;padding:14px 16px;margin:16px 0;color:#166534}
+.diagram-box{background:#0f1c29;color:#d6e8f7;padding:16px 18px;border-radius:12px;font:13.5px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-x:auto;margin:16px 0;border:1px solid #233e56;white-space:pre-wrap;word-break:break-word}
+.code-walkthrough{width:100%;border-collapse:collapse;margin:14px 0;font-size:0.92rem}
+.code-walkthrough th{background:#e8f1f8;color:var(--navy);padding:8px 12px;border:1px solid #cfe0ed;text-align:left}
+.code-walkthrough td{padding:9px 12px;border:1px solid #dbe6ef;vertical-align:top}
+.code-walkthrough tr:nth-child(even) td{background:#fbfdfd}
+.theory-badge{display:inline-block;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;padding:3px 8px;border-radius:6px;margin-right:6px}
+.tb-concept{background:#e1effe;color:#1e429f}
+.tb-deep{background:#ede9fe;color:#5b21b6}
+.tb-pitfall{background:#fee2e2;color:#991b1b}
+.tb-biz{background:#dcfce7;color:#15803d}
+.tb-rule{background:#fef3c7;color:#92400e}
+.summary-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:0.92rem}
+.summary-table th{background:#e8f1f8;color:var(--navy);padding:9px 12px;border:1px solid #cfe0ed;text-align:left}
+.summary-table td{padding:9px 12px;border:1px solid #dbe6ef;vertical-align:top}
+.summary-table tr:nth-child(even) td{background:#fbfdfd}
+
+/* CSS cho các thành phần trực quan hóa bài giảng hiện đại */
+.visual-flow, .visual-pipeline, .visual-memory, .visual-hierarchy, .visual-risk, .visual-ruler {
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin: 20px 0;
+  border: 1px solid #c8d9e6;
+  background: #fdfefe;
+  box-shadow: 0 4px 16px rgba(18, 54, 91, 0.05);
+}
+.visual-flow-title, .pipeline-title, .memory-title, .hierarchy-title, .risk-title, .ruler-title {
+  font-size: 0.88rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.visual-flow-title::before, .pipeline-title::before, .memory-title::before, .hierarchy-title::before, .risk-title::before, .ruler-title::before {
+  content: "◆";
+  color: var(--teal);
+  font-size: 0.95rem;
+}
+
+/* 1. Visual Flow (Quy trình 4 bước) */
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  align-items: stretch;
+}
+.flow-step {
+  background: #f3f8fc;
+  border: 1px solid #d0e2ef;
+  border-radius: 11px;
+  padding: 13px;
+  display: flex;
+  flex-direction: column;
+}
+.flow-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--navy);
+  border-radius: 6px;
+  padding: 2px 8px;
+  margin-bottom: 8px;
+}
+.flow-name { font-weight: 800; color: var(--navy2); font-size: 0.95rem; margin-bottom: 5px; }
+.flow-desc { font-size: 0.84rem; color: #35506b; line-height: 1.5; margin: 0; }
+
+/* 2. Visual Pipeline (Chu trình PVM) */
+.pipeline-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pipe-node {
+  flex: 1 1 140px;
+  background: #f7fafc;
+  border: 1px solid #d4e2ed;
+  border-radius: 12px;
+  padding: 14px 10px;
+  text-align: center;
+}
+.pipe-node.highlight {
+  background: #eef9f6;
+  border-color: #9fe0cb;
+}
+.pipe-icon { font-size: 1.6rem; margin-bottom: 4px; }
+.pipe-name { font-weight: 800; font-size: 0.88rem; color: var(--navy); }
+.pipe-sub { font-size: 0.78rem; color: var(--muted); margin-top: 3px; }
+.pipe-arrow {
+  color: var(--teal);
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.2;
+}
+.pipe-arrow span { font-size: 0.7rem; font-weight: 700; color: var(--muted); }
+
+/* 3. Visual Memory (Mô hình bộ nhớ khi gán lại) */
+.memory-grid { display: flex; flex-direction: column; gap: 14px; }
+.mem-scenario {
+  background: #f5f9fc;
+  border: 1px solid #cfe0ee;
+  border-radius: 12px;
+  padding: 13px 16px;
+}
+.mem-label { font-size: 0.88rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+.mem-flow { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.mem-tag {
+  background: #12365b;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+.mem-pointer { color: var(--teal); font-weight: 800; font-size: 0.9rem; }
+.mem-pointer.new { color: #d97706; }
+.mem-obj {
+  background: #fff;
+  border: 1px solid #a8c8e1;
+  border-radius: 9px;
+  padding: 8px 14px;
+  display: flex;
+  flex-direction: column;
+}
+.mem-obj.new { border-color: #f59e0b; background: #fffdfa; }
+.mem-addr { font-size: 0.73rem; color: #6e8498; font-family: ui-monospace, Consolas, monospace; }
+.mem-gc-note { margin-top: 10px; font-size: 0.82rem; color: #b45309; background: #fffbeb; padding: 7px 11px; border-radius: 7px; border: 1px solid #fed7aa; }
+
+/* 4. Visual Hierarchy (Thứ tự ưu tiên PEMDAS) */
+.tier-list { display: flex; flex-direction: column; gap: 10px; }
+.tier-item {
+  display: grid;
+  grid-template-columns: 150px 200px 1fr;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #d8e5ef;
+  background: #f9fbfd;
+}
+.tier-item.t1 { border-left: 5px solid #087f86; background: #f0fdf9; }
+.tier-item.t2 { border-left: 5px solid #2563eb; background: #f4f8fe; }
+.tier-item.t3 { border-left: 5px solid #d97706; background: #fffdf5; }
+.tier-item.t4 { border-left: 5px solid #64748b; background: #f8fafc; }
+.tier-badge { font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--navy); }
+.tier-code { font-family: ui-monospace, Consolas, monospace; font-weight: 800; font-size: 0.92rem; color: var(--navy2); }
+.tier-desc { font-size: 0.85rem; color: #35506b; }
+
+/* 5. Visual Risk (Rủi ro ép kiểu) */
+.risk-context { font-size: 0.88rem; color: var(--navy2); background: #f1f7fc; padding: 10px 14px; border-radius: 8px; margin-bottom: 12px; }
+.risk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.risk-card {
+  border-radius: 11px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+}
+.risk-card.bad { background: #fffaf0; border: 1px solid #feebc8; }
+.risk-card.fatal { background: #fff5f5; border: 1px solid #fed7d7; }
+.risk-head { font-weight: 800; font-size: 0.88rem; margin-bottom: 6px; }
+.risk-card.bad .risk-head { color: #b7791f; }
+.risk-card.fatal .risk-head { color: #c53030; }
+.risk-code { font-family: ui-monospace, Consolas, monospace; background: rgba(0,0,0,0.05); padding: 4px 8px; border-radius: 6px; font-weight: 700; font-size: 0.88rem; margin-bottom: 6px; }
+.risk-res { font-family: ui-monospace, Consolas, monospace; font-weight: 800; font-size: 0.86rem; margin-bottom: 6px; }
+.risk-card.bad .risk-res { color: #b7791f; }
+.risk-card.fatal .risk-res { color: #e53e3e; }
+.risk-explain { font-size: 0.82rem; color: #4a5568; line-height: 1.45; }
+
+/* 6. Visual Ruler (Thước đo chỉ số 2 chiều) */
+.ruler-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 14px 0;
+}
+.ruler-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f7fafc;
+  border: 1px solid #d2e1ee;
+  border-radius: 12px;
+  padding: 12px 6px;
+  text-align: center;
+}
+.ruler-pos {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-weight: 900;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-family: ui-monospace, Consolas, monospace;
+}
+.ruler-item {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--navy);
+  margin: 10px 0;
+  min-height: 24px;
+}
+.ruler-neg {
+  background: #fee2e2;
+  color: #b91c1c;
+  font-weight: 900;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-family: ui-monospace, Consolas, monospace;
+}
+.ruler-legend {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  font-size: 0.83rem;
+  color: #4b647c;
+  margin-top: 8px;
+}
+.pos-badge { color: #0284c7; }
+.neg-badge { color: #dc2626; }
+
+/* Responsive adjustments */
+@media(max-width: 768px) {
+  .flow-grid { grid-template-columns: 1fr; }
+  .pipeline-grid { flex-direction: column; align-items: stretch; }
+  .pipe-arrow { transform: rotate(90deg); margin: 4px 0; }
+  .tier-item { grid-template-columns: 1fr; gap: 6px; }
+  .risk-grid { grid-template-columns: 1fr; }
+  .ruler-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Dark mode overrides */
+html[data-code-theme="dark"] .concept-box{background:#162638;border-color:#2b4966;border-left-color:#60a5fa;color:#e2eaf4}
+html[data-code-theme="dark"] .pitfall-box{background:#2d181e;border-color:#5c242e;border-left-color:#f87171;color:#fecaca}
+html[data-code-theme="dark"] .business-box{background:#132a22;border-color:#1f5442;border-left-color:#34d399;color:#d1fae5}
+html[data-code-theme="dark"] .diagram-box{background:#0b131d;border-color:#1a2f44;color:#cae3f8}
+html[data-code-theme="dark"] .code-walkthrough th,html[data-code-theme="dark"] .summary-table th{background:#1b2e42;color:#d6e8f7;border-color:#2e4863}
+html[data-code-theme="dark"] .code-walkthrough td,html[data-code-theme="dark"] .summary-table td{border-color:#2e4863;color:#dbe4ee}
+html[data-code-theme="dark"] .code-walkthrough tr:nth-child(even) td,html[data-code-theme="dark"] .summary-table tr:nth-child(even) td{background:#142232}
+html[data-code-theme="dark"] .theory-h4{color:#8bd7f7}
+html[data-code-theme="dark"] .tb-concept{background:#1e3a5f;color:#93c5fd}
+html[data-code-theme="dark"] .tb-deep{background:#2e1065;color:#c4b5fd}
+html[data-code-theme="dark"] .tb-pitfall{background:#450a0a;color:#fca5a5}
+html[data-code-theme="dark"] .tb-biz{background:#064e3b;color:#86efac}
+html[data-code-theme="dark"] .tb-rule{background:#451a03;color:#fde68a}
+
+html[data-code-theme="dark"] .visual-flow,
+html[data-code-theme="dark"] .visual-pipeline,
+html[data-code-theme="dark"] .visual-memory,
+html[data-code-theme="dark"] .visual-hierarchy,
+html[data-code-theme="dark"] .visual-risk,
+html[data-code-theme="dark"] .visual-ruler {
+  background: #132232;
+  border-color: #27415a;
+  box-shadow: none;
+}
+html[data-code-theme="dark"] .visual-flow-title,
+html[data-code-theme="dark"] .pipeline-title,
+html[data-code-theme="dark"] .memory-title,
+html[data-code-theme="dark"] .hierarchy-title,
+html[data-code-theme="dark"] .risk-title,
+html[data-code-theme="dark"] .ruler-title { color: #e1effa; }
+html[data-code-theme="dark"] .flow-step { background: #192d42; border-color: #2b4b6a; }
+html[data-code-theme="dark"] .flow-name { color: #93c5fd; }
+html[data-code-theme="dark"] .flow-desc { color: #c4d7e8; }
+html[data-code-theme="dark"] .pipe-node { background: #172a3d; border-color: #2a4663; }
+html[data-code-theme="dark"] .pipe-node.highlight { background: #133534; border-color: #1e7060; }
+html[data-code-theme="dark"] .pipe-name { color: #e1effa; }
+html[data-code-theme="dark"] .mem-scenario { background: #172a3e; border-color: #294766; }
+html[data-code-theme="dark"] .mem-obj { background: #122131; border-color: #2f5275; color: #e2eaf2; }
+html[data-code-theme="dark"] .mem-gc-note { background: #322111; border-color: #5d3f22; color: #fbd38d; }
+html[data-code-theme="dark"] .tier-item { background: #16283b; border-color: #274563; }
+html[data-code-theme="dark"] .tier-item.t1 { background: #0e2b2c; border-left-color: #14b8a6; }
+html[data-code-theme="dark"] .tier-item.t2 { background: #132742; border-left-color: #60a5fa; }
+html[data-code-theme="dark"] .tier-item.t3 { background: #2d2212; border-left-color: #f59e0b; }
+html[data-code-theme="dark"] .tier-item.t4 { background: #1e293b; border-left-color: #94a3b8; }
+html[data-code-theme="dark"] .tier-badge { color: #dbeafe; }
+html[data-code-theme="dark"] .tier-code { color: #93c5fd; }
+html[data-code-theme="dark"] .tier-desc { color: #cbd5e1; }
+html[data-code-theme="dark"] .risk-context { background: #182e44; color: #bfdbfe; }
+html[data-code-theme="dark"] .risk-card.bad { background: #2e2314; border-color: #5c4424; }
+html[data-code-theme="dark"] .risk-card.fatal { background: #33151b; border-color: #662530; }
+html[data-code-theme="dark"] .risk-explain { color: #e2e8f0; }
+html[data-code-theme="dark"] .ruler-col { background: #172a3d; border-color: #294764; }
+html[data-code-theme="dark"] .ruler-item { color: #f1f6fb; }
+html[data-code-theme="dark"] .ruler-pos { background: #1e3a5f; color: #7dd3fc; }
+html[data-code-theme="dark"] .ruler-neg { background: #4c1d24; color: #fca5a5; }
+html[data-code-theme="dark"] .ruler-legend { color: #94a3b8; }
 </style></head><body><header class="top"><div class="topin"><a class="logo" href="../../index.html">NEU · <span class="dot">DS</span> / Buổi 2</a><nav class="links"><a href="../../index.html">Trang chủ</a><a href="bai-2-bai-giang-tuong-tac.html" aria-current="page">Bài giảng</a><a href="bai-2-quiz-tu-cham.html">Quiz 100 điểm</a><a href="bai-2-bai-tap-tu-lam.html">Bài tập 100 điểm</a></nav><button type="button" id="codeThemeToggle" class="code-theme-toggle" aria-label="Đổi giao diện khối code sáng hoặc tối" aria-pressed="false">☀ Code: Sáng</button></div></header><div class="container"><section class="hero"><span class="badge">BÀI 2 · KHÓA HỌC TUẦN TỰ</span><h1>Giới thiệu ngôn ngữ lập trình Python</h1><p>Học Python từ ví dụ kinh doanh NeuTech Coffee: biến, kiểu dữ liệu, toán tử, Colab, list, tuple, set, indexing và slicing. Từng phần cần hoàn thành câu kiểm tra mới được mở phần kế tiếp.</p><div class="metrics"><span>11 mục học</span><span>11 câu mở khóa</span><span>37 khối code có Run</span><span>6 bài thực hành điền chỗ trống</span><span>8 câu tổng kết</span><span>Chứng nhận PNG</span><span>Lưu tiến độ theo mã SV</span></div></section><div class="shell"><aside class="side"><h3>Lộ trình học tập</h3><div class="progress"><span id="progressBar"></span></div><p id="progressStatus" class="small muted">0/11 mục hoàn thành</p><div class="navitems" id="sideNav"></div></aside><main><section class="card"><span class="tag">Thông tin sinh viên</span><h2>Hồ sơ học tập</h2><p class="muted">Điền thông tin trước khi học. Khi đổi mã SV, tiến độ sẽ tách riêng trên cùng trình duyệt.</p><div class="profile"><label>Họ và tên<input id="studentName" type="text" maxlength="100" placeholder="Nguyễn Văn A"></label><label>Mã sinh viên<input id="studentId" type="text" maxlength="40" placeholder="1126xxxxx"></label><label>Mã lớp<input id="classCode" type="text" maxlength="50" placeholder="KHDL_01"></label></div><p id="profileMessage" class="small muted">Thông tin lưu tự động tại trình duyệt.</p></section><section class="lesson card" id="lesson0" data-lesson="0"><div class="stephead"><span class="tag">MỤC 01/11</span><span class="pill">PDF tr. 1–3</span></div><h2>Bắt đầu từ quán cà phê</h2><p class="lead">Vì sao học Python & Khung tư duy giải quyết bài toán kinh doanh định lượng</p><div class="lesson-body"><p>Buổi 2 bắt đầu với bối cảnh kinh doanh thực tế tại chuỗi cà phê giả định <b>NeuTech Coffee</b>. Trong kỷ nguyên số, mọi nghiệp vụ quản lý — từ lưu trữ thông tin món nước, tính hóa đơn bàn, phân tích chiết khấu thành viên, đến quản lý thực đơn tự động — đều có thể được mô hình hóa thành các chương trình máy tính rõ ràng, chuẩn xác và tin cậy.</p><div class="cards"><article class="mini"><h3>Lưu thông tin thực thể</h3><p>Tên món, đơn giá, số lượng tồn kho → <b>Biến</b> và <b>Kiểu dữ liệu</b> (<code>str</code>, <code>int</code>, <code>float</code>, <code>bool</code>).</p></article><article class="mini"><h3>Xử lý &amp; Tính toán</h3><p>Tính tiền bàn, chiết khấu, thuế VAT → <b>Toán tử số học</b> và <b>Biểu thức logic</b> (<code>+</code>, <code>*</code>, <code>//</code>, <code>and</code>, <code>or</code>).</p></article><article class="mini"><h3>Quản lý danh mục</h3><p>Tổ chức thực đơn, bảng giá → <b>Cấu trúc dữ liệu tuần tự</b> (<code>list</code>, <code>tuple</code>, <code>set</code>) cùng kỹ thuật <b>Indexing</b> &amp; <b>Slicing</b>.</p></article></div><div class="note"><b>Mục tiêu học tập cốt lõi của Buổi 2:</b> Sinh viên hiểu rõ cơ chế hoạt động bên dưới của ngôn ngữ Python; tự tin đọc, dự đoán và viết các câu lệnh Python nền tảng; biết cách chọn đúng kiểu dữ liệu và cấu trúc tuần tự để mô hình hóa các bài toán quản trị kinh tế - kinh doanh.</div>
 
 <div class="theory">
@@ -1023,8 +1327,8 @@ print(so_ly * don_gia) # 100000</textarea>
 
 <div class="business-box">
 <b><span class="theory-badge tb-biz">Hiểm họa Sai số Số học</span> Hiện tượng sai số dấu phẩy động trong phân tích tài chính:</b><br>
-Do máy tính lưu trữ số dưới dạng nhị phân cơ số 2, một số phân số thập phân quen thuộc như $0.1$ ($1/10$) không thể biểu diễn hữu hạn trong hệ nhị phân, tương tự như $1/3 = 0.3333...$ trong hệ thập phân.<br>
-Vì vậy, nếu bạn thử chạy <code>print(0.1 + 0.2)</code> trên Python, kết quả sẽ là <code>0.30000000000000004</code> chứ không tròn $0.3$!<br>
+Do máy tính lưu trữ số dưới dạng nhị phân cơ số 2, một số phân số thập phân quen thuộc như 0.1 (1/10) không thể biểu diễn hữu hạn trong hệ nhị phân, tương tự như 1/3 = 0.3333... trong hệ thập phân.<br>
+Vì vậy, nếu bạn thử chạy <code>print(0.1 + 0.2)</code> trên Python, kết quả sẽ là <code>0.30000000000000004</code> chứ không tròn 0.3!<br>
 <b>Giải pháp kế toán - tài chính:</b> Khi tính toán số tiền lẻ có thuế VAT hoặc chiết khấu, luôn sử dụng hàm làm tròn <code>round(so_tien, 2)</code> trước khi hiển thị, hoặc sử dụng module chuyên dụng <code>decimal</code> cho các hệ thống ngân hàng đòi hỏi độ chính xác tuyệt đối.
 </div>
 
@@ -1205,7 +1509,7 @@ print("Tiền thừa:", tien_thua, "đồng")
   <td><code>7 % 3</code></td>
   <td><code>1</code></td>
   <td><code>int</code></td>
-  <td>Lấy phần dư $r = a - (a // b) 	imes b$. Tìm số sản phẩm lẻ, kiểm tra mã chẵn lẻ.</td>
+  <td>Lấy phần dư theo công thức: <code>r = a - (a // b) * b</code>. Tìm số sản phẩm lẻ, kiểm tra mã chẵn lẻ.</td>
 </tr>
 <tr>
   <td><code>**</code></td>
@@ -1213,7 +1517,7 @@ print("Tiền thừa:", tien_thua, "đồng")
   <td><code>1.08 ** 3</code></td>
   <td><code>1.2597...</code></td>
   <td><code>float</code></td>
-  <td>Tính lãi kép tài chính: $FV = PV 	imes (1 + r)^n$, định giá chiết khấu dòng tiền DCF.</td>
+  <td>Tính lãi kép tài chính: <code>FV = PV * (1 + r)<sup>n</sup></code>, định giá chiết khấu dòng tiền DCF.</td>
 </tr>
 </tbody>
 </table>
@@ -1241,7 +1545,7 @@ Nắm vững điều này sẽ giúp bạn tránh sai lệch số liệu khi x�
     <div class="tier-item t2">
       <div class="tier-badge">Cấp 2 · Lũy thừa</div>
       <div class="tier-code">Lũy thừa: <code>**</code></div>
-      <div class="tier-desc">Tính số mũ trước mọi phép nhân chia, ví dụ: <code>2 ** 3 * 2 = 16</code> (tính $2^3 = 8$ rồi mới nhân 2).</div>
+      <div class="tier-desc">Tính số mũ trước mọi phép nhân chia, ví dụ: <code>2 ** 3 * 2 = 16</code> (tính 2<sup>3</sup> = 8 rồi mới nhân 2).</div>
     </div>
     <div class="tier-item t3">
       <div class="tier-badge">Cấp 3 · Nhân / Chia</div>
@@ -1360,7 +1664,7 @@ print("Đủ điều kiện nhận voucher:", duoc_giam_gia)
   <li><b>Nháy đơn <code>'...'</code> và Nháy kép <code>"..."</code>:</b> Cả hai cách viết đều tạo ra đối tượng chuỗi giống hệt nhau. Tính năng này giúp bạn dễ dàng lồng dấu nháy mà không cần dùng ký tự thoát (Escape):<br>
     Ví dụ: <code>thong_bao = 'Quán "NeuTech" mở cửa'</code> hoặc <code>cau_noi = "Hôm nay trời đẹp, quán 'cháy' hàng"</code>.</li>
   <li><b>Phép nối chuỗi (Concatenation) bằng <code>+</code>:</b> Nối hai chuỗi thành một chuỗi mới: <code>"NeuTech" + " " + "Coffee"</code> → <code>"NeuTech Coffee"</code>. Lưu ý: Cả hai toán hạng đều phải là <code>str</code>!</li>
-  <li><b>Phép nhân chuỗi bằng <code>*</code>:</b> Nhân bản chuỗi $n$ lần. Rất tiện lợi khi định dạng bảng báo cáo: <code>"=" * 30</code> tạo ra một đường kẻ phân cách <code>==============================</code>.</li>
+  <li><b>Phép nhân chuỗi bằng <code>*</code>:</b> Nhân bản chuỗi <code>n</code> lần. Rất tiện lợi khi định dạng bảng báo cáo: <code>"=" * 30</code> tạo ra một đường kẻ phân cách <code>==============================</code>.</li>
   <li><b>Đo độ dài chuỗi bằng hàm <code>len()</code>:</b> Trả về tổng số ký tự (kể cả khoảng trắng và dấu tiếng Việt): <code>len("Bạc xỉu")</code> cho ra <code>7</code>.</li>
 </ul>
 
@@ -1513,13 +1817,13 @@ print(str(so_ly) + " ly " + ten_mon + " = " + str(tong_tien) + "đ")
       <div class="risk-head">❌ Tình huống 1: Nhân chuỗi với số</div>
       <div class="risk-code">don_gia * so_ly</div>
       <div class="risk-res">"350003500035000"</div>
-      <div class="risk-explain">Chuỗi bị nhân bản 3 lần thay vì tính nhân số học $ightarrow$ Sai lệch hoàn toàn số liệu doanh thu!</div>
+      <div class="risk-explain">Chuỗi bị nhân bản 3 lần thay vì tính nhân số học → Sai lệch hoàn toàn số liệu doanh thu!</div>
     </div>
     <div class="risk-card fatal">
       <div class="risk-head">💥 Tình huống 2: Cộng chuỗi với số</div>
       <div class="risk-code">don_gia + 5000</div>
       <div class="risk-res">TypeError: can only concatenate str to str</div>
-      <div class="risk-explain">Python từ chối cộng ngầm định giữa chuỗi và số $ightarrow$ Chương trình thanh toán bị sập (Crash)!</div>
+      <div class="risk-explain">Python từ chối cộng ngầm định giữa chuỗi và số → Chương trình thanh toán bị sập (Crash)!</div>
     </div>
   </div>
 </div>
@@ -1665,7 +1969,7 @@ print("Giờ hoạt động:", gio_mo_cua)
 <p>Một <code>list</code> trong Python sở hữu 4 đặc tính kiến trúc cốt lõi:</p>
 <ol>
   <li><b>Có thứ tự (Ordered):</b> Các phần tử duy trì chính xác thứ tự được thêm vào từ đầu đến cuối danh sách.</li>
-  <li><b>Truy cập theo chỉ số (Indexed):</b> Bạn có thể đọc bất kỳ phần tử nào bằng chỉ số vị trí <code>[0]</code>, <code>[1]</code>,... với tốc độ cực nhanh trong thời gian hằng số $O(1)$.</li>
+  <li><b>Truy cập theo chỉ số (Indexed):</b> Bạn có thể đọc bất kỳ phần tử nào bằng chỉ số vị trí <code>[0]</code>, <code>[1]</code>,... với tốc độ cực nhanh trong thời gian hằng số <code>O(1)</code>.</li>
   <li><b>Cho phép trùng lặp (Duplicates allowed):</b> Có thể chứa nhiều phần tử có giá trị y hệt nhau, ví dụ: <code>["Đen", "Sữa", "Đen"]</code>.</li>
   <li><b>TÍNH THAY ĐỔI ĐƯỢC (MUTABLE):</b> Đây là thuộc tính quan trọng nhất! Bạn có thể sửa đổi nội dung của danh sách trực tiếp ngay tại ô nhớ mà không cần tạo một danh sách mới.</li>
 </ol>
@@ -1814,7 +2118,7 @@ print("Món cuối:", mon_cuoi)
 <div class="concept-box">
 <b><span class="theory-badge tb-concept">Bản chất ô nhớ</span> Chỉ số chính là "Khoảng cách độ lệch" (Memory Offset):</b><br>
 Trong kiến trúc phần cứng máy tính, một danh sách là một khối các ô nhớ liên tiếp trong RAM. Khi chương trình tìm kiếm một phần tử, CPU sử dụng công thức số học định vị địa chỉ cực nhanh:<br>
-$$	ext{Địa chỉ ô nhớ của phần tử thứ } i = 	ext{Địa chỉ cơ sở (Base Address)} + (i 	imes 	ext{Kích thước ô nhớ})$$<br>
+<div style="text-align:center;margin:10px 0;padding:10px 14px;background:var(--gray-bg);border:1px solid var(--border);border-radius:8px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-weight:600;color:var(--navy2);font-size:0.95rem">Địa chỉ ô nhớ phần tử i = Địa chỉ cơ sở + (i × Kích thước ô nhớ)</div>
 • Phần tử đầu tiên nằm ngay tại điểm xuất phát (độ lệch bằng 0 bước), do đó chỉ số của nó <b>bắt buộc phải là 0</b>!<br>
 • Phần tử thứ hai nằm cách điểm xuất phát 1 bước, nên chỉ số của nó là 1.
 </div>
@@ -1891,7 +2195,7 @@ Nếu bạn truy cập <code>gia_ban[4]</code> hoặc <code>gia_ban[-5]</code>, 
 <b><span class="theory-badge tb-biz">Ứng dụng Khoa học Dữ liệu</span> Phân tích Chuỗi thời gian (Time-series Analysis):</b><br>
 Trong kinh tế lượng và phân tích tài chính chứng khoán, danh sách giá cổ phiếu hay doanh số ngày thường xuyên được cập nhật thêm vào cuối danh sách:<br>
 • <code>gia_co_phieu[-1]</code>: Lấy giá đóng cửa phiên gần nhất (ngày hôm nay).<br>
-• <code>gia_co_phieu[-2]</code>: Lấy giá đóng cửa phiên hôm qua để tính tỷ lệ tăng trưởng giá: $rac{P_{-1} - P_{-2}}{P_{-2}}$.<br>
+• <code>gia_co_phieu[-2]</code>: Lấy giá đóng cửa phiên hôm qua để tính tỷ lệ tăng trưởng giá: <code>(P<sub>-1</sub> - P<sub>-2</sub>) / P<sub>-2</sub></code>.<br>
 • <code>gia_co_phieu[0]</code>: Lấy giá của ngày đầu tiên niêm yết làm mốc gốc so sánh.
 </div>
 
@@ -1979,10 +2283,10 @@ print("Lát cắt 2 món ở giữa:", lat_cat)
 </div>
 
 <div class="concept-box">
-<b><span class="theory-badge tb-deep">Nguyên lý toán học</span> Vì sao Python thiết kế Slicing theo khoảng nửa mở $[start, stop)$?</b><br>
+<b><span class="theory-badge tb-deep">Nguyên lý toán học</span> Vì sao Python thiết kế Slicing theo khoảng nửa mở <code>[start, stop)</code>?</b><br>
 Nhiều sinh viên thắc mắc: <em>"Tại sao <code>a[1:3]</code> lại chỉ lấy phần tử 1 và 2 mà không lấy phần tử 3?"</em>. Đây là một quyết định thiết kế thiên tài của các nhà khoa học máy tính:<br>
-1. <b>Số lượng phần tử trả về luôn bằng chính xác: $stop - start$</b>. Ví dụ: <code>a[1:3]</code> có độ dài đúng bằng $3 - 1 = 2$ phần tử. Bạn không bao giờ phải cộng trừ thêm 1 trong đầu!<br>
-2. <b>Phân chia danh sách liền mạch không trùng lặp:</b> Với bất kỳ chỉ số $k$ nào, <code>a[:k]</code> (các phần tử trước $k$) và <code>a[k:]</code> (các phần tử từ $k$ trở đi) sẽ chia danh sách thành 2 nửa hoàn hảo, không bỏ sót và không trùng lặp bất kỳ phần tử nào.
+1. <b>Số lượng phần tử trả về luôn bằng chính xác: <code>stop - start</code></b>. Ví dụ: <code>a[1:3]</code> có độ dài đúng bằng <code>3 - 1 = 2</code> phần tử. Bạn không bao giờ phải cộng trừ thêm 1 trong đầu!<br>
+2. <b>Phân chia danh sách liền mạch không trùng lặp:</b> Với bất kỳ chỉ số <code>k</code> nào, <code>a[:k]</code> (các phần tử trước <code>k</code>) và <code>a[k:]</code> (các phần tử từ <code>k</code> trở đi) sẽ chia danh sách thành 2 nửa hoàn hảo, không bỏ sót và không trùng lặp bất kỳ phần tử nào.
 </div>
 
 <div class="py-playground" data-playground="25">
